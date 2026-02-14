@@ -14,16 +14,12 @@ menu2.style.display="none"
 menu3.style.display="none"
 
 let lines
-fetch("content.txt")
+fetch("/rpggenerator/content.txt")
 .then(res =>res.text())
 .then(text => {lines = text.split('\n')
 lines.forEach(line=> {const parts =line.split(':'); const id=parts[0].trim(); const content=parts.slice(1).join(':').trim(); 
 const p=document.getElementById(id); if (p) {p.innerHTML = content}})})
 .catch(err => console.error ('hiba:', err))
-
-
-
-
 
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 gen.addEventListener("click", () => {if (menu3.style.display==="none") {menu3.style.display="block"} else {menu3.style.display="none"}});
