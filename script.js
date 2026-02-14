@@ -14,7 +14,8 @@ menu2.style.display="none"
 menu3.style.display="none"
 
 let lines
-fetch("/rpggenerator/content.txt")
+const path = window.location.pathname.replace(/\/[^\/]*$/, "/");
+fetch(`${path}content.txt`)
 .then(res =>res.text())
 .then(text => {lines = text.split('\n')
 lines.forEach(line=> {const parts =line.split(':'); const id=parts[0].trim(); const content=parts.slice(1).join(':').trim(); 
