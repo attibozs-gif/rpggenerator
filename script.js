@@ -18,14 +18,22 @@ fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/ma
   .then(res => res.text())
   .then(text => {
     lines = text.split('\n');
-    lines.forEach(line => {const parts = line.split(':');const id = parts[0].trim();const content = parts.slice(1).join(':').trim();const p = document.getElementById(id);
-      if (p) {p.innerHTML = content.replace(/\n/g, "<br>");}});})
+   let parsedLines = [];
+let currentId = null;
+let currentContent = "";
+lines.forEach(line => {
+  if (line.includes(':')) {
+    if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() });
+    const parts = line.split(':');
+    currentId = parts[0].trim();
+    currentContent = parts.slice(1).join(':').trim();} 
+    else {currentContent += '\n' + line;}});if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() }); })
   .catch(err => console.error('hiba:', err));
-
 
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 gen.addEventListener("click", () => {if (menu3.style.display==="none") {menu3.style.display="block"} else {menu3.style.display="none"}});
 mat.addEventListener("click", () =>{let exist=mat.querySelector("#AlapanyagokCopy");if (exist) {exist.remove()} else {const matcopy=material.cloneNode(true); matcopy.id="AlapanyagokCopy"; mat.appendChild(matcopy); matcopy.style.display="block"}})
+
 
 
 
