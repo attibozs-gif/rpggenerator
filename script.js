@@ -28,12 +28,7 @@ parsedLines.forEach(obj => {const p = document.getElementById(obj.id);
 if (p) p.innerHTML = obj.content.replace(/\n/g, "<br>");});})
 .catch(err => console.error('hiba:', err));
 
-
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 gen.addEventListener("click", () => {if (menu3.style.display==="none") {menu3.style.display="block"} else {menu3.style.display="none"}});
 mat.addEventListener("click", () =>{let exist=mat.querySelector("#AlapanyagokCopy");if (exist) {exist.remove()} else {const matcopy=material.cloneNode(true); matcopy.id="AlapanyagokCopy"; mat.appendChild(matcopy); matcopy.style.display="block"}})
-
-
-
-
 
