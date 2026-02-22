@@ -17,9 +17,7 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}
 .virtusflex p {align-self: flex-start; margin: 0;}
 
 .flexsomatium, .flexphrenium, .flexpneum {display: flex; align-items: flex-start}
-.flexsomatium p, .flexphrenium p, .flexpneum p {align-self: flex-start; margin:0}
-   
 
-h1,h2,h3,p {color: white;}
+h1,h2,h3,p {color: white; flex:1; margin:0; white-space:normal; align-self: flex-start;}
 
 
