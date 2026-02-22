@@ -1,8 +1,9 @@
 html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #Menu {display: flex;min-height: 100vh;}
 #Menu2 {height: 100%;flex-shrink: 0;width: 210px; background: rgb(138, 139, 139); border-right: 2px solid #000; overflow:auto}
+#start {color:black; font-style: italic; font-size: 26px; font-weight: bold;}
 #mat {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
-#mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
+#Mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
 
@@ -17,7 +18,9 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}
 .virtusflex p {align-self: flex-start; margin: 0;}
 
 .flexsomatium, .flexphrenium, .flexpneum {display: flex; align-items: flex-start}
+.flexsomatium p, .flexphrenium p, .flexpneum p {align-self: flex-start; margin:0}
+   
 
-h1,h2,h3,p {color: white; flex:1; margin:0; white-space:normal; align-self: flex-start;}
+h1,h2,h3,p {color: white;}
 
 

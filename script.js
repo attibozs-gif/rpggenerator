@@ -34,15 +34,32 @@ Tri2.style.display="block"
 
 let lines;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/content.txt")
-.then(res => res.text()).then(text => {
-text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-let lines = text.split('\n'); let parsedLines = []; let currentId = null; let currentContent = "";
-lines.forEach(line => {const trimmed = line.trim();const colonIndex = line.indexOf(':');
-if (colonIndex > 0) { if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}
-currentId = line.slice(0, colonIndex).trim();currentContent = line.slice(colonIndex + 1); } else 
-{currentContent += "\n" + line;}}); if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}
-parsedLines.forEach(obj => {const p = document.getElementById(obj.id);if (p) {p.textContent = obj.content; }});})
+.then(res => res.text())
+.then(text => 
+{text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+const lines = text.split('\n'); const parsedLines = []; let currentId = null; let currentContent = [];
+const idPattern = /^[a-z]{2}\d+$/;
+
+lines.forEach(line => {const trimmedLine = line.trimEnd();const colonIndex = trimmedLine.indexOf(':');
+if (colonIndex > 0) 
+{const possibleId = trimmedLine.slice(0, colonIndex).trim();
+if (idPattern.test(possibleId)) {if (currentId !== null) 
+{parsedLines.push({id: currentId, content: currentContent.join('\n')});}
+
+currentId = possibleId;
+const afterColon = trimmedLine.slice(colonIndex + 1);currentContent = afterColon ? [afterColon] : [];} 
+else {currentContent.push(trimmedLine);}} else {currentContent.push(trimmedLine);}});
+if (currentId !== null) {parsedLines.push({id: currentId,content: currentContent.join('\n')}); }
+window.parsedLines = parsedLines;
+parsedLines.forEach(obj => {const p = document.getElementById(obj.id);
+if (p) {p.innerHTML = obj.content.split('\n').map(line => line || '&nbsp;') .join('<br>');} 
+else {console.warn(`No <p> found for id="${obj.id}"`);}});})
 .catch(err => console.error('hiba:', err));
+
+
+
+document.querySelectorAll('#content p').forEach(p => {
+  console.log(p.textContent);});
 
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 
