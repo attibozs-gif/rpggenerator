@@ -34,8 +34,8 @@ Tri2.style.display="block"
 
 let lines;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/content.txt")
-.then(res => res.text())
-.then(text => {
+.then(res => res.text()).then(text => {
+text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 lines = text.split('\n');
 let parsedLines = [];  let currentId = null; let currentContent = "";
 lines.forEach(line => {if (line.includes(':')) {if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() });
@@ -44,8 +44,7 @@ currentId = parts[0].trim();currentContent = parts.slice(1).join(':').trim();} e
 currentContent += '\n' + line;}});
 if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() });
 parsedLines.forEach(obj => {const p = document.getElementById(obj.id);
-if (p) p.innerHTML = obj.content.replace(/\n\n/g, "<br>");});})
-.catch(err => console.error('hiba:', err));
+if (p) p.innerHTML = obj.content.replace(/\n\n/g, "<br>").replace(/\n/g, " "); }); })
 
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 
