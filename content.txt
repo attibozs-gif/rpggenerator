@@ -9,7 +9,8 @@ nem függenek éghajlattól vagy földfekvéstől. Egyszerre bárhol megtalálha
 magához a létezéshez kapcsolódik semmint egy geológiai, fizikai folyamathoz. Maga az élet generálja őket, mert  minden élőlény 
 interakcióba van a környeztével. Minél sűrűbben fordul elő egy adott interakció, ami elkerülhetetlen ahogy az élet halmozódik, 
 annál látványosabb ennek a folyamatnak a következménye, ami ezen alapanyagok megjelenése. Mindez teljesen természetes és misztikum 
-nélküli folyamat, akár egy út kitaposása, a nyelv változása, vagy egy ruha kopása. Az alkotóelemek leírásai megjelenésükről és 
+nélküli folyamat, akár egy út kitaposása, a nyelv változása, vagy egy ruha kopása. 
+<br> Az alkotóelemek leírásai megjelenésükről és 
 viselkedésükről pusztán annak az értelmezése, hogy egy koncepció milyen képet vesz fel a fizikai valóságban. 
 Összesen 21 ilyen alapanyagot különböztetünk meg a közismertektől, 4 nagy kategóriára bontva. 
 
@@ -26,7 +27,9 @@ ab1:
 A funkció és én nélküli forma. A fizikai tároló, a Test metafizikai megnyilvánulása.  amely borostyán módjára burjánzó vöröses vagy 
 sárgás növényszárak képét ölti. Beszerzésükhöz cérna mód kell a teljes szárat gyökeréig felgöngyölíteni, ha valahol elszakad a 
 zsákmány kárba vész. Ez korántsem egyszerű feladat mert a növényszár folyamatosan menekül, vonaglik és csavarodik a le nem fogott részeken.      
-Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. Szükséges képzettség: Elkapó Rítus.Kategória:1
+<br> Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. 
+<br> Szükséges képzettség: Elkapó Rítus
+<br> Kategória:1
 
 ab2:
 A forma nélküli, kifejezéstelen funkció. A rendszerszintű gondolat, az Elme metafizikai megnyilvánulása, amely sztalagmitszerű, 
@@ -57,7 +60,36 @@ A teremtéssel, kreálással és imitációval kapcsolatos jelenségekre adott e
 át gyűrűznek végig. <br> Bármilyen organizmus, stabil identitás és azonos körülmények mellett ugyanazon az átívelő narratíva matematikai 
 sorozatán megy végig. Akár egy létra lépcsőfokai, a következő szint mindig ugyanaz, feltéve hogy előrébb akarunk jutni.
 
-ab4:
+ab4: 
+A Virtusok alappilléreként, a Lamentium a szomorúság, az elkerülhetetlen veszteség metafizikai megtestesülése. Értelmezése a 
+lehető legszélesebb körű. A gyakorlati dolgokon - elhagyott cipő, levágott kar - az érzelmin - haláleset, letargia - keresztül a 
+koncepcionálisig - be nem teljesült potenciál, elmúlt évek - terjed. Lilásan, vörösen árnyaló virágok képét öltik, bár 
+beszerzésük egyszerű, nem azonnal használható fel. Egy teljes napig kell a külső hatásoktól óvni a leszedett növényt, 
+hogy megerjedt állapotban szintézisre alkalmassá váljon.    
+<br> Elsődleges előfordulási hely: Bárhol, temetőkön át a zsúfolt városokig, mert a veszteség is mindenhol jelen van.
+<br> Szükséges Képzettség: Oldozó Ritus
+<br> Kategória:1
+
+ab5:
+Ha a gyász a Testben gyökeret ereszt, emlékképpé válik. Más szóval, az emlék, a sokszor elmagyarázhatatlan érzelmek 
+értelmezhetővé vált, történetgazdag pillanatfelvétele. Ennek a metafizikai megnyilvánulása a Memoznit, amely pókhálószerű, 
+színtelen szálak formáját ölti. Ha valaki megérint egyet, a többi fonál szivárványként kezd pompázni, és az illetőt elárasztják 
+mások életének jelentős momentumai. A hatás oly erős, hogy saját emlékeket is átírhat, teljes személyiségvesztést okozva. Emiatt 
+beszerzésük, még ha csupán kézi lefejtésről is van szó, csak gyors mozdulatokkal és mértéktartó magatartás mellett lehetséges.
+<br> Elsődleges előfordulási hely: zarándokhelyek; legendákba szőtt természetföldrajzi helyek; távoleső, de gondozott oltárok, temetők.
+<br> Szükséges Képzettség: Elkapó Ritus
+<br> Kategória:2                      
+
+
+
+
+ab6:
+
+
+
+
+ab7:
+
 
 aa6:
 Kasztok mesterségek vagy végzettségek – tanultak vagy önképzettek –, amelyek nagy vonalakban meghatározzák a Játékos Karakter szerepét a társadalomban.
@@ -395,7 +427,7 @@ félbehagyva, kiugrott diákként, a tudásában létező hézagokat a fantázia
 prezentálja csupán, amihez a kivülállók feltételezik hogy értenie kell. Mutatványai ettől lesznek hitelesek, a közönség azt látja, amire 
 számít, logikai hézag csak abban jelentkezik, amit a néző biztosan át tud ugrani, a hibák pedig csak az illúzió megerősítésére szolgálnak.
 A Nyx eladhatná magát egy harcedzett katonának is, de minek ha negyed annyi munkával kétszer annyi hasznot érhet el. Az egyszerű nép 
-hűsége, egy kalandor csapat ragaszkodása egy helyi kuruzslóhoz nagyon is valós értékkel bír, mégha szélhámosság útján is szerzik 
+hűsége, egy kalandor csapat ragaszkodása egy helyi kuruzslóhoz nagyon is valós értékkel bír, még ha szélhámosság útján is szerzik 
 azt meg. <br> Harci értékei védekezés orientáltak, míg képességei a gyors improvizációra és egyszerű mágikus trükkökre fókuszálnak
 
 ag6:
@@ -498,5 +530,3 @@ ah2:
 ah3:
 
 ba7:
-
-
