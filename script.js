@@ -17,12 +17,19 @@ const mat1=document.querySelector ("#Mat1")
 const matcont=document.querySelector("#matcont")
 const aa1=document.querySelector("#aa1")
 const aa2=document.querySelector("#aa2")
+const Tri2=document.querySelector("#Triskol2")
+const vir2=document.querySelector ("#vir")
+const szom=document.querySelector ("#szom")
+const phren=document.querySelector ("#phren")
+const pne=document.querySelector ("#pne")
+
 
 menu2.style.display="none"
 menu3.style.display="none"
 g2.style.display="none"
 matcont.style.display="none"
 allinfo.forEach(div=> {div.style.display="none"});
+Tri2.style.display="block"
 
 
 let lines;
@@ -44,20 +51,30 @@ world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.s
 
 gn.addEventListener("click", () => {if (menu3.style.display==="none") {menu3.style.display="block"} else {menu3.style.display="none"}});
 
-mat.addEventListener("click", () => {let exist=cont.querySelector("#AlapanyagokCopy");if (exist) {exist.remove()} else {const matcopy=material.cloneNode(false); 
-    material.querySelectorAll(":scope > h1, :scope > p").forEach(el=>{matcopy.appendChild(el.cloneNode(true))});
-    const Triskolclone=Triskol.cloneNode (false); 
-    Triskol.querySelectorAll(":scope > h2, :scope > img, :scope > p").forEach(el=>{Triskolclone.appendChild(el.cloneNode(true))});
-    matcopy.appendChild(Triskolclone);  const Virtusclone=Virtus.cloneNode (false); 
-    Virtus.querySelectorAll(":scope > h2, :scope > img, :scope > p").forEach(el=>{Virtusclone.appendChild(el.cloneNode(true))});
-    matcopy.appendChild(Virtusclone);
-    matcopy.id="AlapanyagokCopy"; cont.appendChild(matcopy); matcopy.style.display="block"}})
+mat.addEventListener("click", () => {let exist=cont.querySelector("#AlapanyagokCopy");if (exist) {exist.remove()} 
+else {const matcopy=material.cloneNode(false); 
+const alapheader=material.querySelector (".alapheader"); matcopy.appendChild(alapheader.cloneNode(true)); 
+const Triskolflex=Triskol.querySelector(".flexTriskol"); Triskolflex.style.display="flex"; Triskolflex.style.alignItems="flex-start";
+matcopy.appendChild(Tri2.cloneNode(true)); matcopy.appendChild(Triskolflex.cloneNode(true)); 
+const Virtusflex=Virtusok.querySelector(".virtusflex"); Virtusflex.style.display="flex"; Virtusflex.style.alignItems="flex-start";
+matcopy.appendChild(vir2.cloneNode(true)); matcopy.appendChild(Virtusflex.cloneNode(true));
+matcopy.id="AlapanyagokCopy"; cont.appendChild(matcopy); matcopy.style.display="block"}})
+
+mat1.addEventListener("click", () => {let exist=cont.querySelector("#AlapanyagokCopy");if (exist) {exist.remove()}; 
+const matcopy = Triskolcontent.cloneNode(false); const flexsomatium=Triskolcontent.querySelector(".flexsomatium"); 
+const Triskolflex=Triskol.querySelector(".flexTriskol"); Triskolflex.style.display="flex"; 
+Triskolflex.style.alignItems="flex-start"; matcopy.appendChild(Tri2.cloneNode(true)); matcopy.appendChild(Triskolflex.cloneNode(true));
+matcopy.appendChild(szom.cloneNode(true)); matcopy.appendChild(flexsomatium.cloneNode(true)); 
+const flexphrenium=Triskolcontent.querySelector(".flexphrenium"); matcopy.appendChild(phren.cloneNode(true)); 
+matcopy.appendChild(flexphrenium.cloneNode(true));
+const flexpneum=Triskolcontent.querySelector(".flexpneum"); matcopy.appendChild(pne.cloneNode(true)); 
+matcopy.appendChild(flexpneum.cloneNode(true));    
+matcopy.id="AlapanyagokCopy"; cont.appendChild(matcopy); matcopy.style.display="block"})
 
 nw.addEventListener("click", () => {if (g2.style.display==="none") {g2.style.display="block"} else {g2.style.display="none"}});
 
 mat.addEventListener("click", () => {if (matcont.style.display==="none") {matcont.style.display="block"} else {matcont.style.display="none"}});
 
-console.log(material.innerHTML)
-console.log(material.querySelectorAll("h2"))
-console.log(material.querySelectorAll("p"))
-console.log(material.querySelectorAll("img"))
+document.querySelectorAll("#Triskol img, #Triskol h2, #Triskol p").forEach(el => {
+    console.log(el.tagName, getComputedStyle(el).display);
+});

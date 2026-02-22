@@ -1,8 +1,25 @@
-html, body{height:100%; margin:0}
-#Menu {display:flex; min-height:100vh} 
-#Menu2 {height:100%; flex-shrink:0; width:210px; background:#777; border-right:2px solid #000}
-#Info p, #Info div {width:100%; box-sizing:border-box; flex-grow:1}
-#content {flex:1; padding-left:50px; padding-right: 50px; text-align:justify}
+html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
+#Menu {display: flex;min-height: 100vh;}
+#Menu2 {height: 100%;flex-shrink: 0;width: 210px; background: rgb(138, 139, 139); border-right: 2px solid #000; overflow:auto}
+#mat {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
+#mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 
-#Alapanyagok img, #Alapanyagok p {display:inline-block; vertical-align: top;}
+#Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
+
+#content {flex: 1; padding-left: 50px; padding-right: 50px; text-align: justify;
+background-color: black ;background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw;                    /* full viewport width */
+min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}               
+
+.flexTriskol {display: flex; flex-wrap: nowrap; align-items: flex-start;}
+.flexTriskol p {align-self: flex-start; margin: 0;}
+.flexTriskol img {margin-right: 10px} 
+.virtusflex {display: flex; flex-wrap: nowrap; align-items: flex-start;}
+.virtusflex p {align-self: flex-start; margin: 0;}
+
+.flexsomatium, .flexphrenium, .flexpneum {display: flex; align-items: flex-start}
+.flexsomatium p, .flexphrenium p, .flexpneum p {align-self: flex-start; margin:0}
+   
+
+h1,h2,h3,p {color: white;}
+
 
