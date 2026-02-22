@@ -9,8 +9,7 @@ nem függenek éghajlattól vagy földfekvéstől. Egyszerre bárhol megtalálha
 magához a létezéshez kapcsolódik semmint egy geológiai, fizikai folyamathoz. Maga az élet generálja őket, mert  minden élőlény 
 interakcióba van a környeztével. Minél sűrűbben fordul elő egy adott interakció, ami elkerülhetetlen ahogy az élet halmozódik, 
 annál látványosabb ennek a folyamatnak a következménye, ami ezen alapanyagok megjelenése. Mindez teljesen természetes és misztikum 
-nélküli folyamat, akár egy út kitaposása, a nyelv változása, vagy egy ruha kopása. 
-<br> Az alkotóelemek leírásai megjelenésükről és 
+nélküli folyamat, akár egy út kitaposása, a nyelv változása, vagy egy ruha kopása. Az alkotóelemek leírásai megjelenésükről és 
 viselkedésükről pusztán annak az értelmezése, hogy egy koncepció milyen képet vesz fel a fizikai valóságban. 
 Összesen 21 ilyen alapanyagot különböztetünk meg a közismertektől, 4 nagy kategóriára bontva. 
 
@@ -27,9 +26,7 @@ ab1:
 A funkció és én nélküli forma. A fizikai tároló, a Test metafizikai megnyilvánulása.  amely borostyán módjára burjánzó vöröses vagy 
 sárgás növényszárak képét ölti. Beszerzésükhöz cérna mód kell a teljes szárat gyökeréig felgöngyölíteni, ha valahol elszakad a 
 zsákmány kárba vész. Ez korántsem egyszerű feladat mert a növényszár folyamatosan menekül, vonaglik és csavarodik a le nem fogott részeken.      
-Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. 
-Szükséges képzettség: Elkapó Rítus
-Kategória:1
+Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. <br> Szükséges képzettség: Elkapó Rítus. <br>Kategória:1
 
 ab2:
 A forma nélküli, kifejezéstelen funkció. A rendszerszintű gondolat, az Elme metafizikai megnyilvánulása, amely sztalagmitszerű, 
@@ -501,3 +498,4 @@ ah2:
 ah3:
 
 ba7:
+
