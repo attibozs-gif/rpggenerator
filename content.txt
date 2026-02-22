@@ -26,7 +26,7 @@ ab1:
 A funkció és én nélküli forma. A fizikai tároló, a Test metafizikai megnyilvánulása.  amely borostyán módjára burjánzó vöröses vagy 
 sárgás növényszárak képét ölti. Beszerzésükhöz cérna mód kell a teljes szárat gyökeréig felgöngyölíteni, ha valahol elszakad a 
 zsákmány kárba vész. Ez korántsem egyszerű feladat mert a növényszár folyamatosan menekül, vonaglik és csavarodik a le nem fogott részeken.      
-Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. <br> Szükséges képzettség: Elkapó Rítus. <br>Kategória:1
+Elsődleges előfordulási hely: Bárhol ahol az élet aktívan jelen van, nagy városok, társasági események, születési helyek. Szükséges képzettség: Elkapó Rítus.Kategória:1
 
 ab2:
 A forma nélküli, kifejezéstelen funkció. A rendszerszintű gondolat, az Elme metafizikai megnyilvánulása, amely sztalagmitszerű, 
@@ -498,4 +498,5 @@ ah2:
 ah3:
 
 ba7:
+
 
