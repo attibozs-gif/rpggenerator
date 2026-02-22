@@ -34,17 +34,16 @@ Tri2.style.display="block"
 
 let lines;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/content.txt")
-.then(res => res.text()).then(text => {
+.then(res => res.text())
+.then(text => {
 text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-lines = text.split('\n');
-let parsedLines = [];  let currentId = null; let currentContent = "";
-lines.forEach(line => {if (line.includes(':')) {if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() });
-const parts = line.split(':');
-currentId = parts[0].trim();currentContent = parts.slice(1).join(':').trim();} else {
-currentContent += '\n' + line;}});
-if (currentId) parsedLines.push({ id: currentId, content: currentContent.trim() });
-parsedLines.forEach(obj => {const p = document.getElementById(obj.id);
-if (p) p.innerHTML = obj.content.replace(/\n\n/g, "<br>").replace(/\n/g, " "); }); })
+let lines = text.split('\n'); let parsedLines = [];let currentId = null;let currentContent = "";
+lines.forEach(line => {if (line.includes(':') && line.trim().length > 1) 
+{if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}
+const parts = line.split(':');currentId = parts[0].trim();
+currentContent = parts.slice(1).join(':');} else {currentContent += "\n" + line;}});
+if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}parsedLines.forEach(obj => {
+const p = document.getElementById(obj.id);if (p) p.innerHTML = obj.content; });}).catch(err => console.error('hiba:', err));
 
 world.addEventListener("click", ()=> {if (menu2.style.display==="none") {menu2.style.display="block"} else {menu2.style.display="none"}});
 
