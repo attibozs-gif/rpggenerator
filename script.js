@@ -38,10 +38,9 @@ fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/ma
 .then(text => {
 text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 let lines = text.split('\n'); let parsedLines = [];let currentId = null;let currentContent = "";
-lines.forEach(line => {if (line.includes(':') && line.trim().length > 1) 
-{if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}
-const parts = line.split(':');currentId = parts[0].trim();
-currentContent = parts.slice(1).join(':');} else {currentContent += "\n" + line;}});
+lines.forEach(line => {const colonIndex = line.indexOf(':'); if (colonIndex > 0) {if (currentId !== null) 
+{parsedLines.push({ id: currentId, content: currentContent });}currentId = line.slice(0, colonIndex).trim();
+currentContent = line.slice(colonIndex + 1); } else {currentContent += "\n" + line; }});
 if (currentId !== null) {parsedLines.push({ id: currentId, content: currentContent });}parsedLines.forEach(obj => {
 const p = document.getElementById(obj.id);if (p) p.innerHTML = obj.content; });}).catch(err => console.error('hiba:', err));
 
