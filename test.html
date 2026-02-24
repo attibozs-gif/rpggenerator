@@ -43,8 +43,8 @@
 		<li id="new"> Új </li>
 		</ul>
 		<div id="Generator">
-		<label for="maxSP"> Képpzettség Pontok száma: </label>
-		<input id="maxSP" type="number" min="1" max="330" step="1">
+		<label for="startSP"> Képpzettség Pontok száma: </label>
+		<input id="startSP" type="number" min="1" max="330" step="1">
 		</div>
 		<ul> 
 		<li id="generate">Random</li>
@@ -1379,6 +1379,15 @@
 
 
 
+
+
+	<div class="karakterlap">
+		<ul> 
+		<li> Kezdő Sp </li> <li> </li>
+		</ul>
+
+	</div>
+
 	</div>
 </div>
 
@@ -1393,11 +1402,16 @@
   
   	<script>
 	function saveValue() {
-  	const value = document.getElementById("maxSP").value;
-  	localStorage.setItem("maxSP", value);}
+  	const value = document.getElementById("startSP").value;
+  	localStorage.setItem("startSP", value);}
 </script>                                		                   
 		 
 
+
+
+
 <script src="script.js?v=1"></script>
+<script src="generator.js?v=1"></script>
+
   </body>
 </html>
