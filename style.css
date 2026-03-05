@@ -4,11 +4,19 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #start {color:black; font-style: italic; font-size: 26px; font-weight: bold;}
 #mat {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 #Mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
+.AlapanyagokCopy {color: white}
+
+#creator {display: flex;flex-direction: row; gap: 20px;}
+.sheet {display: flex; flex-direction: column; gap: 50px;}
+#stepper {display: flex; flex-direction: column;gap: 50px; margin: 0 auto}
+#stepper .row {display: flex;flex-direction: row;gap:30px;}
+
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
 
+
 #content {flex: 1; padding-left: 50px; padding-right: 50px; text-align: justify;
-background-color: black ;background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw;                    /* full viewport width */
+background-color: black ;background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw;                   
 min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}               
 
 .flexTriskol {display: flex; flex-wrap: nowrap; align-items: flex-start;}
