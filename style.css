@@ -8,8 +8,12 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 
 #creator {display: flex;flex-direction: row; gap: 20px;}
 .sheet {display: flex; flex-direction: column; gap: 50px;}
-#stepper {display: flex; flex-direction: column;gap: 50px; margin: 0 auto}
-#stepper .row {display: flex;flex-direction: row;gap:30px;}
+#stepper {display: flex; flex-direction: column;gap:0;  margin: 0 auto}
+#stepper.row2 {display: flex;flex-direction: row;gap:30px;}
+#stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0; margin-left:100px}
+
+
+
 
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
@@ -29,6 +33,9 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}
 .flexsomatium p, .flexphrenium p, .flexpneum p {align-self: flex-start; margin:0}
    
 
-h1,h2,h3,p {color: white;}
+h1,h2,h3,p,span {color: white;}
+.kasztnev, .alkasztnev, .atk, .def, .health, .currSP, .currAP {font-weight:bold; color:rgb(230, 241, 75)}
+
+
 
 

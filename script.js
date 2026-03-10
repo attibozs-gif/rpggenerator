@@ -35,6 +35,7 @@ allinfo.forEach(div=> {div.style.display="none"});
 Tri2.style.display="block"
 
 
+
 let lines;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/content.txt")
 .then(res => res.text())
@@ -42,6 +43,11 @@ fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/ma
 {text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 const lines = text.split('\n'); const parsedLines = []; let currentId = null; let currentContent = [];
 const idPattern = /^[a-z]{2}\d+$/;
+window.dataStore=null;
+fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/stat.json")
+.then (response => response.json())
+.then (data => {window.dataStore=data; attribute();})
+
 
 lines.forEach(line => {const trimmedLine = line.trimEnd();const colonIndex = trimmedLine.indexOf(':');
 if (colonIndex > 0) 
