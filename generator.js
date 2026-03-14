@@ -159,7 +159,7 @@ cont.addEventListener("click", (event) => {if (event.target.dataset.tab) {skills
     const grid1=cont.querySelector(".grid1"); const template=cont.querySelector(".skilltype.hidden");
     const clone=template.cloneNode(true); clone.classList.remove("hidden"); 
     clone.querySelector(".skilltitle").textContent=skill.skilltitle;
-    clone.querySelector(".image").src=path
+    clone.querySelector(".image").src=skill.skillimage
     grid1.appendChild(clone) }) }; 
 
 
