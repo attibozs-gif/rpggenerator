@@ -1382,10 +1382,11 @@
 
 <div id="creator">
 		<div class="sheet">
+		<div class="stats">
 		<ul> 
-		<li> Jelenlegi Képzettség-pont:<span class="currSP"> </span> </li>
-		<li> Jelenlegi Attribútum-pont:<span class="currAP"> </span> </li>
-		<li> Jelenlegi Képesség-pont:<span class="currTP"> </span></li>
+		<li> Elkölthető Képzettség-pont:<span class="currSP"> </span> </li>
+		<li> Elkölthető Attribútum-pont:<span class="currAP"> </span> </li>
+		<li> Elkölthető Képesség-pont:<span class="currTP"> </span></li>
 		<li> Kaszt:<span class="kasztnev"> </span></li> 
 		<li> Alkaszt:<span class="alkasztnev"> </span> </li>
 		<li> Támadás:<span class="atk"> </span> </li>
@@ -1405,11 +1406,19 @@
 		<li> Fizikális Ellenállás: <span class="physres"> </span> </li>
 		<li> Mentális Ellenállás: <span class="menres"> </span> </li>
 		<li> Spirituális Ellenállás: <span class="spires"> </span></li>
+		<li> Páncél Átütés: <span class="pen"> </span></li>
+		<li> Kritikális Sebzés: <span class="critdmg"> </span>% </li>
 		</ul>
-		<audio class="kasztzene" controls></audio>
+		</div>
+		<div class="charactersheet">
+		<button id="characterpage"> Karakterlap </button> 
+		</div>
+		</div>
+		<div>
+		<audio class="kasztzene"></audio>
 		</div>
 
-		<div id="stepper">
+		<div class="stepper">
 		<div class="row">
 		<p> Kaszt </p>
 		<div class="row2">
@@ -1424,6 +1433,14 @@
 		<button id="PreviousSubclass"> ELÖZŐ </button>
 		<span id="CurrentSubclass">  </span>
 		<button id="NextSubclass"> KÖVETKEZŐ </button>
+		</div>
+		<div class="petclass">
+		<p> Társállat </p>	
+		<div class="row4">
+		<button id="PreviousPet"> ELÖZŐ </button>
+		<button id="CurrentPet"> </button>
+		<button id="NextPet"> KÖVETKEZŐ </button>			
+		</div>
 		</div>
 		</div>
 		<div class="row">
@@ -1444,10 +1461,101 @@
 		</div>
 		</div>
 
+		<div class="spacer"> </div>
+		
+		<div class="Skillspage">
+		<button id="Skillsbutton"> Képzettségek </button>
+		</div>
+		<div class="Skills hidden">
+		<div class="grid1"> 
+		<p>Elkölthető Képzettség-pont:<span class="currSP"> </span></p>
+		<div class="filter1">
+		<button class="set1" data-tab="practical"> Gyakorlati </button>
+		<button class="set2" data-tab="academical"> Elméleti </button>
+		<button class="set3" data-tab="gathering"> Beszerző </button>
+		<button class="set4" data-tab="synthesis"> Szintetizáló </button>
+		<button class="set5" data-tab="purpose"> Előállító </button>
+		</div>	
+		<div class="skilltype hidden">
+		<div class="skillimage">
+			<p class="skilltitle"></p>
+			<div class="imagewrap">
+			<img class="image">
+			<div class="buttonwrap">
+			<button class="skillrankplus"> + </button>
+			<button class="skillrankminus"> - </button>
+			</div>
+			</div>
+			<div class="progress"> 
+			<div class="progressfill"> 
+				<div class="segments" style="max-width: 112px">
+				<span class="tick"> 2 </span>
+				<span class="tick"> 4 </span>
+				<span class="tick"> 6 </span>
+				<span class="tick"> 8 </span>
+				<span class="tick"> 10 </span>
+				</div>
+			</div>
+			</div>
+			</div>	
+		</div>
+		</div>
+		<div class="grid2">
+		</div>
+		</div>
 
+		<table class="skilltable1 hidden">
+		<thead class="tablehead">
+			<tr>
+				<th> Szint </th>
+				<th> Minőség </th>
+				<th> Mennyiség </th>
+				<th> Idő </th>
+				<th> Abszolút Siker </th>
+				<th> Bónusz </th>
+			</tr>
+		</thead>
+		<tbody class="tablebody">
+			<tr class="skillrank" data-rank="">
+			<td class="skillevel"> </td>
+			<td class="quality"> </td>
+			<td class="quantity"> </td>
+			<td class="time"> </td>
+			<td class="success"> </td>
+			<td class="bonus"> </td>
+			</tr>	
+		</tbody>
+		</table>
 
-
+		<div class="Abilitypage">
+		<button id="Abilitybutton"> Képességek </button>	
+		</div>
+		<div class="Abilities">
+		<div class="Ability1">
+		</div>
+		<div class="Ability2">
+		</div>
+		<div class="Ability3">
+		</div>
+		<div class="Ability4">
+		</div>
+		<div class="Ability5">
+		</div>
+		</div>
+		
+		
+		<div class="Equipmentpage">
+		<button id="Equipmnetbutton"> Felszerelés </button>	
+		<div class="Equipment">
+		</div>
+		</div>
 </div>
+
+
+
+		
+	
+
 
 	
 

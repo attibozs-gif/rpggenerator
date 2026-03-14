@@ -2,7 +2,7 @@
 "Stats":
   [
     {"SP": 1, "Ira": {"Atk":5, "Def":4, "HP":12},
-	      "Con": {"Atk":4, "Def":7, "HP":14},
+	            "Con": {"Atk":4, "Def":7, "HP":14},
               "Van": {"Atk":5, "Def":3, "HP":14},
               "Car": {"Atk":4, "Def":4, "HP":15},
               "Rey": {"Atk":4, "Def":4, "HP":10},
@@ -495,7 +495,8 @@
 		"Inspiráció",
 		"Felismerés"],
 
-"Attributemax":	{"Ira": {"Fizikum":100, "Ügyesség":90, "Állóképesség":80},
+"Attributemax":	
+    {"Ira": {"Fizikum":100, "Ügyesség":90, "Állóképesség":80},
 		 "Con": {"Állóképesség":100, "Fizikum":90, "Felismerés":80},
 		 "Van": {"Fizikum":100, "Állóképesség":90, "Gyorsasság":80},
 		 "Car": {"Állóképesség":100, "Tehetség":90, "Fizikum":80},
@@ -545,18 +546,138 @@
      "Jin": {"Tehetség":100, "Felismerés":90, "Intelligencia":80}
      },
 	
-  "Skillslotprogression": [{"SP":1, "Skillslot":1},
-                           {"SP":3, "Skillslot":2},
-                           {"SP":40, "Skillslot":3},
-                           {"SP":70, "Skillslot":4},
-                           {"SP":100, "Skillslot":5},
-                           {"SP":130, "Skillslot":6},
-                           {"SP":160,"Skillslot":7},
-                           {"SP":190, "Skillslot":8},
-                           {"SP":220, "Skillslot":9},
-                           {"SP":250, "Skillslot":10}
+"Skillslot": {
+  "Katona": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":50, "Skillslot":3},
+                                {"SP":100, "Skillslot":4},
+                                {"SP":150, "Skillslot":5},
+                                {"SP":200, "Skillslot":6},
+                                {"SP":250,"Skillslot":7}],
+"Ijász": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":45, "Skillslot":3},
+                                {"SP":90, "Skillslot":4},
+                                {"SP":140, "Skillslot":5},
+                                {"SP":185, "Skillslot":6},
+                                {"SP":230, "Skillslot":7},
+                                {"SP":280, "Skillslot":8}],
+"Szörnypásztor": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":40, "Skillslot":3},
+                                {"SP":85, "Skillslot":4},
+                                {"SP":130, "Skillslot":5},
+                                {"SP":175, "Skillslot":6},
+                                {"SP":215, "Skillslot":7},
+                                {"SP":255, "Skillslot":8},
+                                {"SP":290, "Skillslot":9}],
+
+"Paladin": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":55, "Skillslot":3},
+                                {"SP":110, "Skillslot":4},
+                                {"SP":170, "Skillslot":5},
+                                {"SP":230, "Skillslot":6}],
+
+"Mágus": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":45, "Skillslot":3},
+                                {"SP":90, "Skillslot":4},
+                                {"SP":140, "Skillslot":5},
+                                {"SP":185, "Skillslot":6},
+                                {"SP":230, "Skillslot":7},
+                                {"SP":280, "Skillslot":8}],
+
+"Pap": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":55, "Skillslot":3},
+                                {"SP":110, "Skillslot":4},
+                                {"SP":170, "Skillslot":5},
+                                {"SP":230, "Skillslot":6}],
+
+"Átokfattyú": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":45, "Skillslot":3},
+                                {"SP":90, "Skillslot":4},
+                                {"SP":140, "Skillslot":5},
+                                {"SP":185, "Skillslot":6},
+                                {"SP":230, "Skillslot":7},
+                                {"SP":280, "Skillslot":8}],
+"Zsivány": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":40, "Skillslot":3},
+                                {"SP":85, "Skillslot":4},
+                                {"SP":130, "Skillslot":5},
+                                {"SP":175, "Skillslot":6},
+                                {"SP":215, "Skillslot":7},
+                                {"SP":255, "Skillslot":8},
+                                {"SP":290, "Skillslot":9}],
+"Fanatikus": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":45, "Skillslot":3},
+                                {"SP":90, "Skillslot":4},
+                                {"SP":140, "Skillslot":5},
+                                {"SP":185, "Skillslot":6},
+                                {"SP":230, "Skillslot":7},
+                                {"SP":280, "Skillslot":8}],
+"Varázsló": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":40, "Skillslot":3},
+                                {"SP":85, "Skillslot":4},
+                                {"SP":125, "Skillslot":5},
+                                {"SP":160, "Skillslot":6},
+                                {"SP":195, "Skillslot":7},
+                                {"SP":230, "Skillslot":8},
+                                {"SP":265, "Skillslot":9},
+                                {"SP":300, "Skillslot":10}],
+"Párbajhős": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":50, "Skillslot":3},
+                                {"SP":100, "Skillslot":4},
+                                {"SP":150, "Skillslot":5},
+                                {"SP":200, "Skillslot":6},
+                                {"SP":250,"Skillslot":7}],
+"Magiszter": [
+                                {"SP":1, "Skillslot":1},
+                                {"SP":3, "Skillslot":2},
+                                {"SP":40, "Skillslot":3},
+                                {"SP":85, "Skillslot":4},
+                                {"SP":125, "Skillslot":5},
+                                {"SP":160, "Skillslot":6},
+                                {"SP":195, "Skillslot":7},
+                                {"SP":230, "Skillslot":8},
+                                {"SP":265, "Skillslot":9},
+                                {"SP":300, "Skillslot":10}]
+},                      
+              
+
+
+
+
+                                
+                                        
+
+
+                                
+
+
+
+
+
+                              
                                               
-    ],
+    
   
     "Inventoryprogression":  [{"SP":1, "Invslot":1},
                               {"SP":5, "Invslot":2},

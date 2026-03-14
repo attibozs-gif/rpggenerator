@@ -23,8 +23,8 @@ const szom=document.querySelector ("#szom")
 const phren=document.querySelector ("#phren")
 const pne=document.querySelector ("#pne")
 const creator=document.querySelector ("#creator")
-const stepper=document.querySelector ("#stepper")
 const ok=document.querySelector ("#ok")
+
 
 creator.style.display="none"
 menu2.style.display="none"

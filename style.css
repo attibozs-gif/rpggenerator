@@ -7,14 +7,52 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 .AlapanyagokCopy {color: white}
 
 #creator {display: flex;flex-direction: row; gap: 20px;}
-.sheet {display: flex; flex-direction: column; gap: 50px;}
-#stepper {display: flex; flex-direction: column;gap:0;  margin: 0 auto}
-#stepper.row2 {display: flex;flex-direction: row;gap:30px;}
-#stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0; margin-left:100px}
+.stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: (inset(0,100%,0,0)); transition: opacity 0.5s ease;}
+.stepper.row2 {display: flex;flex-direction: row;gap:30px;}
+.stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0}
+.stepper.hidden {width:0; opacity: 0; flex-grow: 0;}
+.sheet {display: flex; align-items: top; max-width: 850px;}
+.stats {display: flex; flex-direction: column; border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width: auto;
+        opacity:1; overflow: hidden; transition: opacity 2s ease, width 2s ease; clip-path: inset(0, 0, 0, 0); transform-origin: left;}
+.stats.hidden {width:0; clip-path: inset(0,100%,0,0); opacity: 0;}
+.charactersheet {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%; 
+                        border-left: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
+#characterpage {font-size: large}
+
+.spacer {flex-grow: 1;}
+.spacer.hidden {flex-grow: 0;}
+
+.Skillspage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
+border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
+
+.Skills.hidden {opacity:0; width:0;flex-grow: 0;}
+.Skills {opacity:1; width:auto; flex-grow: 1;}
+.skillimage img {width: 112px; height: 122px; display: block; border: solid 3px; border-color: rgb(201, 178, 140) ;}
+.skilltype.hidden {display: none}
 
 
+.grid1{display: grid; grid-template-rows: auto; }
+.grid1 p {border: solid 4px; border-color: rgb(201, 178, 140) ; background-color: rgb(177, 124, 61); margin:0; padding:0}
+.grid1 > div:nth-child(n+3) {border-right: solid 4px; border-color: rgb(201, 178, 140)}
+.progress {border: 1px; border-color: white; border: 1px; border-radius: 12px;}
+.progressfill {width: 112px; text-align: center;}
+#Skillsbutton{font-size: large;}
+.filter1 {display:flex; justify-content: space-between; align-items: center; border: solid 2px; border-color:rgb(201, 178, 140)}
+.filter1 button {border-right: solid 2px; padding-right:150px; border-color:rgb(201, 178, 140); font-size: large;}
+.imagewrap {display: flex; flex-direction: row;}
+.buttonwrap {display: flex; flex-direction: column}
+.buttonwrap button {height:50%; align-items: stretch;} 
+.skilltable1.hidden {display: none;}
 
 
+.Abilitypage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
+border-right: double 4px; border-color: rgb(201, 178, 140); } 
+
+.Equipmentpage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
+border-right: double 4px; border-color: rgb(201, 178, 140); }
+
+
+#kasztzene {display: none; width:0; height:0,}
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
 
@@ -36,6 +74,7 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}
 h1,h2,h3,p,span {color: white;}
 .kasztnev, .alkasztnev, .atk, .def, .health, .currSP, .currAP {font-weight:bold; color:rgb(230, 241, 75)}
 
-
+.petclass {display: none;}
+.row4 {flex-direction: row;}
 
 
