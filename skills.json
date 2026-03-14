@@ -4,7 +4,7 @@
             {"skilltitle":"A Guberálás Tana", "skilltype":"practical", "skillimage":"/SKILLS/salvage.jpg"},
             {"skilltitle":"Az Útkeresés Tana", "skilltype":"practical", "skillimage":"/SKILLS/pathfinding.jpg"},
             {"skilltitle":"A Lovaglás Tana", "skilltype":"practical", "skillimage":"/SKILLS/horsemanship.jpg"},
-            {"skilltitle":"A Kripták Tana", "skilltype":"practical", "skillimage":"/SKILLS/vaults.jpg"},
+            {"skilltitle":"A Kripták Tana", "skilltype":"practical", "skillimage":"/SKILLS/vault.jpg"},
             {"skilltitle":"A Megterhelés Tana", "skilltype":"practical","skillimage":"/SKILLS/loads.jpg"},
             {"skilltitle":"A Hangok Tana", "skilltype":"practical", "skillimage":"/SKILLS/voices.jpg"},
             {"skilltitle":"A Nyelvek Ismerete", "skilltype":"academical", "skillimage":"/SKILLS/tongues.jpg"},
