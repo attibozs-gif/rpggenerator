@@ -142,8 +142,14 @@ for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) 
        if (jatekos[key]>=alkaszt.limit[key]) {const attdiff = jatekos[key]-alkaszt.limit[key]; jatekos[key]=alkaszt.limit[key]; if (attdiff>0) {jatekos.currAP+=attdiff};}}};
 
 
- cont.addEventListener("click", (event) => {const statsheet=document.querySelector(".stats");
+cont.addEventListener("click", (event) => {const statsheet=document.querySelector(".stats");
     if (event.target.id==="characterpage") {statsheet.classList.toggle("hidden")}});
+
+cont.addEventListener("click", (event) => {const petsheet2=document.querySelector(".petstats"); 
+  if (event.target.id==="Petbutton") {petsheet2.classList.toggle("hidden")}});
+
+cont.addEventListener("click", (event) => {const gearsheet=document.querySelector(".Equipment");
+  if (event.target.id==="Equipmentbutton") {gearsheet.classList.toggle("hidden")}});
 
 cont.addEventListener("click", (event) => {const skillsheet=document.querySelector(".Skills");
     if (event.target.id==="Skillsbutton") {skillsheet.classList.toggle("hidden"); const spacer=document.querySelector(".spacer"); spacer.classList.toggle("hidden"); 
@@ -152,6 +158,10 @@ cont.addEventListener("click", (event) => {const skillsheet=document.querySelect
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
 .then (response => response.json())
 .then (data => {window.dataStore2=data;});
+
+fetch ("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/equipment.json")
+.then (response => response.json())
+.then (data=>{window.dataStore3=data;});
 
 let type;
 cont.addEventListener("click", (event) => {if (event.target.dataset.tab) {skillsupdate(event)}}); 

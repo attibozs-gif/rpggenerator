@@ -98,5 +98,7 @@ h1,h2,h3,p,span {color: white;}
 .Equipment1 {flex-direction: row;}
 .Equipment2, .Equipment3, .Equipment4 {flex-direction: column;}
 
-
+.Equipment.hidden {display: none;}
+.petstats.hidden {display: none;}
+.petsheet {border-top:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px;}
 
