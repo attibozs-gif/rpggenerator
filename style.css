@@ -94,12 +94,13 @@ h1,h2,h3,p,span {color: white;}
 .petclass {display: none;}
 .row4 {flex-direction: row;}
 
-.head, .neck, .shoulder, .body, .hand, .waist, .leg, .weapon, .offhand {border:solid 3px; border-color:white}
+.head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; min-height: 150px; min-width: 150px;;}
+.weapon {border:solid 3px; border-color: white; min-height: 500 px; min-width: 150 px;}
 .Equipment1 {flex-direction: row;}
 .Equipment2, .Equipment3, .Equipment4 {flex-direction: column;}
 
 .Equipment.hidden {display: none;}
 .petstats.hidden {display: none;}
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px;}
-.petbutton {padding-top: 50 px; font-size: large;}
+.petbutton {margin-top: 25px; padding-top: 25px; font-size: large;}
 

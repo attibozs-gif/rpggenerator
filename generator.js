@@ -23,7 +23,11 @@ function update () {Object.assign
                 Agi: (karakter.Agi || 0) + (kaszt.Agi || 0) + (alkaszt.Agi || 0),
                 Fell :(karakter.Fell || 0) + (kaszt.Fell || 0) + (alkaszt.Fell || 0),
                 Mell: (karakter.Mell || 0) + (kaszt.Mell || 0) + (alkaszt.Mell || 0),
-                Sell: (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0) 
+                Sell: (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0),
+                Ero: (karakter.Ero || 0) + (kaszt.Ero || 0) + (alkaszt.Ero || 0),
+                Spdseg: (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0),
+                Dmg: (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0),
+                Dodgeseg:(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0) 
               }) 
                 
                 attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
@@ -37,17 +41,28 @@ function update () {Object.assign
                 const agi=cont.querySelector(".agilitas"); const fres=cont.querySelector(".physres")
                 const mres=cont.querySelector(".menres"); const sres=cont.querySelector(".spires"); mres.textContent=jatekos.Mell
                 const regen=cont.querySelector(".regen"); const critdmg=cont.querySelector(".critdmg");
-                const armorpen=cont.querySelector(".pen"); 
+                const armorpen=cont.querySelector(".pen"); const ero=cont.querySelector(".Ero"); const seg1=cont.querySelector(".spdseg");
+                const seg2=cont.querySelector(".dodgeseg"); const dam=cont.querySelector(".damage");
+                
+                const petNAME=cont.querySelector(".petname"); const petATK=cont.querySelector(".petatk"); const petDEF=cont.querySelector(".petdef");
+                const petHP=cont.querySelector(".petHP"); const petREGEN=cont.querySelector(".petregen"); const petDMG=cont.querySelector(".petdmg");
+                const petARMOR=cont.querySelector(".petarmor"); const petGEAR=cont.querySelector(".petGV"); const petPEN=cont.querySelector(".petpen");  
+
                 kasztnev.textContent = jatekos.name; alkasztnev.textContent = jatekos.subname
                 currAP.textContent=jatekos.currAP;
                 atk2.textContent=jatekos.Atk; def2.textContent=jatekos.Def; hp2.textContent=jatekos.HP;
                 regen.textContent=jatekos.regen; critdmg.textContent=jatekos.Critdmg; armorpen.textContent=jatekos.armorpen
                 agi.textContent=jatekos.Agi; fres.textContent=jatekos.Fell;
-                mres.textContent=jatekos.Mell; sres.textContent=jatekos.Sell;
+                mres.textContent=jatekos.Mell; sres.textContent=jatekos.Sell; ero.textContent=jatekos.Ero; seg1.textContent=jatekos.Spdseg;
+                seg2.textContent=jatekos.Dodgeseg; dam.textContent=jatekos.Dmg;
+                
+                petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
+                petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen; 
+                
                 currSP.forEach(span=> {span.textContent=jatekos.currSP}); 
                  Attributemax();
                 for (const key in attributespan) {alkaszt[key+"Teszt"]=Math.floor(alkaszt[key]/10);{attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 100} 
-                <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}
+                <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}; 
     
             };
 let cindex=0;
@@ -66,7 +81,7 @@ const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Su
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"}
-console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
+console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); petsearch(); 
 
 if (!lemez.paused) 
 {fadeout(lemez,1000,()=> {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()})} else {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()}})
@@ -102,6 +117,28 @@ currdef = nearlower [alkaszt.code].Def + ((nearupper[alkaszt.code].Def-nearlower
 currhp = nearlower[alkaszt.code].HP + ((nearupper[alkaszt.code].HP-nearlower[alkaszt.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)} 
 alkaszt.Atk=Math.floor(curratk); alkaszt.Def=Math.floor(currdef); alkaszt.HP=Math.floor(currhp); update()};
 
+function petsearch () {if (!dataStore) return; if (!Pet) return;
+const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const upper = dataStore.Pets.filter (row =>(row.SP>=alkaszt.startSP));
+const nearlower = lower [lower.length -1]; const nearupper = upper [0];
+let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
+if (nearupper.SP===nearlower.SP) {petatk=nearlower[Pet.code].Atk; petdef=nearlower[Pet.code].Def; pethp=nearlower[Pet.code].HP; petgear=nearlower[Pet.code].Gear;
+petdmg=nearlower[Pet.code].Dmg; petarmor=nearlower[Pet.code].Armor, petpen=nearlower[Pet.code].armorpen; petregen=nearlower[Pet.code].Regen} else {
+petatk=nearlower[Pet.code].Atk + ((nearupper[Pet.code].Atk-nearlower[Pet.code].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petdef=nearlower[Pet.code].Def + ((nearupper[Pet.code].Def-nearlower[Pet.code].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+pethp=nearlower[Pet.code].HP + ((nearupper[Pet.code].HP-nearlower[Pet.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petgear=nearlower[Pet.code].Gear + ((nearupper[Pet.code].Gear-nearlower[Pet.code].Gear)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petdmg=nearlower[Pet.code].Dmg + ((nearupper[Pet.code].Dmg-nearlower[Pet.code].Dmg)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petarmor=nearlower[Pet.code].Armor + ((nearupper[Pet.code].Armor-nearlower[Pet.code].Armor)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petpen=nearlower[Pet.code].armorpen + ((nearupper[Pet.code].armorpen-nearlower[Pet.code].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petregen=nearlower[Pet.code].regen + ((nearupper[Pet.code].regen-nearlower[Pet.code].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
+Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen);
+
+
+}
+     
+}
+
 let aindex=0; 
 let currAtt;
 function  attribute() {if (!dataStore) return;
@@ -132,7 +169,8 @@ alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsasság)/2); alkaszt.Fell
 alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
 kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
 alkaszt.Dmg= (alkaszt.Dmg || 1 ), alkaszt.Crit=Math.round(alkaszt.Dmg+((alkaszt.Dmg/100)*alkaszt.Ügyesség+(3*alkaszt.Ügyesség/(alkaszt.Ügyesség+alkaszt.Dmg))))
-alkaszt.Critdmg=alkaszt.Crit/alkaszt.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2); 
+alkaszt.Critdmg=alkaszt.Crit/alkaszt.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2);
+alkaszt.Spdseg=Math.floor(alkaszt.Gyorsasság/5); alkaszt.Ero=Math.floor(alkaszt.Tehetség/4); 
 
 update()}, 2000); 
 
