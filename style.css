@@ -100,5 +100,6 @@ h1,h2,h3,p,span {color: white;}
 
 .Equipment.hidden {display: none;}
 .petstats.hidden {display: none;}
-.petsheet {font-size:large; border-top:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%}
+.petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px;}
+.petbutton {padding-top: 50 px; font-size: large;}
 
