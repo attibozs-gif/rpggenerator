@@ -1475,7 +1475,8 @@
 		<button class="set3" data-tab="gathering"> Beszerző </button>
 		<button class="set4" data-tab="synthesis"> Szintetizáló </button>
 		<button class="set5" data-tab="purpose"> Előállító </button>
-		</div>	
+		</div>
+		<div class="skillrow">	
 		<div class="skilltype hidden">
 		<div class="skillimage">
 			<p class="skilltitle"></p>
@@ -1487,24 +1488,25 @@
 			</div>
 			</div>
 			<div class="progress"> 
-			<div class="progressfill"> 
-				<div class="segments" style="max-width: 112px">
+			<div class="progressfill">
+			</div> 
+			<div class="segments" style="max-width: 112px">
 				<span class="tick"> 2 </span>
 				<span class="tick"> 4 </span>
 				<span class="tick"> 6 </span>
 				<span class="tick"> 8 </span>
 				<span class="tick"> 10 </span>
-				</div>
 			</div>
 			</div>
 			</div>	
 		</div>
 		</div>
-		<div class="grid2">
 		</div>
 		</div>
 
-		<table class="skilltable1 hidden">
+		<div class="wrapper">
+		<p class="skilldescription hidden"> </p>	
+		<table class="skilltable hidden" data-tab="gathering">
 		<thead class="tablehead">
 			<tr>
 				<th> Szint </th>
@@ -1526,6 +1528,89 @@
 			</tr>	
 		</tbody>
 		</table>
+		<p class="skilldescription hidden"> </p>	
+		<table class="skilltable hidden" data-tab="synthesis">
+		<thead class="tablehead">
+			<tr>
+				<th> Szint </th>
+				<th> Váltási Ráta </th>
+				<th> Megszerzett Recept-kategóriák </th>
+				<th> Idő </th>
+				<th> Bónusz </th>
+			</tr>
+		</thead>
+		<tbody class="tablebody">
+			<tr	class="skillrank" data-rank="">
+			<td class="skillevel"> </td>
+			<td class="rate"> </td>
+			<td class="categories"> </td>
+			<td class="time"> </td>
+			<td class="bonus"> </td>
+			</tr>
+		</tbody>
+		</table>
+		<p class="skilldescription hidden"> </p>	
+		<table class="skilltable hidden" data-tab="purpose">
+		<thead class="tablehead">
+			<tr>
+				<th> Szint </th>
+				<th> Megszerzett Recept-kategóriák </th>
+				<th> Idő </th>
+				<th> Bónusz </th>
+			</tr>
+		</thead>
+		<tbody class="tablebody">
+			<tr	class="skillrank" data-rank="">
+			<td class="skillevel"> </td>
+			<td class="categories"> </td>
+			<td class="time"> </td>
+			<td class="bonus"> </td>
+			</tr>
+		</tbody>
+		</table>
+		<p class="skilldescription hidden"> </p>	
+		<table class="skilltable hidden" data-tab="academical">
+		<thead class="tablehead">
+			<tr>
+				<th> Szint </th>
+				<th> Kumulatív </th>
+				<th> Nem-kumulatív</th>
+			</tr>
+		</thead>
+		<tbody class="tablebody">
+			<tr	class="skillrank" data-rank="">
+			<td class="skillevel"> </td>
+			<td class="cummulative"> </td>
+			<td class="ncummulative"> </td>
+			</tr>
+		</tbody>
+		</table>
+			<p class="skilldescription hidden"> </p>	
+		<table class="skilltable hidden" data-tab="practical">
+		<thead class="tablehead">
+			<tr>
+				<th> Szint </th>
+				<th> Kumulatív </th>
+				<th> Nem-kumulatív</th>
+				<th> Idő </th>
+			</tr>
+		</thead>
+		<tbody class="tablebody">
+			<tr	class="skillrank" data-rank="">
+			<td class="skillevel"> </td>
+			<td class="cummulative"> </td>
+			<td class="ncummulative"> </td>
+			<td class="time"> </td>
+			</tr>
+		</tbody>
+		</table>
+
+		
+		<div class="grid2 template hidden-e">
+		</div>
+	
+		<span class="badge hidden-g">Megszerzett Receptek</span>
+		</div>
 
 		<div class="Abilitypage">
 		<button id="Abilitybutton"> Képességek </button>	
@@ -1547,6 +1632,28 @@
 		<div class="Equipmentpage">
 		<button id="Equipmnetbutton"> Felszerelés </button>	
 		<div class="Equipment">
+		<div class="Equipment1">
+				<div class="Equipment2">
+				<div class="neck"></div>
+				<div class="shoulder"></div>
+				<div class="body"></div>
+				<div class="hand"></div>
+				<div class="waist"></div>
+				<div class="leg"></div>
+				</div>
+				<div class="Equipment3">
+				<div class="head"></div>
+					<div class="silhouette">
+				<img src="MISC/silhouette.jpg">
+					</div>
+				</div>
+			<div class="Equipment4">
+			<div class="weapon"></div>
+			<div class="offhand"></div>	
+			</div>	
+		</div>
+		
+			</div>
 		</div>
 		</div>
 </div>
@@ -1579,8 +1686,8 @@
 
 
 
-<script src="script.js?v=1"></script>
-<script src="generator.js?v=1"></script>
+<script defer src="script.js?v=1"></script>
+<script defer src="generator.js?v=1"></script>
 
   </body>
 </html>

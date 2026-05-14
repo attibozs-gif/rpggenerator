@@ -6,43 +6,60 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #Mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 .AlapanyagokCopy {color: white}
 
-#creator {display: flex;flex-direction: row; gap: 20px;}
+#creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
 .stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: (inset(0,100%,0,0)); transition: opacity 0.5s ease;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
-.stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0}
+.stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0;}
 .stepper.hidden {width:0; opacity: 0; flex-grow: 0;}
-.sheet {display: flex; align-items: top; max-width: 850px;}
-.stats {display: flex; flex-direction: column; border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width: auto;
+.sheet {display: flex; flex:nowrap; align-items: top; max-width: 850px;}
+.stats {display: flex; flex-direction: column; white-space: nowrap; border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width: auto;
         opacity:1; overflow: hidden; transition: opacity 2s ease, width 2s ease; clip-path: inset(0, 0, 0, 0); transform-origin: left;}
 .stats.hidden {width:0; clip-path: inset(0,100%,0,0); opacity: 0;}
-.charactersheet {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%; 
-                        border-left: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
-#characterpage {font-size: large}
+.charactersheet {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0;  
+                        border-left: double 4px; border-color: rgb(201, 178, 140); width: 31px; min-height: 100vh; position:relative}
+#characterpage {font-size: large;}
 
 .spacer {flex-grow: 1;}
 .spacer.hidden {flex-grow: 0;}
 
-.Skillspage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
+.Skillspage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; min-height:100vh;
 border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 
 .Skills.hidden {opacity:0; width:0;flex-grow: 0;}
 .Skills {opacity:1; width:auto; flex-grow: 1;}
-.skillimage img {width: 112px; height: 122px; display: block; border: solid 3px; border-color: rgb(201, 178, 140) ;}
+.skillimage img {width: 112px; height: 122px; display: block; border: solid 3px; border-color: rgb(201, 178, 140); border-right:none ;}
 .skilltype.hidden {display: none}
-
-
-.grid1{display: grid; grid-template-rows: auto; }
-.grid1 p {border: solid 4px; border-color: rgb(201, 178, 140) ; background-color: rgb(177, 124, 61); margin:0; padding:0}
-.grid1 > div:nth-child(n+3) {border-right: solid 4px; border-color: rgb(201, 178, 140)}
-.progress {border: 1px; border-color: white; border: 1px; border-radius: 12px;}
-.progressfill {width: 112px; text-align: center;}
+.grid1{display: grid; grid-template-rows: auto;  margin-right: 50px;}
+.skilltype .skilltitle {border: solid 4px; border-color: rgb(201, 178, 140) ; background-color: rgb(177, 124, 61); margin-right:10px; 
+        min-width:115px; max-width:115px; min-height:66px; max-height:66px;}
+ .progress {border: solid 2px; border-color: white; border-radius: 12px; width: 112px; height: 14px; position: relative; font-size: 0.9rem;;}
+.segments {width:112px; top:100%; display: flex; justify-content: space-between; margin-top: 5px; margin-left: 5px; position:absolute;}
+.progressfill {width: 112px;}
 #Skillsbutton{font-size: large;}
 .filter1 {display:flex; justify-content: space-between; align-items: center; border: solid 2px; border-color:rgb(201, 178, 140)}
 .filter1 button {border-right: solid 2px; padding-right:150px; border-color:rgb(201, 178, 140); font-size: large;}
-.imagewrap {display: flex; flex-direction: row;}
+.imagewrap  {display: flex; flex-direction: row;}
+.imagewrap image {align-items: center;}
 .buttonwrap {display: flex; flex-direction: column}
-.buttonwrap button {height:50%; align-items: stretch;} 
-.skilltable1.hidden {display: none;}
+.buttonwrap button {height:50%; align-items: stretch; min-width: 25px; font-size: large;}
+.skilltable.hidden {display: none;}
+.skilltitle {display:flex; width: 150px; font-size: medium; justify-content: center; align-items: center; text-align: center; 
+                overflow-wrap: break-word; word-break: normal; white-space: normal;}
+.skilltitle p {margin-right:2px;}
+.skillimage {gap: 10px; display: flex; flex-direction: column;}
+.skillrow {display:flex; flex-direction:row; flex-wrap: wrap; align-items: flex-start; gap: 20px; justify-content: space-around; padding-right: 10px;}
+.skilltype {width: 112px; flex: 0 0 112px; min-width:112; max-width: 150px; justify-content: flex-start;}
+.skilltable {table-layout: fixed; width:100%; border: solid 2px; border-color:rgb(133, 95, 35); 
+                 position:relative; margin-top: 2px; overflow:visible;}
+.skilltable tr {font-weight: bold; display:table-row}
+.skilldescription {font-weight: Bold; text-decoration: underline; font-size: large; position: relative; width:100%; padding-top: 10px; text-align: center;}
+.skilltable tr:nth-child(n+1) {font-weight: normal}
+.skilltable td, .skilltable th {text-align: center; word-break: break-word; border:solid 1px; border-color:rgb(201, 178, 140); font-size:14px}
+.grid2 {max-width: 75px; min-width: 75px; max-height:75px; min-height: 75px; border: solid 4px; border-color: rgb(96, 168, 226);; margin-top:25px; padding-top: 10px;}
+.grid2.template.hidden-e {display:none}
+.rectangle {display:flex; flex-direction: row;}
+
+
 
 
 .Abilitypage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
@@ -59,7 +76,7 @@ border-right: double 4px; border-color: rgb(201, 178, 140); }
 
 #content {flex: 1; padding-left: 50px; padding-right: 50px; text-align: justify;
 background-color: black ;background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw;                   
-min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow: hidden;}               
+min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow:auto;}               
 
 .flexTriskol {display: flex; flex-wrap: nowrap; align-items: flex-start;}
 .flexTriskol p {align-self: flex-start; margin: 0;}
@@ -76,5 +93,10 @@ h1,h2,h3,p,span {color: white;}
 
 .petclass {display: none;}
 .row4 {flex-direction: row;}
+
+.head, .neck, .shoulder, .body, .hand, .waist, .leg, .weapon, .offhand {border:solid 3px; border-color:white}
+.Equipment1 {flex-direction: row;}
+.Equipment2, .Equipment3, .Equipment4 {flex-direction: column;}
+
 
 

@@ -1,5 +1,5 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
-const jatekos = {}; alkaszt.limit={};
+const jatekos = {}; alkaszt.limit={}; let tempname; 
 
 music();
 
@@ -19,7 +19,11 @@ function update () {Object.assign
                 Tehetség: (karakter.Tehetség || 0) + (kaszt.Tehetség || 0) + (alkaszt.Tehetség || 0),
                 Felismerés: (karakter.Felismerés || 0) + (kaszt.Felismerés || 0) + (alkaszt.Felismerés || 0),
                 Inspiráció: (karakter.Inspiráció || 0) + (kaszt.Inspiráció || 0) + (alkaszt.Inspiráció || 0),
-                Critdmg: (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0)
+                Critdmg: (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0),
+                Agi: (karakter.Agi || 0) + (kaszt.Agi || 0) + (alkaszt.Agi || 0),
+                Fell :(karakter.Fell || 0) + (kaszt.Fell || 0) + (alkaszt.Fell || 0),
+                Mell: (karakter.Mell || 0) + (kaszt.Mell || 0) + (alkaszt.Mell || 0),
+                Sell: (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0) 
               }) 
                 
                 attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
@@ -33,7 +37,7 @@ function update () {Object.assign
                 const agi=cont.querySelector(".agilitas"); const fres=cont.querySelector(".physres")
                 const mres=cont.querySelector(".menres"); const sres=cont.querySelector(".spires"); mres.textContent=jatekos.Mell
                 const regen=cont.querySelector(".regen"); const critdmg=cont.querySelector(".critdmg");
-                const armorpen=cont.querySelector(".pen");
+                const armorpen=cont.querySelector(".pen"); 
                 kasztnev.textContent = jatekos.name; alkasztnev.textContent = jatekos.subname
                 currAP.textContent=jatekos.currAP;
                 atk2.textContent=jatekos.Atk; def2.textContent=jatekos.Def; hp2.textContent=jatekos.HP;
@@ -42,7 +46,8 @@ function update () {Object.assign
                 mres.textContent=jatekos.Mell; sres.textContent=jatekos.Sell;
                 currSP.forEach(span=> {span.textContent=jatekos.currSP}); 
                  Attributemax();
-                for (const key in attributespan) {attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 50}`}; 
+                for (const key in attributespan) {alkaszt[key+"Teszt"]=Math.floor(alkaszt[key]/10);{attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 100} 
+                <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}
               const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"} 
               else (petclass.style.display="none");
               
@@ -59,12 +64,12 @@ cont.addEventListener("click", (event) => {if (!dataStore) return;
 if (event.target.id !=="PreviousClass" && event.target.id !== "NextClass") {return};
 if (event.target.id === "PreviousClass") { cindex = cindex === 0 ? dataStore.Classes.length - 1 : cindex - 1;alkaszt.currAP=alkaszt.startAP} 
 if (event.target.id === "NextClass") {cindex = cindex === dataStore.Classes.length - 1 ? 0 : cindex + 1; alkaszt.currAP=alkaszt.startAP}
-const span = event.target.parentElement.querySelector("#CurrentClass"); span.textContent = dataStore.Classes[cindex]; kaszt.name = dataStore.Classes[cindex];
+const span = event.target.parentElement.querySelector("#CurrentClass"); span.textContent = dataStore.Classes[cindex]; kaszt.name = dataStore.Classes[cindex]; 
 const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Subclasses[kaszt.name]; const code=span2.array [0]; 
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"}
-console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); attribute(); 
+console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); attribute(); skillslotdelete(); 
 
 if (!lemez.paused) 
 {fadeout(lemez,1000,()=> {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()})} else {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()}})
@@ -74,7 +79,8 @@ const volInterval = setInterval(() => {lemez.volume = Math.max(0, lemez.volume-v
 lemez.pause(); lemez.currentTime = 0; lemez.volume=1; if (callback) callback();}}, stepdur)}  
 
 const ambiancelist = ["ambiance-1.mp3","ambiance-2.mp3", "ambiance-3.mp3", "ambiance-4.mp3", "ambiance-5.mp3", "ambiance-6.mp3", "ambiance-7.mp3", 
-  "ambiance-8.mp3", "ambiance-9.mp3", "ambiance-10.mp3", "ambiance-11.mp3"];
+  "ambiance-8.mp3", "ambiance-9.mp3", "ambiance-10.mp3", "ambiance-11.mp3", "ambiance-12.mp3", "ambiance-13.mp3", "ambiance-14.mp3", "ambiance-15.mp3", "ambiance-16.mp3",
+"ambiance-17.mp3", "ambiance-18.mp3", "ambiance-19.mp3", "ambiance-20.mp3"];
 function music () {
 if (lemez.paused) {setTimeout(()=>{const songrandom = ambiancelist[Math.floor(Math.random()*ambiancelist.length)]; lemez.src= "./Music/" + songrandom; lemez.play()}, 5000)};
 lemez.addEventListener('ended', () => {const songrandom = ambiancelist[Math.floor(Math.random()*ambiancelist.length)]; lemez.src="./Music/"+songrandom; 
@@ -126,7 +132,7 @@ alkaszt[key]=newvalue; alkaszt.currAP-=delta; attributespan[key].textContent=alk
 setInterval(()=> {const key=currAtt.textContent; if (!key) return; 
 alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsasság)/2); alkaszt.Fell=Math.floor((alkaszt.Fizikum+alkaszt.Állóképesség)/2); 
 alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
-kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(25, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
+kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
 alkaszt.Critdmg=alkaszt.Ügyesség+100; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2); 
 
 update()}, 2000); 
@@ -143,30 +149,115 @@ for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) 
 
 cont.addEventListener("click", (event) => {const skillsheet=document.querySelector(".Skills");
     if (event.target.id==="Skillsbutton") {skillsheet.classList.toggle("hidden"); const spacer=document.querySelector(".spacer"); spacer.classList.toggle("hidden"); 
-      const stepper=document.querySelector(".stepper"); stepper.classList.toggle("hidden") }})
+      const stepper=document.querySelector(".stepper"); stepper.classList.toggle("hidden");}})
 
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
 .then (response => response.json())
 .then (data => {window.dataStore2=data;});
 
-
+let type;
 cont.addEventListener("click", (event) => {if (event.target.dataset.tab) {skillsupdate(event)}}); 
   function skillsupdate (event) {
-  const type=event.target.dataset.tab; 
-   dataStore2.Skills
+  const skillrow=cont.querySelector(".skillrow"); const template=cont.querySelector(".skilltype.hidden");
+  type=event.target.dataset.tab;
+  skillrow.querySelectorAll(".skilltype:not(.hidden)").forEach(el => el.remove());
+  const prevTable = skillrow.querySelector(".skilltable:not(.hidden)");if (prevTable) prevTable.remove();
+    const prevP = skillrow.querySelector(".skilldescription"); if(prevP) prevP.remove();
+  dataStore2.Skills
   .filter (skill => skill.skilltype===type) 
   .forEach(skill => {
-    const grid1=cont.querySelector(".grid1"); const template=cont.querySelector(".skilltype.hidden");
-    const clone=template.cloneNode(true); clone.classList.remove("hidden"); 
+    const clone=template.cloneNode(true);
+    clone.classList.remove("hidden")
     clone.querySelector(".skilltitle").textContent=skill.skilltitle;
-    clone.querySelector(".image").src=skill.skillimage
-    grid1.appendChild(clone) }) }; 
+    clone.dataset.skillcode=skill.skillcode
+    clone.querySelector(".image").src=skill.skillimage;
+    skillrow.appendChild(clone); }) 
+     }; 
 
+cont.addEventListener("click", (event) => {const buttonpress=event.target.closest(".skillrankplus", ".skillrankminus"); if (buttonpress) return;
+  const imagepress=event.target.closest(".skillimage"); if (!imagepress) return; skillupdate2(event); skillsloter()})
 
+function skillupdate2(event) {
+    const skillrow = cont.querySelector(".skillrow"); const card = event.target.closest(".skilltype");
+    const pfill = cont.querySelector(".wrapper"); const pfill2 = pfill.querySelector(".skilldescription");
+    const template = pfill.querySelector(`.skilltable.hidden[data-tab="${type}"]`);
+    const clone2 = template.cloneNode(true); const cloneP = pfill2.cloneNode(true);
+    const prevtable = skillrow.querySelector(".skilltable:not(.hidden)");
+    const prevP = skillrow.querySelector(".skilldescription");
+    if (prevtable) prevtable.remove();
+    if (prevP) prevP.remove();
+    const type2 = card.querySelector(".skilltitle").textContent; const skillcontent = dataStore2[type2];
+    cloneP.textContent = skillcontent.header; 
+    const body = clone2.querySelector(".tablebody"); const row = body.querySelector(".skillrank");
+    skillcontent.levels.forEach(level => {
+        const rows = row.cloneNode(true);
+        rows.dataset.rank = level.Szint; let tablecolumn;
+        tablecolumn=rows.querySelector(".skillevel"); if (tablecolumn) {tablecolumn.textContent = level.Szint};
+        tablecolumn=rows.querySelector(".rate"); if (tablecolumn) {tablecolumn.textContent=level["Váltási Ráta"]};
+        tablecolumn=rows.querySelector(".quality"); if(tablecolumn){tablecolumn.textContent = level.Minőség};
+        tablecolumn=rows.querySelector(".quantity"); if (tablecolumn) {tablecolumn.textContent = level.Mennyiség};
+        tablecolumn=rows.querySelector(".categories"); if(tablecolumn) {tablecolumn.textContent = level.Kategória};
+        tablecolumn=rows.querySelector(".success"); if (tablecolumn) {tablecolumn.textContent = level["Abszolút Siker"]};
+        tablecolumn=rows.querySelector(".time"); if (tablecolumn) {tablecolumn.textContent = level.Idő};
+        tablecolumn=rows.querySelector(".cummulative"); if (tablecolumn) {tablecolumn.textContent=level.Kummulatív}
+        tablecolumn=rows.querySelector(".ncummulative"); if (tablecolumn) {tablecolumn.textContent=level["Nem Kummulatív"]};
+        tablecolumn=rows.querySelector(".bonus"); if (tablecolumn){tablecolumn.textContent = Object.entries(level.Bónusz)
+            .map(([key, val]) => `${key}:${val}`).join(",")};
+        body.appendChild(rows); 
+    }); row.remove(); 
+    skillrow.appendChild(cloneP); skillrow.appendChild(clone2); clone2.classList.remove("hidden");}
+    
+    
+let currlimit
+function skillsloter () {console.log("skillslotter futott"); if (!dataStore) return; 
+const grid1=cont.querySelector(".grid1"); 
+if (grid1.querySelectorAll(".generated").length>0) return; const skillimit=dataStore.Skillslot[kaszt.name]; 
+const filtered=skillimit.filter (limit =>(limit.SP<=alkaszt.startSP)); const lastindex=filtered.length-1; currlimit=filtered[lastindex].Skillslot;  
+const rect=cont.querySelector(".grid2.template"); const filter2=document.createElement("div"); filter2.classList.add("rectangle"); 
+for (let i=0; i<currlimit; i++) {const newrect=rect.cloneNode(true); newrect.classList.add("generated"); newrect.classList.add("empty") 
+newrect.classList.remove("hidden-e"); filter2.appendChild(newrect);} grid1.appendChild(filter2) }
 
+cont.addEventListener("click", (event) => {const buttonplus=event.target.closest(".skillrankplus"); const buttonmin=event.target.closest(".skillrankminus")
+if (!buttonplus && !buttonmin) return; const skillEx=event.target.closest(".skilltype"); if (!skillEx) return;
+if (buttonplus) {console.log("skillplus futott"); skillplus(skillEx)} else if (buttonmin) {skillminus(skillEx);skilldisappend(skillEx);} });
 
+function skillplus (skillEx) {const code=skillEx.dataset.skillcode;if (!kaszt.Skills) {kaszt.Skills={}}; if(!(code in kaszt.Skills)) {kaszt.Skills[code]=[]};
+if (kaszt.Skills[code].length===0) {kaszt.Skills[code].push(0)}
+let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
+const grid1=cont.querySelector(".grid1"); const fulltangle= grid1.querySelectorAll(".full");
+const current=lastinst || 0; if (fulltangle.length>=currlimit && current===0) return; const skillcost=current+1; 
+if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(skillEx); alkaszt.currSP-=skillcost}
+if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
+{skillappend(skillEx, lastind)}update()};
 
+function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
+let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
+const current=lastinst || 0; if (current===0) return; alkaszt.currSP=Math.max(0, alkaszt.currSP+current); kaszt.Skills[code][lastind]-=1; updatespan(skillEx); alkaszt.currSP=Math.min(alkaszt.currSP, alkaszt.startSP); 
+if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)} };
 
+function skillappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
+const emptangle=grid1.querySelectorAll(".generated.empty"); let lastind=kaszt.Skills[code].length-1  
+if(fulltangle.length>=currlimit) return; if (!emptangle.length) return; if (kaszt.Skills[code][lastind] ===1) {
+console.log("image element found:", skillEx.querySelector(".image")); console.log(emptangle);
+const image=skillEx.querySelector(".image").cloneNode(false); 
+image.style.width="70px"; image.style.height="70px"; const icon=emptangle[0]; icon.appendChild(image); icon.classList.remove("empty"); icon.classList.add("full"); 
+icon.dataset.skillcode=code; icon.dataset.instance=lastind; 
+let skillspan=icon.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); icon.appendChild(skillspan)} skillspan.textContent=kaszt.Skills[code][lastind]}}
+
+function skilldisappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
+let lastind=kaszt.Skills[code].length-1; if (!fulltangle.length) return; if (kaszt.Skills[code][lastind] === 0) {
+let icon=null; fulltangle.forEach(el => {if (el.dataset.skillcode===code && Number(el.dataset.instance)===lastind) {icon=el};}); if (!icon) return; 
+const img=icon.querySelector(".image"); if (img) icon.removeChild(img); let skillspan=icon.querySelector("span"); if(skillspan) icon.removeChild(skillspan); 
+icon.classList.remove("full"); icon.classList.add("empty"); delete icon.dataset.skillcode; delete icon.dataset.instance; }} 
+
+function updatespan(skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
+let lastind=kaszt.Skills[code].length-1;
+fulltangle.forEach(el => {if (el.dataset.skillcode===code && Number(el.dataset.instance)===lastind) {let skillspan=el.querySelector("span"); if(skillspan) 
+skillspan.textContent=kaszt.Skills[code][lastind]}})}
+
+function skillslotdelete() {
+const filter2 = cont.querySelectorAll(".rectangle");
+if (!filter2) return;
+filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
 
   
-
