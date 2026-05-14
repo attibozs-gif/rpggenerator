@@ -1,5 +1,5 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
-const jatekos = {}; alkaszt.limit={}; let tempname; 
+const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={};
 
 music();
 
@@ -81,7 +81,7 @@ const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Su
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"}
-console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); petsearch(); 
+console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
 if (!lemez.paused) 
 {fadeout(lemez,1000,()=> {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()})} else {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()}})
