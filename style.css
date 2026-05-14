@@ -20,12 +20,12 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #characterpage {font-size: large;}
 
 .spacer {flex-grow: 1;}
-.spacer.hidden {flex-grow: 0;}
+.spacer.hidden {flex-grow: 0; display: none;}
 
 .Skillspage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; min-height:100vh;
 border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 
-.Skills.hidden {opacity:0; width:0;flex-grow: 0;}
+.Skills.hidden {opacity:0; width:0;flex-grow: 0; display: none;}
 .Skills {opacity:1; width:auto; flex-grow: 1;}
 .skillimage img {width: 112px; height: 122px; display: block; border: solid 3px; border-color: rgb(201, 178, 140); border-right:none ;}
 .skilltype.hidden {display: none}
@@ -99,8 +99,8 @@ h1,h2,h3,p,span {color: white;}
 .Equipment1 {display:flex; flex-direction: row;}
 .Equipment2, .Equipment3, .Equipment4 {display:flex; flex-direction: column;}
 
-.Equipment.hidden {display: none;}
-.petstats.hidden {display: none;}
+.Equipment.hidden {display: none; max-width: 0; max-height: 0; max-width: 0;}
+.petstats.hidden {display: none;max-width: 0; max-height: 0; max-width: 0;}
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px;}
 .petbutton {margin-top: 25px; padding-top: 25px; font-size: large;}
 
