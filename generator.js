@@ -117,28 +117,6 @@ currdef = nearlower [alkaszt.code].Def + ((nearupper[alkaszt.code].Def-nearlower
 currhp = nearlower[alkaszt.code].HP + ((nearupper[alkaszt.code].HP-nearlower[alkaszt.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)} 
 alkaszt.Atk=Math.floor(curratk); alkaszt.Def=Math.floor(currdef); alkaszt.HP=Math.floor(currhp); update()};
 
-function petsearch () {if (!dataStore) return; if (!Pet) return;
-const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const upper = dataStore.Pets.filter (row =>(row.SP>=alkaszt.startSP));
-const nearlower = lower [lower.length -1]; const nearupper = upper [0];
-let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
-if (nearupper.SP===nearlower.SP) {petatk=nearlower[Pet.code].Atk; petdef=nearlower[Pet.code].Def; pethp=nearlower[Pet.code].HP; petgear=nearlower[Pet.code].Gear;
-petdmg=nearlower[Pet.code].Dmg; petarmor=nearlower[Pet.code].Armor, petpen=nearlower[Pet.code].armorpen; petregen=nearlower[Pet.code].Regen} else {
-petatk=nearlower[Pet.code].Atk + ((nearupper[Pet.code].Atk-nearlower[Pet.code].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petdef=nearlower[Pet.code].Def + ((nearupper[Pet.code].Def-nearlower[Pet.code].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-pethp=nearlower[Pet.code].HP + ((nearupper[Pet.code].HP-nearlower[Pet.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petgear=nearlower[Pet.code].Gear + ((nearupper[Pet.code].Gear-nearlower[Pet.code].Gear)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petdmg=nearlower[Pet.code].Dmg + ((nearupper[Pet.code].Dmg-nearlower[Pet.code].Dmg)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petarmor=nearlower[Pet.code].Armor + ((nearupper[Pet.code].Armor-nearlower[Pet.code].Armor)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petpen=nearlower[Pet.code].armorpen + ((nearupper[Pet.code].armorpen-nearlower[Pet.code].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petregen=nearlower[Pet.code].regen + ((nearupper[Pet.code].regen-nearlower[Pet.code].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
-Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen);
-
-
-}
-     
-}
-
 let aindex=0; 
 let currAtt;
 function  attribute() {if (!dataStore) return;

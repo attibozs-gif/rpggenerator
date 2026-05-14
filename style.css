@@ -96,8 +96,8 @@ h1,h2,h3,p,span {color: white;}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; min-height: 150px; min-width: 150px;;}
 .weapon {border:solid 3px; border-color: white; min-height: 500 px; min-width: 150 px;}
-.Equipment1 {flex-direction: row;}
-.Equipment2, .Equipment3, .Equipment4 {flex-direction: column;}
+.Equipment1 {display:flex; flex-direction: row;}
+.Equipment2, .Equipment3, .Equipment4 {display:flex; flex-direction: column;}
 
 .Equipment.hidden {display: none;}
 .petstats.hidden {display: none;}
