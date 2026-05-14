@@ -66,7 +66,7 @@ const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Su
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"}
-console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); attribute(); skillslotdelete(); 
+console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
 if (!lemez.paused) 
 {fadeout(lemez,1000,()=> {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()})} else {lemez.src="./Music/" + String(kaszt.name) + ".mp3"; lemez.play()}})
@@ -110,7 +110,8 @@ currAtt.textContent=dataStore.Attributes[aindex];}
 cont.addEventListener("click", (event) => 
 {if (event.target.id === "PreviousAttribute") {aindex= (aindex-1+dataStore.Attributes.length)%dataStore.Attributes.length};
 if (event.target.id === "NextAttribute") {aindex=(aindex+1+dataStore.Attributes.length)%dataStore.Attributes.length}; 
-currAtt.textContent=dataStore.Attributes[aindex]});
+currAtt.textContent=dataStore.Attributes[aindex]; console.log("aindex =", aindex);
+console.log("attribute =", dataStore.Attributes[aindex]);});
 
 cont.addEventListener("click", (event)=> {const key=currAtt.textContent; if (!key) return;
 if (event.target.id==="dec1") {const delta=-1; if (alkaszt[key]>1) {alkaszt[key]= Math.max(1,alkaszt[key]+delta); alkaszt.currAP=Math.min(alkaszt.startAP, alkaszt.currAP-delta)}; 
