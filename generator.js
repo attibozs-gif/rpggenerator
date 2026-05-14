@@ -158,21 +158,13 @@ attmax=dataStore.Attributemax[alkaszt.code];
 for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) ? attmax[key]:50; 
        if (jatekos[key]>=alkaszt.limit[key]) {const attdiff = jatekos[key]-alkaszt.limit[key]; jatekos[key]=alkaszt.limit[key]; if (attdiff>0) {jatekos.currAP+=attdiff};}}};
 
+function show(section) {const panels=document.querySelectorAll(".panel"); panels.forEach(el => el.classList.add("hidden")); section.classList.remove ("hidden")};
+cont.addEventListener("click", (event)=> {switch(event.target.id) {
+case "characterpage": show(document.querySelector(".stats")); break; 
+case "Petbutton": show(document.querySelector(".petstats")); break;
+case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
+case "Skillsbutton": show(document.querySelector(".Skills")); break; }; })
 
-cont.addEventListener("click", (event) => {const statsheet=document.querySelector(".stats");
-    if (event.target.id==="characterpage") {statsheet.classList.toggle("hidden")}});
-
-cont.addEventListener("click", (event) => {const petsheet2=document.querySelector(".petstats"); 
-  if (event.target.id==="Petbutton") {petsheet2.classList.toggle("hidden")}});
-
-cont.addEventListener("click", (event) => {const gearsheet=document.querySelector(".Equipment");
-  if (event.target.id==="Equipmentbutton") {gearsheet.classList.toggle("hidden"); const skillsheet=document.querySelector(".Skills"); skillsheet.classList.toggle("hidden");
-    const stepper=document.querySelector(".stepper"); stepper.classList.toggle("hidden")};
-  });
-
-cont.addEventListener("click", (event) => {const skillsheet=document.querySelector(".Skills");
-    if (event.target.id==="Skillsbutton") {skillsheet.classList.toggle("hidden"); const spacer=document.querySelector(".spacer"); spacer.classList.toggle("hidden"); 
-      const stepper=document.querySelector(".stepper"); stepper.classList.toggle("hidden");}})
 
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
 .then (response => response.json())

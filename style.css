@@ -6,6 +6,8 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #Mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 .AlapanyagokCopy {color: white}
 
+.hidden {display:none}
+
 #creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
 .stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: (inset(0,100%,0,0)); transition: opacity 0.5s ease;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
@@ -25,10 +27,9 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 .Skillspage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; min-height:100vh;
 border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 
-.Skills.hidden {opacity:0; width:0;flex-grow: 0; display: none;}
+.Skills.hidden {opacity:0; width:0;flex-grow: 0}
 .Skills {opacity:1; width:auto; flex-grow: 1;}
 .skillimage img {width: 112px; height: 122px; display: block; border: solid 3px; border-color: rgb(201, 178, 140); border-right:none ;}
-.skilltype.hidden {display: none}
 .grid1{display: grid; grid-template-rows: auto;  margin-right: 50px;}
 .skilltype .skilltitle {border: solid 4px; border-color: rgb(201, 178, 140) ; background-color: rgb(177, 124, 61); margin-right:10px; 
         min-width:115px; max-width:115px; min-height:66px; max-height:66px;}
@@ -42,7 +43,6 @@ border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 .imagewrap image {align-items: center;}
 .buttonwrap {display: flex; flex-direction: column}
 .buttonwrap button {height:50%; align-items: stretch; min-width: 25px; font-size: large;}
-.skilltable.hidden {display: none;}
 .skilltitle {display:flex; width: 150px; font-size: medium; justify-content: center; align-items: center; text-align: center; 
                 overflow-wrap: break-word; word-break: normal; white-space: normal;}
 .skilltitle p {margin-right:2px;}
@@ -68,11 +68,9 @@ border-right: double 4px; border-color: rgb(201, 178, 140); }
 .Equipmentpage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
 border-right: double 4px; border-color: rgb(201, 178, 140); }
 
-
 #kasztzene {display: none; width:0; height:0,}
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
-
 
 #content {flex: 1; padding-left: 50px; padding-right: 50px; text-align: justify;
 background-color: black ;background-size: cover; background-position: center; background-repeat: no-repeat; width: 100vw;                   
@@ -86,7 +84,6 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow:auto;}
 
 .flexsomatium, .flexphrenium, .flexpneum {display: flex; align-items: flex-start}
 .flexsomatium p, .flexphrenium p, .flexpneum p {align-self: flex-start; margin:0}
-   
 
 h1,h2,h3,p,span {color: white;}
 .kasztnev, .alkasztnev, .atk, .def, .health, .currSP, .currAP {font-weight:bold; color:rgb(230, 241, 75)}
@@ -99,8 +96,6 @@ h1,h2,h3,p,span {color: white;}
 .Equipment1 {display:flex; flex-direction: row;}
 .Equipment2, .Equipment3, .Equipment4 {display:flex; flex-direction: column;}
 
-.Equipment.hidden {display: none; max-width: 0; max-height: 0; max-width: 0;}
-.petstats.hidden {display: none;max-width: 0; max-height: 0; max-width: 0;}
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px;}
-.petbutton {margin-top: 25px; padding-top: 25px; font-size: large;}
+#petbutton {margin-top: 25px; padding-top: 25px; font-size: large;}
 
