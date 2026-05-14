@@ -48,10 +48,7 @@ function update () {Object.assign
                  Attributemax();
                 for (const key in attributespan) {alkaszt[key+"Teszt"]=Math.floor(alkaszt[key]/10);{attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 100} 
                 <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}
-              const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"} 
-              else (petclass.style.display="none");
-              
-
+    
             };
 let cindex=0;
 document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP");
@@ -133,7 +130,8 @@ setInterval(()=> {const key=currAtt.textContent; if (!key) return;
 alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsasság)/2); alkaszt.Fell=Math.floor((alkaszt.Fizikum+alkaszt.Állóképesség)/2); 
 alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
 kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
-alkaszt.Critdmg=alkaszt.Ügyesség+100; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2); 
+alkaszt.Dmg= (alkaszt.Dmg || 1 ), alkaszt.Crit=Math.round(alkaszt.Dmg+((alkaszt.Dmg/100)*alkaszt.Ügyesség+(3*alkaszt.Ügyesség/(alkaszt.Ügyesség+alkaszt.Dmg))))
+alkaszt.Critdmg=alkaszt.Crit/alkaszt.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2); 
 
 update()}, 2000); 
 
