@@ -106,11 +106,11 @@ let aindex=0;
 let currAtt;
 function  attribute() {if (!dataStore) return;
 currAtt=cont.querySelector("#CurrentAttribute");
-currAtt.textContent=dataStore.Attributes[aindex];
+currAtt.textContent=dataStore.Attributes[aindex];}
 cont.addEventListener("click", (event) => 
 {if (event.target.id === "PreviousAttribute") {aindex= (aindex-1+dataStore.Attributes.length)%dataStore.Attributes.length};
 if (event.target.id === "NextAttribute") {aindex=(aindex+1+dataStore.Attributes.length)%dataStore.Attributes.length}; 
-currAtt.textContent=dataStore.Attributes[aindex]})};
+currAtt.textContent=dataStore.Attributes[aindex]});
 
 cont.addEventListener("click", (event)=> {const key=currAtt.textContent; if (!key) return;
 if (event.target.id==="dec1") {const delta=-1; if (alkaszt[key]>1) {alkaszt[key]= Math.max(1,alkaszt[key]+delta); alkaszt.currAP=Math.min(alkaszt.startAP, alkaszt.currAP-delta)}; 
