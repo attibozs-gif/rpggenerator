@@ -150,7 +150,9 @@ cont.addEventListener("click", (event) => {const petsheet2=document.querySelecto
   if (event.target.id==="Petbutton") {petsheet2.classList.toggle("hidden")}});
 
 cont.addEventListener("click", (event) => {const gearsheet=document.querySelector(".Equipment");
-  if (event.target.id==="Equipmentbutton") {gearsheet.classList.toggle("hidden")}});
+  if (event.target.id==="Equipmentbutton") {gearsheet.classList.toggle("hidden"); const skillsheet=document.querySelector(".Skills"); skillsheet.classList.toggle("hidden");
+    const stepper=document.querySelector(".stepper"); stepper.classList.toggle("hidden")};
+  });
 
 cont.addEventListener("click", (event) => {const skillsheet=document.querySelector(".Skills");
     if (event.target.id==="Skillsbutton") {skillsheet.classList.toggle("hidden"); const spacer=document.querySelector(".spacer"); spacer.classList.toggle("hidden"); 
