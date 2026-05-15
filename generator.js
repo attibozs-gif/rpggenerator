@@ -80,7 +80,7 @@ const span = event.target.parentElement.querySelector("#CurrentClass"); span.tex
 const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Subclasses[kaszt.name]; const code=span2.array [0]; 
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
-const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden")} else {petclass.classList.add("hidden")};
+const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else {petclass.classList.add("hidden")};
 
 console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
@@ -104,16 +104,18 @@ const span2 = event.target.parentElement.querySelector("#CurrentSubclass");
 if (!span2.array) {span2.array=dataStore.Subclasses[kaszt.name]; span2.index=0};
 if (event.target.id === "PreviousSubclass") {span2.index = span2.index===0 ? span2.array.length-1:span2.index -1}; 
 if (event.target.id === "NextSubclass") {span2.index=span2.index===span2.array.length -1 ? 0:span2.index +1}; 
-const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; statsearch();
+const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; statsearch(); petrender();
 })
 
 let pindex=0; 
 function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.HasPet[alkaszt.code]; 
-const petselect=petlist[pindex]; cp.textContent=petselect}
+const petselect=petlist[pindex]; cp.textContent=petselect; petsearch()}
+
 cont.addEventListener("click", (event) => {if (!dataStore) return;  if (event.target.id !== "PreviousPet" && event.target.id !=="NextPet") {return};
 const petlist=dataStore.HasPet[alkaszt.code]
 if (event.target.id === "PreviousPet") {if (pindex===0) {pindex=petlist.length-1} else {pindex-=1}};
 if (event.target.id === "NextPet") {if (pindex===petlist.length-1) {pindex=0} else {pindex+=1}}; petrender()});
+
 
 function statsearch () {if (!dataStore) return; 
 const lower = dataStore.Stats.filter (row =>(row.SP<=alkaszt.startSP)); const upper = dataStore.Stats.filter (row =>(row.SP>=alkaszt.startSP));
@@ -125,6 +127,23 @@ currdef = nearlower [alkaszt.code].Def + ((nearupper[alkaszt.code].Def-nearlower
 currhp = nearlower[alkaszt.code].HP + ((nearupper[alkaszt.code].HP-nearlower[alkaszt.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)} 
 alkaszt.Atk=Math.floor(curratk); alkaszt.Def=Math.floor(currdef); alkaszt.HP=Math.floor(currhp); update()};
 
+function petsearch () {if (!dataStore) return; if (!Pet) return; 
+const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const upper = dataStore.Pets.filter (row =>(row.SP>=alkaszt.startSP)) 
+const nearlower = lower [lower.length -1]; const nearupper = upper [0]; const petlist=dataStore.HasPet[alkaszt.code]; 
+const petselect=petlist[pindex]; 
+let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
+if (nearupper.SP===nearlower.SP) {petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
+petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor, petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].Regen} else {
+petatk=nearlower[petselect].Atk + ((nearupper[petselect].Atk-nearlower[petselect].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petdef=nearlower[petselect].Def + ((nearupper[petselect].Def-nearlower[petselect].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+pethp=nearlower[petselect].HP + ((nearupper[petselect].HP-nearlower[petselect].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petgear=nearlower[petselect].Gear + ((nearupper[petselect].Gear-nearlower[petselect].Gear)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petdmg=nearlower[petselect].Dmg + ((nearupper[petselect].Dmg-nearlower[petselect].Dmg)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petarmor=nearlower[petselect].Armor + ((nearupper[petselect].Armor-nearlower[petselect].Armor)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower[petselect].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
+Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); }}
 
 let aindex=0; 
 let currAtt;
