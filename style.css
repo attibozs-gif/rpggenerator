@@ -106,7 +106,7 @@ gap:10px; justify-content: center; align-items: start;}
 
 .head {grid-area:head} .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
 .inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} 
-.silhoette{grid-area: silhoette; display:flex; justify-content: center; align-items: center; margin:0; width:150px; height:300px}
+.silhoette{grid-area: silhoette; display:flex; justify-content: center; align-items: center; margin:0; max-width:300px; max-height:600px}
 .silhoette img {object-fit: contain;display: block; width:300px; height:450px}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
