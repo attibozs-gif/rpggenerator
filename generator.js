@@ -158,10 +158,12 @@ attmax=dataStore.Attributemax[alkaszt.code];
 for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) ? attmax[key]:50; 
        if (jatekos[key]>=alkaszt.limit[key]) {const attdiff = jatekos[key]-alkaszt.limit[key]; jatekos[key]=alkaszt.limit[key]; if (attdiff>0) {jatekos.currAP+=attdiff};}}};
 
-function show(section) {const panels=document.querySelectorAll(".panel"); const visual=!section.classList.contains("hidden"); 
-panels.forEach(el => el.classList.add("hidden")); if (!visual) {section.classList.remove ("hidden")}};
+function show(section) {const panels=document.querySelectorAll(".panel"); const visual=!section.classList.contains("hidden");  
+panels.forEach(el => {if (el.classList.contains("stats")) return; if (el.classList.contains("petstats")) return; el.classList.add("hidden");}); 
+if (!visual) {section.classList.remove("hidden") ;}}; 
+
 cont.addEventListener("click", (event)=> {switch(event.target.id) {
-case "characterpage": const statsheet=document.querySelector(".stats"); statsheet.classList.toggle("hiddden"); break; 
+case "characterpage": const statsheet=document.querySelector(".stats"); statsheet.classList.toggle("hidden"); break; 
 case "Petbutton": const petsheet2=document.querySelector(".petstats"); petsheet2.classList.toggle("hidden"); break;
 case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
