@@ -80,7 +80,8 @@ const span = event.target.parentElement.querySelector("#CurrentClass"); span.tex
 const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Subclasses[kaszt.name]; const code=span2.array [0]; 
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
-const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.style.display="flex"; petclass.style.flexDirection="column"}
+const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden")} else {petclass.classList.add("hidden")};
+
 console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
 if (!lemez.paused) 
@@ -104,8 +105,15 @@ if (!span2.array) {span2.array=dataStore.Subclasses[kaszt.name]; span2.index=0};
 if (event.target.id === "PreviousSubclass") {span2.index = span2.index===0 ? span2.array.length-1:span2.index -1}; 
 if (event.target.id === "NextSubclass") {span2.index=span2.index===span2.array.length -1 ? 0:span2.index +1}; 
 const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; statsearch();
-
 })
+
+let pindex=0; 
+function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.Haspet[alkaszt.code]; 
+const petselect=petlist[pindex]; cp.textContent=petselect}
+cont.addEventListener("click", (event) => {if (!dataStore) return;  if (event.target.id !== "PreviousPet" && event.target.id !=="NextPet") {return};
+const petlist=dataStore.Haspet[alkaszt.code]
+if (event.target.id === "PreviousPet") {if (pindex===0) {pindex=petlist.length-1} else {pindex-=1}};
+if (event.target.id === "NextPet") {if (pindex===petlist.length-1) {pindex=0} else {pindex+=1}}; petrender()});
 
 function statsearch () {if (!dataStore) return; 
 const lower = dataStore.Stats.filter (row =>(row.SP<=alkaszt.startSP)); const upper = dataStore.Stats.filter (row =>(row.SP>=alkaszt.startSP));
@@ -116,6 +124,7 @@ curratk = nearlower[alkaszt.code].Atk + ((nearupper[alkaszt.code].Atk-nearlower[
 currdef = nearlower [alkaszt.code].Def + ((nearupper[alkaszt.code].Def-nearlower[alkaszt.code].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 currhp = nearlower[alkaszt.code].HP + ((nearupper[alkaszt.code].HP-nearlower[alkaszt.code].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)} 
 alkaszt.Atk=Math.floor(curratk); alkaszt.Def=Math.floor(currdef); alkaszt.HP=Math.floor(currhp); update()};
+
 
 let aindex=0; 
 let currAtt;

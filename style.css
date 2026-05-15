@@ -87,13 +87,12 @@ min-height: 100vh; overflow-y:auto; box-sizing: border-box; overflow:auto;}
 h1,h2,h3,p,span {color: white;}
 .kasztnev, .alkasztnev, .atk, .def, .health, .currSP, .currAP {font-weight:bold; color:rgb(230, 241, 75)}
 
-.petclass {display: none;}
 .row4 {flex-direction: row;}
 
-.Equipment {display:flex; flex-direction: row; gap:1px; align-items: flex-start; height:100vh; width:100vw}
+.Equipment {display:flex; flex-direction: row; align-items: flex-start; margin:0; height:100vh; width:100vw}
 .Equipment2 {display:flex; flex-direction: column; gap: 10px; align-items: right; justify-content: right; margin-left:50px}
 
-.Equipment1 {display: grid; grid-template-columns: 150px 300px 150px; 
+.Equipment1 {display: grid; grid-template-columns: 150px 300px 150px; grid-template-rows: 150px 150px 150px 150px 150px 75px; row-gap: 2px; 
         grid-template-areas: 
 "neck head weapon"
 "shoulder silhoette weapon"
@@ -104,13 +103,15 @@ h1,h2,h3,p,span {color: white;}
 
 gap:10px; justify-content: center; align-items: start;}
 
-.head {grid-area:head} .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
+.head {grid-area:head; margin-left: 75px; align-items: end; justify-content: center;} .neck {grid-area:neck} .shoulder{grid-area:shoulder} 
+.body{grid-area:body; padding:0; margin:0} .waist {grid-area: waist; margin:0} .leg{grid-area: leg} 
+.hand{grid-area: hand}
 .inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} 
-.silhoette{grid-area: silhoette; display:flex; justify-content: center; align-items: center; margin:0; max-width:250px; max-height:550px; padding-top: 50px}
-.silhoette img {object-fit: contain;display: block; width:300px; height:450px}
+.silhoette{grid-area: silhoette; display:flex; justify-content: start; align-items: start; margin:0; max-width:250px; max-height:600px; padding-top: 25px;}
+.silhoette img {object-fit: contain;display: block; width:250px; height:600px}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
-.weapon {border:solid 3px; border-color: white; min-height: 500px; min-width: 150px}
+.weapon {border:solid 3px; border-color: white; min-height: 450px; min-width: 150px}
 .inventory {border:double 3px; border-color:white; width:85px; height: 85px}
 
 
