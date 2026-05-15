@@ -152,14 +152,14 @@ petgear=nearlower[petselect].Gear + ((nearupper[petselect].Gear-nearlower[petsel
 petdmg=nearlower[petselect].Dmg + ((nearupper[petselect].Dmg-nearlower[petselect].Dmg)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petarmor=nearlower[petselect].Armor + ((nearupper[petselect].Armor-nearlower[petselect].Armor)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower[petselect].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);}
 Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
 Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); 
 console.log("FINAL RESULT:", {
   petatk,
   petdef,
   pethp
-}); update()}}
+}); update()}
 
 let aindex=0; 
 let currAtt;
