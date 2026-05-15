@@ -18,6 +18,7 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 .charactersheet {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0;  
                         border-left: double 4px; border-color: rgb(201, 178, 140); width: 31px; min-height: 100vh; position:relative}
 #characterpage {font-size: large;}
+#selection {font-size: large;}
 
 .spacer {flex-grow: 1;}
 .spacer.hidden {flex-grow: 0; display: none;}
@@ -110,7 +111,7 @@ gap:10px; justify-content: center; align-items: start;}
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
 .weapon {border:solid 3px; border-color: white; min-height: 500px; min-width: 150px}
 .inventory {border:double 3px; border-color:white; width:85px; height: 85px}
-.silhoette img {height:auto; width:100%; display:block;}
+.silhoette img {height:100%; width:100%; display:block;}
 
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px}
 #petbutton {margin-top: 25px; padding-top: 25px; font-size: large}
