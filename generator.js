@@ -108,10 +108,10 @@ const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[
 })
 
 let pindex=0; 
-function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.Haspet[alkaszt.code]; 
+function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.HasPet[alkaszt.code]; 
 const petselect=petlist[pindex]; cp.textContent=petselect}
 cont.addEventListener("click", (event) => {if (!dataStore) return;  if (event.target.id !== "PreviousPet" && event.target.id !=="NextPet") {return};
-const petlist=dataStore.Haspet[alkaszt.code]
+const petlist=dataStore.HasPet[alkaszt.code]
 if (event.target.id === "PreviousPet") {if (pindex===0) {pindex=petlist.length-1} else {pindex-=1}};
 if (event.target.id === "NextPet") {if (pindex===petlist.length-1) {pindex=0} else {pindex+=1}}; petrender()});
 
