@@ -9,7 +9,7 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 .hidden {display:none}
 
 #creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
-.stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: inset(0,100%,0,0); transition: opacity 0.5s ease;}
+.stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: inset(0 100% 0 0); transition: opacity 0.5s ease;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
 .stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0;}
 .stepper.hidden {width:0; opacity: 0; flex-grow: 0;}
@@ -48,7 +48,7 @@ border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 .skilltitle p {margin-right:2px;}
 .skillimage {gap: 10px; display: flex; flex-direction: column;}
 .skillrow {display:flex; flex-direction:row; flex-wrap: wrap; align-items: flex-start; gap: 20px; justify-content: space-around; padding-right: 10px;}
-.skilltype {width: 112px; flex: 0 0 112px; min-width:112; max-width: 150px; justify-content: flex-start;}
+.skilltype {width: 112px; flex: 0 0 112px; min-width:112px; max-width: 150px; justify-content: flex-start;}
 .skilltable {table-layout: fixed; width:100%; border: solid 2px; border-color:rgb(133, 95, 35); 
                  position:relative; margin-top: 2px; overflow:visible;}
 .skilltable tr {font-weight: bold; display:table-row}
@@ -62,11 +62,11 @@ border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px;}
 
 
 
-.Abilitypage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
-border-right: double 4px; border-color: rgb(201, 178, 140); } 
+.Abilitypage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; min-height:100vh;
+border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px} 
 
-.Equipmentpage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
-border-right: double 4px; border-color: rgb(201, 178, 140); }
+.Equipmentpage {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; min-height:100vh;
+border-right: double 4px; border-color: rgb(201, 178, 140); width: 31px }
 
 #kasztzene {display: none;}
 
