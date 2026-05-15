@@ -133,6 +133,8 @@ const nearlower = lower [lower.length -1]; const nearupper = upper [0]; const pe
 const petselect=petlist[pindex]; 
 let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
 console.log("START DEBUG");
+console.log("LOWER === UPPER?", nearlower === nearupper);
+console.log("SP check:", nearlower.SP, nearupper.SP);
 console.log("startSP:", alkaszt.startSP);
 console.log("nearlower:", nearlower);
 console.log("nearupper:", nearupper);
@@ -142,7 +144,7 @@ console.log("EXACT SP BRANCH HIT");
 console.log("row keys:", Object.keys(nearlower));
 console.log("pet object:", nearlower[petselect]); 
 petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
-petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor, petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].Regen} else {
+petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].Regen} else {
 petatk=nearlower[petselect].Atk + ((nearupper[petselect].Atk-nearlower[petselect].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petdef=nearlower[petselect].Def + ((nearupper[petselect].Def-nearlower[petselect].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 pethp=nearlower[petselect].HP + ((nearupper[petselect].HP-nearlower[petselect].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
