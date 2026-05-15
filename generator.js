@@ -167,7 +167,7 @@ case "characterpage": const statsheet=document.querySelector(".stats"); statshee
 case "Petbutton": const petsheet2=document.querySelector(".petstats"); petsheet2.classList.toggle("hidden"); break;
 case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
-case "election": show(document.querySelector(".stepper")); break; }; })
+case "selection": show(document.querySelector(".stepper")); break; }; })
 
 
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
