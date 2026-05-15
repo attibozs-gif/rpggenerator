@@ -9,14 +9,14 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 .hidden {display:none}
 
 #creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
-.stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: (inset(0,100%,0,0)); transition: opacity 0.5s ease;}
+.stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: inset(0,100%,0,0); transition: opacity 0.5s ease;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
 .stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0;}
 .stepper.hidden {width:0; opacity: 0; flex-grow: 0;}
-.sheet {display: flex; flex:nowrap; align-items: top; max-width: 850px;}
+.sheet {display: flex; flex-wrap:nowrap; align-items: flex-start; max-width: 850px;}
 .stats {display: flex; flex-direction: column; white-space: nowrap; border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width: auto;
-        opacity:1; overflow: hidden; transition: opacity 2s ease, width 2s ease; clip-path: inset(0, 0, 0, 0); transform-origin: left;}
-.stats.hidden {width:0; clip-path: inset(0,100%,0,0); opacity: 0;}
+        opacity:1; overflow: hidden; transition: opacity 2s ease, width 2s ease; clip-path: inset(0 0 0 0); transform-origin: left;}
+.stats.hidden {width:0; clip-path: inset(0 100% 0 0); opacity: 0;}
 .charactersheet {display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0;  
                         border-left: double 4px; border-color: rgb(201, 178, 140); width: 31px; min-height: 100vh; position:relative}
 #characterpage {font-size: large;}
@@ -68,7 +68,7 @@ border-right: double 4px; border-color: rgb(201, 178, 140); }
 .Equipmentpage { display: flex; justify-content: center; writing-mode:vertical-rl; text-orientation: upright; margin:0; height:100%;
 border-right: double 4px; border-color: rgb(201, 178, 140); }
 
-#kasztzene {display: none; width:0; height:0,}
+#kasztzene {display: none;}
 
 #Info div {width: 100%; box-sizing: border-box; flex-grow: 1}
 
@@ -108,7 +108,7 @@ h1,h2,h3,p,span {color: white;}
 "inventory inventory inventory";
 gap:10px; justify-content: center; align-items: start;}
 
-.head {grid-area:head}; .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
+.head {grid-area:head} .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
 .inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} .silhoette{grid-area: silhoette}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; min-height: 150px; min-width: 150px}
