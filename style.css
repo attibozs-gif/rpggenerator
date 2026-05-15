@@ -100,17 +100,19 @@ h1,h2,h3,p,span {color: white;}
 "body silhoette weapon"
 "waist silhoette hand"
 "leg silhoette offhand  "
-"inventory inventory inventory"
-"inventory inventory inventory"
 "inventory inventory inventory";
+
 gap:10px; justify-content: center; align-items: start;}
 
 .head {grid-area:head} .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
-.inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} .silhoette{grid-area: silhoette}
+.inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} 
+.silhoette{grid-area: silhoette; display:flex; justify-content: center; align-items: center; overflow: hidden;}
+.silhoette img {width: 100%; height: 100%; object-fit: contain;display: block;}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
 .weapon {border:solid 3px; border-color: white; min-height: 500px; min-width: 150px}
 .inventory {border:double 3px; border-color:white; width:85px; height: 85px}
+
 
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px}
 #petbutton {margin-top: 25px; padding-top: 25px; font-size: large}
