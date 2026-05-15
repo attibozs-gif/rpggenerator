@@ -6,8 +6,6 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #Mat1 {text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color:black; font-size: large;}
 .AlapanyagokCopy {color: white}
 
-.hidden {display:none}
-
 #creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
 .stepper {display: flex; flex-direction: column;gap:0; opacity:1; clip-path: inset(0 100% 0 0); transition: opacity 0.5s ease;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
@@ -91,7 +89,7 @@ h1,h2,h3,p,span {color: white;}
 .petclass {display: none;}
 .row4 {flex-direction: row;}
 
-.Equipment {display:flex; flex-direction: row; gap:10px; align-items: flex-start;}
+.Equipment {display:flex; flex-direction: row; gap:10px; align-items: flex-start; height:100vh}
 .Equipment2 {display:flex; flex-direction: column; gap: 10px;}
 
 .Equipment1 {display: grid; grid-template-columns: 150px 300px 150px; 
@@ -114,8 +112,9 @@ gap:10px; justify-content: center; align-items: start;}
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; min-height: 150px; min-width: 150px}
 .weapon {border:solid 3px; border-color: white; min-height: 500px; min-width: 150px}
 .inventory {border:double 3px; border-color:white; width:100%; height: 150px}
-.silhoette img {height: auto; width:100%; display:block;}
+.silhoette img {height: 100%; width:100%; display:block;}
 
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px}
 #petbutton {margin-top: 25px; padding-top: 25px; font-size: large}
 
+.hidden {display:none}
