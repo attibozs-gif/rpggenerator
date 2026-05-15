@@ -89,10 +89,10 @@ h1,h2,h3,p,span {color: white;}
 .petclass {display: none;}
 .row4 {flex-direction: row;}
 
-.Equipment {display:flex; flex-direction: row; gap:5px; align-items: center; height:100vh}
+.Equipment {display:flex; flex-direction: row; gap:5px; align-items: flex-start; height:100vh}
 .Equipment2 {display:flex; flex-direction: column; gap: 10px;}
 
-.Equipment1 {display: grid; grid-template-columns: 150px 300px 150px; 
+.Equipment1 {display: grid; grid-template-columns: 150px 150px 150px; 
         grid-template-areas: 
 "neck head weapon"
 "shoulder silhoette weapon"
@@ -107,10 +107,10 @@ gap:10px; justify-content: center; align-items: start;}
 .head {grid-area:head} .neck {grid-area:neck} .shoulder{grid-area:shoulder} .body{grid-area:body} .waist{grid-area: waist} .leg{grid-area: leg} .hand{grid-area: hand}
 .inventory {grid-area: inventory} .weapon {grid-area: weapon} .offhand{grid-area: offhand} .silhoette{grid-area: silhoette}
 
-.head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; min-height: 125px; max-height: 125px; min-width: 125px; max-width:125px}
+.head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
 .weapon {border:solid 3px; border-color: white; min-height: 500px; min-width: 150px}
 .inventory {border:double 3px; border-color:white; width:85px; height: 85px}
-.silhoette img {height: 100%; width:100%; display:block;}
+.silhoette img {height:600px ; width:350px; display:block;}
 
 .petsheet {border:double 4px; border-color: rgb(201, 178, 140); border-radius: 12px; width:100%; padding-top: 25px}
 #petbutton {margin-top: 25px; padding-top: 25px; font-size: large}
