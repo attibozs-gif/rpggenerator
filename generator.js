@@ -161,11 +161,11 @@ for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) 
 function show(section) {const panels=document.querySelectorAll(".panel"); const visual=!section.classList.contains("hidden"); 
 panels.forEach(el => el.classList.add("hidden")); if (!visual) {section.classList.remove ("hidden")}};
 cont.addEventListener("click", (event)=> {switch(event.target.id) {
-case "characterpage": show(document.querySelector(".stats")); break; 
-case "Petbutton": show(document.querySelector(".petstats")); break;
+case "characterpage": document.querySelector(".stats").classList.toggle("hiddden"); break; 
+case "Petbutton": document.querySelector(".petstats").classList.toggle("hidden"); break;
 case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
-case "selection": show(document.querySelector(".stepper")); break; }; })
+case "election": show(document.querySelector(".stepper")); break; }; })
 
 
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
