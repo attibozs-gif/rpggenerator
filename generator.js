@@ -109,7 +109,7 @@ const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[
 
 let pindex=0; 
 function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.HasPet[alkaszt.code]; 
-const petselect=petlist[pindex]; cp.textContent=petselect; petsearch()}
+const petselect=petlist[pindex]; cp.textContent=petselect; petsearch(); update()}
 
 cont.addEventListener("click", (event) => {if (!dataStore) return;  if (event.target.id !== "PreviousPet" && event.target.id !=="NextPet") {return};
 const petlist=dataStore.HasPet[alkaszt.code]
