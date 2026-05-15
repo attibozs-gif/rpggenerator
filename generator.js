@@ -132,17 +132,7 @@ const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const up
 const nearlower = lower [lower.length -1]; const nearupper = upper [0]; const petlist=dataStore.HasPet[alkaszt.code]; 
 const petselect=petlist[pindex]; 
 let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
-console.log("START DEBUG");
-console.log("LOWER === UPPER?", nearlower === nearupper);
-console.log("SP check:", nearlower.SP, nearupper.SP);
-console.log("startSP:", alkaszt.startSP);
-console.log("nearlower:", nearlower);
-console.log("nearupper:", nearupper);
-console.log("petselect:", petselect);
 if (nearupper.SP===nearlower.SP) {
-console.log("EXACT SP BRANCH HIT");
-console.log("row keys:", Object.keys(nearlower));
-console.log("pet object:", nearlower[petselect]); 
 petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
 petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].regen} else {
 petatk=nearlower[petselect].Atk + ((nearupper[petselect].Atk-nearlower[petselect].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
@@ -154,12 +144,7 @@ petarmor=nearlower[petselect].Armor + ((nearupper[petselect].Armor-nearlower[pet
 petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower[petselect].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);}
 Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
-Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); 
-console.log("FINAL RESULT:", {
-  petatk,
-  petdef,
-  pethp
-}); update()}
+Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg);update()}
 
 let aindex=0; 
 let currAtt;
