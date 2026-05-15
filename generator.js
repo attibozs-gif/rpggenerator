@@ -158,7 +158,8 @@ attmax=dataStore.Attributemax[alkaszt.code];
 for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) ? attmax[key]:50; 
        if (jatekos[key]>=alkaszt.limit[key]) {const attdiff = jatekos[key]-alkaszt.limit[key]; jatekos[key]=alkaszt.limit[key]; if (attdiff>0) {jatekos.currAP+=attdiff};}}};
 
-function show(section) {const panels=document.querySelectorAll(".panel"); panels.forEach(el => el.classList.add("hidden")); section.classList.remove ("hidden")};
+function show(section) {const panels=document.querySelectorAll(".panel"); const visual=!section.classList.contains(".hidden"); 
+panels.forEach(el => el.classList.add("hidden")); if (!visual) {section.remove ("hidden")}};
 cont.addEventListener("click", (event)=> {switch(event.target.id) {
 case "characterpage": show(document.querySelector(".stats")); break; 
 case "Petbutton": show(document.querySelector(".petstats")); break;
