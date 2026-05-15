@@ -163,7 +163,8 @@ cont.addEventListener("click", (event)=> {switch(event.target.id) {
 case "characterpage": show(document.querySelector(".stats")); break; 
 case "Petbutton": show(document.querySelector(".petstats")); break;
 case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
-case "Skillsbutton": show(document.querySelector(".Skills")); break; }; })
+case "Skillsbutton": show(document.querySelector(".Skills")); break; ;
+case "Selection": show(document.querySelector(".stepper")); break; }; })
 
 
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
