@@ -161,8 +161,8 @@ for (const key in attributespan) {alkaszt.limit[key]=attmax.hasOwnProperty(key) 
 function show(section) {const panels=document.querySelectorAll(".panel"); const visual=!section.classList.contains("hidden"); 
 panels.forEach(el => el.classList.add("hidden")); if (!visual) {section.classList.remove ("hidden")}};
 cont.addEventListener("click", (event)=> {switch(event.target.id) {
-case "characterpage": document.querySelector(".stats").classList.toggle("hiddden"); break; 
-case "Petbutton": document.querySelector(".petstats").classList.toggle("hidden"); break;
+case "characterpage": const statsheet=document.querySelector(".stats"); statsheet.classList.toggle("hiddden"); break; 
+case "Petbutton": const petsheet2=document.querySelector(".petstats"); petsheet2.classList.toggle("hidden"); break;
 case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
 case "election": show(document.querySelector(".stepper")); break; }; })
