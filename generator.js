@@ -80,7 +80,14 @@ const span = event.target.parentElement.querySelector("#CurrentClass"); span.tex
 const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Subclasses[kaszt.name]; const code=span2.array [0]; 
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
-const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else {petclass.classList.add("hidden")};
+
+const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else 
+{petclass.classList.add("hidden");
+const petNAME=cont.querySelector(".petname"); const petATK=cont.querySelector(".petatk"); const petDEF=cont.querySelector(".petdef");
+const petHP=cont.querySelector(".petHP"); const petREGEN=cont.querySelector(".petregen"); const petDMG=cont.querySelector(".petdmg");
+const petARMOR=cont.querySelector(".petarmor"); const petGEAR=cont.querySelector(".petGV"); const petPEN=cont.querySelector(".petpen");  
+petNAME.textContent=""; petATK.textContent=""; petDEF.textContent=""; petHP.textContent=""; petGEAR.textContent="";
+petARMOR.textContent=""; petREGEN.textContent=""; petDMG.textContent=""; petPEN.textContent=""};
 
 console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
@@ -144,7 +151,7 @@ petarmor=nearlower[petselect].Armor + ((nearupper[petselect].Armor-nearlower[pet
 petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower[petselect].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);}
 Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
-Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg);update()}
+Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg); Pet.Name=petselect; update()}
 
 let aindex=0; 
 let currAtt;
