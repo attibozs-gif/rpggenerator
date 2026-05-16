@@ -82,12 +82,8 @@ span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else 
-{petclass.classList.add("hidden");
-const petNAME=cont.querySelector(".petname"); const petATK=cont.querySelector(".petatk"); const petDEF=cont.querySelector(".petdef");
-const petHP=cont.querySelector(".petHP"); const petREGEN=cont.querySelector(".petregen"); const petDMG=cont.querySelector(".petdmg");
-const petARMOR=cont.querySelector(".petarmor"); const petGEAR=cont.querySelector(".petGV"); const petPEN=cont.querySelector(".petpen");  
-petNAME.textContent=""; petATK.textContent=""; petDEF.textContent=""; petHP.textContent=""; petGEAR.textContent="";
-petARMOR.textContent=""; petREGEN.textContent=""; petDMG.textContent=""; petPEN.textContent=""};
+{petclass.classList.add("hidden"); const petempty=Object.keys(Pet); petempty.forEach=""}
+
 
 console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
