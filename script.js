@@ -103,10 +103,12 @@ const startSP = document.getElementById("startSP"); ok.addEventListener("click",
   matcopy.style.display="flex"; matcopy.style.alignItems="flex-start";  
   matcopy.classList.add("AlapanyagokCopy"); cont.appendChild(matcopy)};});
 
-cont.addEventListener("click", (event) => {if (event.target.id!=="finish") {return}; const check=document.querySelector(".finalcheck"); check.classList.toggle("hidden")});
+cont.addEventListener("click", (event) => {if (event.target.id!=="finish") {return}; const check=document.querySelector(".finalcheck"); check.classList.toggle("hidden");const fsheet=document.querySelector(".finalsheet"); console.log(fsheet.outerHTML);});
 cont.addEventListener("click", (event) => {if (event.target.id==="yes")
-{const fsheet=document.querySelector(".finalsheet"); const fsheet2=fsheet.cloneNode(true); cont.innerHTML=""; fsheet2.style.display="block"; cont.appendChild(fsheet2)};
-if (event.target.id==="no") {const check=document.querySelector("finalcheck"); check.classList.toggle("hidden")} else {return}});
+{const fsheet=document.querySelector(".finalsheet"); console.log(fsheet === document.querySelector(".finalsheet")); const fsheet2=fsheet.cloneNode(true); console.log(fsheet2); console.log(fsheet2.querySelector(".finaltext").innerHTML)
+cont.innerHTML=""; fsheet2.style.display="block"; cont.appendChild(fsheet2);
+console.log(fsheet2.innerHTML)};
+if (event.target.id==="no") {const check=document.querySelector(".finalcheck"); check.classList.toggle("hidden")} else {return}});
 
   document.querySelectorAll("#Triskol img, #Triskol h2, #Triskol p").forEach(el => {
     console.log(el.tagName, getComputedStyle(el).display);});

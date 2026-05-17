@@ -315,8 +315,8 @@ const filter2 = cont.querySelectorAll(".rectangle");
 if (!filter2) return;
 filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
 
-let vardivs={ftext: document.querySelector(".finaltext"), frecipe: document.querySelector(".finalrecipe"), fability: document.querySelector(".finalability"),
-             fvartext: document.querySelector(".finalvartext")}
+let vardivs={ftext: fsheet.querySelector(".finaltext"), frecipe: fsheet.querySelector(".finalrecipe"), fability: fsheet.querySelector(".finalability"),
+             fvartext: fsheet.querySelector(".finalvartext")}
 
 function fullskillrender () {
 Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (skillcode => skillapply(skillcode))}
