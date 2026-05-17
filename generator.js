@@ -82,8 +82,8 @@ span2.index=0; span2.textContent=dataStore.Subclassname[code]
 alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
 
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else 
-{petclass.classList.add("hidden"); const petempty=Object.keys(Pet); petempty.forEach=""}
-
+{petclass.classList.add("hidden");
+Pet.Atk=""; Pet.Name=""; Pet.Def=""; Pet.HP=""; Pet.Gear=""; Pet.Armor=""; Pet.Regen=""; Pet.Dmg=""; Pet.Pen=""};
 
 console.log("kaszt.name =", kaszt.name); for (const attr of window.dataStore.Attributes) {alkaszt[attr] = 1; }; statsearch(); aindex=0; attribute(); skillslotdelete(); 
 
@@ -314,5 +314,25 @@ function skillslotdelete() {
 const filter2 = cont.querySelectorAll(".rectangle");
 if (!filter2) return;
 filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
+
+let vardivs={ftext: cont.querySelector(".finaltext"), frecipe: cont.querySelector(".finalrecipe"), fability: cont.querySelector(".finalability"),
+             fvartext: cont.querySelector(".finalvartext")}
+
+function fullskillrender () {
+Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (skillcode => skillapply(skillcode))}
+
+function skillapply(skillEx) {const skillszint=jatekos.Skills[code]; const skilllist=dataStore2[code]; 
+const fsheet=document.querySelector(".finalsheet"); const activeskill=skilllist.filter(row => row.Szint <= skillszint); const ftext= fsheet.querySelector(".finaltext");
+activeskill.forEach(row => {
+const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; vardivs.ftext.appendChild(span3)}; 
+const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=row.Abitext; vardivs.fability.appendChild(span4)};
+const span5=document.createElement("span"); if (row.Text) {const textrow=activeskill.filter(row => row.Text); const lastrow=textrow.length-1; 
+span5.textContent=JSON.stringify(textrow[lastrow].Text); vardivs.fvartext.appendChild(span5);}
+
+
+ });
+
+
+}
 
   

@@ -24,6 +24,7 @@ const phren=document.querySelector ("#phren")
 const pne=document.querySelector ("#pne")
 const creator=document.querySelector ("#creator")
 const ok=document.querySelector ("#ok")
+const fsheet=document.querySelector(".finalsheet")
 
 
 creator.style.display="none"
@@ -33,8 +34,7 @@ g2.style.display="none"
 matcont.style.display="none"
 allinfo.forEach(div=> {div.style.display="none"});
 Tri2.style.display="block"
-
-
+fsheet.style.display="none"
 
 let lines;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/content.txt")
@@ -101,7 +101,12 @@ mat.addEventListener("click", () => {if (matcont.style.display==="none") {matcon
 const startSP = document.getElementById("startSP"); ok.addEventListener("click",() => {let exist=cont.querySelector(".AlapanyagokCopy")
 ; if (exist) {exist.remove()} else {const matcopy=creator.cloneNode(true); 
   matcopy.style.display="flex"; matcopy.style.alignItems="flex-start";  
-  matcopy.classList.add("AlapanyagokCopy"); cont.appendChild(matcopy)};});  
+  matcopy.classList.add("AlapanyagokCopy"); cont.appendChild(matcopy)};});
+
+cont.addEventListener("click", (event) => {if (event.target.id!=="finish") {return}; const check=document.querySelector(".finalcheck"); check.classList.toggle("hidden")});
+cont.addEventListener("click", (event) => {if (event.target.id==="yes")
+{const fsheet=document.querySelector(".finalsheet"); const fsheet2=fsheet.cloneNode(true); cont.innerHTML=""; fsheet2.style.display="block"; cont.appendChild(fsheet2)};
+if (event.target.id==="no") {const check=document.querySelector("finalcheck"); check.classList.toggle("hidden")} else {return}});
 
   document.querySelectorAll("#Triskol img, #Triskol h2, #Triskol p").forEach(el => {
     console.log(el.tagName, getComputedStyle(el).display);});

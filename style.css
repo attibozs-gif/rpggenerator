@@ -90,7 +90,7 @@ h1,h2,h3,p,span {color: white;}
 .row4 {flex-direction: row;}
 
 .Equipment {display:flex; flex-direction: row; align-items: flex-start; margin:0; height:100vh; width:100vw}
-.Equipment2 {display:flex; flex-direction: column; gap: 10px; align-items: right; justify-content: right; margin-left:50px}
+.Equipment2 {display:flex; flex-direction: column; gap: 10px; margin-left:50px}
 
 .Equipment1 {display: grid; grid-template-columns: 150px 300px 150px; grid-template-rows: 150px 150px 150px 150px 150px 75px; row-gap: 2px; 
         grid-template-areas: 
@@ -111,7 +111,7 @@ gap:10px; justify-content: center; align-items: start;}
 .silhoette img {object-fit: contain;display: block; width:250px; height:600px}
 
 .head, .neck, .shoulder, .body, .hand, .waist, .leg, .offhand {border:solid 3px; border-color:white; height: 125px; width: 125px}
-.weapon {border:solid 3px; border-color: white; min-height: 450px; min-width: 150px}
+.weapon {border:solid 3px; border-color: white; height: 450px; width: 150px}
 .inventory {border:double 3px; border-color:white; width:85px; height: 85px}
 
 
@@ -120,3 +120,7 @@ gap:10px; justify-content: center; align-items: start;}
 
 .hidden {display:none} 
 .hidden-g {display: none;}
+
+#finish {font-size: large;}
+.finalcheck {font-size: large;}
+.finalsheet {background-color: black; width: 100vw; height: 100lvh;}

@@ -63,19 +63,19 @@
                        "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":2, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára",
                        "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Lamentium, 1 db Romlott Ajdimin, 1 db Romlott Veruzin, 1 db Romlott Meridal, 2 db Romlott Anerox"},
 
-"Romlott Katonai Fokos":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Fokos", "image":"WEAPON/SpoiledHatchet.jpg",
+"Romlott Katonai Fejsze":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":6, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára",
                         "Szükséges": "2 db Romlott Szomatium, 2 db Romlott Memoznit, 3 db Romlott Irenit, 2 db Romlott Farighion, 2 db Romlott Theráx"},
 
-"Romlott Szövetségi Fokos":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Fokos", "image":"WEAPON/SpoiledHatchet.jpg",
+"Romlott Szövetségi Fejsze":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára",
                         "Szükséges": "1 db Romlott Szomatium, 2 db Romlott Frénium, 2 db Romlott Irenit, 2 db Romlott Heszperisz, 1 db Romlott Szapaux"},
 
-"Romlott Bizalmi Fokos":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Fokos", "image":"WEAPON/SpoiledHatchet.jpg",
+"Romlott Bizalmi Fejsze":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára",
                         "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Szapinit, 3 db Romlott Mularin, 3 db Romlott Uhton, 2 db Romlott Eonix"},
 
-"Romlott Uralmi Fokos":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Fokos", "image":"WEAPON/SpoiledHatchet.jpg",
+"Romlott Uralmi Fejsze":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára",
                         "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Irenit, 2 db Romlott Meridal, 2 db Romlott Farighion, 1 db Romlott Diszepelrix"},
 
@@ -191,35 +191,35 @@
                         "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":4, "Becs":4.5, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára",
                     "Szükséges":"3 db Romlott Neumonit, 3 db Romlott Mularin, 1 db Romlott Memoznit, 2 db Romlott Heszperisz, 3 db Romlott Theráx, 3 db Romlott Anerox"},
 
-"Romlott Katonai Sudár":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledWand.jpg",
+"Romlott Katonai Sudár":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 3 db Romlott Uhton, 1 db Romlott Diszepelrix"},
 
-"Romlott Szövetségi Sudár":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledWand.jpg",
+"Romlott Szövetségi Sudár":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
                     
-"Romlott Bizalmi Sudár":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledWand.jpg",
+"Romlott Bizalmi Sudár":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"2 db Romlott Frénium, 1 db Romlott Neumonit, 2 db Romlott Lamentium, 1 db Romlott Szapinit, 2 db Romlott Meridal, 2 db Romlott Diszepelrix"},
 
-"Romlott Uralmi Sudár":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledWand.jpg",
+"Romlott Uralmi Sudár":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"1 db Romlott Frénium, 1 db Romlott Neumonit, 3 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
 
-"Romlott Katonai Driokt":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledStave.jpg",
+"Romlott Katonai Driokt":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 3 db Romlott Lamentium, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 3 db Romlott Theráx"},
 
-"Romlott Szövetségi Driokt":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledStave.jpg",
+"Romlott Szövetségi Driokt":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Veruzin, 3 db Romlott Theráx"},
 
-"Romlott Bizalmi Driokt":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledStave.jpg",
+"Romlott Bizalmi Driokt":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":4, "Becs":3.5, "Rúnaszám":1, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Irenit, 3 db Romlott Szapinit, 2 db Romlott Szapaux, 2 db Romlott Theráx"},
 
-"Romlott Uralmi Driokt":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledStave.jpg",
+"Romlott Uralmi Driokt":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":["Fegyver", "Kellék"], "Sebzés":4, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"3 db Romlott Frénium, 3 db Romlott Neumonit, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 1 db Romlott Veruzin, 2 db Romlott Theráx"},
 
@@ -595,7 +595,7 @@
                         "Invslot":1, "Slot":"Nyak", "Armor":1, "Becs":1, "Rúnaszám":0, "Dodgeseg":1, "Tehetség":1,  "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"1 db Romlott Neumonit, 2 db Romlott Memoznit, 1 db Romlott Veruzin, 1 db Romlott Theráx"},
 
-"Romlott Katonai Csipkagallér":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Gallér", "Típus":"Csipkegallér", "image":"NECK/SpoiledAbierta.jpg",
+"Romlott Katonai Csipkegallér":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Gallér", "Típus":"Csipkegallér", "image":"NECK/SpoiledAbierta.jpg",
                         "Invslot":1, "Slot":"Nyak", "Armor":2, "Becs":1, "Rúnaszám":0, "Dodgeseg":0, "Def":1, "Előállítható":"A Parancsok Litániája",
                     "Szükséges":"1 db Romlott Mularin, 1 db Romlott Heszperisz, 1 db Romlott Theráx, 3 db Romlott Anerox"},
 
