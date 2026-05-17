@@ -283,12 +283,12 @@ const grid1=cont.querySelector(".grid1"); const fulltangle= grid1.querySelectorA
 const current=lastinst || 0; if (fulltangle.length>=currlimit && current===0) return; const skillcost=current+1; 
 if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(skillEx); alkaszt.currSP-=skillcost}
 if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
-{skillappend(skillEx, lastind)}update()};
+{skillappend(skillEx, lastind)} skillapply(skillEx); update()};
 
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
 const current=lastinst || 0; if (current===0) return; alkaszt.currSP=Math.max(0, alkaszt.currSP+current); kaszt.Skills[code][lastind]-=1; updatespan(skillEx); alkaszt.currSP=Math.min(alkaszt.currSP, alkaszt.startSP); 
-if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)} };
+if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)}; fullskillrender(); };
 
 function skillappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
 const emptangle=grid1.querySelectorAll(".generated.empty"); let lastind=kaszt.Skills[code].length-1  
