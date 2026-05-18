@@ -124,3 +124,9 @@ gap:10px; justify-content: center; align-items: start;}
 #finish {font-size: large;}
 .finalcheck {font-size: large;}
 .finalsheet {background-color: black; width: 100vw; height: 100lvh;}
+.finalsheet span {color: white;}
+.finalstat span, .finaltext span, .finalvartext span, .finalrecipe span, .finalability span {display: block;} 
+#content .finalsheet {display: flex; flex-direction: column;}
+
+span.szalag {color: aquamarine;}
+li.culture {color:white}

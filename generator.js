@@ -1,5 +1,8 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
-const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={};
+const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skills={}; karakter.Skills={}, alkaszt.Skills={}, kaszt.Skills={},
+kaszt.Nyelv={}; karakter.Nyelv={}, kaszt.Kapcsolat={}; karakter.Kapcsolat={}; 
+jatekos.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
+jatekos.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
 
 music();
 
@@ -28,8 +31,12 @@ function update () {Object.assign
                 Spdseg: (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0),
                 Dmg: (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0),
                 Dodgeseg:(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0) 
-              }) 
-                
+              }); 
+            Object.assign(jatekos.Skills, alkaszt.Skills, kaszt.Skills, karakter.Skills);
+            for (const key in jatekos.Skills) {jatekos.Skills[key]=(kaszt.Skills[key] || 0) + (alkaszt.Skills[key] || 0) + (karakter.Skills[key] || 0)};
+            for (const key in jatekos.Nyelv) {jatekos.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (karakter.Nyelv[key] || 0)};
+            for (const key in jatekos.Kapcsolat) {jatekos.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (karakter.Kapcsolat[key] || 0)} 
+                                           
                 attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
                        "Ügyesség": cont.querySelector (".ugyesseg"), "Gyorsasság": cont.querySelector(".gyorsassag"),
                        "Intelligencia": cont.querySelector (".intelligencia"), "Tehetség":cont.querySelector(".tehetseg"),
@@ -267,7 +274,8 @@ let currlimit
 function skillsloter () {console.log("skillslotter futott"); if (!dataStore) return; 
 const grid1=cont.querySelector(".grid1"); 
 if (grid1.querySelectorAll(".generated").length>0) return; const skillimit=dataStore.Skillslot[kaszt.name]; 
-const filtered=skillimit.filter (limit =>(limit.SP<=alkaszt.startSP)); const lastindex=filtered.length-1; currlimit=filtered[lastindex].Skillslot;  
+const filtered=skillimit.filter (limit =>(limit.SP<=alkaszt.startSP)); const lastindex=filtered.length-1; 
+currlimit=filtered[lastindex].Skillslot; currlimit=currlimit+(kaszt.slimit || 0);  
 const rect=cont.querySelector(".grid2.template"); const filter2=document.createElement("div"); filter2.classList.add("rectangle"); 
 for (let i=0; i<currlimit; i++) {const newrect=rect.cloneNode(true); newrect.classList.add("generated"); newrect.classList.add("empty") 
 newrect.classList.remove("hidden-e"); filter2.appendChild(newrect);} grid1.appendChild(filter2) }
@@ -315,22 +323,69 @@ const filter2 = cont.querySelectorAll(".rectangle");
 if (!filter2) return;
 filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
 
-function fullskillrender (fsheet, vardivs){ 
-Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (skillcode => skillapply(skillcode))}
-
-function skillapply(skillEx) {console.log("skillapply START", skillEx);
-const final=document.getElementById("final")
-const fsheet=final.querySelector(".finalsheet");
 const vardivs={ftext: fsheet.querySelector(".finaltext"), frecipe: fsheet.querySelector(".finalrecipe"), fability: fsheet.querySelector(".finalability"),
-             fvartext: fsheet.querySelector(".finalvartext")};
-const code=skillEx.dataset.skillcode; const skillszint=jatekos.Skills[code]; const skilllist=dataStore2[code]; 
-const activeskill=skilllist.filter(row => row.Szint <= skillszint);
-const textrow=activeskill.filter(row => row.Text); if (textrow.length>0) {const lastrow=textrow.length-1; const span5=document.createElement("span"); 
-span5.textContent=JSON.stringify(textrow[lastrow].Text); vardivs.fvartext.appendChild(span5)};
+             fvartext: fsheet.querySelector(".finalvartext"), fstat:fsheet.querySelector(".finalstat") };
+
+function fullskillrender (){ 
+Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (code => skillapply(code))}
+
+function skillapply(code) {;
+const skillszint=jatekos.Skills[code]; const skilllist=dataStore2[code]; if (!skilllist) return;
+const activename=dataStore2.Skills.find (row=> row.skillcode===code);
+const activeskill=skilllist.filter(row => row.Szint <= skillszint); const skilldiv=document.createElement("div"); skilldiv.classList.add(code);
+const spantitle=document.createElement("span");spantitle.classList.add("szalag"); spantitle.textContent=activename.skilltitle;
+vartext(activeskill, skilldiv, spantitle, vardivs); ftext(activeskill, skilldiv, spantitle, vardivs); fability(activeskill, skilldiv, spantitle, vardivs);
+social(activeskill, vardivs); socialstats(activeskill, vardivs); }
+
+function vartext(activeskill, skilldiv, spantitle, vardivs) {
+const checkif=activeskill.some (row=> row.Text); if (!checkif) {return};
+const textrow=activeskill.filter(row => row.Text); if (textrow.length>0) {const lastrow=textrow.length-1; const span5=document.createElement("span");
+span5.textContent=JSON.stringify(textrow[lastrow].Text);
+const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true); 
+const activediv=vardivs.fvartext.appendChild(clonediv); activediv.appendChild(titleclone); activediv.appendChild(span5);
+console.log("SPAN ADDED:", vardivs.fvartext.innerHTML)}; };
+
+function ftext(activeskill, skilldiv, spantitle, vardivs) {
+const checkif=activeskill.some (row => row.Fixtext); if (!checkif) {return}; 
+const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true);   
+const activediv=vardivs.ftext.appendChild(clonediv); activediv.appendChild(titleclone);
 activeskill.forEach(row => {
-const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; vardivs.ftext.appendChild(span3)};
-const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=row.Abitext; vardivs.fability.appendChild(span4);}});
-}; 
+const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; activediv.appendChild(span3); 
+console.log("SPAN ADDED:", vardivs.ftext.innerHTML)}})};
+
+function fability (activeskill, skilldiv, spantitle, vardivs) {
+const checkif=activeskill.some (row=> row.Abitext); if (!checkif) {return};
+const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true);
+const activediv=vardivs.fability.appendChild(clonediv); activediv.appendChild(titleclone);
+activeskill.forEach(row => {
+const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=JSON.stringify(row.Abitext); activediv.appendChild(span4)  
+console.log("SPAN ADDED:", vardivs.fability.innerHTML)} }); };
+
+function social (activeskill, vardivs) {socialstats(activeskill, vardivs); update();
+const culture = fsheet.querySelector(".culture"); const culture2=document.createElement("ul"); const culture3=document.createElement("ul");
+for (const key in jatekos.Nyelv) {const listline=document.createElement("li"); 
+listline.textContent = `${key}:${jatekos.Nyelv[key]}`; culture2.appendChild(listline)}; 
+for (const key in jatekos.Kapcsolat) {const listline=document.createElement("li");
+listline.textContent= `${key}:${jatekos.Kapcsolat[key]}`; culture3.appendChild(listline)};
+culture.appendChild(culture2); culture.appendChild(culture3); const statsheet=document.querySelector(".sheet"); 
+const clonesheet=statsheet.cloneNode(true); fsheet.appendChild(clonesheet)  } 
+
+function socialstats (activeskill, vardivs) { 
+const whitelist=["Fizikum", "FizikumTeszt", "Állóképesség", "ÁllóképességTeszt", "Ügyesség", "ÜgyességTeszt", "Gyorsasság", "GyorsasságTeszt", 
+                "Intelligencia", "IntelligenciaTeszt", "Tehetség", "TehetségTeszt", "Felismerés", "FelismerésTeszt", "Inspiráció", "InspirációTeszt",
+                 "Ero", "Armor", "Mell", "Sell", "Fell", "Atk", "Def", "Agi", "HP", "slimit", "ilimit", "alimit"]
+for (const row of activeskill) {if (!row.Eval) {continue}; 
+if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
+if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
+for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}} }}
+
+
+
+
+
+
+
 
 
  

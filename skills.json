@@ -833,7 +833,7 @@
         "Text":"Napi 1-szer, az időben meghatározott hosszúságú gyalogút esetén a játékos garantáltan talál 2 rejtett alapanyag forrást, 2 Alapanyag kiválasztható (Meridal, Szapinit, irenit)"},
         {"Szint":9, "Eval":{"HP":8, "Idő4":11700},
         "Text":"Napi 1-szer, az időben meghatározott hosszúságú gyalogút esetén a játékos garantáltan talál 2 rejtett alapanyag forrást, 1 Alapanyag kiválasztható (Heszperisz, Ajdimim)"},
-        {"Szint":10, "Eval":{"Skillslot":1, "Idő4":10800},
+        {"Szint":10, "Eval":{"slimit":1, "Idő4":10800},
         "Text":"Napi 1-szer, az időben meghatározott hosszúságú gyalogút esetén a játékos garantáltan talál 3 rejtett alapanyag forrást, 1 Alapanyag kiválasztható (Farighion, Meruzin, Veruzin)"}],
 
 "Lovt":[{"Szint":1, "Fixtext":"A játékos képes hátasok megülésére, kezelésére, és amíg azokon utaznak megszerzika  hozzájuk járó +3 felszerelési helyet",
@@ -848,7 +848,7 @@
         {"Szint":7, "Eval":{"GyorsasságTeszt":3, "Fell":5, "Idő4":53100}, "Text":"A hátassal naponta 54 kilométert lehet megtenni, és csökken a velük való utazási idő"},
         {"Szint":8, "Eval":{"Skill":{"Oldozó Rítus":3}, "Idő4":52200}, "Text":"A hátassal naponta 56 kilométert lehet megtenni, és csökken a velük való utazási idő"},
         {"Szint":9, "Abitext":{"HÍVÓSZÓ":{"Használat":"Napi 1", "Hatás":"A játékos képes megidézni Társállatát attól függetlenül hol hagyta. A Társállat a játékos jobb oldalán lévő legközelebbi szabad cellán jelenik meg. Társállatos kasztokra is érvényes"}},
-                    "Eval":{"Erő":5, "Idő4":51300}, "Text":"A hátassal naponta 58 kilométert lehet megtenni, és csökken a velük való utazási idő"},
+                    "Eval":{"Ero":5, "Idő4":51300}, "Text":"A hátassal naponta 58 kilométert lehet megtenni, és csökken a velük való utazási idő"},
         {"Szint":10, "Eval":{"Pet":{"Atk":10, "Def":10, "HP":15}, "Idő4":50400}, "Text":"A hátassal naponta 60 kilométert lehet megtenni, és csökken a velük való utazási idő"}],
 
 "Szirt":[{"Szint":1, "Fixtext":"A Játékos képes felismerni ha egy Szirtre került, a Szirtnek nagyjából való földrajzi elhelyezkedésést, és azt hogy a föld alatt vagy felett tartozkódik",
@@ -886,7 +886,7 @@
                     "Text":"-3 Nimesh hajózási árakból, városba való belépési díjakból, -4 Nimesh exkluzív klubok belépési díjából, a hajókkal való utazási idő csökken"},
         {"Szint":8, "Fixtext":"A játékos által viselt páncélzat nehezítése csökken, vagy normális áron tud 1 cellát megtenni vagy 2-vel csökken a sebesség szegmens büntetés",
                     "Eval":{"Idő4":48600}, "Text":"-3 Nimesh hajózási árakból, városba való belépési díjakból, -5 Nimesh exkluzív klubok belépési díjából, a hajókkal való utazási idő csökken"},                    
-        {"Szint":9, "Eval":{"Invslot":1, "Debuff":{"Mozgás":{"Időtartam":-1}}, "Idő4":47700},
+        {"Szint":9, "Eval":{"ilimit":1, "Debuff":{"Mozgás":{"Időtartam":-1}}, "Idő4":47700},
                     "Text":"-4 Nimesh hajózási árakból, városba való belépési díjakból, -6 Nimesh exkluzív klubok belépési díjából, a hajókkal való utazási idő csökken"},
         {"Szint":10, "Abitext":{"RÖGTÖNZÖTT PAJZS":{"Használat":"Napi 2", "Költség":1, "Intervallum":18, "Hatás":"A játékos az őt ért következő támadásból -15 sebzést fog csak elszenvedni, amíg van felszerelési tárgya. A sebzéskor vagy az intervallum lejártakor egy általa választott felszerelési tárgy elpusztul"}},
                      "Eval":{"Idő4":46800}, "Text":"-4 Nimesh hajózási árakból, városba való belépési díjakból, -6 Nimesh exkluzív klubok belépési díjából, a hajókkal való utazási idő csökken"}],
@@ -998,7 +998,7 @@
         {"Szint":8, "Eval":{"Ügyesség":5}, "Text":"Egyszer egy csatában, egy szörny(Theras) ellen:-4 sebzés vagy +4 sebzés"},
         {"Szint":9, "Abitext":{"ÖSZTÖNÖS VÉDELEN":{"Használat":"Napi 1", "Költség":3, "Időtartam":18, "Hatás": "A játékos immunis lesz az időtartamon belül őt érő első kritikus találatra, és csak normál sebzést szenved el"}},
                     "Text":"Egyszer egy csatában, egy szörny(Theras) ellen:-5 sebzés vagy +4 sebzés"},
-        {"Szint":10, "Eval":{"Abislot":1}, "Text":"Egyszer egy csatában, egy szörny(Theras) ellen:-5 sebzés vagy +5 sebzés"}],
+        {"Szint":10, "Eval":{"alimit":1}, "Text":"Egyszer egy csatában, egy szörny(Theras) ellen:-5 sebzés vagy +5 sebzés"}],
 
 "Tudi":[{"Szint":1, "Fixtext":"A játékos képes azonosítással a rajtaütéseket, vagy a rejtözködő ellenfeleket, kivétel Szirteken", "Text":"Heti 1 azonosítás"},
         {"Szint":2, "Eval":{"Kapcsolat":{"Kahal":1}}, "Text":"Heti 2 azonosítás"},
@@ -1032,8 +1032,27 @@
                                                 "Kategória":["Tűzkígyó","Éji Skarlát", "Orkánmoraj", "Viharverés", "Ábrándfüst", "Badarcsípés", "Pokolfazék", "Vétekszelence", "Bujavetés", "Lidércpatron"]},
                                         "Elíxir": {"Minőség": ["Romlott", "Hibás", "Nyers", "Makulátlan"],
                                                    "Kategória": ["Vérfürdő", "Gondolatfolyam", "Siralomvíz", "Gátszérum", "Jellempárlat", "Tudatlikőr", "Tündérszesz", "Haragkoktél"]},
-                                        "Csodaszer":{"Minőség":"Makulátlan", "Kategória":["Jellegrappa", "Készség-ital", "Hajlam-főzet"]}}},        
-                                        
+                                        "Csodaszer":{"Minőség":"Makulátlan", "Kategória":["Jellegrappa", "Készség-ital", "Hajlam-főzet"]}}}, 
+
+"Tárgyak": {"Merev Vért":["Fémkéreg", "Mellvért"], "Fűzött Vért":["Brigantin", "Sodronying"], "Szegecselt Vért":["Páncéltunika", "Irhapáncél"],
+                        "Bélelt Vért":["Zeke", "Fegyverkabát"], "Díszruha":["Köntös", "Talár"], "Kard":["Szablya", "Pallos"], "Tőr":["Gyilok", "Krisz"],
+                        "Balta":["Fejsze", "Csatabárd"], "Zúzófegyver":["Buzogány", "Sulyok"], "Szálfegyver":["Lándzsa", "Gléfe"], "Íj":["Ártoló", "Ark"],
+                        "Varázsbot":["Sudár", "Driokt"], "Egzotikus":["Viharpenge", "Ulka", "Ostor", "Emberfogó"], "Sisak":["Burgund Sisak", "Szárnyas Sisak"],
+                        "Fejvédő":["Lánccsuklya", "Barett"], "Gluga":["Kámzsa", "Csuklyás Fejfedő"], "Maszk":["Csőrös Maszk", "Álarc"], "Fejdísz":["Fejpánt", "Diadém"],
+                        "Nyakvért":["Állvas", "Láncfátyol"], "Nyakék":["Uzeh", "Padaung"], "Gallér":["Nyakfodor", "Csipkegallér"], "Amulett":["Kundan", "Nazar"],
+                        "Sál":["Csősál", "Pashmina"], "Vállvas":["Haut", "Sode"], "Vállvédő":["Köpenybőr", "Straza"], "Köpeny":["Pelerin", "Cappa"],
+                        "Vállkendő":["Stóla", "Kani"], "Válldísz":["Cordon", "Dragona"], "Vaskesztyű":["Manika", "Vasököl"], "Karvédő":["Alkarvédő", "Karperec"],
+                        "Kesztyű":["Gant", "Palmar"], "Bandázs":["Fásli", "Chuek"], "Gyűrű":["Milgrain", "Laurel"], "Csatakötény":["Combvért", "Haidate"],
+                        "Vasszoknya":["Kampana", "Kettenrock"], "Kardkötő":["Cintura", "Gurtni"], "Öv":["Csípőszorító", "Obi"], "Derékpánt":["Kösöntyű", "Cummerbund"],
+                        "Vassaru":["Csőrsaru", "Maximillian"], "Sodronynadrág":["Láncharisnya","Kogake"], "Csizma":["Hessian", "Bocskor"], "Szandál":["Caligae", "Tzangion"],
+                        "Topán":["Cizemka", "Mokaszin"], "Pajzs":["Levélpajzs", "Bolda"], "Tarisznya":["Hordtáska", "Erszény"], "Lámpás":["Viharlámpás", "Dicsfény"],
+                        "Relikvia":["Grimoár", "Talizmán"], "Hangszer":["Kürt", "Pánsíp"], "Bélyeg":["Bala", "Sabru", "Kheti", "Vega", "Noia", "Sia", "Grati", "Ekku"],
+                        "Véset":["Stathmos", "Atman", "Sekhel", "Ankh", "Metron", "Mahas", "Dib", "Shiryon", "Vis", ""], "Pecsét":["Iddun", "Mattan", "Ars"], 
+                        "Karc":["Kutallu", "Cista", "Miqra"], "Élelmiszer":["Telthas-dudva", "Beszéd-pirula", "Fortuna-fanyar", "Létkása", "Erőfű", "Dolgos-gejva",
+                        "Hamar-pác", "Szép-imolya", "Teszt-morvány"], "Bomba":["Tűzkígyó", "Éji Skarlát", "Orkánmoraj", "Viharverés", "Ábrándfüst", "Badarcsípés", "Pokolfazék",
+                        "Vétekszelence", "Bujavetés", "Lidércpatron"], "Elixír":["Vérfürdő", "Lélekfolyam", "Siralomvíz", "Gátszérum", "Jellempárlat", "Tudatlikőr", "Tündérszer",
+                        "Haragkoktél"], "Csodaszer":["Jellegrappa", "Készség-ital", "Hajlam-főzet"]}, 
+                                       
 "Alapanyagok": {
 "Mularin":      {"Szins":       {"Ingredients": ["Szomatium", "Frénium", "Neumonit"], "Szintek":{
                                 "1":   [{"inputqual":"Romlott", "outputqual":"Romlott", "multiplier":1, "endquan":1, "output":"Mularin"}],
