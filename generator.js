@@ -288,7 +288,7 @@ if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltang
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
 const current=lastinst || 0; if (current===0) return; alkaszt.currSP=Math.max(0, alkaszt.currSP+current); kaszt.Skills[code][lastind]-=1; updatespan(skillEx); alkaszt.currSP=Math.min(alkaszt.currSP, alkaszt.startSP); 
-if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)}; fullskillrender() };
+if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)};};
 
 function skillappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
 const emptangle=grid1.querySelectorAll(".generated.empty"); let lastind=kaszt.Skills[code].length-1  
@@ -315,29 +315,21 @@ const filter2 = cont.querySelectorAll(".rectangle");
 if (!filter2) return;
 filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
 
-let vardivs={ftext: fsheet.querySelector(".finaltext"), frecipe: fsheet.querySelector(".finalrecipe"), fability: fsheet.querySelector(".finalability"),
-             fvartext: fsheet.querySelector(".finalvartext")}
-
-function fullskillrender () {
+function fullskillrender (fsheet, vardivs){ 
 Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (skillcode => skillapply(skillcode))}
 
 function skillapply(skillEx) {console.log("skillapply START", skillEx);
-const code=skillEx.dataset.skillcode 
-const skillszint=jatekos.Skills[code]; const skilllist=dataStore2[code]; 
-const fsheet=document.querySelector(".finalsheet"); const activeskill=skilllist.filter(row => row.Szint <= skillszint); const ftext= fsheet.querySelector(".finaltext");
-const textrow=activeskill.filter(row => row.Text); const lastrow=textrow.length-1; const span5=document.createElement("span"); 
-span5.textContent=JSON.stringify(textrow[lastrow].Text); vardivs.fvartext.appendChild(span5);
-console.log("code:", code);
-console.log("skillszint:", skillszint);
-console.log("skilllist:", skilllist);
-console.log("textrow:", textrow);
-console.log("lastrow index:", lastrow);
-console.log("lastrow object:", textrow[lastrow]);
-console.log("activeskill:", activeskill);
-console.log("activeskill length:", activeskill.length);
+const final=document.getElementById("final")
+const fsheet=final.querySelector(".finalsheet");
+const vardivs={ftext: fsheet.querySelector(".finaltext"), frecipe: fsheet.querySelector(".finalrecipe"), fability: fsheet.querySelector(".finalability"),
+             fvartext: fsheet.querySelector(".finalvartext")};
+const code=skillEx.dataset.skillcode; const skillszint=jatekos.Skills[code]; const skilllist=dataStore2[code]; 
+const activeskill=skilllist.filter(row => row.Szint <= skillszint);
+const textrow=activeskill.filter(row => row.Text); if (textrow.length>0) {const lastrow=textrow.length-1; const span5=document.createElement("span"); 
+span5.textContent=JSON.stringify(textrow[lastrow].Text); vardivs.fvartext.appendChild(span5)};
 activeskill.forEach(row => {
-const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; vardivs.ftext.appendChild(span3)}; 
-const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=row.Abitext; vardivs.fability.appendChild(span4)};})
+const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; vardivs.ftext.appendChild(span3)};
+const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=row.Abitext; vardivs.fability.appendChild(span4);}});
 }; 
 
 
