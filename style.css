@@ -123,10 +123,13 @@ gap:10px; justify-content: center; align-items: start;}
 
 #finish {font-size: large;}
 .finalcheck {font-size: large;}
-.finalsheet {background-color: black; width: 100vw; height: 100lvh;}
+.finalsheet {background-color: black; width: 100vw; height: 100lvh; display: flex; flex-direction: column;}
 .finalsheet span {color: white;}
-.finalstat span, .finaltext span, .finalvartext span, .finalrecipe span, .finalability span {display: block;} 
-#content .finalsheet {display: flex; flex-direction: column;}
+.finalstat span, .finaltext span, .finalvartext span, .finalrecipe span, .finalability span {display: flex; flex-direction: row;} 
+#content .finalsheet {display: block;}
 
 span.szalag {color: aquamarine;}
-li.culture {color:white}
+.culture li {color:white}
+.culture p {color: beige;}
+.finalstat {color:white ; width:40%; display:flex; flex-direction: row;}
+.finalstat li {color:white ; display: flex; flex-direction: row; align-items: baseline; gap:5px}
