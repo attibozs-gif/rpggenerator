@@ -108,8 +108,8 @@ cont.addEventListener("click", (event) => {if (event.target.id!=="finish") {retu
 const final=document.getElementById("final")
 const fsheet=final.querySelector(".finalsheet");});
 cont.addEventListener("click", (event) => {if (event.target.id==="yes")
-{const final=document.getElementById("final"); const fsheet=final.querySelector(".finalsheet"); update(); fullskillrender(); const fsheet2=fsheet.cloneNode(true); 
-cont.innerHTML=""; fsheet2.style.display="block"; cont.appendChild(fsheet2);}; 
+{const final=document.getElementById("final"); const fsheet=final.querySelector(".finalsheet"); update(); fullskillrender(); rebuildstats(vardivs); const fsheet2=fsheet.cloneNode(true); 
+cont.innerHTML=""; fsheet2.style.display="flex"; cont.appendChild(fsheet2);}; 
 if (event.target.id==="no") {const check=document.querySelector(".finalcheck"); check.classList.toggle("hidden")} else {return}});
 
   document.querySelectorAll("#Triskol img, #Triskol h2, #Triskol p").forEach(el => {
