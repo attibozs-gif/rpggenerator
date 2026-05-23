@@ -1,6 +1,6 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
 const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skills={}; karakter.Skills={}, alkaszt.Skills={}, kaszt.Skills={},
-kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={};
+kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
 console.trace("NYELV WAS MODIFIED:", jatekos.Nyelv);
@@ -43,28 +43,28 @@ function update () {Object.assign
                 Object.assign(jatekos.Skills, alkaszt.Skills, kaszt.Skills, karakter.Skills);
               for (const key in jatekos.Skills) {jatekos.Skills[key]=(kaszt.Skills[key] || 0) + (alkaszt.Skills[key] || 0) + (karakter.Skills[key] || 0)};
                                                     
-                Object.assign (jatekos, alkaszt, kaszt, karakter, {
-                Critdmg: (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0),
-                Becs:(karakter.Becs || 0) + (alkaszt.Becs || 0) + (kaszt.Becs || 0), 
-                Agi: (karakter.Agi || 0) + (kaszt.Agi || 0) + (alkaszt.Agi || 0),
-                Fell :(karakter.Fell || 0) + (kaszt.Fell || 0) + (alkaszt.Fell || 0),
-                Mell: (karakter.Mell || 0) + (kaszt.Mell || 0) + (alkaszt.Mell || 0),
-                Sell: (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0),
-                Ero: (karakter.Ero || 0) + (kaszt.Ero || 0) + (alkaszt.Ero || 0),
-                Spdseg: (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0),
-                Dmg: (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0),
-                Dodgeseg:(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0),
-                FizikumTeszt:(karakter.FizikumTeszt || 0) + (kaszt.FizikumTeszt || 0) + (alkaszt.FizikumTeszt || 0),
-                ÁllóképességTeszt:(karakter.ÁllóképességTeszt || 0) + (kaszt.ÁllóképességTeszt || 0) + (alkaszt.ÁllóképességTeszt || 0),  
-                ÜgyességTeszt:(karakter.ÜgyességTeszt || 0) + (kaszt.ÜgyességTeszt || 0) + (alkaszt.ÜgyességTeszt || 0),
-                GyorsasságTeszt:(karakter.GyorsasságTeszt || 0) + (kaszt.GyorsasságTeszt || 0) + (alkaszt.GyorsasságTeszt || 0),
-                IntelligenciaTeszt:(karakter.IntelligenciaTeszt || 0) + (kaszt.IntelligenciaTeszt || 0) + (alkaszt.IntelligenciaTeszt || 0),
-                TehetségTeszt:(karakter.TehetségTeszt|| 0) + (kaszt.TehetségTeszt || 0) + (alkaszt.TehetségTeszt || 0),
-                FelismerésTeszt:(karakter.FelismerésTeszt || 0) + (kaszt.FelismerésTeszt || 0) + (alkaszt.FelismerésTeszt || 0),
-                InspirációTeszt:(karakter.InspirációTeszt || 0) + (kaszt.InspirációTeszt || 0) + (alkaszt.InspirációTeszt || 0),
-                Armor:(karakter.Armor || 0) + (alkaszt.Armor || 0) + (kaszt.Armor || 0)}  
+                
+                jatekos.Critdmg= (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0);
+                jatekos.Becs=(karakter.Becs || 0) + (alkaszt.Becs || 0) + (kaszt.Becs || 0); 
+                jatekos.Agi= (karakter.Agi || 0) + (kaszt.Agi || 0) + (alkaszt.Agi || 0);
+                jatekos.Fell=(karakter.Fell || 0) + (kaszt.Fell || 0) + (alkaszt.Fell || 0);
+                jatekos.Mell= (karakter.Mell || 0) + (kaszt.Mell || 0) + (alkaszt.Mell || 0);
+                jatekos.Sell= (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0);
+                jatekos.Ero=(karakter.Ero || 0) + (kaszt.Ero || 0) + (alkaszt.Ero || 0);
+                jatekos.Spdseg= (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0);
+                jatekos.Dmg= (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0);
+                jatekos.Dodgeseg=(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0);
+                jatekos.FizikumTeszt=(karakter.FizikumTeszt || 0) + (kaszt.FizikumTeszt || 0) + (alkaszt.FizikumTeszt || 0);
+                jatekos.ÁllóképességTeszt=(karakter.ÁllóképességTeszt || 0) + (kaszt.ÁllóképességTeszt || 0) + (alkaszt.ÁllóképességTeszt || 0);
+                jatekos.ÜgyességTeszt=(karakter.ÜgyességTeszt || 0) + (kaszt.ÜgyességTeszt || 0) + (alkaszt.ÜgyességTeszt || 0);
+                jatekos.GyorsasságTeszt=(karakter.GyorsasságTeszt || 0) + (kaszt.GyorsasságTeszt || 0) + (alkaszt.GyorsasságTeszt || 0);
+                jatekos.IntelligenciaTeszt=(karakter.IntelligenciaTeszt || 0) + (kaszt.IntelligenciaTeszt || 0) + (alkaszt.IntelligenciaTeszt || 0);
+                jatekos.TehetségTeszt=(karakter.TehetségTeszt|| 0) + (kaszt.TehetségTeszt || 0) + (alkaszt.TehetségTeszt || 0);
+                jatekos.FelismerésTeszt=(karakter.FelismerésTeszt || 0) + (kaszt.FelismerésTeszt || 0) + (alkaszt.FelismerésTeszt || 0);
+                jatekos.InspirációTeszt=(karakter.InspirációTeszt || 0) + (kaszt.InspirációTeszt || 0) + (alkaszt.InspirációTeszt || 0);
+                jatekos.Armor=(karakter.Armor || 0) + (alkaszt.Armor || 0) + (kaszt.Armor || 0); 
 
-              ); 
+              
             jatekos.Nyelv.Mergla = (alkaszt.Nyelv.Mergla || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Mergla || 0);
             jatekos.Nyelv.Mei = (alkaszt.Nyelv.Mei || 0) + (kaszt.Nyelv.Mei || 0) + (karakter.Nyelv.Mei || 0);
             jatekos.Nyelv.Venta = (alkaszt.Nyelv.Venta || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Venta || 0);
@@ -317,7 +317,34 @@ const grid1=cont.querySelector(".grid1"); const fulltangle= grid1.querySelectorA
 const current=lastinst || 0; if (fulltangle.length>=currlimit && current===0) return; const skillcost=current+1; 
 if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(skillEx); alkaszt.currSP-=skillcost}
 if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
-{skillappend(skillEx, lastind)} skillapply(skillEx); update()};
+{skillappend(skillEx, lastind)}; checkbox(code, lastinst); skillapply(skillEx); update()};
+
+function checkbox (code, lastinst) {
+const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; if (!craftrow.Eval || !craftrow.Eval.Selection) return; 
+const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Pool[code];
+for (const rule of craftrow.Eval.Selection) {const groupname=Object.keys(rule)[0]; const container=document.createElement("div"); 
+let countindex=0; 
+const rquality=rule[groupname].Minőség; const span9=document.createElement("span"); const count=rule[groupname].Count;   
+for (const id of craftpool[groupname].select) {const qual=kaszt.Selection[id] ? Object.keys(kaszt.Selection[id]).length:0; 
+if (rquality!==craftpool[groupname].Minőség[qual]) {continue};
+const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.dataset.id=id; const tag=document.createElement("label");
+checkbox.checked=!!kaszt.Selection[id]?.[rquality]; 
+checkbox.addEventListener("change", () =>{if (checkbox.checked && countindex>=count) {checkbox.checked=false; return}; 
+if (checkbox.checked) {if (!kaszt.Selection[id]) {kaszt.Selection[id]={}};
+kaszt.Selection[id][rquality]=true} else 
+{delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]};};
+countindex=Array.from(craftpool[groupname].select).filter(id=>kaszt.Selection[id]?.[rquality]).length;
+span9.textContent=`Választható:${count-countindex}`;}); 
+tag.textContent=dataStore2.Tárgy[id].Név; container.appendChild(checkbox); container.appendChild(tag)};
+countindex=Array.from(craftpool[groupname].select).filter(id=>kaszt.Selection[id]?.[rquality]).length; 
+span9.textContent=`Választható:${count-countindex}`;
+container.appendChild(span9); selbox.appendChild(container)}; 
+selbox.classList.remove("hidden"); cont.appendChild(selbox)};
+
+
+
+
+
 
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
@@ -327,7 +354,6 @@ if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)};};
 function skillappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
 const emptangle=grid1.querySelectorAll(".generated.empty"); let lastind=kaszt.Skills[code].length-1  
 if(fulltangle.length>=currlimit) return; if (!emptangle.length) return; if (kaszt.Skills[code][lastind] ===1) {
-console.log("image element found:", skillEx.querySelector(".image")); console.log(emptangle);
 const image=skillEx.querySelector(".image").cloneNode(false); 
 image.style.width="70px"; image.style.height="70px"; const icon=emptangle[0]; icon.appendChild(image); icon.classList.remove("empty"); icon.classList.add("full"); 
 icon.dataset.skillcode=code; icon.dataset.instance=lastind; 
@@ -403,7 +429,8 @@ listline.textContent= `${key}:${jatekos.Kapcsolat[key]}`; culture3.appendChild(l
 ultitle.textContent="Kulturális Adatok:"; culture.appendChild(ultitle);
 culture.appendChild(culture2); culture.appendChild(culture3);} 
 
-function socialstats (activeskill, vardivs) { 
+function socialstats (activeskill, vardivs) {
+  console.trace (jatekos.Felismerés) 
 const whitelist=["Fizikum", "FizikumTeszt", "Állóképesség", "ÁllóképességTeszt", "Ügyesség", "ÜgyességTeszt", "Gyorsasság", "GyorsasságTeszt", 
                 "Intelligencia", "IntelligenciaTeszt", "Tehetség", "TehetségTeszt", "Felismerés", "FelismerésTeszt", "Inspiráció", "InspirációTeszt",
                  "Ero", "Armor", "Mell", "Sell", "Fell", "Atk", "Def", "Agi", "HP", "slimit", "ilimit", "alimit"]
@@ -411,7 +438,50 @@ for (const row of activeskill) {if (!row.Eval) {continue};
 if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
 if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
 for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
-if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};};
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
+update(); console.trace (jatekos.Felismerés)};
+
+function skilltime (activeskill, skilldiv, spantitle, vardivs) {
+const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 
+const timeloop={time1:activeskill.filter(row=>row.Eval && row.Eval.Idő1), time2:activeskill.filter(row=>row.Eval && row.Eval.Idő2), 
+                time3:activeskill.filter(row=>row.Eval && row.Eval.Idő3), time4:activeskill.filter(row=>row.Eval &&row.Eval.Idő4), 
+                time5:activeskill.filter(row=>row.Eval && row.Eval.Idő5)};
+const rule1=(1-Math.floor(jatekos.Inspiráció/4)/100); const rule2=(1-Math.floor(jatekos.Intelligencia/4)/100); const rule3=(1-Math.floor(jatekos.Felismerés/4)/100);
+const rule4=(1-Math.floor(jatekos.Tehetség/5)/100); const rule5=(1+Math.floor(jatekos.Tehetség/5)/100);
+for (const key in timeloop) {if (!timeloop[key].length) continue; const timeindex=timeloop[key].length-1; const time=timeloop[key][timeindex]; let timevalue
+if (key==="time1") {timevalue= Math.floor(time.Eval.Idő1*rule1)}; if (key==="time2") {timevalue=Math.floor(time.Eval.Idő2*rule2)}; 
+if (key==="time3") {timevalue=Math.floor(time.Eval.Idő3*rule3);} if (key==="time4") {timevalue=Math.floor(time.Eval.Idő4*rule4)};
+if (key==="time5") {timevalue=Math.floor(time.Eval.Idő5*rule5)}; 
+const timespan=document.createElement("span"); timespan.textContent=`: ${timeformat(timevalue)}`
+const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true); 
+clonediv.appendChild(titleclone); clonediv.appendChild(timespan); vardivs.ftime.appendChild(clonediv)}}
+
+function recipe (activeskill, code, skillszint, skilldiv, spantitle, vardivs) {
+const checkif=activeskill.some (row => row.Eval?.Notification); if (!checkif) return;  
+const base=Object.values(dataStore2.Alapanyagok); const currbase=base.filter(row=>row[code]); 
+for (const row of currbase) {for (const key of Object.keys(row[code].Szintek)) {if (Number(key) <= skillszint)
+{const rdata=row[code].Szintek[key]; const ingredient=row[code].Ingredients; 
+for (const receits of rdata) {let input=[]; let input2=[]; let input3=[]; let input4=[];
+const material=receits.output; 
+for (const block of ingredient) 
+{if (block.type==="and") {const text=Object.entries(block.items).map(([ing,amount]) => `${receits.multiplier*amount} db ${receits.inputqual} ${ing}`); input.push(text.join (" + "));}; 
+if (block.type==="or") {const text2=Object.entries(block.items).map(([ing,amount]) => `${receits.multiplier*amount} db ${receits.inputqual} ${ing}`); input2.push(`(${text2.join (" VAGY ")})`);
+}}; 
+for (const block2 of material) 
+{if (block2.type==="and") {const text3=Object.entries(block2.items).map(([ing, amount]) => {if (ing==="Meshik" || ing === "Nimesh") {return `${amount} db ${ing}`} else 
+{return `${amount} db ${receits.outputqual} ${ing}`}}); input3.push(text3.join(" + "));}
+if (block2.type==="or") {const text4=Object.entries(block2.items).map(([ing, amount]) => {if (receits.chquality) {return `${amount} db ${rdata.chquality} ${ing}`} else
+{return `${amount} db ${receits.outputqual} ${ing}`}}); input4.push(`(${text4.join(" VAGY ")})`);}}
+const finput=input.join (" + "); const finput2=input2.join(" + "); const finput3=input3.join (" + "); const finput4=input4.join(" + ");
+const span6=document.createElement("span"); span6.style.color="orange"; if (finput4) {span6.textContent=`${finput3} + (${finput4}) =`;} else {span6.textContent=`${finput3}=`}
+const span7=document.createElement("span"); span7.style.color="white"; if (finput2) {span7.textContent=`${finput} + (${finput2})`} else {span7.textContent=`${finput}`};
+const recipeline=document.createElement("div"); recipeline.appendChild(span6); recipeline.appendChild(span7); vardivs.frecipe.appendChild(recipeline);}}}};
+const allspan=vardivs.frecipe.querySelectorAll("div") 
+const span8=document.createElement("span"); span8.textContent="Megszerzett Receptek"; span8.classList.add("badge"); span8.style.color="aquamarine"; 
+if (!vardivs.frecipe.querySelector(".badge")) {vardivs.frecipe.appendChild(span8); allspan[0].parentNode.insertBefore(span8, allspan[0])}};
+
+function timeformat(x) {const h=String(Math.floor(x/3600)).padStart(2,"0"); const m=String(Math.floor((x % 3600)/60)).padStart(2,"0"); const s=String(x%60).padStart(2, "0");
+                        return `${h}:${m}:${s}`;}
 
 function rebuildstats (vardivs) {
 update()
@@ -433,42 +503,3 @@ const statline4=document.createElement("li"); statline4.textContent=item.title +
 const statline5=document.createElement("span"); statline5.textContent=jatekos[item.key] || 0;
 statline4.appendChild(statline5); statlist2.appendChild(statline4)}
 vardivs.fstat.appendChild(statlist2); vardivs.fstat.appendChild(statlist)}
-
-function skilltime (activeskill, skilldiv, spantitle, vardivs) {
-const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 
-const timeloop={time1:activeskill.filter(row=>row.Eval && row.Eval.Idő1), time2:activeskill.filter(row=>row.Eval && row.Eval.Idő2), 
-                time3:activeskill.filter(row=>row.Eval && row.Eval.Idő3), time4:activeskill.filter(row=>row.Eval &&row.Eval.Idő4), 
-                time5:activeskill.filter(row=>row.Eval && row.Eval.Idő5)};
-const rule1=(1-Math.floor(jatekos.Inspiráció/4)/100); const rule2=(1-Math.floor(jatekos.Intelligencia/4)/100); const rule3=(1-Math.floor(jatekos.Felismerés/4)/100);
-const rule4=(1-Math.floor(jatekos.Tehetség/5)/100); const rule5=(1+Math.floor(jatekos.Tehetség/5)/100);
-for (const key in timeloop) {if (!timeloop[key].length) continue; const timeindex=timeloop[key].length-1; const time=timeloop[key][timeindex]; let timevalue
-if (key==="time1") {timevalue= Math.floor(time.Eval.Idő1*rule1)}; if (key==="time2") {timevalue=Math.floor(time.Eval.Idő2*rule2)}; 
-if (key==="time3") {timevalue=Math.floor(time.Eval.Idő3*rule3);} if (key==="time4") {timevalue=Math.floor(time.Eval.Idő4*rule4)};
-if (key==="time5") {timevalue=Math.floor(time.Eval.Idő5*rule5)}; 
-const timespan=document.createElement("span"); timespan.textContent=`: ${timeformat(timevalue)}`
-const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true); 
-clonediv.appendChild(titleclone); clonediv.appendChild(timespan); vardivs.ftime.appendChild(clonediv)}}
-
-function recipe (activeskill, code, skillszint, skilldiv, spantitle, vardivs) {
-let input=[]; let input2=[]; let input3=[]; let input4=[];
-const checkif=activeskill.some (row => row.Eval.Notification); if (!checkif) return;  
-const base=Object.values(dataStore2.Alapanyagok); const currbase=base.filter(row=>row[code]); 
-for (const row of currbase) {for (const key of Object.keys(row[code].Szintek)) {if (Number(key) <= skillszint)
-{const rdata=row[code].Szintek[key]; const ingredient=row[code].Ingredients; const material=rdata.output; 
-for (const block of ingredient) 
-{if (block.type==="and") {const text=Object.entries(block.items).map(([ing,amount]) => `${rdata.multiplier*amount} db ${rdata.inputqual} ${ing}`); input.push(text.join (" + "));}; 
-if (block.type==="or") {const text2=Object.entries(block.items).map(([ing,amount]) => `${rdata.multiplier*amount} db ${rdata.inputqual} ${ing}`); input2.push(text2.join (" OR "));}};
-for (const block2 of material)
-{if (block2.type==="and") {const text3=Object.entries(block2.items).map(([ing, amount]) => {if (ing==="Meshik" || ing === "Nimesh") {return `${amount} db ${ing}`} else 
-{return `${amount} db ${rdata.outputqual} ${ing}`}}); input3.push(text3.join(" + "));}
-if (block2.type==="or") {const text4=Object.entries(block2.items).map(([ing, amount]) => {if (rdata.chquality) {return `${amount} db ${rdata.chquality} ${ing}`} else
-{return `${amount} db ${rdata.outputqual} ${ing}`}}); input4.push(text4.join(" OR "));}}; }
-const finput=input.join (" + "); const finput2=input2.join (" + "); const finput3=input3.join (" + "); const finput4=input4.join(" + ");
-const span6=document.createElement("span"); span6.style.color="green"; span6.textContent=`${finput3} + (${finput4}) =`;
-const span7=document.createElement("span"); span7.style.color="white"; span7.textContent=`${finput} + (${finput2})`; 
-vardivs.frecipe.appendChild(span6); vardivs.frecipe.appendChild(span7)}}};  
-
-
-function timeformat(x) {const h=String(Math.floor(x/3600)).padStart(2,"0"); const m=String(Math.floor((x % 3600)/60)).padStart(2,"0"); const s=String(x%60).padStart(2, "0");
-                        return `${h}:${m}:${s}`;}
-
