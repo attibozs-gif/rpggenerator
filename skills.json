@@ -239,16 +239,16 @@
 
 "A Nyelvek Ismerete":   {"header": "Nyelvismerettel, nyelvtudományokkal és ősi grammatikával kapcsolatban",
                         "levels": [
-                {"Szint":1, "Kummulatív":"A játékos képes a táji akcentusok, nyelvi sajátosságok felismerésére, még akkor is ha nem beszéli az adott nyelvet, +1 választott nyelvhez", 
+                {"Szint":1, "Kummulatív":"A játékos képes a táji akcentusok, nyelvi sajátosságok felismerésére, még akkor is ha nem beszéli az adott nyelvet, +1 2 db választott nyelvhez", 
                             "Nem Kummulatív":"+2 Meshik egyéni küldetések teljesítéséért"},
                 {"Szint":2, "Kummulatív":"+2 Felismerés tesztekhez, +3 Inspiráció tesztekhez", "Nem Kummulatív":"+5 Meshik egyéni küldetések teljesítéséért"},
                 {"Szint":3, "Kummulatív":"+1 Ekkalri kapcsolat", "Nem Kummulatív":"+7 Meshik egyéni küldetések teljesítéséért"},
                 {"Szint":4, "Kummulatív":"Bónusz képzettség: 2. szintű A Hit Ismerete", "Nem Kummulatív":"+10 Meshik egyéni küldetések teljesítéséért"},
-                {"Szint":5, "Kummulatív":"+2 választott nyelvhez", "Nem Kummulatív":"+1 Nimesh egyéni küldetések teljesítéséért"},
+                {"Szint":5, "Kummulatív":"+1 2 db választott nyelvhez", "Nem Kummulatív":"+1 Nimesh egyéni küldetések teljesítéséért"},
                 {"Szint":6, "Kummulatív":"+5 spirituális ellenállás", "Nem Kummulatív":"+4 Nimesh egyéni küldetések teljesítéséért"},
                 {"Szint":7, "Kummulatív":"+2 Inspiráció tesztekhez,+3 Felismerés tesztekhez", "Nem Kummulatív":"+7 Nimesh egyéni küldetések teljesítéséért"},
                 {"Szint":8, "Kummulatív":"Bónusz képzettség: 3.szintű Az Áldomás Fohásza", "Nem Kummulatív":"+10 Nimesh egyéni küldetések teljesítéséért"},
-                {"Szint":9, "Kummulatív":"+2 választott nyelvhez és +5 Becs", "Nem Kummulatív":"+12 Nimesh egyéni küldetések teljesítéséért"},
+                {"Szint":9, "Kummulatív":"+1 2 db választott nyelvhez és +5 Becs", "Nem Kummulatív":"+12 Nimesh egyéni küldetések teljesítéséért"},
                 {"Szint":10, "Kummulatív": "Egyedi képesség: PARANCS:Napi 1,Erő:60,ell:mentális,Költ:3AP,Időt:18 AP,Maximum 4 szavas parancs, ami nem káros az egészségre", 
                              "Nem Kummulatív":"+15 Nimesh egyéni küldetések teljesítéséért"}]},
 
@@ -912,16 +912,16 @@
         {"Szint":10, "Fixtext":"A játékos képes a Szemle Himnusza által készült Makulátlan tárgyak azonosítására, napi 1 azonosítás", "Eval":{"Idő4":1500},
                      "Text":"Napi 3 előadás, eltérő településeken vagy kerületben, 7 Nimesh jutalom előadásonként"}],
 
-"Nyei":[{"Szint":1, "Eval":{"Selection2": {"Nyelv":1, "Count":1}}, "Text":"+2 Meshik Egyéni Küldetések teljesítéséért", 
-        "Fixtext":"A játékos képes a táji akcentusok, nyelvi sajátosságok felismerésére, még akkor is ha nem beszéli az adott nyelvet"},
+"Nyei":[{"Szint":1, "Eval":{"Selection":[{"Nyelv":{"Minőség":"nincs", "Count":1}}, {"Nyelv":{"Minőség":"nincs", "Count":1}}], "Text":"+2 Meshik Egyéni Küldetések teljesítéséért", 
+        "Fixtext":"A játékos képes a táji akcentusok, nyelvi sajátosságok felismerésére, még akkor is ha nem beszéli az adott nyelvet"}},
         {"Szint":2, "Eval":{"FelismerésTeszt":2, "InspirációTeszt":3}, "Text":"+5 Meshik Egyéni Küldetések teljesítéséért"},
         {"Szint":3, "Eval":{"Kapcsolat":{"Ekkalri":1}}, "Text":"+7 Meshik Egyéni Küldetések teljesítéséért"},
         {"Szint":4, "Eval":{"Skill":{"A Hit Ismerete":2}}, "Text":"+10 Meshik Egyéni Küldetések teljesítéséért"},
-        {"Szint":5, "Eval":{"Selection2": {"Nyelv":2, "Count":1}}, "Text":"+1 Nimesh Egyéni Küldetések teljesítéséért"},
+        {"Szint":5, "Eval":{"Selection": [{"Nyelv":{"Minőség":"nincs", "Count":1}}, {"Nyelv":{"Minőség":"nincs", "Count":1}}], "Text":"+1 Nimesh Egyéni Küldetések teljesítéséért"}},
         {"Szint":6, "Eval":{"Sell":5}, "Text":"+4 Nimesh Egyéni Küldetések teljesítéséért"},
         {"Szint":7, "Eval":{"InspirációTeszt":2, "FelismerésTeszt":3}, "Text":"+7 Nimesh Egyéni Küldetések teljesítéséért"},
         {"Szint":8, "Eval":{"Skill":{"Az Áldomás Fohásza":3}}, "Text":"+10 Nimesh Egyéni Küldetések teljesítéséért"},
-        {"Szint":9, "Eval":{"Selection2": {"Nyelv":2, "Count":1}, "Becs":5}, "Text":"+12 Nimesh Egyéni Küldetések teljesítéséért"},
+        {"Szint":9, "Eval":{"Selection": [{"Nyelv":{"Minőség":"nincs", "Count":1}}, {"Nyelv":{"Minőség":"nincs", "Count":1}}], "Becs":5}, "Text":"+12 Nimesh Egyéni Küldetések teljesítéséért"},
         {"Szint":10, "Abitext":{"PARANCS":{"Használat":"Napi 1", "Hatótáv": "teljes csatatér", "Erő":60, "Ellenállás":"Mentális", "Költség":3, "Időtartam":18, "Hatás":"Maximum 4 szavas parancs, amit a célpont követni fog, ami nem lehet káros az egészségére, nyelvismeret függő"}},
                      "Text":"+15 Nimesh Egyéni küldetések teljesítéséért"}],                   
 
@@ -1039,7 +1039,10 @@
                                         "select":["tk","ej", "om", "vh", "af", "bc", "pf", "ve", "bu", "lp"]},
                         "Elíxir": {"Minőség": ["Romlott", "Hibás", "Nyers", "Makulátlan"],
                                         "select": ["vf", "lf", "sr", "gs", "jp", "tl", "ts", "hk"]},
-                        "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}}}, 
+                        "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}},
+                "Nyei":{"Nyelv": {"Minőség":["nincs", "nincs", "nincs"],
+                                        "select":["me", "vn", "ml", "pr", "mg"]}}}, 
+
 
 "Tárgy": {"mv":{"Név":"Merev Vért", "Típus":["Fémkéreg", "Mellvért"]}, 
            "fv":{"Név":"Fűzött Vért", "Típus":["Brigantin", "Sodronying"]}, 
@@ -1141,7 +1144,14 @@
            "hk":{"Név":"Haragkoktél"},
            "jg":{"Név":"Jellegrappa"},
            "ki":{"Név":"Készség-ital"},
-           "hf":{"Név":"Hajlam-főzet"}},  
+           "hf":{"Név":"Hajlam-főzet"},
+           "me":{"Név":"Mei"},
+           "vn":{"Név":"Venta"},
+           "ml":{"Név":"Malco"},
+           "pr":{"Név":"Prosant"},
+           "mg":{"Név":"Mergla"}},  
+
+   
       
         
                                        
