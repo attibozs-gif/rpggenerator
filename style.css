@@ -125,11 +125,23 @@ gap:10px; justify-content: center; align-items: start;}
 .finalcheck {font-size: large;}
 .finalsheet {background-color: black; width: 100vw; height: 100lvh; display: flex; flex-direction: column;}
 .finalsheet span {color: white;}
-.finalstat span, .finaltext span, .finalvartext span, .finalrecipe span, .finalability span {display: flex; flex-direction: row;} 
+.finalstat span, .finaltext span, .finalvartext span, .finalability span {display: flex; flex-direction: row;} 
 #content .finalsheet {display: block;}
 
 span.szalag {color: aquamarine;}
 .culture li {color:white}
-.culture p {color: beige;}
+.culture p {color: aquamarine;}
 .finalstat {color:white ; width:40%; display:flex; flex-direction: row;}
-.finalstat li {color:white ; display: flex; flex-direction: row; align-items: baseline; gap:5px}
+.finalstat li {color:white ; display: flex; flex-direction: row; align-items:first baseline; gap:5px}
+.finalrecipe {display:flex; flex-direction:column}
+.finalrecipe div {display:flex; flex-direction:row; align-items:baseline; gap:3px; flex-wrap:wrap}
+.finalrecipe span {font-size:15px; width: fit-content; min-width:0; white-space: normal; overflow-wrap: anywhere; max-width:50% }
+.finalrecipe .badge {font-size:large}
+
+
+.checking {position: fixed; top:50%; left:50%; transform:translate(-50%, -50%); background: #8a7155; color:#f2e6d0; word-spacing: normal; 
+        border: 4px solid; border-color: rgb(207, 207, 207); box-shadow:inset 2px, 2px, 0 #858585, inset -2px, -2px 0 #e7e7e7 }
+.checking input[type="checkbox"] {width: 15px; height:15px}
+.checking span{display: flex; flex-wrap: wrap; align-items: baseline;}
+.confirm {font-size: x-large;}
+.confirm{justify-content: center;}

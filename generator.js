@@ -3,27 +3,27 @@ const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skill
 kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
-console.trace("NYELV WAS MODIFIED:", jatekos.Nyelv);
+
 
 music();
 
 let attributespan;
 
-function update () {Object.assign
-                (jatekos, alkaszt, kaszt, karakter, {
-                atk: (karakter.atk || 0) + (kaszt.atk || 0) + (alkaszt.atk || 0),
-                def: (karakter.def || 0) + (kaszt.def || 0) + (alkaszt.def || 0),
-                HP: (karakter.HP || 0) + (kaszt.HP || 0) + (alkaszt.HP || 0),
-                regen: (karakter.regen || 0) + (kaszt.regen || 0) + (alkaszt.regen || 0),
-                Fizikum: (karakter.Fizikum || 0) + (kaszt.Fizikum || 0) + (alkaszt.Fizikum || 0),
-                Állóképesség: (karakter.Állóképesség || 0) + (kaszt.Állóképesség || 0) + (alkaszt.Állóképesség || 0),
-                Ügyesség: (karakter.Ügyesség || 0) + (kaszt.Ügyesség || 0) + (alkaszt.Ügyesség || 0),
-                Gyorsasság: (karakter.Gyorsasság || 0) + (kaszt.Gyorsasság || 0) + (alkaszt.Gyorsasság || 0),
-                Intelligencia: (karakter.Intelligencia || 0) + (kaszt.Intelligencia || 0) + (alkaszt.Intelligencia || 0),
-                Tehetség: (karakter.Tehetség || 0) + (kaszt.Tehetség || 0) + (alkaszt.Tehetség || 0),
-                Felismerés: (karakter.Felismerés || 0) + (kaszt.Felismerés || 0) + (alkaszt.Felismerés || 0),
-                Inspiráció: (karakter.Inspiráció || 0) + (kaszt.Inspiráció || 0) + (alkaszt.Inspiráció || 0)});
-                
+function update () {
+                jatekos.name=kaszt.name; jatekos.subname=alkaszt.subname; jatekos.currSP=alkaszt.currSP; jatekos.currAP=alkaszt.currAP;
+                jatekos.Atk= (karakter.Atk || 0) + (kaszt.Atk || 0) + (alkaszt.Atk || 0);
+                jatekos.Def= (karakter.Def || 0) + (kaszt.Def || 0) + (alkaszt.Def || 0);
+                jatekos.HP= (karakter.HP || 0) + (kaszt.HP || 0) + (alkaszt.HP || 0);
+                jatekos.regen= (karakter.regen || 0) + (kaszt.regen || 0) + (alkaszt.regen || 0);
+                jatekos.Fizikum= (karakter.Fizikum || 0) + (kaszt.Fizikum || 0) + (alkaszt.Fizikum || 0);
+                jatekos.Állóképesség= (karakter.Állóképesség || 0) + (kaszt.Állóképesség || 0) + (alkaszt.Állóképesség || 0);
+                jatekos.Ügyesség= (karakter.Ügyesség || 0) + (kaszt.Ügyesség || 0) + (alkaszt.Ügyesség || 0);
+                jatekos.Gyorsasság= (karakter.Gyorsasság || 0) + (kaszt.Gyorsasság || 0) + (alkaszt.Gyorsasság || 0);
+                jatekos.Intelligencia= (karakter.Intelligencia || 0) + (kaszt.Intelligencia || 0) + (alkaszt.Intelligencia || 0);
+                jatekos.Tehetség= (karakter.Tehetség || 0) + (kaszt.Tehetség || 0) + (alkaszt.Tehetség || 0);
+                jatekos.Felismerés= (karakter.Felismerés || 0) + (kaszt.Felismerés || 0) + (alkaszt.Felismerés || 0);
+                jatekos.Inspiráció= (karakter.Inspiráció || 0) + (kaszt.Inspiráció || 0) + (alkaszt.Inspiráció || 0);
+
                 alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsasság)/2); alkaszt.Fell=Math.floor((alkaszt.Fizikum+alkaszt.Állóképesség)/2); 
                 alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
                 kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
@@ -31,19 +31,6 @@ function update () {Object.assign
                 alkaszt.Critdmg=alkaszt.Crit/alkaszt.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2);
                 alkaszt.Spdseg=Math.floor(alkaszt.Gyorsasság/5); alkaszt.Ero=Math.floor(alkaszt.Tehetség/4); 
 
-                attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
-                "Ügyesség": cont.querySelector (".ugyesseg"), "Gyorsasság": cont.querySelector(".gyorsassag"),
-                "Intelligencia": cont.querySelector (".intelligencia"), "Tehetség":cont.querySelector(".tehetseg"),
-                "Felismerés": cont.querySelector (".felismeres"), "Inspiráció": cont.querySelector(".inspiracio")} 
-
-                for (const key in attributespan) {alkaszt[key+"Teszt"]=Math.floor(jatekos[key]/10);
-                {attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 100} 
-                <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}; 
-
-                Object.assign(jatekos.Skills, alkaszt.Skills, kaszt.Skills, karakter.Skills);
-              for (const key in jatekos.Skills) {jatekos.Skills[key]=(kaszt.Skills[key] || 0) + (alkaszt.Skills[key] || 0) + (karakter.Skills[key] || 0)};
-                                                    
-                
                 jatekos.Critdmg= (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0);
                 jatekos.Becs=(karakter.Becs || 0) + (alkaszt.Becs || 0) + (kaszt.Becs || 0); 
                 jatekos.Agi= (karakter.Agi || 0) + (kaszt.Agi || 0) + (alkaszt.Agi || 0);
@@ -54,6 +41,16 @@ function update () {Object.assign
                 jatekos.Spdseg= (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0);
                 jatekos.Dmg= (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0);
                 jatekos.Dodgeseg=(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0);
+
+                attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
+                "Ügyesség": cont.querySelector (".ugyesseg"), "Gyorsasság": cont.querySelector(".gyorsassag"),
+                "Intelligencia": cont.querySelector (".intelligencia"), "Tehetség":cont.querySelector(".tehetseg"),
+                "Felismerés": cont.querySelector (".felismeres"), "Inspiráció": cont.querySelector(".inspiracio")} 
+
+                for (const key in attributespan) {alkaszt[key+"Teszt"]=Math.floor(jatekos[key]/10);
+                {attributespan[key].innerHTML=`<span style="color: rgb(230, 241, 75); font-weight: bold"> ${jatekos[key]}</span> / ${alkaszt.limit[key] || 100} 
+                <span> / Teszt: </span> ${alkaszt[key+"Teszt"]}`}}; 
+
                 jatekos.FizikumTeszt=(karakter.FizikumTeszt || 0) + (kaszt.FizikumTeszt || 0) + (alkaszt.FizikumTeszt || 0);
                 jatekos.ÁllóképességTeszt=(karakter.ÁllóképességTeszt || 0) + (kaszt.ÁllóképességTeszt || 0) + (alkaszt.ÁllóképességTeszt || 0);
                 jatekos.ÜgyességTeszt=(karakter.ÜgyességTeszt || 0) + (kaszt.ÜgyességTeszt || 0) + (alkaszt.ÜgyességTeszt || 0);
@@ -62,22 +59,22 @@ function update () {Object.assign
                 jatekos.TehetségTeszt=(karakter.TehetségTeszt|| 0) + (kaszt.TehetségTeszt || 0) + (alkaszt.TehetségTeszt || 0);
                 jatekos.FelismerésTeszt=(karakter.FelismerésTeszt || 0) + (kaszt.FelismerésTeszt || 0) + (alkaszt.FelismerésTeszt || 0);
                 jatekos.InspirációTeszt=(karakter.InspirációTeszt || 0) + (kaszt.InspirációTeszt || 0) + (alkaszt.InspirációTeszt || 0);
-                jatekos.Armor=(karakter.Armor || 0) + (alkaszt.Armor || 0) + (kaszt.Armor || 0); 
-
-              
-            jatekos.Nyelv.Mergla = (alkaszt.Nyelv.Mergla || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Mergla || 0);
-            jatekos.Nyelv.Mei = (alkaszt.Nyelv.Mei || 0) + (kaszt.Nyelv.Mei || 0) + (karakter.Nyelv.Mei || 0);
-            jatekos.Nyelv.Venta = (alkaszt.Nyelv.Venta || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Venta || 0);
-            jatekos.Nyelv.Malco = (alkaszt.Nyelv.Malco || 0) + (kaszt.Nyelv.Malco || 0) + (karakter.Nyelv.Malco || 0);
-            jatekos.Nyelv.Prosant = (alkaszt.Nyelv.Prosant || 0) + (kaszt.Nyelv.Prosant || 0) + (karakter.Nyelv.Prosant || 0);
-            jatekos.Kapcsolat.Kahal = (alkaszt.Kapcsolat.Kahal || 0) + (kaszt.Kapcsolat.Kahal || 0) + (karakter.Kapcsolat.Kahal || 0);
-            jatekos.Kapcsolat.Edubra = (alkaszt.Kapcsolat.Edubra || 0) + (kaszt.Kapcsolat.Edubra || 0) + (karakter.Kapcsolat.Edubra || 0);
-            jatekos.Kapcsolat.Ekkalri = (alkaszt.Kapcsolat.Ekkalri || 0) + (kaszt.Kapcsolat.Ekkalri || 0) + (karakter.Kapcsolat.Ekkalri || 0);
-            jatekos.Kapcsolat.Shatra = (alkaszt.Kapcsolat.Shatra || 0) + (kaszt.Kapcsolat.Shatra || 0) + (karakter.Kapcsolat.Shatra || 0);
-            jatekos.Kapcsolat.Siphal = (alkaszt.Kapcsolat.Siphal || 0) + (kaszt.Kapcsolat.Siphal || 0) + (karakter.Kapcsolat.Siphal || 0);
-            jatekos.Kapcsolat.Gestri = (alkaszt.Kapcsolat.Gestri || 0) + (kaszt.Kapcsolat.Gestri || 0) + (karakter.Kapcsolat.Gestri || 0);
-            
-                             
+                jatekos.Armor=(karakter.Armor || 0) + (alkaszt.Armor || 0) + (kaszt.Armor || 0);            
+                jatekos.Nyelv.Mergla = (alkaszt.Nyelv.Mergla || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Mergla || 0);
+                jatekos.Nyelv.Mei = (alkaszt.Nyelv.Mei || 0) + (kaszt.Nyelv.Mei || 0) + (karakter.Nyelv.Mei || 0);
+                jatekos.Nyelv.Venta = (alkaszt.Nyelv.Venta || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Venta || 0);
+                jatekos.Nyelv.Malco = (alkaszt.Nyelv.Malco || 0) + (kaszt.Nyelv.Malco || 0) + (karakter.Nyelv.Malco || 0);
+                jatekos.Nyelv.Prosant = (alkaszt.Nyelv.Prosant || 0) + (kaszt.Nyelv.Prosant || 0) + (karakter.Nyelv.Prosant || 0);
+                jatekos.Kapcsolat.Kahal = (alkaszt.Kapcsolat.Kahal || 0) + (kaszt.Kapcsolat.Kahal || 0) + (karakter.Kapcsolat.Kahal || 0);
+                jatekos.Kapcsolat.Edubra = (alkaszt.Kapcsolat.Edubra || 0) + (kaszt.Kapcsolat.Edubra || 0) + (karakter.Kapcsolat.Edubra || 0);
+                jatekos.Kapcsolat.Ekkalri = (alkaszt.Kapcsolat.Ekkalri || 0) + (kaszt.Kapcsolat.Ekkalri || 0) + (karakter.Kapcsolat.Ekkalri || 0);
+                jatekos.Kapcsolat.Shatra = (alkaszt.Kapcsolat.Shatra || 0) + (kaszt.Kapcsolat.Shatra || 0) + (karakter.Kapcsolat.Shatra || 0);
+                jatekos.Kapcsolat.Siphal = (alkaszt.Kapcsolat.Siphal || 0) + (kaszt.Kapcsolat.Siphal || 0) + (karakter.Kapcsolat.Siphal || 0);
+                jatekos.Kapcsolat.Gestri = (alkaszt.Kapcsolat.Gestri || 0) + (kaszt.Kapcsolat.Gestri || 0) + (karakter.Kapcsolat.Gestri || 0);
+                
+                Object.assign(jatekos.Skills, alkaszt.Skills, kaszt.Skills, karakter.Skills);
+                 for (const key in jatekos.Skills) {jatekos.Skills[key]=(kaszt.Skills[key] || 0) + (alkaszt.Skills[key] || 0) + (karakter.Skills[key] || 0)};
+                                                              
                 const kasztnev = cont.querySelector(".kasztnev"); const alkasztnev = cont.querySelector (".alkasztnev");
                 const currSP = cont.querySelectorAll(".currSP"); const currAP =cont.querySelector (".currAP");
                 const atk2 = cont.querySelector(".atk"); const def2 = cont.querySelector(".def"); const hp2 =cont.querySelector(".health")
@@ -102,9 +99,8 @@ function update () {Object.assign
                 seg2.textContent=jatekos.Dodgeseg; dam.textContent=jatekos.Dmg;
                 
                 petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
-                petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen; }
-                
-                         
+                petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen  };     
+                                         
 let cindex=0;
 document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP");
 startSP.addEventListener("input", () => {alkaszt.startSP = Number(startSP.value)
@@ -147,7 +143,9 @@ const span2 = event.target.parentElement.querySelector("#CurrentSubclass");
 if (!span2.array) {span2.array=dataStore.Subclasses[kaszt.name]; span2.index=0};
 if (event.target.id === "PreviousSubclass") {span2.index = span2.index===0 ? span2.array.length-1:span2.index -1}; 
 if (event.target.id === "NextSubclass") {span2.index=span2.index===span2.array.length -1 ? 0:span2.index +1}; 
-const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; statsearch(); petrender();
+const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; 
+const sconnect=dataStore.Kapcsolat[code]; Object.assign(alkaszt.Kapcsolat, sconnect); const stongue=dataStore.Nyelv[code]; Object.assign(alkaszt.Nyelv, stongue);
+statsearch(); petrender();
 })
 
 let pindex=0; 
@@ -329,22 +327,18 @@ for (const id of craftpool[groupname].select) {const qual=kaszt.Selection[id] ? 
 if (rquality!==craftpool[groupname].Minőség[qual]) {continue};
 const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.dataset.id=id; const tag=document.createElement("label");
 checkbox.checked=!!kaszt.Selection[id]?.[rquality]; 
+if (checkbox.checked) {countindex=countindex+1}
 checkbox.addEventListener("change", () =>{if (checkbox.checked && countindex>=count) {checkbox.checked=false; return}; 
 if (checkbox.checked) {if (!kaszt.Selection[id]) {kaszt.Selection[id]={}};
-kaszt.Selection[id][rquality]=true} else 
-{delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]};};
-countindex=Array.from(craftpool[groupname].select).filter(id=>kaszt.Selection[id]?.[rquality]).length;
-span9.textContent=`Választható:${count-countindex}`;}); 
+kaszt.Selection[id][rquality]=true; countindex=countindex+1} else 
+{delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]}; countindex=countindex-1};
+span9.textContent=`Minőség:${rquality}, Még Választható:${count-countindex}`;}); 
 tag.textContent=dataStore2.Tárgy[id].Név; container.appendChild(checkbox); container.appendChild(tag)};
-countindex=Array.from(craftpool[groupname].select).filter(id=>kaszt.Selection[id]?.[rquality]).length; 
 span9.textContent=`Választható:${count-countindex}`;
 container.appendChild(span9); selbox.appendChild(container)}; 
-selbox.classList.remove("hidden"); cont.appendChild(selbox)};
-
-
-
-
-
+selbox.classList.remove("hidden"); cont.appendChild(selbox)
+const buttonok=selbox.querySelector(".confirm"); selbox.addEventListener("click", (event)=> {if (event.target!==buttonok) {return}; selbox.classList.add("hidden")})
+};
 
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
@@ -358,6 +352,9 @@ const image=skillEx.querySelector(".image").cloneNode(false);
 image.style.width="70px"; image.style.height="70px"; const icon=emptangle[0]; icon.appendChild(image); icon.classList.remove("empty"); icon.classList.add("full"); 
 icon.dataset.skillcode=code; icon.dataset.instance=lastind; 
 let skillspan=icon.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); icon.appendChild(skillspan)} skillspan.textContent=kaszt.Skills[code][lastind]}}
+
+function bonuskill (activecraft, craftrow) {}
+
 
 function skilldisappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
 let lastind=kaszt.Skills[code].length-1; if (!fulltangle.length) return; if (kaszt.Skills[code][lastind] === 0) {
@@ -430,15 +427,15 @@ ultitle.textContent="Kulturális Adatok:"; culture.appendChild(ultitle);
 culture.appendChild(culture2); culture.appendChild(culture3);} 
 
 function socialstats (activeskill, vardivs) {
-  console.trace (jatekos.Felismerés) 
-const whitelist=["Fizikum", "FizikumTeszt", "Állóképesség", "ÁllóképességTeszt", "Ügyesség", "ÜgyességTeszt", "Gyorsasság", "GyorsasságTeszt", 
+  const whitelist=["Fizikum", "FizikumTeszt", "Állóképesség", "ÁllóképességTeszt", "Ügyesség", "ÜgyességTeszt", "Gyorsasság", "GyorsasságTeszt", 
                 "Intelligencia", "IntelligenciaTeszt", "Tehetség", "TehetségTeszt", "Felismerés", "FelismerésTeszt", "Inspiráció", "InspirációTeszt",
                  "Ero", "Armor", "Mell", "Sell", "Fell", "Atk", "Def", "Agi", "HP", "slimit", "ilimit", "alimit"]
 for (const row of activeskill) {if (!row.Eval) {continue}; 
 if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
 if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
 for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
-if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}}
+;
 update(); console.trace (jatekos.Felismerés)};
 
 function skilltime (activeskill, skilldiv, spantitle, vardivs) {
