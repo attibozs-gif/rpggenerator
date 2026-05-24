@@ -760,15 +760,15 @@
                                 {"SP":225, "Skillslot":7},
                                 {"SP":275, "Skillslot":8}],
 "Zsivány": [
-                                {"SP":1, "Skillslot":1},
-                                {"SP":3, "Skillslot":2},
-                                {"SP":30, "Skillslot":3},
-                                {"SP":75, "Skillslot":4},
-                                {"SP":120, "Skillslot":5},
-                                {"SP":165, "Skillslot":6},
-                                {"SP":205, "Skillslot":7},
-                                {"SP":245, "Skillslot":8},
-                                {"SP":285, "Skillslot":9}],
+                                {"SP":1, "Skillslot":2},
+                                {"SP":3, "Skillslot":3},
+                                {"SP":40, "Skillslot":4},
+                                {"SP":90, "Skillslot":5},
+                                {"SP":130, "Skillslot":6},
+                                {"SP":170, "Skillslot":7},
+                                {"SP":210, "Skillslot":8},
+                                {"SP":250, "Skillslot":9}],
+                               
 "Fanatikus": [
                                 {"SP":1, "Skillslot":1},
                                 {"SP":3, "Skillslot":2},
@@ -779,16 +779,16 @@
                                 {"SP":230, "Skillslot":7},
                                 {"SP":280, "Skillslot":8}],
 "Varázsló": [
-                                {"SP":1, "Skillslot":1},
-                                {"SP":3, "Skillslot":2},
-                                {"SP":30, "Skillslot":3},
-                                {"SP":60, "Skillslot":4},
-                                {"SP":110, "Skillslot":5},
-                                {"SP":150, "Skillslot":6},
-                                {"SP":185, "Skillslot":7},
-                                {"SP":220, "Skillslot":8},
-                                {"SP":255, "Skillslot":9},
-                                {"SP":290, "Skillslot":10}],
+                                {"SP":1, "Skillslot":2},
+                                {"SP":3, "Skillslot":3},
+                                {"SP":40, "Skillslot":4},
+                                {"SP":75, "Skillslot":5},
+                                {"SP":110, "Skillslot":6},
+                                {"SP":145, "Skillslot":7},
+                                {"SP":180, "Skillslot":8},
+                                {"SP":215, "Skillslot":9},
+                                {"SP":250, "Skillslot":10}],
+                               
 "Párbajhős": [
                                 {"SP":1, "Skillslot":1},
                                 {"SP":3, "Skillslot":2},
@@ -797,17 +797,16 @@
                                 {"SP":140, "Skillslot":5},
                                 {"SP":190, "Skillslot":6},
                                 {"SP":240,"Skillslot":7}],
-"Magiszter": [
-                                {"SP":1, "Skillslot":1},
-                                {"SP":3, "Skillslot":2},
-                                {"SP":30, "Skillslot":3},
-                                {"SP":60, "Skillslot":4},
-                                {"SP":110, "Skillslot":5},
-                                {"SP":150, "Skillslot":6},
-                                {"SP":185, "Skillslot":7},
-                                {"SP":220, "Skillslot":8},
-                                {"SP":255, "Skillslot":9},
-                                {"SP":290, "Skillslot":10}]
+
+"Magiszter": [                  {"SP":1, "Skillslot":2},
+                                {"SP":3, "Skillslot":3},
+                                {"SP":40, "Skillslot":4},
+                                {"SP":75, "Skillslot":5},
+                                {"SP":110, "Skillslot":6},
+                                {"SP":145, "Skillslot":7},
+                                {"SP":180, "Skillslot":8},
+                                {"SP":215, "Skillslot":9},
+                                {"SP":250, "Skillslot":10}]
 },                      
               
 "Inventoryslot": {
@@ -1173,22 +1172,37 @@
                   "Párbajhős": {"Invmax":10, "Skillmax":7, "Abimax":9},
                   "Magiszter": {"Invmax":15, "Skillmax":10, "Abimax":13}}],
  
-"Kapcsolat" : [{"Ira":{"Kahal":1}}, {"Con":{"Shatra":1}}, {"Van":{"Kahal":1}}, {"Car":{"Siphal":1}},
-               {"Rey":{"Siphal":1}}, {"Card":{"Shatra":1}}, {"Gan":{"Ekkalri":1}}, {"Mys":{"Gestri":1}},
-               {"Dy":{"Kahal":1}}, {"Hal":{"Gestri":1}}, {"Or":{"Siphal":1}}, {"Nem":{"Edubra":1}},
-               {"Qua":{"Ekkalri":1}}, {"Pre":{"Siphal":1}}, {"Pro":{"Ekkalri":1}}, {"Fac":{"Edubra":1}},
-               {"Anf":{"Kahal":1}}, {"Fos":{"Gestri":1}}, {"Agn":{"Edubra":1}}, {"Kym":{"Edubra":1}},
-               {"The":{"Ekkalri":1}}, {"Sak":{"Ekkalri":1}}, {"Rak":{"Siphal":1}}, {"Hek":{"Siphal":1}},
-               {"Sya":{"Kahal":1}}, {"Com":{"Ekkalri":1}}, {"Mal":{"Shatra":1}}, {"Bha":{"Gestri":1}},
-               {"Nyx":{"Kahal":1}}, {"Neme":{"Shatra":1}}, {"Ves":{"Shatra":1}}, {"Nim":{"Siphal":1}},
-               {"Epu":{"Ekkalri":1}}, {"Apo":{"Edubra":1}}, {"Har":{"Kahal":1}}, {"Api":{"Gestri":1}},
-               {"Dyn":{"Edubra":1}}, {"Phy":{"Gestri":1}}, {"Eki":{"Shatra":1}}, {"Kai":{"Ebdubra":1}},
-               {"Eid":{"Siphal":1}}, {"Ago":{"Siphal":1}}, {"Aph":{"Ekkalri":1}}, {"Man":{"Shatra":1}},
-               {"Dar":{"Gestri":1}}, {"Carn":{"Kahal":1}}, {"Dip":{"Shatra":1}}, {"Jin":{"Edubra":1}}]
+"Kapcsolat" : {"Ira":{"Kahal":1}, "Con":{"Shatra":1}, "Van":{"Kahal":1}, "Car":{"Siphal":1},
+               "Rey":{"Siphal":1}, "Card":{"Shatra":1}, "Gan":{"Ekkalri":1}, "Mys":{"Gestri":1},
+               "Dy":{"Kahal":1}, "Hal":{"Gestri":1}, "Or":{"Siphal":1}, "Nem":{"Edubra":1},
+               "Qua":{"Ekkalri":1}, "Pre":{"Siphal":1}, "Pro":{"Ekkalri":1}, "Fac":{"Edubra":1},
+               "Anf":{"Kahal":1}, "Fos":{"Gestri":1}, "Agn":{"Edubra":1}, "Kym":{"Edubra":1},
+               "The":{"Ekkalri":1}, "Sak":{"Ekkalri":1}, "Rak":{"Siphal":1}, "Hek":{"Siphal":1},
+               "Sya":{"Kahal":1}, "Com":{"Ekkalri":1}, "Mal":{"Shatra":1}, "Bha":{"Gestri":1},
+               "Nyx":{"Kahal":1}, "Neme":{"Shatra":1}, "Ves":{"Shatra":1}, "Nim":{"Siphal":1},
+               "Epu":{"Ekkalri":1}, "Apo":{"Edubra":1}, "Har":{"Kahal":1}, "Api":{"Gestri":1},
+               "Dyn":{"Edubra":1}, "Phy":{"Gestri":1}, "Eki":{"Shatra":1}, "Kai":{"Ebdubra":1},
+               "Eid":{"Siphal":1}, "Ago":{"Siphal":1}, "Aph":{"Ekkalri":1}, "Man":{"Shatra":1},
+               "Dar":{"Gestri":1}, "Carn":{"Kahal":1}, "Dip":{"Shatra":1}, "Jin":{"Edubra":1}},
 
+"Nyelv": {"Ira":{"Malco":1}, "Con":{"Mei":1}, "Van":{"Mei":1}, "Car":{"Prosant":1},
+         "Rey":{"Mei":1}, "Card":{"Mergla":1}, "Gan":{"Venta":1}, "Mys":{"Malco":1},
+         "Dy":{"Malco":1}, "Hal":{"Malco":1}, "Or":{"Mergla":1}, "Nem":{"Prosant":1},
+         "Qua":{"Venta":1}, "Pre":{"Venta":1}, "Pro":{"Mei":1}, "Fac":{"Prosant":1},
+         "Anf":{"Malco":1}, "Fos":{"Prosant":1}, "Agn":{"Malco":1}, "Kym":{"Prosant":1},
+         "The":{"Venta":1}, "Sak":{"Mergla":1}, "Rak":{"Venta":1}, "Hek":{"Mei":1},
+         "Sya":{"Malco":1}, "Com":{"Venta":1}, "Mal":{"Mei":1}, "Bha":{"Mergla":1},
+         "Nyx":{"Prosant":1}, "Neme":{"Mei":1}, "Ves":{"Mergla":1}, "Nim":{"Mergla":1},
+         "Epu":{"Venta":1}, "Apo":{"Prosant":1}, "Har":{"Malco":1}, "Apistos":{"Venta":1},
+         "Dyn":{"Mei":1}, "Phy":{"Mergla":1}, "Eki":{"Mei":1}, "Kai":{"Prosant":1},
+         "Eid":{"Mei":1}, "Ago":{"Malco":1}, "Aph":{"Venta":1}, "Man":{"Mergla":1},
+         "Dar":{"Venta":1}, "Carn":{"Malco":1}, "Dip":{"Mergla":1}, "Jin":{"Prosant":1}},
 
+"Ország":["Meiran", "Laumalco", "Ventars", "Velbruun", "Aydeliq", "Bastein", "Saehrit", "Eclepaan"],
+"Kország":{"Meiran":{"Mei":2}, "Laumalco":{"Malco":1, "Mergla":1}, "Ventars":{"Venta":2}, "Velbruun":{"Venta":1, "Prosant":1},
+           "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}}
+  }
 
-}
   
 
 		
