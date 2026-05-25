@@ -3,6 +3,7 @@ const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skill
 kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
+let cindex=0; let oindex=0; 
 
 
 music();
@@ -101,7 +102,6 @@ function update () {
                 petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
                 petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen  };     
                                          
-let cindex=0;
 document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP");
 startSP.addEventListener("input", () => {alkaszt.startSP = Number(startSP.value)
 const filteredRows = dataStore.Stats.filter (row =>Number(row.SP) === alkaszt.startSP);alkaszt.currSP=alkaszt.startSP; 
@@ -112,10 +112,15 @@ cont.addEventListener("click", (event) => {if (!dataStore) return;
 if (event.target.id !=="PreviousClass" && event.target.id !== "NextClass") {return};
 if (event.target.id === "PreviousClass") { cindex = cindex === 0 ? dataStore.Classes.length - 1 : cindex - 1;alkaszt.currAP=alkaszt.startAP} 
 if (event.target.id === "NextClass") {cindex = cindex === dataStore.Classes.length - 1 ? 0 : cindex + 1; alkaszt.currAP=alkaszt.startAP}
-const span = event.target.parentElement.querySelector("#CurrentClass"); span.textContent = dataStore.Classes[cindex]; kaszt.name = dataStore.Classes[cindex]; 
+const span = event.target.parentElement.querySelector("#CurrentClass"); 
+span.textContent = dataStore.Classes[cindex]; kaszt.name = dataStore.Classes[cindex]; 
 const span2 = cont.querySelector("#CurrentSubclass"); span2.array = dataStore.Subclasses[kaszt.name]; const code=span2.array [0]; 
 span2.index=0; span2.textContent=dataStore.Subclassname[code]
-alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code;
+alkaszt.subname=dataStore.Subclassname [code]; alkaszt.code=code; 
+alkaszt.Kapcsolat=dataStore.Kapcsolat[code]; alkaszt.Nyelv=dataStore.Nyelv[code];
+const span2c=document.querySelector("#CurrentCountry"); jatekos.startcountry=dataStore.Ország[oindex]
+span2c.textContent=dataStore.Ország[oindex]
+
 
 const petclass=cont.querySelector(".petclass"); if (kaszt.name==="Szörnypásztor") {petclass.classList.remove("hidden"); petrender()} else 
 {petclass.classList.add("hidden");
@@ -143,15 +148,21 @@ const span2 = event.target.parentElement.querySelector("#CurrentSubclass");
 if (!span2.array) {span2.array=dataStore.Subclasses[kaszt.name]; span2.index=0};
 if (event.target.id === "PreviousSubclass") {span2.index = span2.index===0 ? span2.array.length-1:span2.index -1}; 
 if (event.target.id === "NextSubclass") {span2.index=span2.index===span2.array.length -1 ? 0:span2.index +1}; 
-const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code; 
-const sconnect=dataStore.Kapcsolat[code]; Object.assign(alkaszt.Kapcsolat, sconnect); const stongue=dataStore.Nyelv[code]; Object.assign(alkaszt.Nyelv, stongue);
+const code =span2.array [span2.index]; span2.textContent=dataStore.Subclassname[code]; alkaszt.subname=dataStore.Subclassname[code]; alkaszt.code = code;
+alkaszt.Kapcsolat=dataStore.Kapcsolat[code]; alkaszt.Nyelv=dataStore.Nyelv[code]; console.log(code); console.log(dataStore.Nyelv[code]);
 statsearch(); petrender();
 })
+
+cont.addEventListener("click", (event) => {
+if (!dataStore) return; if (event.target.id!=="PreviousCountry" && event.target.id !== "NextCountry") {return};
+if (event.target.id==="PreviousCountry") {oindex= oindex=== 0 ? dataStore.Ország.length-1 : oindex-1}
+if (event.target.id==="NextCountry") {oindex = oindex===dataStore.Ország.length-1 ? 0: oindex+1}
+const span2c=document.querySelector("#CurrentCountry");
+span2c.textContent=dataStore.Ország[oindex]; jatekos.startcountry=dataStore.Ország[oindex]})
 
 let pindex=0; 
 function petrender () {if (!dataStore) {return} const cp=document.querySelector(".CurrentPet"); const petlist=dataStore.HasPet[alkaszt.code]; 
 const petselect=petlist[pindex]; cp.textContent=petselect; petsearch(); update()}
-
 cont.addEventListener("click", (event) => {if (!dataStore) return;  if (event.target.id !== "PreviousPet" && event.target.id !=="NextPet") {return};
 const petlist=dataStore.HasPet[alkaszt.code]
 if (event.target.id === "PreviousPet") {if (pindex===0) {pindex=petlist.length-1} else {pindex-=1}};
@@ -323,22 +334,32 @@ const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Poo
 for (const rule of craftrow.Eval.Selection) {const groupname=Object.keys(rule)[0]; const container=document.createElement("div"); 
 let countindex=0; 
 const rquality=rule[groupname].Minőség; const span9=document.createElement("span"); const count=rule[groupname].Count;   
-for (const id of craftpool[groupname].select) {const qual=kaszt.Selection[id] ? Object.keys(kaszt.Selection[id]).length:0; 
-if (rquality!==craftpool[groupname].Minőség[qual]) {continue};
+for (const id of craftpool[groupname].select) {if (groupname!=="Nyelv") {
+const qual=kaszt.Selection[id] ? Object.keys(kaszt.Selection[id]).length:0; 
+if (rquality!==craftpool[groupname].Minőség[qual]) {continue}};
 const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.dataset.id=id; const tag=document.createElement("label");
 checkbox.checked=!!kaszt.Selection[id]?.[rquality]; 
 if (checkbox.checked) {countindex=countindex+1}
-checkbox.addEventListener("change", () =>{if (checkbox.checked && countindex>=count) {checkbox.checked=false; return}; 
+checkbox.addEventListener("change", () =>{
+if (groupname==="Nyelv") {if (checkbox.checked && countindex>=count) {checkbox.checked=false; return}; 
+if (!kaszt.Nyelv) {kaszt.Nyelv={}}; if (checkbox.checked) {kaszt.Nyelv[id]=(kaszt.Nyelv[id] || 0) + 1; countindex=countindex+1} else
+{kaszt.Nyelv[id] = Math.max(0, (kaszt.Nyelv[id] ?? 0)-1); countindex=countindex-1}; selectionspan(groupname, span9, rquality, count); return};
+if (checkbox.checked && countindex>=count) {checkbox.checked=false; return
 if (checkbox.checked) {if (!kaszt.Selection[id]) {kaszt.Selection[id]={}};
 kaszt.Selection[id][rquality]=true; countindex=countindex+1} else 
 {delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]}; countindex=countindex-1};
-span9.textContent=`Minőség:${rquality}, Még Választható:${count-countindex}`;}); 
+selectionspan(groupname, span9, rquality, count)}}); 
 tag.textContent=dataStore2.Tárgy[id].Név; container.appendChild(checkbox); container.appendChild(tag)};
-span9.textContent=`Választható:${count-countindex}`;
+selectionspan(groupname, span9, rquality, count); 
 container.appendChild(span9); selbox.appendChild(container)}; 
 selbox.classList.remove("hidden"); cont.appendChild(selbox)
 const buttonok=selbox.querySelector(".confirm"); selbox.addEventListener("click", (event)=> {if (event.target!==buttonok) {return}; selbox.classList.add("hidden")})
 };
+
+function selectionspan (groupname, span9, rquality, count) {
+  if (groupname==="Nyelv") {span9.textconten=span9.textContent=`Nyelv tanulásból még Választható":${count-countindex}`} 
+  else {span9.textContent=`Minőség:${rquality}, Még Választható:${count-countindex}`}}
+
 
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
@@ -434,9 +455,10 @@ for (const row of activeskill) {if (!row.Eval) {continue};
 if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
 if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
 for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
-if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}}
-;
-update(); console.trace (jatekos.Felismerés)};
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
+const country=dataStore.Kország[jatekos.startcountry]; 
+for (const key in country) {if (!alkaszt.Nyelv[key]) {alkaszt.Nyelv[key]=0} alkaszt.Nyelv[key]=alkaszt.Nyelv[key]+country[key]} console.log(alkaszt.Nyelv); update() };
+
 
 function skilltime (activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 

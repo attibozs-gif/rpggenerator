@@ -9,6 +9,7 @@ html, body {height: 100%; width: 100%; margin: 0;padding: 0; overflow:auto}
 #creator {display: flex;flex-direction: row; gap: 20px; height:100vh}
 .stepper {display: flex; flex-direction: column;gap:5px;}
 .stepper.row2 {display: flex;flex-direction: row;gap:30px;}
+.stepper.row3 {display: flex;flex-direction: row;gap:30px;}
 .stepper.row {display:flex; flex-direction: column; padding:0; margin-bottom:0;}
 .stepper.hidden {width:0; opacity: 0; flex-grow: 0;}
 .sheet {display: flex; flex-wrap:nowrap; align-items: flex-start; max-width: 850px;}
