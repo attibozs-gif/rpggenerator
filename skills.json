@@ -1041,7 +1041,7 @@
                                         "select": ["vf", "lf", "sr", "gs", "jp", "tl", "ts", "hk"]},
                         "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}},
                 "Nyei":{"Nyelv": {"Minőség":["nincs", "nincs", "nincs"],
-                                        "select":["me", "vn", "ml", "pr", "mg"]}}}, 
+                                        "select":["Mei", "Venta", "Malco", "Prosnat", "Mergla"]}}}, 
 
 
 "Tárgy": {"mv":{"Név":"Merev Vért", "Típus":["Fémkéreg", "Mellvért"]}, 
@@ -1145,11 +1145,11 @@
            "jg":{"Név":"Jellegrappa"},
            "ki":{"Név":"Készség-ital"},
            "hf":{"Név":"Hajlam-főzet"},
-           "me":{"Név":"Mei"},
-           "vn":{"Név":"Venta"},
-           "ml":{"Név":"Malco"},
-           "pr":{"Név":"Prosant"},
-           "mg":{"Név":"Mergla"}},  
+           "Mei":{"Név":"Mei"},
+           "Venta":{"Név":"Venta"},
+           "Malco":{"Név":"Malco"},
+           "Prosant":{"Név":"Prosant"},
+           "Mergla":{"Név":"Mergla"}},  
 
    
       
