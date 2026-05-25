@@ -1041,7 +1041,7 @@
                                         "select": ["vf", "lf", "sr", "gs", "jp", "tl", "ts", "hk"]},
                         "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}},
                 "Nyei":{"Nyelv": {"Minőség":["nincs", "nincs", "nincs"],
-                                        "select":["Mei", "Venta", "Malco", "Prosnat", "Mergla"]}}}, 
+                                        "select":["Mei", "Venta", "Malco", "Prosant", "Mergla"]}}}, 
 
 
 "Tárgy": {"mv":{"Név":"Merev Vért", "Típus":["Fémkéreg", "Mellvért"]}, 
