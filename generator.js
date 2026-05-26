@@ -1,9 +1,18 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
 const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skills={}; karakter.Skills={}, alkaszt.Skills={}, kaszt.Skills={},
 kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
+Equipment={};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
 let cindex=0; let oindex=0; 
+
+fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
+.then (response => response.json())
+.then (data => {window.dataStore2=data;});
+
+fetch ("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/equipment.json")
+.then (response => response.json())
+.then (data=>{window.dataStore3=data;});
 
 
 music();
@@ -11,7 +20,8 @@ music();
 let attributespan;
 
 function update () {
-                jatekos.name=kaszt.name; jatekos.subname=alkaszt.subname; jatekos.currSP=alkaszt.currSP; jatekos.currAP=alkaszt.currAP;
+                jatekos.name=kaszt.name; jatekos.subname=alkaszt.subname; 
+                jatekos.currSP=Math.min(alkaszt.startSP, ((alkaszt.currSP || 0) + (kaszt.currSP || 0) + (karakter.currSP || 0))); jatekos.currAP=alkaszt.currAP;
                 jatekos.Atk= (karakter.Atk || 0) + (kaszt.Atk || 0) + (alkaszt.Atk || 0);
                 jatekos.Def= (karakter.Def || 0) + (kaszt.Def || 0) + (alkaszt.Def || 0);
                 jatekos.HP= (karakter.HP || 0) + (kaszt.HP || 0) + (alkaszt.HP || 0);
@@ -102,10 +112,10 @@ function update () {
                 petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
                 petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen  };     
                                          
-document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP");
+document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP"); 
 startSP.addEventListener("input", () => {alkaszt.startSP = Number(startSP.value)
 const filteredRows = dataStore.Stats.filter (row =>Number(row.SP) === alkaszt.startSP);alkaszt.currSP=alkaszt.startSP; 
-alkaszt.startAP=alkaszt.startSP; alkaszt.currAP=alkaszt.startAP; update();
+alkaszt.startAP=alkaszt.startSP; alkaszt.currAP=alkaszt.startAP; update(); itemstats();
 console.log(filteredRows)}); statsearch(); attribute(); });
 
 cont.addEventListener("click", (event) => {if (!dataStore) return;
@@ -243,15 +253,6 @@ case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
 case "selection": show(document.querySelector(".stepper")); break; }; })
 
-
-fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/skills.json")
-.then (response => response.json())
-.then (data => {window.dataStore2=data;});
-
-fetch ("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/equipment.json")
-.then (response => response.json())
-.then (data=>{window.dataStore3=data;});
-
 let type;
 cont.addEventListener("click", (event) => {if (event.target.dataset.tab) {skillsupdate(event)}}); 
   function skillsupdate (event) {
@@ -326,55 +327,86 @@ const grid1=cont.querySelector(".grid1"); const fulltangle= grid1.querySelectorA
 const current=lastinst || 0; if (fulltangle.length>=currlimit && current===0) return; const skillcost=current+1; 
 if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(skillEx); alkaszt.currSP-=skillcost}
 if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
-{skillappend(skillEx, lastind)}; checkbox(code, lastinst); skillapply(skillEx); update()};
+{skillappend(skillEx, lastind)}; checkbox(code, lastinst); bonuskill(code, lastinst); skillapply(skillEx); update()};
 
 function checkbox (code, lastinst) {
 const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; if (!craftrow.Eval || !craftrow.Eval.Selection) return; 
 const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Pool[code];
 for (const rule of craftrow.Eval.Selection) {const groupname=Object.keys(rule)[0]; const container=document.createElement("div"); 
-let countindex=0; 
+let countindexs=0; let countindexn=0;  
 const rquality=rule[groupname].Minőség; const span9=document.createElement("span"); const count=rule[groupname].Count;   
 for (const id of craftpool[groupname].select) {if (groupname!=="Nyelv") {
 const qual=kaszt.Selection[id] ? Object.keys(kaszt.Selection[id]).length:0; 
 if (rquality!==craftpool[groupname].Minőség[qual]) {continue}};
 const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.dataset.id=id; const tag=document.createElement("label");
 checkbox.checked=!!kaszt.Selection[id]?.[rquality]; 
-if (checkbox.checked) {countindex=countindex+1}
-checkbox.addEventListener("change", () =>{
-if (groupname==="Nyelv") {if (checkbox.checked && countindex>=count) {checkbox.checked=false; return}; 
-if (!kaszt.Nyelv) {kaszt.Nyelv={}}; if (checkbox.checked) {kaszt.Nyelv[id]=(kaszt.Nyelv[id] || 0) + 1; countindex=countindex+1} else
-{kaszt.Nyelv[id] = Math.max(0, (kaszt.Nyelv[id] ?? 0)-1); countindex=countindex-1}; selectionspan(groupname, span9, rquality, count); return};
-if (checkbox.checked && countindex>=count) {checkbox.checked=false; return
+checkbox.addEventListener("change", () =>{console.log("Before:",countindexs, countindexn, count) 
+if (checkbox.checked && ((groupname==="Nyelv" && countindexn>=count) || (groupname!=="Nyelv" && countindexs>=count))) {checkbox.checked=false; return}
+if (groupname==="Nyelv") { 
+if (!kaszt.Nyelv) {kaszt.Nyelv={}}; if (checkbox.checked) {kaszt.Nyelv[id]=(kaszt.Nyelv[id] || 0) + 1; countindexn=countindexn+1;
+console.log("After", countindexs, countindexn, count)
+selectionspan(groupname, span9, rquality, count, countindexn, countindexs)  
+} else
+{kaszt.Nyelv[id] = Math.max(0, (kaszt.Nyelv[id] ?? 0)-1); countindexn=countindexn-1;console.log("After", countindexs, countindexn, count)
+   selectionspan(groupname, span9, rquality, count, countindexn, countindexs); 
+};return} else {
 if (checkbox.checked) {if (!kaszt.Selection[id]) {kaszt.Selection[id]={}};
-kaszt.Selection[id][rquality]=true; countindex=countindex+1} else 
-{delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]}; countindex=countindex-1};
-selectionspan(groupname, span9, rquality, count)}}); 
+kaszt.Selection[id][rquality]=true; countindexs=countindexs+1; console.log("After", countindexs, countindexn, count)
+selectionspan(groupname, span9, rquality, count, countindexn, countindexs)} else 
+{delete kaszt.Selection[id][rquality]; if (Object.keys(kaszt.Selection[id]).length===0) {delete kaszt.Selection[id]}; countindexs=countindexs-1;
+console.log("After",countindexs, countindexn, count) 
+selectionspan(groupname, span9, rquality, count, countindexn, countindexs)}}});
 tag.textContent=dataStore2.Tárgy[id].Név; container.appendChild(checkbox); container.appendChild(tag)};
-selectionspan(groupname, span9, rquality, count); 
+selectionspan(groupname, span9, rquality, count, countindexn, countindexs); 
 container.appendChild(span9); selbox.appendChild(container)}; 
 selbox.classList.remove("hidden"); cont.appendChild(selbox)
 const buttonok=selbox.querySelector(".confirm"); selbox.addEventListener("click", (event)=> {if (event.target!==buttonok) {return}; selbox.classList.add("hidden")})
 };
 
-function selectionspan (groupname, span9, rquality, count) {
-  if (groupname==="Nyelv") {span9.textconten=span9.textContent=`Nyelv tanulásból még Választható":${count-countindex}`} 
-  else {span9.textContent=`Minőség:${rquality}, Még Választható:${count-countindex}`}}
-
+function selectionspan (groupname, span9, rquality, count, countindexn, countindexs) {
+  if (groupname==="Nyelv") {span9.textContent=`Nyelv tanulásból még Választható:${count-countindexn}`} 
+  else {span9.textContent=`Minőség:${rquality}, Még Választható:${count-countindexs}`}}
 
 function skillminus (skillEx) {const code=skillEx.dataset.skillcode; if (!kaszt.Skills) {kaszt.Skills={}}; 
 let lastind=kaszt.Skills[code].length-1; let lastinst=kaszt.Skills[code][lastind];
 const current=lastinst || 0; if (current===0) return; alkaszt.currSP=Math.max(0, alkaszt.currSP+current); kaszt.Skills[code][lastind]-=1; updatespan(skillEx); alkaszt.currSP=Math.min(alkaszt.currSP, alkaszt.startSP); 
-if (kaszt.Skills[code][lastind]===0) {skilldisappend(skillEx)};};
+if (kaszt.Skills[code][lastind]===0 && kaszt.Skills[code].length===1) {skilldisappend(skillEx); delete kaszt.Skills[code]; return};
+if (kaszt.Skills[code][lastind]===0 && kaszt.Skills[code].length>1) {kaszt.Skills[code].splice(lastind,1); skilldisappend(skillEx)}
+};
 
-function skillappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
-const emptangle=grid1.querySelectorAll(".generated.empty"); let lastind=kaszt.Skills[code].length-1  
-if(fulltangle.length>=currlimit) return; if (!emptangle.length) return; if (kaszt.Skills[code][lastind] ===1) {
+function skillappend (skillEx) {
+console.log("skillappend ENTER");
+const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full"); 
+const emptangle=grid1.querySelectorAll(".generated.empty"); 
+let lastind=kaszt.Skills[code].length-1  
+if (!emptangle.length) { console.log("B: EXIT no empties"); return}; console.log("C: lastind value", kaszt.Skills[code][lastind]); if (kaszt.Skills[code][lastind] ===1) {
 const image=skillEx.querySelector(".image").cloneNode(false); 
-image.style.width="70px"; image.style.height="70px"; const icon=emptangle[0]; icon.appendChild(image); icon.classList.remove("empty"); icon.classList.add("full"); 
+image.style.width="70px"; image.style.height="70px"; const icon=emptangle[0]; 
+icon.appendChild(image); icon.classList.remove("empty"); icon.classList.add("full"); 
 icon.dataset.skillcode=code; icon.dataset.instance=lastind; 
-let skillspan=icon.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); icon.appendChild(skillspan)} skillspan.textContent=kaszt.Skills[code][lastind]}}
+console.log("FINISHED)")
+let skillspan=icon.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); 
+icon.appendChild(skillspan)} skillspan.textContent=kaszt.Skills[code][lastind]}}
 
-function bonuskill (activecraft, craftrow) {}
+function bonuskill (code, lastinst) {
+const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; const grid1=cont.querySelector(".grid1"); const emptangle=grid1.querySelectorAll(".generated.empty"); 
+const firstempty=emptangle[0];  
+if (!craftrow.Eval || !craftrow.Eval.Skill) {return}; const bskill=craftrow.Eval.Skill; const bkey=Object.keys(bskill)[0]; const bvalue=bskill[bkey][0];
+if (emptangle.length > 0 && (!kaszt.Skills[bkey] || kaszt.Skills[bkey].length===0)) {kaszt.Skills[bkey] = []; kaszt.Skills[bkey].push(bvalue); checkbox(code, lastinst);
+const fakeskill=dataStore2.Skills.find(row=> row.skillcode===bkey); console.log(fakeskill); const image=document.createElement("img"); image.classList.add("image");
+image.src=fakeskill.skillimage; image.style.width="70px"; image.style.height="70px"; firstempty.appendChild(image);
+firstempty.classList.remove("empty"); firstempty.classList.add("full"); firstempty.dataset.skillcode=bkey; firstempty.dataset.instance=kaszt.Skills[bkey].length-1;
+let skillspan=firstempty.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); firstempty.appendChild(skillspan);
+skillspan.textContent=kaszt.Skills[bkey][kaszt.Skills[bkey].length-1]}}; 
+if (emptangle.length===0 && kaszt.Skills[bkey] && kaszt.Skills[bkey].length>0) {const last=kaszt.Skills[bkey].length-1; const rankskill=kaszt.Skills[bkey][last];
+const sworth=rankskill+1; const bworth=(bvalue*(bvalue+1))/2; const rchange=Math.max(0, bworth-sworth); console.log(bworth, sworth); 
+if (bworth>=sworth) {kaszt.Skills[bkey][last]+=1; const icon=cont.querySelector(`[data-skillcode="${bkey}"][data-instance="${last}"]`); console.log(icon);
+const span=icon?.querySelector("span"); if (span) {span.textContent=kaszt.Skills[bkey][last]};
+kaszt.currSP=(kaszt.currSP || 0)+rchange; console.log(alkaszt.currSP, rchange);} else {kaszt.currSP= (kaszt.currSP || 0) + bworth};
+;}
+
+}
+
 
 
 function skilldisappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
@@ -421,12 +453,16 @@ const activediv=vardivs.fvartext.appendChild(clonediv); activediv.appendChild(ti
 }; };
 
 function ftext(activeskill, skilldiv, spantitle, vardivs) {
-const checkif=activeskill.some (row => row.Fixtext); if (!checkif) {return}; 
 const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true);   
 const activediv=vardivs.ftext.appendChild(clonediv); activediv.appendChild(titleclone);
+for (const key in kaszt.Selection) {console.log("Key", key); const span10=document.createElement("span"); if (dataStore2.Tárgy[key].Típus) 
+{span10.textContent=`${Object.keys(kaszt.Selection[key])} ${dataStore2.Tárgy[key]?.Típus} előállítása`} else
+{span10.textContent=`${Object.keys(kaszt.Selection[key])} ${dataStore2.Tárgy[key]?.Név} előállítása`}; console.log("Created", span10.textContent); activediv.appendChild(span10)};
+const checkif=activeskill.some (row => row.Fixtext); if (!checkif) {return}; 
 activeskill.forEach(row => {
-const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; activediv.appendChild(span3);   
-}})};
+const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; activediv.appendChild(span3)}}); 
+console.log ("Selection", kaszt.Selection, "Div", activediv)  
+};
 
 function fability (activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row=> row.Abitext); if (!checkif) {return};
@@ -458,7 +494,6 @@ for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key]
 if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
 const country=dataStore.Kország[jatekos.startcountry]; 
 for (const key in country) {if (!alkaszt.Nyelv[key]) {alkaszt.Nyelv[key]=0} alkaszt.Nyelv[key]=alkaszt.Nyelv[key]+country[key]} console.log(alkaszt.Nyelv); update() };
-
 
 function skilltime (activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 
@@ -521,4 +556,22 @@ const statlist2=document.createElement("ul"); for (const item of merge) {
 const statline4=document.createElement("li"); statline4.textContent=item.title +":";
 const statline5=document.createElement("span"); statline5.textContent=jatekos[item.key] || 0;
 statline4.appendChild(statline5); statlist2.appendChild(statline4)}
-vardivs.fstat.appendChild(statlist2); vardivs.fstat.appendChild(statlist)}
+vardivs.fstat.appendChild(statlist2); vardivs.fstat.appendChild(statlist);
+const coolture=fsheet.querySelector(".culture"); 
+vardivs.fstat.appendChild(coolture)}
+
+
+function itemstats () {
+const pslot=document.querySelector(".Prslot"); const crslot=document.querySelector(".Crslot"); const nslot=document.querySelector(".Nslot");
+const paspect=document.querySelector(".Praspect"); const caspect=document.querySelector(".Craspect"); const naspect=document.querySelector(".Naspect");
+const pcategory=document.querySelector(".Pcategory"); const crcategory=document.querySelector(".Crcategory"); const ncategory=document.querySelector(".Ncategory");
+const ptype=document.querySelector(".Ptype"); const ctype=document.querySelector(".Crtype"); const ntype=document.querySelector(".Ntype");
+const nameline=document.querySelector(".itemname"); const dmgline=document.querySelector(".sebzes"); const pancelline=document.querySelector(".pancelzat");
+const becsline=document.querySelector(".becs"); const runeline=document.querySelector(".runeslot"); const dodgeline=document.querySelector(".kiteres"); 
+const bonusline=document.querySelector(".bonusz"); const speedline=document.querySelector(".gyors"); const otherline=document.querySelector(".other");
+const needline=document.querySelector(".needed"); const equipitem=document.querySelector(".equip"); 
+const slotlist=dataStore3.filter(row=> row.Slot) .map(row=>row.Slot); console.log(slotlist); crslot.textContent=slotlist[0];     
+
+
+
+};
