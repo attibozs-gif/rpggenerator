@@ -115,7 +115,7 @@ function update () {
 document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP"); 
 startSP.addEventListener("input", () => {alkaszt.startSP = Number(startSP.value)
 const filteredRows = dataStore.Stats.filter (row =>Number(row.SP) === alkaszt.startSP);alkaszt.currSP=alkaszt.startSP; 
-alkaszt.startAP=alkaszt.startSP; alkaszt.currAP=alkaszt.startAP; update(); itemstats();
+alkaszt.startAP=alkaszt.startSP; alkaszt.currAP=alkaszt.startAP; update(); 
 console.log(filteredRows)}); statsearch(); attribute(); });
 
 cont.addEventListener("click", (event) => {if (!dataStore) return;
@@ -249,7 +249,7 @@ if (!visual) {section.classList.remove("hidden") ;}};
 cont.addEventListener("click", (event)=> {switch(event.target.id) {
 case "characterpage": const statsheet=document.querySelector(".stats"); statsheet.classList.toggle("hidden"); break; 
 case "Petbutton": const petsheet2=document.querySelector(".petstats"); petsheet2.classList.toggle("hidden"); break;
-case "Equipmentbutton": show(document.querySelector(".Equipment")); break;
+case "Equipmentbutton": show(document.querySelector(".Equipment")); itemstats(); break;
 case "Skillsbutton": show(document.querySelector(".Skills")); break; 
 case "selection": show(document.querySelector(".stepper")); break; }; })
 
@@ -562,16 +562,65 @@ vardivs.fstat.appendChild(coolture)}
 
 
 function itemstats () {
-const pslot=document.querySelector(".Prslot"); const crslot=document.querySelector(".Crslot"); const nslot=document.querySelector(".Nslot");
-const paspect=document.querySelector(".Praspect"); const caspect=document.querySelector(".Craspect"); const naspect=document.querySelector(".Naspect");
-const pcategory=document.querySelector(".Pcategory"); const crcategory=document.querySelector(".Crcategory"); const ncategory=document.querySelector(".Ncategory");
-const ptype=document.querySelector(".Ptype"); const ctype=document.querySelector(".Crtype"); const ntype=document.querySelector(".Ntype");
+const pslot=document.querySelector("#Prslot"); const crslot=document.querySelector(".Crslot"); const nslot=document.querySelector("#Nslot");
+const paspect=document.querySelector("#Praspect"); const caspect=document.querySelector(".Craspect"); const naspect=document.querySelector("#Naspect");
+const pcategory=document.querySelector("#Pcategory"); const crcategory=document.querySelector(".Crcategory"); const ncategory=document.querySelector("#Ncategory");
+const ptype=document.querySelector("#Ptype"); const ctype=document.querySelector(".Crtype"); const ntype=document.querySelector("#Ntype");
+const pqual=document.querySelector("#Prqual"); const cqual=document.querySelector(".Crqual"); const nqual=document.querySelector("#Nqual");
 const nameline=document.querySelector(".itemname"); const dmgline=document.querySelector(".sebzes"); const pancelline=document.querySelector(".pancelzat");
 const becsline=document.querySelector(".becs"); const runeline=document.querySelector(".runeslot"); const dodgeline=document.querySelector(".kiteres"); 
 const bonusline=document.querySelector(".bonusz"); const speedline=document.querySelector(".gyors"); const otherline=document.querySelector(".other");
 const needline=document.querySelector(".needed"); const equipitem=document.querySelector(".equip"); 
-const slotlist=dataStore3.filter(row=> row.Slot) .map(row=>row.Slot); console.log(slotlist); crslot.textContent=slotlist[0];     
-
-
+let sind=0; let qind=0; let asind=0; let cind=0; let tind=0;
+const slotlist=[...new Set(Object.values(dataStore3.Felszerelés).map(row=>row.Slot))]; console.log(slotlist); crslot.textContent=slotlist[sind];
+const quallist=[...new Set(Object.values(dataStore3.Felszerelés).map (row=>row.Minőség))]; console.log(quallist); cqual.textContent=quallist[qind];
+const asplist=[...new Set(Object.values(dataStore3.Felszerelés).filter (row=>row.Slot===slotlist[sind]).map(row=>row.Arculat))]
+console.log(asplist); caspect.textContent=asplist[asind];
+const catlist=[...new Set(Object.values(dataStore3.Felszerelés).filter(row=>row.Slot===slotlist[sind] && row.Arculat===asplist[asind]).map(row=>row.Kategória))]; 
+console.log(catlist); crcategory.textContent=catlist[cind];
+const typlist=[...new Set(Object.values(dataStore3.Felszerelés).filter(row=>row.Slot===slotlist[sind] && row.Arculat===asplist[asind] &&
+row.Kategória===catlist[cind]).map(row=>row.Típus))]; console.log(typlist); ctype.textContent=typlist[tind];
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind)
+cont.addEventListener("click", (event) => {switch(event.target.id) {
+case "Prslot": sind= sind=== 0 ? slotlist.length-1 : sind-1; crslot.textContent=slotlist[sind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Nslot": sind= sind===slotlist.length-1 ? 0:sind+1; crslot.textContent=slotlist[sind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Praspect": asind= asind=== 0 ? asplist.length-1 : asind-1; caspect.textContent=asplist[asind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Naspect": asind= asind=== asplist.length-1 ? 0: asind+1; caspect.textContent=asplist[asind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Pcategory": cind= cind=== 0 ? catlist.length-1 : cind-1; crcategory.textContent=catlist[cind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Ncategory": cind= cind=== catlist.length-1 ? 0: cind+1;crcategory.textContent=catlist[cind];
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Ptype": tind= tind=== 0 ? typlist.length-1 : tind-1; ctype.textContent=typlist[tind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Ntype": tind= tind=== typlist.length-1 ? 0: tind+1;ctype.textContent=typlist[tind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Prqual": qind= qind=== 0 ? quallist.length-1 : qind-1; cqual.textContent=quallist[qind];
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
+case "Nqual": qind= qind=== quallist.length-1 ? 0: qind+1;cqual.textContent=quallist[qind]; 
+itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break; 
+}})
 
 };
+
+function categorize (slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind) {
+const validtypes = [...new Set(Object.values)]
+}
+
+function itemmatch (slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind) {
+const curritem=Object.entries(dataStore3.Felszerelés).find(([name,row])=> row.Slot===slotlist[sind] && row.Minőség===quallist[qind] && row.Arculat===asplist[asind] &&
+row.Kategória===catlist[cind] && row.Típus===typlist[tind]); const itemname=curritem[0]; const itemvalue=curritem[1]; itemspan(itemname, itemvalue)
+};
+
+function itemspan (itemname, itemvalue) {
+const nameline=document.querySelector(".itemname"); const dmgline=document.querySelector(".sebzes"); const pancelline=document.querySelector(".pancelzat");
+const becsline=document.querySelector(".becs"); const runeline=document.querySelector(".runeslot"); const dodgeline=document.querySelector(".kiteres"); 
+const bonusline=document.querySelector(".bonusz"); const speedline=document.querySelector(".gyors"); const otherline=document.querySelector(".other");
+const needline=document.querySelector(".needed");   
+nameline.textContent=itemname; dmgline.textContent=itemvalue.Sebzés || 0; pancelline.textContent=itemvalue.Armor || 0; becsline.textContent=itemvalue.Becs || 0;
+runeline.textContent=itemvalue.Rúnaszám || 0; dodgeline.textContent=itemvalue.Dodgeseg || 0; speedline.textContent=itemvalue.Spdseg || 0; 
+needline.textContent=itemvalue.Szükséges   
+}
