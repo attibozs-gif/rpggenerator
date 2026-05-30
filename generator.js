@@ -663,9 +663,8 @@ nameline.textContent=itemname; dmgline.textContent=itemvalue.Sebzés || 0; pance
 runeline.textContent=itemvalue.Rúnaszám || 0; dodgeline.textContent=itemvalue.Dodgeseg || 0; speedline.textContent=itemvalue.Spdseg || 0; 
 needline.textContent=itemvalue.Szükséges; otherline.textContent=itemvalue.Nyelv; 
 if (itemvalue.Táv) {const img2=document.createElement("img"); img2.src="./Misc/" + String(itemvalue.Táv) + ".jpg"; const preview=document.querySelector(".preview");
-preview.appendChild(img2); rangeline.textContent=itemvalue.Táv
+preview.appendChild(img2); rangeline.textContent=itemvalue.Táv};
 
-lemez.src="./Music/" + String(kaszt.name) + ".mp3";
 
 const baseline1=["Fizikum", "Állóképesség", "Ügyesség", "Gyorsaság", "Intelligencia", "Tehetség", "Felismerés", "Inspiráció", "Atk", "Def", "HP", "Fell", "Sell", "Mell"];
 const baseline2=["Fizikum", "Állóképesség", "Ügyesség", "Gyorsaság", "Intelligencia", "Tehetség", "Felismerés", "Inspiráció", "Támadás", "Védekezés", "Életerő Pont",
