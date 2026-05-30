@@ -192,35 +192,35 @@
                     "Szükséges":"3 db Romlott Neumonit, 3 db Romlott Mularin, 1 db Romlott Memoznit, 2 db Romlott Heszperisz, 3 db Romlott Theráx, 3 db Romlott Anerox"},
 
 "Romlott Katonai Sudár":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
-                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrk1",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrk1",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 3 db Romlott Uhton, 1 db Romlott Diszepelrix"},
 
 "Romlott Szövetségi Sudár":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
-                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrs1",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrs1",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
                     
 "Romlott Bizalmi Sudár":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
-                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrb1",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrb1",
                     "Szükséges":"2 db Romlott Frénium, 1 db Romlott Neumonit, 2 db Romlott Lamentium, 1 db Romlott Szapinit, 2 db Romlott Meridal, 2 db Romlott Diszepelrix"},
 
 "Romlott Uralmi Sudár":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
-                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Erő":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbru1",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbru1",
                     "Szükséges":"1 db Romlott Frénium, 1 db Romlott Neumonit, 3 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
 
 "Romlott Katonai Driokt":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
-                        "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrk2",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrk2",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 3 db Romlott Lamentium, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 3 db Romlott Theráx"},
 
 "Romlott Szövetségi Driokt":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
-                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrs2",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrs2",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Veruzin, 3 db Romlott Theráx"},
 
 "Romlott Bizalmi Driokt":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
-                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":1, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrb2",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":1, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrb2",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Irenit, 3 db Romlott Szapinit, 2 db Romlott Szapaux, 2 db Romlott Theráx"},
 
 "Romlott Uralmi Driokt":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
-                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Erő":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbru2",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbru2",
                     "Szükséges":"3 db Romlott Frénium, 3 db Romlott Neumonit, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 1 db Romlott Veruzin, 2 db Romlott Theráx"},
 
 "Romlott Katonai Viharpenge":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
