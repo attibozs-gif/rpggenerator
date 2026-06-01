@@ -38,8 +38,8 @@ function update () {
                 alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsaság)/2); alkaszt.Fell=Math.floor((alkaszt.Fizikum+alkaszt.Állóképesség)/2); 
                 alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
                 kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
-                alkaszt.Dmg= (alkaszt.Dmg || 1 ), alkaszt.Crit=Math.round(alkaszt.Dmg+((alkaszt.Dmg/100)*alkaszt.Ügyesség+(3*alkaszt.Ügyesség/(alkaszt.Ügyesség+alkaszt.Dmg))))
-                alkaszt.Critdmg=alkaszt.Crit/alkaszt.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2);
+                alkaszt.Dmg= (alkaszt.Dmg || 1 ), jatekos.Crit=Math.round(jatekos.Dmg+((jatekos.Dmg/100)*jatekos.Ügyesség+(3*jatekos.Ügyesség/(jatekos.Ügyesség+jatekos.Dmg))))
+                alkaszt.Critdmg=jatekos.Crit/jatekos.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2);
                 alkaszt.Spdseg=Math.floor(alkaszt.Gyorsaság/5); alkaszt.Ero=Math.floor(alkaszt.Tehetség/4); 
 
                 jatekos.Critdmg= (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0);
@@ -50,8 +50,10 @@ function update () {
                 jatekos.Sell= (karakter.Sell || 0) + (kaszt.Sell || 0) + (alkaszt.Sell || 0);
                 jatekos.Ero=(karakter.Ero || 0) + (kaszt.Ero || 0) + (alkaszt.Ero || 0);
                 jatekos.Spdseg= (karakter.Spdseg || 0) + (kaszt.Spdseg || 0) + (alkaszt.Spdseg || 0);
-                jatekos.Dmg= (karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0);
+                jatekos.Dmg= Math.max((karakter.Dmg || 0) + (kaszt.Dmg || 0) + (alkaszt.Dmg || 0)-1,1)
                 jatekos.Dodgeseg=(karakter.Dodgeseg || 0) + (kaszt.Dodgeseg || 0) + (alkaszt.Dodgeseg || 0);
+                jatekos.armorpen=(karakter.armorpen || 0) + (kaszt.armorpen || 0) + (alkaszt.armorpen || 0);
+                jatekos.Armor=(karakter.Armor || 0) + (kaszt.Armor || 0) + (alkaszt.Armor || 0);
 
                 attributespan = {"Fizikum": cont.querySelector(".fizikum"), "Állóképesség": cont.querySelector(".allokepesseg"),
                 "Ügyesség": cont.querySelector (".ugyesseg"), "Gyorsaság": cont.querySelector(".gyorsassag"),
@@ -90,10 +92,10 @@ function update () {
                 const currSP = cont.querySelectorAll(".currSP"); const currAP =cont.querySelector (".currAP");
                 const atk2 = cont.querySelector(".atk"); const def2 = cont.querySelector(".def"); const hp2 =cont.querySelector(".health")
                 const agi=cont.querySelector(".agilitas"); const fres=cont.querySelector(".physres")
-                const mres=cont.querySelector(".menres"); const sres=cont.querySelector(".spires"); mres.textContent=jatekos.Mell
-                const regen=cont.querySelector(".regen"); const critdmg=cont.querySelector(".critdmg");
+                const mres=cont.querySelector(".menres"); const sres=cont.querySelector(".spires"); 
+                const regen=cont.querySelector(".regen"); const critdmg=cont.querySelector(".critdmg"); const GV=cont.querySelector(".GV")
                 const armorpen=cont.querySelector(".pen"); const ero=cont.querySelector(".Ero"); const seg1=cont.querySelector(".spdseg");
-                const seg2=cont.querySelector(".dodgeseg"); const dam=cont.querySelector(".damage");
+                const seg2=cont.querySelector(".dodgeseg"); const dam=cont.querySelector(".damage"); const arm=cont.querySelector(".armor")
 
                 currSP.forEach(span=> {span.textContent=jatekos.currSP}); Attributemax();
                 
@@ -107,7 +109,8 @@ function update () {
                 regen.textContent=jatekos.regen; critdmg.textContent=jatekos.Critdmg; armorpen.textContent=jatekos.armorpen
                 agi.textContent=jatekos.Agi; fres.textContent=jatekos.Fell;
                 mres.textContent=jatekos.Mell; sres.textContent=jatekos.Sell; ero.textContent=jatekos.Ero; seg1.textContent=jatekos.Spdseg;
-                seg2.textContent=jatekos.Dodgeseg; dam.textContent=jatekos.Dmg;
+                seg2.textContent=jatekos.Dodgeseg; dam.textContent=jatekos.Dmg; armorpen.textContent=jatekos.armorpen;
+                arm.textContent=jatekos.Armor; GV.textContent=jatekos.Becs;
                 
                 petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
                 petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen  };     
@@ -403,11 +406,7 @@ const sworth=rankskill+1; const bworth=(bvalue*(bvalue+1))/2; const rchange=Math
 if (bworth>=sworth) {kaszt.Skills[bkey][last]+=1; const icon=cont.querySelector(`[data-skillcode="${bkey}"][data-instance="${last}"]`); console.log(icon);
 const span=icon?.querySelector("span"); if (span) {span.textContent=kaszt.Skills[bkey][last]};
 kaszt.currSP=(kaszt.currSP || 0)+rchange; console.log(alkaszt.currSP, rchange);} else {kaszt.currSP= (kaszt.currSP || 0) + bworth};
-;}
-
-}
-
-
+;}}
 
 function skilldisappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
 let lastind=kaszt.Skills[code].length-1; if (!fulltangle.length) return; if (kaszt.Skills[code][lastind] === 0) {
@@ -426,10 +425,13 @@ if (!filter2) return;
 filter2.forEach(r=>{if(r) r.remove();}); alkaszt.currSP=alkaszt.startSP }
 
 const vardivs={ftext: fsheet.querySelector(".finaltext"), frecipe: fsheet.querySelector(".finalrecipe"), fability: fsheet.querySelector(".finalability"),
-             fvartext: fsheet.querySelector(".finalvartext"), fstat: fsheet.querySelector(".finalstat"), ftime: fsheet.querySelector(".finaltime") };
+             fvartext: fsheet.querySelector(".finalvartext"), fstat: fsheet.querySelector(".finalstat"), ftime: fsheet.querySelector(".finaltime"),
+             fequip:fsheet.querySelector(".finalequip")};
 
 function fullskillrender () { 
-Object.values(vardivs).forEach (div => div.innerHTML=""); Object.keys(jatekos.Skills).forEach (code => skillapply(code));
+Object.values(vardivs).forEach (div => div.innerHTML="");
+country();
+Object.keys(jatekos.Skills).forEach (code => skillapply(code));
 const inttitle=document.createElement("span"); inttitle.classList.add("szalag"); vardivs.ftext.appendChild(inttitle); inttitle.textContent="Intelligencia:" 
 const intspan=document.createElement("span"); vardivs.ftext.appendChild(intspan)
 intspan.textContent=`Csatánként egyszer + ${Math.floor(jatekos.Intelligencia/4)} sebzés fegyvertávon belül`; }
@@ -442,7 +444,8 @@ const activeskill=skilllist.filter(row => row.Szint <= skillszint);
 const skilldiv=document.createElement("div"); skilldiv.classList.add(code);
 const spantitle=document.createElement("span");spantitle.classList.add("szalag"); spantitle.textContent=activename.skilltitle;
 vartext(activeskill, skilldiv, spantitle, vardivs); ftext(activeskill, skilldiv, spantitle, vardivs); fability(activeskill, skilldiv, spantitle, vardivs);
-social(activeskill, vardivs); skilltime(activeskill, skilldiv,spantitle, vardivs), recipe (activeskill, code, skillszint, skilldiv, spantitle, vardivs)}
+social(activeskill, vardivs); skilltime(activeskill, skilldiv,spantitle, vardivs), recipe (activeskill, code, skillszint, skilldiv, spantitle, vardivs);
+finalitem(vardivs)}
 
 function vartext(activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row=> row.Text); if (!checkif) {return};
@@ -472,6 +475,13 @@ activeskill.forEach(row => {
 const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=JSON.stringify(row.Abitext, null, 2); activediv.appendChild(span4)  
 } }); };
 
+function finalitem(vardivs) {
+  vardivs.fequip.innerHTML="";
+for (const key in Equipment) {const equipped2=Object.entries(dataStore3.Felszerelés).find(([name,row])=>row.code===key); if (!equipped2) continue; 
+const itemname2=equipped2[0]; const itemvalue2=equipped2[1]; const span12=document.createElement("span"); const colorspan=document.createElement("span"); 
+colorspan.style.color="orange"; colorspan.textContent=` ${itemvalue2.Slot} : `; span12.appendChild(colorspan); span12.append(itemname2);
+vardivs.fequip.appendChild(span12);}}
+
 function social (activeskill, vardivs) {socialstats(activeskill, vardivs); 
 const culture = fsheet.querySelector(".culture"); culture.innerHTML="";
 const culture2=document.createElement("ul"); const culture3=document.createElement("ul");
@@ -491,9 +501,7 @@ for (const row of activeskill) {if (!row.Eval) {continue};
 if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
 if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
 for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
-if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
-const country=dataStore.Kország[jatekos.startcountry]; 
-for (const key in country) {if (!alkaszt.Nyelv[key]) {alkaszt.Nyelv[key]=0} alkaszt.Nyelv[key]=alkaszt.Nyelv[key]+country[key]} console.log(alkaszt.Nyelv); update() };
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};}
 
 function skilltime (activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 
@@ -537,6 +545,10 @@ if (!vardivs.frecipe.querySelector(".badge")) {vardivs.frecipe.appendChild(span8
 function timeformat(x) {const h=String(Math.floor(x/3600)).padStart(2,"0"); const m=String(Math.floor((x % 3600)/60)).padStart(2,"0"); const s=String(x%60).padStart(2, "0");
                         return `${h}:${m}:${s}`;}
 
+function country () {                        
+const country=dataStore.Kország[jatekos.startcountry]; 
+for (const key in country) {if (!alkaszt.Nyelv[key]) {alkaszt.Nyelv[key]=0} alkaszt.Nyelv[key]=alkaszt.Nyelv[key]+country[key]} console.log(alkaszt.Nyelv); update() };
+
 function rebuildstats (vardivs) {
 update()
 vardivs.fstat.innerHTML="";
@@ -560,7 +572,6 @@ vardivs.fstat.appendChild(statlist2); vardivs.fstat.appendChild(statlist);
 const coolture=fsheet.querySelector(".culture"); 
 vardivs.fstat.appendChild(coolture)}
 
-
 function itemstats () {
 const pslot=document.querySelector("#Prslot"); const crslot=document.querySelector(".Crslot"); const nslot=document.querySelector("#Nslot");
 const paspect=document.querySelector("#Praspect"); const caspect=document.querySelector(".Craspect"); const naspect=document.querySelector("#Naspect");
@@ -571,7 +582,7 @@ const nameline=document.querySelector(".itemname"); const dmgline=document.query
 const becsline=document.querySelector(".becs"); const runeline=document.querySelector(".runeslot"); const dodgeline=document.querySelector(".kiteres"); 
 const bonusline=document.querySelector(".bonusz"); const speedline=document.querySelector(".gyors"); const otherline=document.querySelector(".other");
 const needline=document.querySelector(".needed"); const equipitem=document.querySelector(".equip"); 
-let sind=0; let qind=0; let asind=0; let cind=0; let tind=0; let slotlist; let quallist; let asplist; let catlist; let typlist;
+let sind=0; let qind=0; let asind=0; let cind=0; let tind=0; let slotlist; let quallist; let asplist; let catlist; let typlist; let curritem;
 categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ctype, tind)
 slotlist=[...new Set(Object.values(dataStore3.Felszerelés).map(row=>row.Slot))]; crslot.textContent=slotlist[sind];
 quallist=[...new Set(Object.values(dataStore3.Felszerelés).map (row=>row.Minőség))]; cqual.textContent=quallist[qind];
@@ -581,7 +592,6 @@ catlist=[...new Set(Object.values(dataStore3.Felszerelés).filter(row=>row.Slot=
 crcategory.textContent=catlist[cind];
 typlist=[...new Set(Object.values(dataStore3.Felszerelés).filter(row=>row.Slot===slotlist[sind] && row.Arculat===asplist[asind] &&
 row.Kategória===catlist[cind]).map(row=>row.Típus))]; ctype.textContent=typlist[tind];
-
 itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); 
 let lists;
 cont.addEventListener("click", (event) => {switch(event.target.id) {
@@ -596,12 +606,12 @@ list=categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ct
 slotlist=list.slotlist; quallist=list.quallist; asplist=list.asplist; catlist=list.catlist; typlist=list.typlist;
 itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
 
-case "Praspect": asind= asind=== 0 ? asplist.length-1 : asind-1; cind=0; tind=0; caspect.textContent=asplist[asind]; 
+case "Praspect": asind= asind=== 0 ? asplist.length-1 : asind-1; caspect.textContent=asplist[asind]; 
 list=categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ctype, tind); 
 slotlist=list.slotlist; quallist=list.quallist; asplist=list.asplist; catlist=list.catlist; typlist=list.typlist;
 itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
 
-case "Naspect": asind= asind=== asplist.length-1 ? 0: asind+1; cind=0; tind=0; caspect.textContent=asplist[asind]; 
+case "Naspect": asind= asind=== asplist.length-1 ? 0: asind+1; caspect.textContent=asplist[asind]; 
 list=categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ctype, tind); 
 slotlist=list.slotlist; quallist=list.quallist; asplist=list.asplist; catlist=list.catlist; typlist=list.typlist;
 itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break;
@@ -635,7 +645,22 @@ case "Nqual": qind= qind=== quallist.length-1 ? 0: qind+1;cqual.textContent=qual
 list=categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ctype, tind); 
 slotlist=list.slotlist; quallist=list.quallist; asplist=list.asplist; catlist=list.catlist; typlist=list.typlist;
 itemmatch(slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind); break; 
-}})};
+}});
+invslotter()};
+
+function invslotter() {
+let crinvlimit=0;
+const invgrid=cont.querySelector(".inventory"); const invsq=invgrid.querySelector(".invsquare");
+const Equipment1=cont.querySelector(".Equipment1"); 
+invgrid.querySelectorAll(".generated").forEach(el=>el.remove());
+const emptyslot=Equipment1.querySelectorAll(".emptyslot").length; console.log(emptyslot); 
+const invdata=dataStore.Inventoryslot[kaszt.name].filter(limit=>(limit.SP<=alkaszt.startSP)); 
+const index2=invdata.length-1; crinvlimit=invdata[index2].Invslot; console.log(crinvlimit);
+crinvlimit=Math.max(crinvlimit+(karakter.crinvlimit || 0)-9+emptyslot, 0); console.log(crinvlimit);
+const filter3=document.createElement("div"); filter3.classList.add("square"); console.log(filter3)
+for (let i=0; i<crinvlimit; i++) {console.log(i);const newsquare=invsq.cloneNode(true); newsquare.classList.add("generated"); newsquare.classList.add("empty")
+newsquare.classList.remove("hidden"); filter3.appendChild(newsquare);} invgrid.appendChild(filter3); console.log(filter3);
+};
 
 function categorize (crslot, sind, cqual, qind, caspect, asind, crcategory, cind, ctype, tind) {
 slotlist=[...new Set(Object.values(dataStore3.Felszerelés).map(row=>row.Slot))]; crslot.textContent=slotlist[sind];
@@ -649,24 +674,51 @@ row.Kategória===catlist[cind]).map(row=>row.Típus))]; ctype.textContent=typlis
 return{slotlist, quallist, asplist, catlist, typlist}; };
 
 function itemmatch (slotlist, sind, quallist, qind, asplist, asind, catlist, cind, typlist, tind) {
-const curritem=Object.entries(dataStore3.Felszerelés).find(([name,row])=> row.Slot===slotlist[sind] && row.Minőség===quallist[qind] && row.Arculat===asplist[asind] &&
+curritem=Object.entries(dataStore3.Felszerelés).find(([name,row])=> row.Slot===slotlist[sind] && row.Minőség===quallist[qind] && row.Arculat===asplist[asind] &&
 row.Kategória===catlist[cind] && row.Típus===typlist[tind]); 
-console.log(curritem); const itemname=curritem[0]; const itemvalue=curritem[1]; itemspan(itemname, itemvalue)
+console.log(curritem); const itemname=curritem[0]; const itemvalue=curritem[1]; itemspan(itemname, itemvalue, vardivs)
 };
 
-function itemspan (itemname, itemvalue) {
+function itemspan (itemname, itemvalue, vardivs) {
 const nameline=document.querySelector(".itemname"); const dmgline=document.querySelector(".sebzes"); const pancelline=document.querySelector(".pancelzat");
 const becsline=document.querySelector(".becs"); const runeline=document.querySelector(".runeslot"); const dodgeline=document.querySelector(".kiteres"); 
 const bonusline=document.querySelector(".bonusz"); const speedline=document.querySelector(".gyors"); const otherline=document.querySelector(".other");
-const needline=document.querySelector(".needed"); const rangeline=document.querySelector("range");   
+const needline=document.querySelector(".needed"); const rangeline=document.querySelector(".range");   
 nameline.textContent=itemname; dmgline.textContent=itemvalue.Sebzés || 0; pancelline.textContent=itemvalue.Armor || 0; becsline.textContent=itemvalue.Becs || 0;
 runeline.textContent=itemvalue.Rúnaszám || 0; dodgeline.textContent=itemvalue.Dodgeseg || 0; speedline.textContent=itemvalue.Spdseg || 0; 
-needline.textContent=itemvalue.Szükséges; otherline.textContent=itemvalue.Nyelv; 
-if (itemvalue.Táv) {const img2=document.createElement("img"); img2.src="./Misc/" + String(itemvalue.Táv) + ".jpg"; const preview=document.querySelector(".preview");
-preview.appendChild(img2); rangeline.textContent=itemvalue.Táv};
+needline.textContent=itemvalue.Szükséges; 
+if (itemvalue.Nyelv) {otherline.textContent=`${Object.keys(itemvalue.Nyelv)[0]} Nyelv : ${Object.values(itemvalue.Nyelv)[0]}`}; 
+const preview=document.querySelector(".preview");
+if (itemvalue.Táv) {const img2=document.createElement("img"); img2.src="./Misc/" + String(itemvalue.Táv) + ".jpg"; 
+preview.innerHTML=""; preview.appendChild(img2); rangeline.textContent=itemvalue.Táv} else {preview.innerHTML=""; rangeline.textContent="";}  
+if (itemvalue.Abitext) {const span11=document.createElement("span"); span11.classList.add("wpn"); const check2=vardivs.fability.querySelector("wpn"); 
+if (check2!==null) {check2.remove()}; vardivs.fability.appendChild(span11); span11.textContent=`${itemname}:${itemvalue.Abitext}`}; 
+
+const baseline1={"Fizikum":"Fizikum", "Állóképesség":"Állóképesség", "Ügyesség":"Ügyesség", "Gyorsaság":"Gyorsaság", "Intelligencia":"Intelligencia", 
+  "Tehetség":"Tehetség", "Felismerés":"Felismerés", "Inspiráció":"Inspiráció", "Atk":"Támadás", "Def":"Védekezés", "HP":"Életerő Pont", 
+  "Fell":"Fizikai Ellenállás", "Sell":"Spirituális Ellenállás", "Mell":"Mentális Ellenállás", "Ero":"Erő"};
+const bonus=[]; for (const key in itemvalue) {if (key in baseline1) {bonus.push(`${baseline1[key]}:${itemvalue[key]}`)}}; bonusline.textContent=bonus.join(", ");};
+
+cont.addEventListener("click", (event) => {if (event.target.id==="equip") {itemadd(curritem);}});
+
+function itemadd(curritem) {
+console.log("Hello")
+const itemvalue=curritem[1];
+if (Equipment[itemvalue.code]) return; for (const key in Equipment) {const equipped=Object.values(dataStore3.Felszerelés).find(row=>row.code===key); console.log(equipped);
+if (!equipped) continue; if (equipped.Slot===itemvalue.Slot) return; if (equipped.Slot==="Kellék" && itemvalue.Invslot===2) return; 
+if (equipped.Invslot===2 && itemvalue.Slot==="Kellék") return;} 
+let stat={Dmg:0, Armor:0, Runeslot:0, Becs:0, Spdseg:0, Dodgeseg:0, Fizikum:0, ÁLlóképesség:0, Ügyesség:0, Gyorsaság:0, Intelligencia:0, Tehetség:0,
+            Felismerés:0, Inspiráció:0, Mell:0, Sell:0, Fell:0, HP:0, Ero:0, Atk:0, Def:0}
+console.log(itemvalue.code); 
+Equipment[itemvalue.code]=true; const itemchange=document.querySelector(`.${itemvalue.Slot}`); itemchange.classList.remove("emptyslot"); 
+itemchange.classList.add("fullslot"); for (const key in Equipment) {const equipped=Object.values(dataStore3.Felszerelés).find(row=>row.code===key)
+stat.Dmg+=equipped.Sebzés || 0; stat.Armor+=equipped.Armor || 0; stat.Runeslot+=equipped.Runeslot || 0; stat.Becs+=equipped.Becs || 0; stat.Spdseg+=equipped.Spdseg || 0; 
+stat.Dodgeseg+=equipped.Dodgeseg || 0; stat.Fizikum+=equipped.Fizikum || 0; stat.Állóképesség+=equipped.Állóképesség || 0; stat.Ügyesség+=equipped.Ügyesség || 0; 
+stat.Gyorsaság+=equipped.Gyorsaság || 0; stat.Intelligencia+=equipped.Intelligencia || 0; stat.Tehetség+=equipped.Tehetség || 0; stat.Felismerés+=equipped.Felismerés || 0; 
+stat.Inspiráció+=equipped.Inspiráció || 0; stat.Mell+=equipped.Mell || 0; stat.Sell+=equipped.Sell || 0; stat.Fell+=equipped.Fell || 0; stat.Atk+=equipped.Atk || 0; 
+stat.Def+=equipped.Def || 0; stat.HP+=equipped.HP || 0; stat.Ero+=equipped.Ero || 0;  console.log(stat);
+};
+ for (const key in stat) {karakter[key]=stat[key]}; invslotter()}; 
 
 
-const baseline1=["Fizikum", "Állóképesség", "Ügyesség", "Gyorsaság", "Intelligencia", "Tehetség", "Felismerés", "Inspiráció", "Atk", "Def", "HP", "Fell", "Sell", "Mell"];
-const baseline2=["Fizikum", "Állóképesség", "Ügyesség", "Gyorsaság", "Intelligencia", "Tehetség", "Felismerés", "Inspiráció", "Támadás", "Védekezés", "Életerő Pont",
-  "Fizikai Ellenállás", "Spirituális Ellenállás", "Mentális Ellenállás"];   
-}
+
