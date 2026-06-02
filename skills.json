@@ -1038,7 +1038,7 @@
                                         "select": ["td", "bp", "ff", "lk", "ef", "dg", "ha", "sz", "tm"]},
                         "Bomba": {"Minőség":["Romlott", "Hibás", "Nyers", "Makulátlan"], 
                                         "select":["tk","ej", "om", "vh", "af", "bc", "pf", "ve", "bu", "lp"]},
-                        "Elíxir": {"Minőség": ["Romlott", "Hibás", "Nyers", "Makulátlan"],
+                        "Elixír": {"Minőség": ["Romlott", "Hibás", "Nyers", "Makulátlan"],
                                         "select": ["vf", "lf", "sr", "gs", "jp", "tl", "ts", "hk"]},
                         "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}},
                 "Nyei":{"Nyelv": {"Minőség":["nincs", "nincs", "nincs"],
