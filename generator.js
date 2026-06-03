@@ -75,7 +75,7 @@ function update () {
                 jatekos.Armor=(karakter.Armor || 0) + (alkaszt.Armor || 0) + (kaszt.Armor || 0);            
                 jatekos.Nyelv.Mergla = (alkaszt.Nyelv.Mergla || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Mergla || 0);
                 jatekos.Nyelv.Mei = (alkaszt.Nyelv.Mei || 0) + (kaszt.Nyelv.Mei || 0) + (karakter.Nyelv.Mei || 0);
-                jatekos.Nyelv.Venta = (alkaszt.Nyelv.Venta || 0) + (kaszt.Nyelv.Mergla || 0) + (karakter.Nyelv.Venta || 0);
+                jatekos.Nyelv.Venta = (alkaszt.Nyelv.Venta || 0) + (kaszt.Nyelv.Venta || 0) + (karakter.Nyelv.Venta || 0);
                 jatekos.Nyelv.Malco = (alkaszt.Nyelv.Malco || 0) + (kaszt.Nyelv.Malco || 0) + (karakter.Nyelv.Malco || 0);
                 jatekos.Nyelv.Prosant = (alkaszt.Nyelv.Prosant || 0) + (kaszt.Nyelv.Prosant || 0) + (karakter.Nyelv.Prosant || 0);
                 jatekos.Kapcsolat.Kahal = (alkaszt.Kapcsolat.Kahal || 0) + (kaszt.Kapcsolat.Kahal || 0) + (karakter.Kapcsolat.Kahal || 0);
@@ -332,12 +332,12 @@ if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(s
 if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
 {skillappend(skillEx, lastind)}; checkbox(code, lastinst); bonuskill(code, lastinst); skillapply(skillEx); update()};
 
-function checkbox (code, lastinst) {
+function checkbox (code, lastinst) {console.log("CHECKBOX STARTED", code, lastinst);
 const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; if (!craftrow.Eval || !craftrow.Eval.Selection) return; 
-const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Pool[code];
+const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Pool[code]; console.log("CHECK:",code,craftpool);
 for (const rule of craftrow.Eval.Selection) {const groupname=Object.keys(rule)[0]; const container=document.createElement("div"); 
 let countindexs=0; let countindexn=0;  
-const rquality=rule[groupname].Minőség; const span9=document.createElement("span"); const count=rule[groupname].Count;   
+const rquality=rule[groupname].Minőség; const span9=document.createElement("span"); const count=rule[groupname].Count; console.log(groupname);  
 for (const id of craftpool[groupname].select) {if (groupname!=="Nyelv") {
 const qual=kaszt.Selection[id] ? Object.keys(kaszt.Selection[id]).length:0; 
 if (rquality!==craftpool[groupname].Minőség[qual]) {continue}};
@@ -395,13 +395,15 @@ function bonuskill (code, lastinst) {
 const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; const grid1=cont.querySelector(".grid1"); const emptangle=grid1.querySelectorAll(".generated.empty"); 
 const firstempty=emptangle[0];  
 if (!craftrow.Eval || !craftrow.Eval.Skill) {return}; const bskill=craftrow.Eval.Skill; const bkey=Object.keys(bskill)[0]; const bvalue=bskill[bkey][0];
-if (emptangle.length > 0 && (!kaszt.Skills[bkey] || kaszt.Skills[bkey].length===0)) {kaszt.Skills[bkey] = []; kaszt.Skills[bkey].push(bvalue); checkbox(code, lastinst);
+console.log("BONUSKILL",{bkey,emptySlots: emptangle.length, currentSkill: kaszt.Skills[bkey]});
+if (emptangle.length > 0 && (!kaszt.Skills[bkey] || kaszt.Skills[bkey].length===0)) { console.log("Branch: GRANT BONUS SKILL");kaszt.Skills[bkey] = []; kaszt.Skills[bkey].push(bvalue); 
+console.log("BEFORE checkbox",bkey, bvalue); checkbox(bkey, bvalue);
 const fakeskill=dataStore2.Skills.find(row=> row.skillcode===bkey); console.log(fakeskill); const image=document.createElement("img"); image.classList.add("image");
 image.src=fakeskill.skillimage; image.style.width="70px"; image.style.height="70px"; firstempty.appendChild(image);
 firstempty.classList.remove("empty"); firstempty.classList.add("full"); firstempty.dataset.skillcode=bkey; firstempty.dataset.instance=kaszt.Skills[bkey].length-1;
 let skillspan=firstempty.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); firstempty.appendChild(skillspan);
 skillspan.textContent=kaszt.Skills[bkey][kaszt.Skills[bkey].length-1]}}; 
-if (emptangle.length===0 && kaszt.Skills[bkey] && kaszt.Skills[bkey].length>0) {const last=kaszt.Skills[bkey].length-1; const rankskill=kaszt.Skills[bkey][last];
+if (emptangle.length===0 && kaszt.Skills[bkey] && kaszt.Skills[bkey].length>0) {console.log("Branch: CONVERT TO RANK/SP");const last=kaszt.Skills[bkey].length-1; const rankskill=kaszt.Skills[bkey][last];
 const sworth=rankskill+1; const bworth=(bvalue*(bvalue+1))/2; const rchange=Math.max(0, bworth-sworth); console.log(bworth, sworth); 
 if (bworth>=sworth) {kaszt.Skills[bkey][last]+=1; const icon=cont.querySelector(`[data-skillcode="${bkey}"][data-instance="${last}"]`); console.log(icon);
 const span=icon?.querySelector("span"); if (span) {span.textContent=kaszt.Skills[bkey][last]};
@@ -437,33 +439,39 @@ const intspan=document.createElement("span"); vardivs.ftext.appendChild(intspan)
 intspan.textContent=`Csatánként egyszer + ${Math.floor(jatekos.Intelligencia/4)} sebzés fegyvertávon belül`; }
 
 function skillapply(code) {;
-const skillszint=Math.max(...(jatekos.Skills[code] || 0)); const skilllist=dataStore2[code]; 
+const skillszint=Math.max(0,...(jatekos.Skills[code] || [])); const skilllist=dataStore2[code]; 
   if (!skilllist) return;
 const activename=dataStore2.Skills.find (row=> row.skillcode===code);
 const activeskill=skilllist.filter(row => row.Szint <= skillszint); 
 const skilldiv=document.createElement("div"); skilldiv.classList.add(code);
 const spantitle=document.createElement("span");spantitle.classList.add("szalag"); spantitle.textContent=activename.skilltitle;
-vartext(activeskill, skilldiv, spantitle, vardivs); ftext(activeskill, skilldiv, spantitle, vardivs); fability(activeskill, skilldiv, spantitle, vardivs);
+vartext(activeskill, skilldiv, spantitle, vardivs); ftext(activeskill, skilldiv, spantitle, vardivs, code); fability(activeskill, skilldiv, spantitle, vardivs);
 social(activeskill, vardivs); skilltime(activeskill, skilldiv,spantitle, vardivs), recipe (activeskill, code, skillszint, skilldiv, spantitle, vardivs);
 finalitem(vardivs)}
 
 function vartext(activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row=> row.Text); if (!checkif) {return};
-const textrow=activeskill.filter(row => row.Text); if (textrow.length>0) {const lastrow=textrow.length-1; const span5=document.createElement("span");
-span5.textContent=JSON.stringify(textrow[lastrow].Text, null, 2);
+const textrow=activeskill.filter(row => row.Text); if 
+(textrow.length>0) {const lastrow=textrow.length-1; const lastentry=textrow[lastrow].Text; 
+const span5=document.createElement("span");  if (typeof lastentry==="string") {span5.textContent=lastentry} else if(typeof lastentry==="object" && lastentry!==null)
+{span5.innerHTML=Object.entries(lastentry).map(([key,value]) => `${key}: ${value}`).join(";  ")}  
 const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true); 
-const activediv=vardivs.fvartext.appendChild(clonediv); activediv.appendChild(titleclone); activediv.appendChild(span5);
+const activediv=vardivs.fvartext.appendChild(clonediv); activediv.appendChild(titleclone); clonediv.appendChild(span5);
 }; };
 
-function ftext(activeskill, skilldiv, spantitle, vardivs) {
+function ftext(activeskill, skilldiv, spantitle, vardivs, code) {
 const clonediv=skilldiv.cloneNode(true); const titleclone=spantitle.cloneNode(true);   
 const activediv=vardivs.ftext.appendChild(clonediv); activediv.appendChild(titleclone);
-for (const key in kaszt.Selection) {console.log("Key", key); const span10=document.createElement("span"); if (dataStore2.Tárgy[key].Típus) 
+let skillid=null
+for (const key in kaszt.Selection) {let skillid=null; console.log("Key", key, "code", code); 
+for (const skill in dataStore2.Pool) {for (const group in dataStore2.Pool[skill]) {const select=dataStore2.Pool[skill][group].select; 
+if (select?.includes(key)) {skillid=skill; break}} if (skillid) break}
+if (skillid!==code) continue;
+const span10=document.createElement("span"); if (dataStore2.Tárgy[key].Típus) 
 {span10.textContent=`${Object.keys(kaszt.Selection[key])} ${dataStore2.Tárgy[key]?.Típus} előállítása`} else
 {span10.textContent=`${Object.keys(kaszt.Selection[key])} ${dataStore2.Tárgy[key]?.Név} előállítása`}; console.log("Created", span10.textContent); activediv.appendChild(span10)};
 const checkif=activeskill.some (row => row.Fixtext); if (!checkif) {return}; 
-activeskill.forEach(row => {
-const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; activediv.appendChild(span3)}}); 
+activeskill.forEach(row => {const span3=document.createElement("span"); if (row.Fixtext) {span3.textContent=row.Fixtext; activediv.appendChild(span3)}}); 
 console.log ("Selection", kaszt.Selection, "Div", activediv)  
 };
 
@@ -476,11 +484,16 @@ const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=
 } }); };
 
 function finalitem(vardivs) {
-  vardivs.fequip.innerHTML="";
+const span14=document.createElement("span");const invgrid=cont.querySelector(".inventory");
+const eq1=document.querySelector(".Equipment1");
+console.log(invgrid); const emptys=invgrid.querySelectorAll(".generated.empty").length+eq1.querySelector(".emptyslot").length
+console.log(emptys);span14.textContent=`; Üres Felszerelési helyek száma:${emptys}`; console.log(span14)
 for (const key in Equipment) {const equipped2=Object.entries(dataStore3.Felszerelés).find(([name,row])=>row.code===key); if (!equipped2) continue; 
 const itemname2=equipped2[0]; const itemvalue2=equipped2[1]; const span12=document.createElement("span"); const colorspan=document.createElement("span"); 
 colorspan.style.color="orange"; colorspan.textContent=` ${itemvalue2.Slot} : `; span12.appendChild(colorspan); span12.append(itemname2);
-vardivs.fequip.appendChild(span12);}}
+vardivs.fequip.appendChild(span12); console.log("Appending:", span14); vardivs.fequip.appendChild(span14); 
+console.log("Children now:", vardivs.fequip.children);}
+}
 
 function social (activeskill, vardivs) {socialstats(activeskill, vardivs); 
 const culture = fsheet.querySelector(".culture"); culture.innerHTML="";
@@ -501,7 +514,9 @@ for (const row of activeskill) {if (!row.Eval) {continue};
 if (row.Eval.Nyelv) {for (const key in row.Eval.Nyelv) {kaszt.Nyelv[key]=(kaszt.Nyelv[key] || 0) + (row.Eval.Nyelv[key] || 0)}}; 
 if (row.Eval.Kapcsolat) {for (const key in row.Eval.Kapcsolat) {kaszt.Kapcsolat[key]=(kaszt.Kapcsolat[key] || 0) + (row.Eval.Kapcsolat[key] || 0)}}; 
 for (const key in row.Eval) if (whitelist.includes(key)) {kaszt[key]=(kaszt[key] || 0) + (row.Eval[key] || 0)}; 
-if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};}
+if (row.Eval.Pet) {for (const key in row.Eval.Pet) {if (Pet[key]>0) {Pet[key]=(Pet[key]) + (row.Eval.Pet[key])}}}};
+update();
+}
 
 function skilltime (activeskill, skilldiv, spantitle, vardivs) {
 const checkif=activeskill.some (row => row.Eval); if (!checkif) return; 
@@ -687,7 +702,7 @@ const needline=document.querySelector(".needed"); const rangeline=document.query
 nameline.textContent=itemname; dmgline.textContent=itemvalue.Sebzés || 0; pancelline.textContent=itemvalue.Armor || 0; becsline.textContent=itemvalue.Becs || 0;
 runeline.textContent=itemvalue.Rúnaszám || 0; dodgeline.textContent=itemvalue.Dodgeseg || 0; speedline.textContent=itemvalue.Spdseg || 0; 
 needline.textContent=itemvalue.Szükséges; 
-if (itemvalue.Nyelv) {otherline.textContent=`${Object.keys(itemvalue.Nyelv)[0]} Nyelv : ${Object.values(itemvalue.Nyelv)[0]}`}; 
+otherline.textContent=""; if (itemvalue.Nyelv) {otherline.textContent=`${Object.keys(itemvalue.Nyelv)[0]} Nyelv : ${Object.values(itemvalue.Nyelv)[0]}`}; 
 const preview=document.querySelector(".preview");
 if (itemvalue.Táv) {const img2=document.createElement("img"); img2.src="./Misc/" + String(itemvalue.Táv) + ".jpg"; 
 preview.innerHTML=""; preview.appendChild(img2); rangeline.textContent=itemvalue.Táv} else {preview.innerHTML=""; rangeline.textContent="";}  
@@ -720,5 +735,14 @@ stat.Def+=equipped.Def || 0; stat.HP+=equipped.HP || 0; stat.Ero+=equipped.Ero |
 };
  for (const key in stat) {karakter[key]=stat[key]}; invslotter()}; 
 
+const st3=document.querySelector(".structure3"); const pinput=document.querySelector("#player");
+const textdiv={name:st3.querySelector(".name2"), startSP:st3.querySelector(".sp2"), HP:st3.querySelector(".HP2"),
+      regen:st3.querySelector(".regen2"), Atk:st3.querySelector(".atk2"), Def:st3.querySelector(".def2")}
+
+ function simpopulate () {
+  pinput.addEventListener("change", ()=>{const player=dataStore[pinput.value]; for (const div in textdiv) {const statname=div;
+  textdiv[div].textContent=player[statname]}})};
+     
 
 
+ 
