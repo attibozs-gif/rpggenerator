@@ -1118,38 +1118,38 @@
 
     "APGained": [
                 {"SP":1, "APcul":1},
-                {"SP":5, "APcul":2},
-                {"SP":10, "APcul":3},
-                {"SP":15, "APcul":4},
-                {"SP":21, "APcul":5},
-                {"SP":27, "APcul":6},
-                {"SP":33, "APcul":7},
-                {"SP":40, "APcul":8},
-                {"SP":47, "APcul":9},
-                {"SP":54, "APcul":10},
-                {"SP":62, "APcul":11},
-                {"SP":70, "APcul":12},
-                {"SP":78, "APcul":13},
-                {"SP":87, "APcul":14},
-                {"SP":96, "APcul":15},
-                {"SP":105, "APcul":16},
-                {"SP":115, "APcul":17},
-                {"SP":125, "APcul":18},
-                {"SP":135, "APcul":19},
-                {"SP":146, "APcul":20},
-                {"SP":157, "APcul":21},
-                {"SP":168, "APcul":22},
-                {"SP":180, "APcul":23},
-                {"SP":192, "APcul":24},
-                {"SP":204, "APcul":25},
-                {"SP":217, "APcul":26},
-                {"SP":230, "APcul":27},
-                {"SP":243, "APcul":28},
-                {"SP":257, "APcul":29},
-                {"SP":271, "APcul":30},
-                {"SP":285, "APcul":31},
-                {"SP":300, "APcul":32},
-                {"SP":315, "APcul":33},
+                {"SP":15, "APcul":2},
+                {"SP":30, "APcul":3},
+                {"SP":45, "APcul":4},
+                {"SP":59, "APcul":5},
+                {"SP":73, "APcul":6},
+                {"SP":87, "APcul":7},
+                {"SP":100, "APcul":8},
+                {"SP":113, "APcul":9},
+                {"SP":126, "APcul":10},
+                {"SP":138, "APcul":11},
+                {"SP":150, "APcul":12},
+                {"SP":162, "APcul":13},
+                {"SP":173, "APcul":14},
+                {"SP":184, "APcul":15},
+                {"SP":195, "APcul":16},
+                {"SP":205, "APcul":17},
+                {"SP":215, "APcul":18},
+                {"SP":225, "APcul":19},
+                {"SP":234, "APcul":20},
+                {"SP":243, "APcul":21},
+                {"SP":252, "APcul":22},
+                {"SP":260, "APcul":23},
+                {"SP":268, "APcul":24},
+                {"SP":276, "APcul":25},
+                {"SP":283, "APcul":26},
+                {"SP":290, "APcul":27},
+                {"SP":297, "APcul":28},
+                {"SP":303, "APcul":29},
+                {"SP":309, "APcul":30},
+                {"SP":315, "APcul":31},
+                {"SP":320, "APcul":32},
+                {"SP":325, "APcul":33},
                 {"SP":330, "APcul":34}
     ],
   
@@ -1195,12 +1195,14 @@
 
 "Ország":["Meiran", "Laumalco", "Ventars", "Velbruun", "Aydeliq", "Bastein", "Saehrit", "Eclepaan"],
 "Kország":{"Meiran":{"Mei":2}, "Laumalco":{"Malco":1, "Mergla":1}, "Ventars":{"Venta":2}, "Velbruun":{"Venta":1, "Prosant":1},
-           "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}}
-  }
+           "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}},
 
   
-
-		
+"Dudi":{"Név":"Apistos", "startSP":40, "currSP":2, "startAP":3, "currAP":0, "Atk":27, "currAtk":27, "Def":37, "currDef":37, "HP":39, "currHP":39, "regen":6, "currregen":6,
+"Critdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "CurrBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, "Ero":0, 
+"currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3      
+ }
+}	
 			
 	      	 
 
