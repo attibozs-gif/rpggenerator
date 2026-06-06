@@ -1,7 +1,7 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
 const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skills={}; karakter.Skills={}, alkaszt.Skills={}, kaszt.Skills={},
 kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
-Equipment={}; const instance={player:{}, enemy:{}}; const active={playerEntry:null, enemyEntry2:null};
+Equipment={}; const instance={player:{}, enemy:{}}; const active={attacker:null, defender:null};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
 let cindex=0; let oindex=0; 
@@ -741,19 +741,35 @@ const textdiv={name:st3.querySelector(".name2"), startSP:st3.querySelector(".sp2
     regen:st3.querySelector(".regen2"), Atk:st3.querySelector(".atk2"), Def:st3.querySelector(".def2"), Dmg: st3.querySelector(".damage2"),
     Critdmg:st3.querySelector(".crit2"), Becs:st3.querySelector(".GV2"), Armor:st3.querySelector(".armor2"), armorpen:st3.querySelector(".pen2"),
     Spdseg:st3.querySelector(".spdseg2"), Dodgeseg:st3.querySelector(".dodgeseg2"), Agi:st3.querySelector(".agi2"), Fell:st3.querySelector(".fres2"),
-    Mell:st3.querySelector(".mres2"), Sell:st3.querySelector(".sres2"), Ero:st3.querySelector(".ero2")  }
+    Mell:st3.querySelector(".mres2"), Sell:st3.querySelector(".sres2"), Ero:st3.querySelector(".ero2")}
+const textdiv2={name:st2.querySelector(".name2"), startSP:st2.querySelector(".sp2"), HP:st2.querySelector(".HP2"),
+    regen:st2.querySelector(".regen2"), Atk:st2.querySelector(".atk2"), Def:st2.querySelector(".def2"), Dmg: st2.querySelector(".damage2"),
+    Critdmg:st2.querySelector(".crit2"), Becs:st2.querySelector(".GV2"), Armor:st2.querySelector(".armor2"), armorpen:st2.querySelector(".pen2"),
+    Spdseg:st2.querySelector(".spdseg2"), Dodgeseg:st2.querySelector(".dodgeseg2"), Agi:st2.querySelector(".agi2"), Fell:st2.querySelector(".fres2"),
+    Mell:st2.querySelector(".mres2"), Sell:st2.querySelector(".sres2"), Ero:st2.querySelector(".ero2")}
     
 pinput.addEventListener("change", ()=>{const Entry=dataStore[pinput.value]; 
-if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClone(dataStore[pinput.value])}; active.playerEntry=instance.player[pinput.value]; 
-const selected=instance.player[pinput.value];
+if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClone(dataStore[pinput.value])}; active.attacker=instance.player[pinput.value]; 
+const p=instance.player[pinput.value];
 for (const div in textdiv) {const statname=div;
-textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected[statname]} / ${selected["curr"+statname] ?? ""}  `}});
+textdiv[div].textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}  `}});
 
 pinput2.addEventListener("change", ()=>{const Entry2=dataStore[pinput2.value]; 
-if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClone(dataStore[pinput2.value])}; active.enemyEntry2=instance.enemy[pinput2.value];
-const selected2=instance.enemy[pinput2.value] 
-for (const div in textdiv) {const statname=div;
-textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected2[statname]} / ${selected2["curr"+statname] ??  ""}`}});
+if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClone(dataStore[pinput2.value])}; active.defender=instance.enemy[pinput2.value];
+const e=instance.enemy[pinput2.value] 
+for (const div in textdiv2) {const statname=div;
+textdiv2[div].textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}`}});
+
+document.addEventListener("click", (event) => {if (event.target===att) {combat()}})
+
+function combat () {
+const a=active.attacker; const d=active.defender; const avd=Math.max(0,(Math.floor((a.currAtk-d.currDef)/12))); console.log(a.currBecs, d.currBecs)
+const gv=Math.max(0,Math.floor((a.currBecs-Math.floor(d.Inspiráció/10)-d.currBecs)/5)); const ld=a.startSP-d.startSP; let ldparity;
+if (ld>10) {ldparity=3} else if(ld<-10) {ldparity=1} else {ldparity=2}; console.log(avd, gv, ldparity)
+
+
+
+}
 
 
 
