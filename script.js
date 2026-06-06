@@ -26,6 +26,9 @@ const creator=document.querySelector ("#creator")
 const ok=document.querySelector ("#ok")
 const final=document.getElementById("final")
 const fsheet=final.querySelector(".finalsheet");
+const men4=document.querySelector("#men4");
+const sim=men4.querySelector("#Simulation"); console.log(sim)
+const sim2=document.querySelector(".sim"); console.log(sim2)
 
 
 creator.style.display="none"
@@ -48,6 +51,9 @@ window.dataStore=null;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/stat.json")
 .then (response => response.json())
 .then (data => {window.dataStore=data; attribute();})
+fetch("https://raw.githubusercontent.com/attibozs-gif/rpgcreator/refs/heads/main/dmg.json")
+.then (response => response.json())
+.then (data => {window.dataStore4=data;})
 
 
 lines.forEach(line => {const trimmedLine = line.trimEnd();const colonIndex = trimmedLine.indexOf(':');
@@ -115,3 +121,9 @@ if (event.target.id==="no") {const check=document.querySelector(".finalcheck"); 
   document.querySelectorAll("#Triskol img, #Triskol h2, #Triskol p").forEach(el => {
     console.log(el.tagName, getComputedStyle(el).display);});
 
+
+document.addEventListener("click", (event)=> {if (event.target!==sim) return; cont.innerHTML=""; sim2.classList.remove("hidden"); cont.appendChild(sim2);})
+
+const save=document.getElementById("save"); save.addEventListener("click", (event) =>{ 
+{const data=JSON.stringify(jatekos); const blob=new Blob ([data], {type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+a.download="character.json"; a.click()}})

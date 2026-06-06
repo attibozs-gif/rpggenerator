@@ -1,7 +1,7 @@
 const alkaszt = {}; const kaszt = {}; const karakter = {}; const lemez=document.querySelector(".kasztzene"); 
 const jatekos = {}; alkaszt.limit={}; let tempname; const Pet ={}; jatekos.Skills={}; karakter.Skills={}, alkaszt.Skills={}, kaszt.Skills={},
 kaszt.Nyelv={}; kaszt.Kapcsolat={}; alkaszt.Kapcsolat={}; alkaszt.Nyelv={}; jatekos.Nyelv={}; jatekos.Kapcsolat={}; kaszt.Selection={};
-Equipment={};
+Equipment={}; const instance={player:{}, enemy:{}}; const active={playerEntry:null, enemyEntry2:null};
 karakter.Nyelv={"Mei":0, "Venta":0, "Malco":0, "Mergla":0, "Prosant":0};
 karakter.Kapcsolat={"Kahal":0, "Edubra":0, "Ekkalri":0, "Siphal":0, "Shatra":0, "Gestri":0};
 let cindex=0; let oindex=0; 
@@ -576,7 +576,7 @@ const statline3=document.createElement("span"); statline3.textContent= ` /Teszt:
 statli.appendChild(statline); statli.appendChild(statline2); statli.appendChild(statline3);
 statlist.appendChild(statli);}
 const basic2= ["Kaszt", "Alkaszt", "Életerő-Pont", "Regeneráció", "Támadás", "Védekezés", "Becs", "Alapsebzés", "Páncélzat", "Agilitás", "Fizikális Ellenállás", "Mentális Ellenállás", 
-              "Spirituális Ellenállás", "Páncél-Átütés", "Erő", "Kritikális Sebzés", "Gyorsassági szegmens fordulónként", "Kitérési szegmens támadásonként"];
+              "Spirituális Ellenállás", "Páncél-Átütés", "Erő", "Kritikális Sebzés", "Gyorsasági szegmens fordulónként", "Kitérési szegmens támadásonként"];
 const basic3=["name", "subname", "HP", "regen", "Atk", "Def", "Becs", "Dmg", "Armor", "Agi", "Fell", "Mell", "Sell", "armorpen", "Ero", "Critdmg", "Spdseg", "Dodgeseg"];
 const merge= basic3.map((key, i) => ({key, title:basic2[i]})); 
 const statlist2=document.createElement("ul"); for (const item of merge) {
@@ -735,14 +735,29 @@ stat.Def+=equipped.Def || 0; stat.HP+=equipped.HP || 0; stat.Ero+=equipped.Ero |
 };
  for (const key in stat) {karakter[key]=stat[key]}; invslotter()}; 
 
-const st3=document.querySelector(".structure3"); const pinput=document.querySelector("#player");
+const st3=document.querySelector(".structure3"); const pinput=document.querySelector("#player"); const att=document.querySelector(".attack")
+const st2=document.querySelector(".structure2"); const pinput2=document.querySelector("#enemy")
 const textdiv={name:st3.querySelector(".name2"), startSP:st3.querySelector(".sp2"), HP:st3.querySelector(".HP2"),
-      regen:st3.querySelector(".regen2"), Atk:st3.querySelector(".atk2"), Def:st3.querySelector(".def2")}
+    regen:st3.querySelector(".regen2"), Atk:st3.querySelector(".atk2"), Def:st3.querySelector(".def2"), Dmg: st3.querySelector(".damage2"),
+    Critdmg:st3.querySelector(".crit2"), Becs:st3.querySelector(".GV2"), Armor:st3.querySelector(".armor2"), armorpen:st3.querySelector(".pen2"),
+    Spdseg:st3.querySelector(".spdseg2"), Dodgeseg:st3.querySelector(".dodgeseg2"), Agi:st3.querySelector(".agi2"), Fell:st3.querySelector(".fres2"),
+    Mell:st3.querySelector(".mres2"), Sell:st3.querySelector(".sres2"), Ero:st3.querySelector(".ero2")  }
+    
+pinput.addEventListener("change", ()=>{const Entry=dataStore[pinput.value]; 
+if (!instance.player[Entry]) {instance.player[Entry]=structuredClone(dataStore[Entry])}; active.playerEntry=instance.player[pinput.value]; 
+const selected=instance.player[pinput.value];
+for (const div in textdiv) {const statname=div;
+textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected[statname]} / ${selected["curr"+statname] ?? ""}  `}});
 
- function simpopulate () {
-  pinput.addEventListener("change", ()=>{const player=dataStore[pinput.value]; for (const div in textdiv) {const statname=div;
-  textdiv[div].textContent=player[statname]}})};
-     
+pinput2.addEventListener("change", ()=>{const Entry2=dataStore[pinput2.value]; 
+if (!instance.enemy[Entry2]) {instance.enemy[Entry2]=structuredClone(dataStore[Entry2])}; active.enemyEntry2=instance.enemy[pinput2.value];
+const selected2=instance.enemy[pinput2.value] 
+for (const div in textdiv) {const statname=div;
+textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected2[statname]} / ${selected2["curr"+statname] ??  ""}`}});
 
 
- 
+
+
+
+
+
