@@ -1198,10 +1198,14 @@
            "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}},
 
   
-"Dudi":{"Név":"Apistos", "startSP":40, "currSP":2, "startAP":3, "currAP":0, "Atk":27, "currAtk":27, "Def":37, "currDef":37, "HP":39, "currHP":39, "regen":6, "currregen":6,
-"Critdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "CurrBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, "Ero":0, 
+"Dudi":{"name":"Apistos", "startSP":40, "currSP":2, "startAP":3, "currAP":0, "Atk":27, "currAtk":27, "Def":37, "currDef":37, "HP":39, "currHP":39, "regen":6, "currregen":6,
+"Critdmg":1.4, "currCritdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "CurrBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, "Ero":0, 
 "currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3      
- }
+ },
+
+"Kalsyo":{"name":"Probator", "startSP":45, "currSP":3, "startAP":4, "currAP":0, "Atk":40, "currAtk":40, "Def":36, "currDef":36, "HP":48, "currHP":48, "regen":5, "currregen":5,
+"Critdmg":1.25, "currCritdmg":1.25, "Crit":5, "currCrit":5, "Dmg":4, "currDmg":4, "Becs":9, "CurrBecs":9, "Fell":10, "currFell":10, "Mell":8, "currMell":8, "Sell":7, "currSell":7, "Ero":2, 
+"currEro":2, "Dodgeseg":2, "currDodgeseg":2, "Spdseg":1, "currSpdseg":1, "Armor":16, "currArmor":16, "armorpen":5, "currarmorpen":5, "Agi":5, "currAgi":5 }
 }	
 			
 	      	 
