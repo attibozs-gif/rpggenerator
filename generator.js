@@ -744,13 +744,13 @@ const textdiv={name:st3.querySelector(".name2"), startSP:st3.querySelector(".sp2
     Mell:st3.querySelector(".mres2"), Sell:st3.querySelector(".sres2"), Ero:st3.querySelector(".ero2")  }
     
 pinput.addEventListener("change", ()=>{const Entry=dataStore[pinput.value]; 
-if (!instance.player[Entry]) {instance.player[Entry]=structuredClone(dataStore[Entry])}; active.playerEntry=instance.player[pinput.value]; 
+if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClone(dataStore[pinput.value])}; active.playerEntry=instance.player[pinput.value]; 
 const selected=instance.player[pinput.value];
 for (const div in textdiv) {const statname=div;
 textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected[statname]} / ${selected["curr"+statname] ?? ""}  `}});
 
 pinput2.addEventListener("change", ()=>{const Entry2=dataStore[pinput2.value]; 
-if (!instance.enemy[Entry2]) {instance.enemy[Entry2]=structuredClone(dataStore[Entry2])}; active.enemyEntry2=instance.enemy[pinput2.value];
+if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClone(dataStore[pinput2.value])}; active.enemyEntry2=instance.enemy[pinput2.value];
 const selected2=instance.enemy[pinput2.value] 
 for (const div in textdiv) {const statname=div;
 textdiv[div].textContent=`${textdiv[div].dataset.label} ${selected2[statname]} / ${selected2["curr"+statname] ??  ""}`}});

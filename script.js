@@ -50,10 +50,10 @@ const idPattern = /^[a-z]{2}\d+$/;
 window.dataStore=null;
 fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/stat.json")
 .then (response => response.json())
-.then (data => {window.dataStore=data; attribute();})
-fetch("https://raw.githubusercontent.com/attibozs-gif/rpgcreator/refs/heads/main/dmg.json")
+.then (data => {window.dataStore=data; attribute();});
+fetch("https://raw.githubusercontent.com/attibozs-gif/rpggenerator/refs/heads/main/dmg.json")
 .then (response => response.json())
-.then (data => {window.dataStore4=data;})
+.then (data => {window.dataStore4=data});
 
 
 lines.forEach(line => {const trimmedLine = line.trimEnd();const colonIndex = trimmedLine.indexOf(':');
