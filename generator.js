@@ -332,8 +332,10 @@ if ((alkaszt.currSP-skillcost)>=0) {kaszt.Skills[code][lastind]+=1; updatespan(s
 if (kaszt.Skills[code][lastind]===10) {kaszt.Skills[code].push(0)}; if (fulltangle.length<currlimit && kaszt.Skills[code][lastind]===1) 
 {skillappend(skillEx, lastind)}; checkbox(code, lastinst); bonuskill(code, lastinst); skillapply(skillEx); update()};
 
-function checkbox (code, lastinst) {console.log("CHECKBOX STARTED", code, lastinst);
-const activecraft=dataStore2[code]; const craftrow=activecraft[lastinst]; if (!craftrow.Eval || !craftrow.Eval.Selection) return; 
+function checkbox (code, lastinst) {console.log("CHECKBOX STARTED", code, lastinst); console.log("ARGUMENTS:", arguments);
+const activecraft=dataStore2[code]; const craftrow = arguments[2] ?? activecraft[lastinst] ?? activecraft[activecraft.length - 1];
+console.log({receivedRank: lastinst,resolvedRow: lastinst - 1,rowData: activecraft[lastinst - 1]?.Szint});
+if (!craftrow.Eval || !craftrow.Eval.Selection) return; 
 const selbox=document.querySelector(".checking"); const craftpool=dataStore2.Pool[code]; console.log("CHECK:",code,craftpool);
 for (const rule of craftrow.Eval.Selection) {const groupname=Object.keys(rule)[0]; const container=document.createElement("div"); 
 let countindexs=0; let countindexn=0;  
@@ -397,18 +399,38 @@ const firstempty=emptangle[0];
 if (!craftrow.Eval || !craftrow.Eval.Skill) {return}; const bskill=craftrow.Eval.Skill; const bkey=Object.keys(bskill)[0]; const bvalue=bskill[bkey][0];
 console.log("BONUSKILL",{bkey,emptySlots: emptangle.length, currentSkill: kaszt.Skills[bkey]});
 if (emptangle.length > 0 && (!kaszt.Skills[bkey] || kaszt.Skills[bkey].length===0)) { console.log("Branch: GRANT BONUS SKILL");kaszt.Skills[bkey] = []; kaszt.Skills[bkey].push(bvalue); 
-console.log("BEFORE checkbox",bkey, bvalue); checkbox(bkey, bvalue);
+;console.log("BONUSSELECTION RETURN:", bonusselection(bkey, bvalue - 1));
+ checkbox(bkey, bvalue-1, bonusselection(bkey, bvalue-1));
 const fakeskill=dataStore2.Skills.find(row=> row.skillcode===bkey); console.log(fakeskill); const image=document.createElement("img"); image.classList.add("image");
 image.src=fakeskill.skillimage; image.style.width="70px"; image.style.height="70px"; firstempty.appendChild(image);
 firstempty.classList.remove("empty"); firstempty.classList.add("full"); firstempty.dataset.skillcode=bkey; firstempty.dataset.instance=kaszt.Skills[bkey].length-1;
 let skillspan=firstempty.querySelector("span"); if (!skillspan) {skillspan=document.createElement("span"); firstempty.appendChild(skillspan);
-skillspan.textContent=kaszt.Skills[bkey][kaszt.Skills[bkey].length-1]}}; 
-if (emptangle.length===0 && kaszt.Skills[bkey] && kaszt.Skills[bkey].length>0) {console.log("Branch: CONVERT TO RANK/SP");const last=kaszt.Skills[bkey].length-1; const rankskill=kaszt.Skills[bkey][last];
-const sworth=rankskill+1; const bworth=(bvalue*(bvalue+1))/2; const rchange=Math.max(0, bworth-sworth); console.log(bworth, sworth); 
+skillspan.textContent=kaszt.Skills[bkey][kaszt.Skills[bkey].length-1]}; return}; 
+console.log("SP CONDITION CHECK:", {
+  empt: emptangle.length,
+  hasSkill: !!kaszt.Skills[bkey],
+  len: kaszt.Skills[bkey]?.length,
+  willEnter:
+    emptangle.length === 0 &&
+    kaszt.Skills[bkey] &&
+    kaszt.Skills[bkey].length > 0
+}); 
+if (emptangle.length===0 && kaszt.Skills[bkey] && kaszt.Skills[bkey].length>0) {console.log("Branch: CONVERT TO RANK/SP"); 
+const last=kaszt.Skills[bkey].length-1; const rankskill=kaszt.Skills[bkey][last]; const sworth=rankskill+1; const bworth=(bvalue*(bvalue+1))/2; const rchange=Math.max(0, bworth-sworth); 
+console.log("BWORTH, SWORTH:", bworth, sworth); checkbox(bkey, bvalue) 
 if (bworth>=sworth) {kaszt.Skills[bkey][last]+=1; const icon=cont.querySelector(`[data-skillcode="${bkey}"][data-instance="${last}"]`); console.log(icon);
 const span=icon?.querySelector("span"); if (span) {span.textContent=kaszt.Skills[bkey][last]};
-kaszt.currSP=(kaszt.currSP || 0)+rchange; console.log(alkaszt.currSP, rchange);} else {kaszt.currSP= (kaszt.currSP || 0) + bworth};
-;}}
+kaszt.currSP=(kaszt.currSP || 0)+rchange; console.log("ALKASZT.SP && CHANGE:",alkaszt.currSP, rchange);} else {kaszt.currSP= (kaszt.currSP || 0) + bworth}; return}
+if (emptangle.length===0 && (!kaszt.Skills[bkey] || kaszt.Skills[bkey].length===0)) {
+const bworth=(bvalue*(bvalue+1))/2; console.log("Branch:SP ROUTE", bworth); kaszt.currSP=(kaszt.currSP || 0) + bworth; console.log(kaszt.currSP);}}
+
+function bonusselection(code, lastinst) {
+console.log("BONUSSELECTION CALL:", code, lastinst);
+console.log("ACTIVECRAFT:", dataStore2[code]);
+const activecraft=dataStore2[code]; const selection=activecraft.slice(0,lastinst+1).flatMap(r=>r.Eval?.Selection || []); 
+console.log("SLICE RANGE:", 0, lastinst + 1);
+console.log("SELECTED ROWS:", activecraft.slice(0, lastinst + 1));console.log("FINAL MERGED SELECTION:", selection);
+const craftrow= {Eval: {Selection:selection}}; return craftrow;};
 
 function skilldisappend (skillEx) {const grid1=cont.querySelector(".grid1"); const code=skillEx.dataset.skillcode; const fulltangle= grid1.querySelectorAll(".full");
 let lastind=kaszt.Skills[code].length-1; if (!fulltangle.length) return; if (kaszt.Skills[code][lastind] === 0) {
@@ -484,10 +506,10 @@ const span4=document.createElement("span"); if (row.Abitext) {span4.textContent=
 } }); };
 
 function finalitem(vardivs) {
-const span14=document.createElement("span");const invgrid=cont.querySelector(".inventory");
-const eq1=document.querySelector(".Equipment1");
-console.log(invgrid); const emptys=invgrid.querySelectorAll(".generated.empty").length+eq1.querySelector(".emptyslot").length
-console.log(emptys);span14.textContent=`; Üres Felszerelési helyek száma:${emptys}`; console.log(span14)
+const span14=document.createElement("span");const invgrid=cont.querySelector(".square");
+const eq1=document.querySelector(".Equipment1"); const gen=invgrid.querySelectorAll(".generated.empty"); console.log("HELLO", gen); 
+const emptys=document.querySelectorAll(".emptyslot"); console.log("ÜRES:", gen, emptys)
+span14.textContent=`; Üres Felszerelési helyek száma:${emptys}`; console.log(span14)
 for (const key in Equipment) {const equipped2=Object.entries(dataStore3.Felszerelés).find(([name,row])=>row.code===key); if (!equipped2) continue; 
 const itemname2=equipped2[0]; const itemvalue2=equipped2[1]; const span12=document.createElement("span"); const colorspan=document.createElement("span"); 
 colorspan.style.color="orange"; colorspan.textContent=` ${itemvalue2.Slot} : `; span12.appendChild(colorspan); span12.append(itemname2);
@@ -736,7 +758,10 @@ stat.Def+=equipped.Def || 0; stat.HP+=equipped.HP || 0; stat.Ero+=equipped.Ero |
  for (const key in stat) {karakter[key]=stat[key]}; invslotter()}; 
 
 const st3=document.querySelector(".structure3"); const pinput=document.querySelector("#player"); const att=document.querySelector(".attack")
-const st2=document.querySelector(".structure2"); const pinput2=document.querySelector("#enemy")
+const st2=document.querySelector(".structure2"); const pinput2=document.querySelector("#enemy"); const cbox=document.querySelector(".contentbox");
+const st0=document.querySelector(".structure0"); const acte=st0.querySelector(".activate"); const actp=st0.querySelector(".activate2");
+
+const roll=cbox.querySelector(".roll"); const span13=cbox.querySelector(".result");
 const textdiv={name:st3.querySelector(".name2"), startSP:st3.querySelector(".sp2"), HP:st3.querySelector(".HP2"),
     regen:st3.querySelector(".regen2"), Atk:st3.querySelector(".atk2"), Def:st3.querySelector(".def2"), Dmg: st3.querySelector(".damage2"),
     Critdmg:st3.querySelector(".crit2"), Becs:st3.querySelector(".GV2"), Armor:st3.querySelector(".armor2"), armorpen:st3.querySelector(".pen2"),
@@ -752,28 +777,66 @@ pinput.addEventListener("change", ()=>{const Entry=dataStore[pinput.value];
 if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClone(dataStore[pinput.value])}; active.attacker=instance.player[pinput.value]; 
 const p=instance.player[pinput.value];
 for (const div in textdiv) {const statname=div;
-textdiv[div].textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}  `}});
+textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}     `}});
+
+st0.addEventListener("click", (event)=> {if (event.target===acte) {active.attacker=instance.enemy[pinput2.value]; active.defender=instance.player[pinput.value]}});
+st0.addEventListener("click", (event)=> {if (event.target===actp) {active.attacker=instance.player[pinput.value]; active.defender=instance.enemy[pinput2.value]}});
 
 pinput2.addEventListener("change", ()=>{const Entry2=dataStore[pinput2.value]; 
 if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClone(dataStore[pinput2.value])}; active.defender=instance.enemy[pinput2.value];
 const e=instance.enemy[pinput2.value] 
 for (const div in textdiv2) {const statname=div;
-textdiv2[div].textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}`}});
+textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}   `}});
+
+
 
 document.addEventListener("click", (event) => {if (event.target===att) {combat()}})
+const crittable=[[], [6], [6], [6], [6], [6], [6], [6], [5,6], [5,6], [4,5,6], [4,5,6]];
 
 function combat () {
-const a=active.attacker; const d=active.defender; const avd=Math.max(0,(Math.floor((a.currAtk-d.currDef)/12))); console.log(a.currBecs, d.currBecs)
-const gv=Math.max(0,Math.floor((a.currBecs-Math.floor(d.Inspiráció/10)-d.currBecs)/5)); const ld=a.startSP-d.startSP; let ldparity;
-if (ld>10) {ldparity=3} else if(ld<-10) {ldparity=1} else {ldparity=2}; console.log(avd, gv, ldparity)
+const a=active.attacker; const d=active.defender; const avd=Math.max(1,(Math.floor((a.currAtk-d.currDef)/12))+1); console.log("ROLL", Number(roll.value), a, d); 
+console.log(a.currBecs, d.currBecs) 
+const gv=Math.max(1,(Math.floor((a.currBecs-Math.floor(d.Inspiráció/10)-d.currBecs)/5))+1); console.log("GV", gv, a.currBecs, Math.floor(d.Inspiráció/10), d.currBecs); const ld=a.startSP-d.startSP; let ldparity;
+if (ld>10) {ldparity=3} else if(ld<-10) {ldparity=1} else {ldparity=2}; console.log(avd, gv, ldparity);
+const dmgline=dataStore4["damage table"].values.find(row=> row[0]===avd && row[1]===gv && row[2]===ldparity); if (!dmgline) {throw new Error (`Invalid damga table`)};
+const dmgline2=dmgline[3]; console.log(dmgline2);
+const bonusdmg=dmgline2[roll.value-1]; console.log("Bonusdmg:", bonusdmg); const basedmg=Math.max(0,(bonusdmg+a.currDmg)); console.log("Basedmg:", basedmg)
+const delta2=Math.max(0,a.currAtk-d.currDef); const bracket=Math.max(0,(Math.floor(delta2/12))); const pressure=delta2 % 12; (console.log(bracket,pressure));
+const pr= Math.min(11, (pressure+bracket+Math.floor(a.Ügyesség/25))); console.log("PR:",pr); const critfaces=crittable[pr]; console.log("KRITIKAL:", crittable[pr],critfaces); 
+let basedmg2; 
+if(critfaces.includes(Number(roll.value))) {
+basedmg2=Math.round(Math.round(basedmg * (1 + (a.Ügyesség / 100) + ((3 * a.Ügyesség) / (basedmg * (a.Ügyesség + basedmg))))));
+console.log(`${basedmg2}, = ${basedmg} * ${(a.Ügyesség/100)} + ${3*a.Ügyesség} / ${a.Ügyesség/basedmg}`)} 
+else {basedmg2=basedmg; console.log(basedmg2)}; 
+const correction=0.53-(basedmg2/(basedmg2+d.currArmor)); const scale=basedmg2*((d.currArmor/100)/(1+(a.currarmorpen/2)*(a.currarmorpen/2)/100));
+const fulldmg=Math.round(basedmg2-correction-scale); console.log("FULLdmg:", basedmg2,correction, scale, "=", fulldmg)
+if (basedmg2>basedmg) {span13.style.color="red";span13.textContent=`Kritikus Találat! Sebzés:${fulldmg}`} else
+{span13.style.color="#00ff66"; span13.textContent=`Sima Találat, Sebzés:${fulldmg}`}; d.currHP-=fulldmg; d.currDodgeseg+=d.Dodgeseg; updateui(a,d);
+console.log({
+    attacker: a.name,
+    currDmg: a.currDmg,
+    bonusdmg,
+    basedmg
+});};
+
+function updateui (a, d) {
+if (d.name===instance.player[pinput.value].name) {for (const div in textdiv) {const statname=div;
+textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}};
+if (d.name===instance.enemy[pinput2.value].name) {for (const div in textdiv2) {const statname=div;
+textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}} }
 
 
-
-}
-
-
-
-
-
+const inputdiv= {currHP:st2.querySelector(".currHP"), currregen:st2.querySelector(".currregen"), currAtk:st2.querySelector(".curratk"), currDef:st2.querySelector(".currdef"),
+                currDmg:st2.querySelector(".currdmg"), currCrit:st2.querySelector(".currcrit"), currBecs:st2.querySelector("currgv"), currArmor:st2.querySelector(".currarm"),
+                currarmorpen:st2.querySelector(".currpen"), currSpdseg:st2.querySelector(".currspd"), currDodgeseg:st2.querySelector("currdodge"), 
+                currAgi:st2.querySelector(".curragi"), currEro:st2.querySelector(".currero"), currFell:st2.querySelector(".currfres"), 
+                currMell:st2.querySelector(".currmres"), currSell:st2.querySelector(".currsres"),}; 
+const inputdiv2= {currHP:st3.querySelector(".currHP"), currregen:st3.querySelector(".currregen"), currAtk:st3.querySelector(".curratk"), currDef:st3.querySelector(".currdef"),
+                currDmg:st3.querySelector(".currdmg"), currCrit:st3.querySelector(".currcrit"), currBecs:st3.querySelector("currgv"), currArmor:st3.querySelector(".currarm"),
+                currarmorpen:st3.querySelector(".currpen"), currSpdseg:st3.querySelector(".currspd"), currDodgeseg:st3.querySelector("currdodge"), 
+                currAgi:st3.querySelector(".curragi"), currEro:st3.querySelector(".currero"), currFell:st3.querySelector(".currfres"), 
+                currMell:st3.querySelector(".currmres"), currSell:st3.querySelector(".currsres"),};
+for (const div in inputdiv) {inputdiv[div].addEventListener("input", (event) => {if (event.target.value==="") return; instance.enemy[div]=Number(event.target.value)})}; 
+for (const div in inputdiv2) {inputdiv2[div].addEventListener("input", (event) => {if (event.target.value==="") return; instance.player[div]=Number(event.target.value)})}; 
 
 

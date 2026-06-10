@@ -1199,16 +1199,25 @@
 
   
 "Dudi":{"name":"Apistos", "startSP":40, "currSP":2, "startAP":3, "currAP":0, "Atk":27, "currAtk":27, "Def":37, "currDef":37, "HP":39, "currHP":39, "regen":6, "currregen":6,
-"Critdmg":1.4, "currCritdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "currBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, "Ero":0, 
-"currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3, "Inspiráció":11,
-"Ügyesség":5      
+"Critdmg":1.4, "currCritdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "currBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, 
+"Ero":0, "currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3, 
+"Inspiráció":11, "Ügyesség":5      
  },
 
 "Kalsyo":{"name":"Probator", "startSP":45, "currSP":3, "startAP":4, "currAP":0, "Atk":40, "currAtk":40, "Def":36, "currDef":36, "HP":48, "currHP":48, "regen":5, "currregen":5,
-"Critdmg":1.25, "currCritdmg":1.25, "Crit":5, "currCrit":5, "Dmg":4, "currDmg":4, "Becs":9, "currBecs":9, "Fell":10, "currFell":10, "Mell":8, "currMell":8, "Sell":7, "currSell":7, "Ero":2, 
-"currEro":2, "Dodgeseg":2, "currDodgeseg":2, "Spdseg":1, "currSpdseg":1, "Armor":16, "currArmor":16, "armorpen":5, "currarmorpen":5, "Agi":5, "currAgi":5, "Inspiráció":10, 
-"Ügyesség":1}
-}	
+"Critdmg":1.25, "currCritdmg":1.25, "Crit":5, "currCrit":5, "Dmg":4, "currDmg":4, "Becs":9, "currBecs":9, "Fell":10, "currFell":10, "Mell":8, "currMell":8, "Sell":7, "currSell":7, 
+"Ero":2, "currEro":2, "Dodgeseg":2, "currDodgeseg":2, "Spdseg":1, "currSpdseg":1, "Armor":16, "currArmor":16, "armorpen":5, "currarmorpen":5, "Agi":5, "currAgi":5, 
+"Inspiráció":10, "Ügyesség":1},
+
+"Omnirara":{"name":"Társállat", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":22, "currAtk":22, "Def":21, "currDef":21, "HP":22, "currHP":22, "regen":8, "currregen":8,
+"Critdmg":0, "currCritdmg":0, "Crit":0, "currCrit":0, "Dmg":5, "currDmg":5, "Becs":13, "currBecs":13, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
+"Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":4, "currArmor":4, "armorpen":17, "currarmorpen":17, "Agi":0, "currAgi":0, 
+"Inspiráció":0, "Ügyesség":0}
+
+
+
+}
+
 			
 	      	 
 
