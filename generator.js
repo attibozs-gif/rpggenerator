@@ -101,7 +101,8 @@ function update () {
                 
                 const petNAME=cont.querySelector(".petname"); const petATK=cont.querySelector(".petatk"); const petDEF=cont.querySelector(".petdef");
                 const petHP=cont.querySelector(".petHP"); const petREGEN=cont.querySelector(".petregen"); const petDMG=cont.querySelector(".petdmg");
-                const petARMOR=cont.querySelector(".petarmor"); const petGEAR=cont.querySelector(".petGV"); const petPEN=cont.querySelector(".petpen");  
+                const petARMOR=cont.querySelector(".petarmor"); const petGEAR=cont.querySelector(".petGV"); const petPEN=cont.querySelector(".petpen"); 
+                const petDEX=cont.querySelector(".petdex"); const petAGI=cont.querySelector(".petagi"); 
 
                 kasztnev.textContent = jatekos.name; alkasztnev.textContent = jatekos.subname
                 currAP.textContent=jatekos.currAP;
@@ -113,7 +114,8 @@ function update () {
                 arm.textContent=jatekos.Armor; GV.textContent=jatekos.Becs;
                 
                 petNAME.textContent=Pet.Name; petATK.textContent=Pet.Atk; petDEF.textContent=Pet.Def; petHP.textContent=Pet.HP; petGEAR.textContent=Pet.Gear;
-                petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen  };     
+                petARMOR.textContent=Pet.Armor; petREGEN.textContent=Pet.Regen; petDMG.textContent=Pet.Dmg; petPEN.textContent=Pet.Pen
+                petDEX.textContent=Pet.Ügyesség; petAGI.textContent=Pet.Agi};     
                                          
 document.addEventListener("DOMContentLoaded", () => {const startSP = document.getElementById("startSP"); 
 startSP.addEventListener("input", () => {alkaszt.startSP = Number(startSP.value)
@@ -196,7 +198,7 @@ function petsearch () {if (!dataStore) return; if (!Pet) return;
 const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const upper = dataStore.Pets.filter (row =>(row.SP>=alkaszt.startSP)) 
 const nearlower = lower [lower.length -1]; const nearupper = upper [0]; const petlist=dataStore.HasPet[alkaszt.code]; 
 const petselect=petlist[pindex]; 
-let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen;
+let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen; petdex; petagi
 if (nearupper.SP===nearlower.SP) {
 petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
 petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].regen} else {
@@ -207,9 +209,12 @@ petgear=nearlower[petselect].Gear + ((nearupper[petselect].Gear-nearlower[petsel
 petdmg=nearlower[petselect].Dmg + ((nearupper[petselect].Dmg-nearlower[petselect].Dmg)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petarmor=nearlower[petselect].Armor + ((nearupper[petselect].Armor-nearlower[petselect].Armor)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower[petselect].armorpen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
-petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);}
+petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petdex=nearlower[petselect].Ügyesség + ((nearupper[petselect].Ügyesség-nearlower[petselect].Ügyesség)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
+petagi=nearlower[petselect].Agi + ((nearupper[petselect].Agi-nearlower[petselect].Agi)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)};
 Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
-Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg); Pet.Name=petselect; update()}
+Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg); Pet.Agi=Math.floor(petagi); Pet.Ügyesség=Math.floor(petdex); 
+Pet.Name=petselect; update()}
 
 let aindex=0; 
 let currAtt;
@@ -457,8 +462,10 @@ Object.values(vardivs).forEach (div => div.innerHTML="");
 country();
 Object.keys(jatekos.Skills).forEach (code => skillapply(code));
 const inttitle=document.createElement("span"); inttitle.classList.add("szalag"); vardivs.ftext.appendChild(inttitle); inttitle.textContent="Intelligencia:" 
-const intspan=document.createElement("span"); vardivs.ftext.appendChild(intspan)
-intspan.textContent=`Csatánként egyszer + ${Math.floor(jatekos.Intelligencia/4)} sebzés fegyvertávon belül`; }
+const intspan=document.createElement("span"); vardivs.ftext.appendChild(intspan);
+intspan.textContent=`Csatánként egyszer + ${Math.floor(jatekos.Intelligencia/4)} sebzés fegyvertávon belül`;
+const ephspan=document.createElement("span"); vardivs.ftext.appendChild(ephspan);
+ephspan.textContent=`Ellenfelek képességei -${Math.floor(jatekos.Felismerés/10)} AP időtartammal hatnak`};
 
 function skillapply(code) {;
 const skillszint=Math.max(0,...(jatekos.Skills[code] || [])); const skilllist=dataStore2[code]; 
@@ -838,5 +845,18 @@ const inputdiv2= {currHP:st3.querySelector(".currHP"), currregen:st3.querySelect
                 currMell:st3.querySelector(".currmres"), currSell:st3.querySelector(".currsres"),};
 for (const div in inputdiv) {inputdiv[div].addEventListener("input", (event) => {if (event.target.value==="") return; instance.enemy[div]=Number(event.target.value)})}; 
 for (const div in inputdiv2) {inputdiv2[div].addEventListener("input", (event) => {if (event.target.value==="") return; instance.player[div]=Number(event.target.value)})}; 
+
+
+function generateTowns(count = 100) {
+  const list1 = ["Z", "K", "D", "V", "M"];
+  const list2 = ["a", "e", "i", "o", "u"];
+  const list3 = ["br","cr","fr","gr","pr","tr","fl","sl","sh","th","ch","sw","sn","sp","st","nl","nr","ns","nf","nh","ny","ly","syr","shyr","thyr","bryn","trl","nyr"];
+  const list4 = ["l", "n", "r", "s", "h", "f"];
+function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];}
+const seen = new Set(); const result = []; while (result.length < count) {
+    const name =pick(list1) +pick(list2) +pick(list3) +pick(list2) +pick(list4);
+    if (!seen.has(name)) {seen.add(name);result.push(name);}}return result.join (", ")}
+
 
 
