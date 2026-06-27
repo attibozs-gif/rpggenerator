@@ -198,7 +198,7 @@ function petsearch () {if (!dataStore) return; if (!Pet) return;
 const lower = dataStore.Pets.filter (row => (row.SP<=alkaszt.startSP)); const upper = dataStore.Pets.filter (row =>(row.SP>=alkaszt.startSP)) 
 const nearlower = lower [lower.length -1]; const nearupper = upper [0]; const petlist=dataStore.HasPet[alkaszt.code]; 
 const petselect=petlist[pindex]; 
-let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen; petdex; petagi
+let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen, petdex, petagi
 if (nearupper.SP===nearlower.SP) {
 petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
 petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].regen} else {
