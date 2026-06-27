@@ -558,7 +558,7 @@
 "Pets":[{
 "SP":1,     "Loma":{"Atk":3, "Def":3, "Gear":1, "HP":9, "Dmg":3, "Armor":2, "armorpen":2, "regen":3, "Ügyesség":1, "Agi":4},
             "Ratriah":{"Atk":5, "Def":2, "Gear":1, "HP":6, "Dmg":5, "Armor":1, "armorpen":1, "regen":3, "Ügyesség":3, "Agi":2},
-            "Ikaulah":{"Atk":4, "Def":3, "Gear":5, "HP":8, "Dmg":2, "Armor":1, "armorpen":1, "regen":1, "Ügyesség":0, "Agi:10"},
+            "Ikaulah":{"Atk":4, "Def":3, "Gear":5, "HP":8, "Dmg":2, "Armor":1, "armorpen":1, "regen":1, "Ügyesség":0, "Agi":10},
             "Sapauka":{"Atk":6, "Def":1, "Gear":1, "HP":8, "Dmg":5, "Armor":1, "armorpen":0, "regen":2, "Ügyesség":10, "Agi":2},
             "Kriva":{"Atk":4, "Def":3, "Gear":1, "HP":13, "Dmg":4, "Armor":0, "armorpen":3, "regen":1, "Ügyesség":3, "Agi":1 },
             "Nehtep":{"Atk":3, "Def":6, "Gear":1, "HP":10, "Dmg":6, "Armor":2, "armorpen":1, "regen":2, "Ügyesség":1, "Agi":6},
