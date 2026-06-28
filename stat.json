@@ -407,7 +407,7 @@
 "Classes": [
 "",  
 "Katona", 
-"Íjász", 
+"Ijász", 
 "Szörnypásztor", 
 "Paladin", 
 "Mágus", 
@@ -422,7 +422,7 @@
 
 "Subclasses": {
         "Katona": ["Ira", "Con", "Van", "Car"], 
-	      "Íjász": ["Rey", "Card", "Gan", "Mys"],
+	      "Ijász": ["Rey", "Card", "Gan", "Mys"],
 	      "Szörnypásztor": ["Dy", "Hal", "Or", "Nem"],
 	      "Paladin": ["Qua", "Pre", "Pro", "Fac"],
 	      "Mágus": ["Anf", "Fos", "Agn", "Kym"],
@@ -704,7 +704,7 @@
                                 {"SP":100, "Skillslot":5},
                                 {"SP":170, "Skillslot":6},
                                 {"SP":250,"Skillslot":7}],
-"Íjász": [
+"Ijász": [
                                 {"SP":1, "Skillslot":1},
                                 {"SP":10, "Skillslot":2},
                                 {"SP":25, "Skillslot":3},
@@ -823,7 +823,7 @@
                               {"SP":215, "Invslot":13},
                               {"SP":250, "Invslot":14},
                               {"SP":285, "Invslot":15}],
-"Íjász": [                    
+"Ijász": [                    
                               {"SP":1, "Invslot":2},
                               {"SP":5, "Invslot":3},
                               {"SP":10, "Invslot":4},
@@ -1209,8 +1209,6 @@
 "Ellenállás":"Fizikális", "Költség":4, "Leírás":"Célpont ellenfél az időtartam végéig nem mozoghat"}, 
 {"Név":"Visszaszerzés", "Szint":1, "Típus":"Egyedi", "Napi Használat":1, "Hatótáv":"Bárhol", "Intervallum":"Nincs", "Erő":"Nincs", "Ellenállás":"nincs", "Költség":1,
 "Leírás":"A Játékos automatikus visszaszerez bármilyen tárgyat ami akarata ellenére lett tőle eltulajdonítva 1 órán belül"}]},
-"Thief2":
-
 },
 
 
