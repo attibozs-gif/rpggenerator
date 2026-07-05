@@ -945,7 +945,7 @@
         {"Szint":3, "Eval":{"Skill":{"Gubt":[2]}}, "Text":"Naponta 1-szer +5 Meshik alapanyag beszerzéskor, megfelelő típusú és szintű Rítus szükséges"},
         {"Szint":4, "Fixtext":"A játékos képes a Segítség Imája által készült Hibás tárgyak azonosítására, heti 2 azonosítás", 
                     "Text":"Naponta 1-szer +1 Romlott Szimtax alapanyag beszerzéskor, megfelelő típusú és szintű Rítus szükséges"},
-        {"Szint":5, "Eval": {"Selection":{"Kategória":{"Minőség":"Romlott", "Count":3}, "Fixtext":"A képzettség nélkül előállított tárgyak költsége +50 Meshik"}},
+        {"Szint":5, "Eval": {"Selection":[{"Kategória":{"Minőség":"Romlott", "Count":3}}]}, "Fixtext":"A képzettség nélkül előállított tárgyak költsége +50 Meshik",
                     "Text":"Naponta 1-szer +1 Romlott alapanyag annak beszerzésekor, megfelelő típusú és szintű Rítus szükséges"},
         {"Szint":6, "Eval":{"IntelligenciaTeszt":3, "Tehetség":2}, "Text":"Naponta 1-szer +1 Hibás Szimtax alapanyag beszerzéskor, megfelelő típusú és szintű Rítus szükséges"},
         {"Szint":7, "Fixtext":"A játékos képes a Segítség Imája által készült Nyers tárgyak azonosítására, heti 3 azonosítás",
