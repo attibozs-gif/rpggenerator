@@ -35,12 +35,12 @@ function update () {
                 jatekos.Felismerés= (karakter.Felismerés || 0) + (kaszt.Felismerés || 0) + (alkaszt.Felismerés || 0);
                 jatekos.Inspiráció= (karakter.Inspiráció || 0) + (kaszt.Inspiráció || 0) + (alkaszt.Inspiráció || 0);
 
-                alkaszt.Agi=Math.floor((alkaszt.Ügyesség+alkaszt.Gyorsaság)/2); alkaszt.Fell=Math.floor((alkaszt.Fizikum+alkaszt.Állóképesség)/2); 
-                alkaszt.Mell=Math.floor((alkaszt.Intelligencia+alkaszt.Tehetség)/2); alkaszt.Sell=Math.floor((alkaszt.Felismerés+alkaszt.Inspiráció)/2);
-                kaszt.HP=Math.floor(alkaszt.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
+                alkaszt.Agi=Math.floor((jatekos.Ügyesség+jatekos.Gyorsaság)/2); alkaszt.Fell=Math.floor((jatekos.Fizikum+jatekos.Állóképesség)/2); 
+                alkaszt.Mell=Math.floor((jatekos.Intelligencia+jatekos.Tehetség)/2); alkaszt.Sell=Math.floor((jatekos.Felismerés+jatekos.Inspiráció)/2);
+                kaszt.HP=Math.floor(jatekos.Állóképesség/10); alkaszt.regen=Math.min(30, Math.floor(2+(jatekos.HP/25)+(jatekos.Állóképesség/5)));
                 alkaszt.Dmg= (alkaszt.Dmg || 1 ), jatekos.Crit=Math.round(jatekos.Dmg+((jatekos.Dmg/100)*jatekos.Ügyesség+(3*jatekos.Ügyesség/(jatekos.Ügyesség+jatekos.Dmg))))
                 alkaszt.Critdmg=jatekos.Crit/jatekos.Dmg; alkaszt.armorpen=Math.floor(jatekos.Fizikum/2);
-                alkaszt.Spdseg=Math.floor(alkaszt.Gyorsaság/5); alkaszt.Ero=Math.floor(alkaszt.Tehetség/4); 
+                alkaszt.Spdseg=Math.floor(jatekos.Gyorsaság/5); alkaszt.Ero=Math.floor(jatekos.Tehetség/4); 
 
                 jatekos.Critdmg= (karakter.Critdmg || 0) + (kaszt.Critdmg || 0) + (alkaszt.Critdmg || 0);
                 jatekos.Becs=(karakter.Becs || 0) + (alkaszt.Becs || 0) + (kaszt.Becs || 0); 
@@ -201,7 +201,8 @@ const petselect=petlist[pindex];
 let petatk, petdef, pethp, petgear, petdmg, petarmor, petpen, petregen, petdex, petagi
 if (nearupper.SP===nearlower.SP) {
 petatk=nearlower[petselect].Atk; petdef=nearlower[petselect].Def; pethp=nearlower[petselect].HP; petgear=nearlower[petselect].Gear;
-petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].regen} else {
+petdmg=nearlower[petselect].Dmg; petarmor=nearlower[petselect].Armor; petpen=nearlower[petselect].armorpen; petregen=nearlower[petselect].regen;
+petagi=nearlower[petselect].Agi; petdex=nearlower[petselect].Ügyesség} else {
 petatk=nearlower[petselect].Atk + ((nearupper[petselect].Atk-nearlower[petselect].Atk)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petdef=nearlower[petselect].Def + ((nearupper[petselect].Def-nearlower[petselect].Def)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 pethp=nearlower[petselect].HP + ((nearupper[petselect].HP-nearlower[petselect].HP)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
@@ -212,6 +213,7 @@ petpen=nearlower[petselect].armorpen + ((nearupper[petselect].armorpen-nearlower
 petregen=nearlower[petselect].regen + ((nearupper[petselect].regen-nearlower[petselect].regen)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petdex=nearlower[petselect].Ügyesség + ((nearupper[petselect].Ügyesség-nearlower[petselect].Ügyesség)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP);
 petagi=nearlower[petselect].Agi + ((nearupper[petselect].Agi-nearlower[petselect].Agi)/(nearupper.SP-nearlower.SP))*(alkaszt.startSP-nearlower.SP)};
+console.log(petagi); console.log(petdex)
 Pet.Atk=Math.floor(petatk); Pet.Def=Math.floor(petdef); Pet.HP=Math.floor(pethp); Pet.Gear=Math.floor(petgear); Pet.Armor=Math.floor(petarmor);
 Pet.Pen=Math.floor(petpen); Pet.Regen=Math.floor(petregen); Pet.Dmg=Math.floor(petdmg); Pet.Agi=Math.floor(petagi); Pet.Ügyesség=Math.floor(petdex); 
 Pet.Name=petselect; update()}

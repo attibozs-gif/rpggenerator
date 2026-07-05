@@ -125,5 +125,5 @@ if (event.target.id==="no") {const check=document.querySelector(".finalcheck"); 
 document.addEventListener("click", (event)=> {if (event.target!==sim) return; cont.innerHTML=""; sim2.classList.remove("hidden"); cont.appendChild(sim2);})
 
 const save=document.getElementById("save"); save.addEventListener("click", (event) =>{ 
-{const data=JSON.stringify(jatekos); const blob=new Blob ([data], {type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+{const data=JSON.stringify(jatekos, Equipment); const blob=new Blob ([data], {type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
 a.download="character.json"; a.click()}})
