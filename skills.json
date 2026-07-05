@@ -1043,7 +1043,7 @@
                         "Csodaszer":{"Minőség":["Makulátlan"], "select":["jg", "ki", "hf"]}},
                 "Nyei":{"Nyelv": {"Minőség":["nincs", "nincs", "nincs"],
                                         "select":["Mei", "Venta", "Malco", "Prosant", "Mergla"]}},
-                "Alai":{"Katgeória": {"Minőség":["Romlott", "Hibás"],
+                "Alai":{"Kategória": {"Minőség":["Romlott", "Hibás"],
                 "select": ["mv","fv", "sk", "nv", "vv", "vu", "ck", "va", "sn", "ps", "kd", "tr", "ba", "zf", "sf", "ij", "bs", "ta", "mk",
                  "dr", "fo", "nk", "vk", "vd", "kv", "dp", "tn", "es", "fd", "gr", "at", "ko", "gu", "vs", "sl", "vb", "ra", "hs", 
                  "sv", "bv", "gl", "sa", "vo", "ku", "kk", "ov", "ca", "ls"]}}},
