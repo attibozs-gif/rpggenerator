@@ -1237,7 +1237,7 @@
                                         {"type":"or", "chquality":"Romlott", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],
                                 "6":    [{"inputqual":"Nyers", "outputqual":"Hibás", "multiplier":1, 
                                         "output":[{"type":"and", "items":{"Szomatium":1, "Mularin":1, "Nimesh":1}}, {"type":"or", "items":{"Theráx":1, "Anerox":1, "Eonix":1}}]}],        
-                                "7":    [{"inputqual":"Nyers", "outputqual":"Hibás", "multiplier":1, "endquan":1,
+                                "7":    [{"inputqual":"Nyers", "outputqual":"Hibás", "multiplier":1, 
                                          "output":[{"type":"and", "items":{"Szomatium":1, "Mularin":1, "Nimesh":2}}, 
                                         {"type":"or", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],                                   
                                 "8":    [{"inputqual":"Makulátlan", "outputqual":"Nyers", "multiplier":3,
@@ -1300,7 +1300,7 @@
                                 "6":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":4, "output":[{"type":"and", "items":{"Memoznit":1}}]}],
                                 "7":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":3, "output":[{"type":"and", "items":{"Memoznit":1}}]}],
                                 "9":    [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":3, "output":[{"type":"and", "items":{"Memoznit":1}}]},
-                                         {"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "endquan":1, "output":[{"type":"and", "items":{"Memoznit":1}}]}],
+                                         {"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "output":[{"type":"and", "items":{"Memoznit":1}}]}],
                                 "10":   [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":2, "output":[{"type":"and", "items":{"Memoznit":1}}]}]}}},                                                                              
    
 "Irenit":       {"Szins":       {"Ingredients": [{"type":"and", "items":{"Memoznit":1, "Neumonit":1}}], "Szintek":{
@@ -1329,7 +1329,7 @@
                                 "9":    [{"inputqual":"Makulátlan", "outputqual":"Nyers", "multiplier":2, 
                                         "output":[{"type":"and", "items":{"Memoznit":2, "Neumonit":2, "Nimesh":4}}, 
                                         {"type":"or", "chquality":"Hibás", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],  
-                                "10":   [{"inputqual":"Makulátlan", "outputqual":"Nyers", "multiplier":1, "endquan":2,
+                                "10":   [{"inputqual":"Makulátlan", "outputqual":"Nyers", "multiplier":1,
                                         "output":[{"type":"and", "items":{"Memoznit":2, "Neumonit":2, "Nimesh":6}}, 
                                         {"type":"or", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}]}},
                                      
@@ -1341,7 +1341,7 @@
                                 "6":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":4, "output":[{"type":"and", "items":{"Irenit":1}}]}], 
                                 "7":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":3, "output":[{"type":"and", "items":{"Irenit":1}}]}], 
                                 "9":    [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":3, "output":[{"type":"and", "items":{"Irenit":1}}]}, 
-                                        {"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "endquan":1, "output":[{"type":"and", "items":{"Irenit":1}}]}], 
+                                        {"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "output":[{"type":"and", "items":{"Irenit":1}}]}], 
                                 "10":   [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":2, "output":[{"type":"and", "items":{"Irenit":1}}]}]}}},  
 
 "Uhton":        {"Szins":       {"Ingredients": [{"type":"and", "items":{"Mularin":1}}, {"type":"or", "items":
@@ -1354,7 +1354,7 @@
                                 "7":    [{"inputqual":"Nyers", "outputqual": "Nyers", "multiplier":1, "output":[{"type":"and", "items":{"Uhton":1}}]}],
                                 "9":    [{"inputqual": "Makulátlan", "outputqual": "Makulátlan", "output":[{"type":"and", "items":{"Uhton":1}}]},
                                         {"inputqual": "Nyers", "outputqual":"Makulátlan", "multiplier":4, "output":[{"type":"and", "items":{"Uhton":1}}]}],                          
-                                "10":   [{"inputqual": "Nyers", "outputqual": "Makulátlan", "multiplier":3, "endquan":1, "output":[{"type":"and", "items":{"Uhton":1}}]}]}},
+                                "10":   [{"inputqual": "Nyers", "outputqual": "Makulátlan", "multiplier":3, "output":[{"type":"and", "items":{"Uhton":1}}]}]}},
 
                 "Apts":         {"Ingredients": [{"type":"and", "items":{"Uhton":1}}], "Szintek": {
                                 "1":    [{"inputqual":"Romlott", "outputqual":"Minősíthetetlen", "multiplier":1, "output":[{"type":"and", "items":{"Meshik":2}}]}],
@@ -1447,7 +1447,7 @@
                                 "2": [{"inputqual":"Romlott", "outputqual":"Minősíthetetlen", "multiplier":1, "output":[{"type":"and", "items":{"Meshik":2}}]}],  
                                 "4": [{"inputqual":"Hibás", "outputqual":"Romlott", "multiplier":1, "output":[{"type":"and", "items":{"Irenit":1, "Frénium":1, "Meshik":4}},
                                      {"type":"or", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],                                 
-                                "7": [{"inputqual":"Nyers", "outputqual":"Hibás", "multiplier":1, "output":[{"type":"and", "items":{"Irenit":1, "Frénium":1, "":4}},
+                                "7": [{"inputqual":"Nyers", "outputqual":"Hibás", "multiplier":1, "output":[{"type":"and", "items":{"Irenit":1, "Frénium":1, "Nimesh":2}},
                                      {"type":"or", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],    
                                 "9": [{"inputqual":"Makulátlan", "outputqual":"Nyers", "multiplier":2, "output":[{"type":"and", "items":{"Irenit":2, "Frénium":2, "Nimesh":4}},
                                      {"type":"or", "chquality":"Hibás", "items":{"Theráx":1, "Anerox":1, "Eonix":1, "Diszepelrix":1, "Szapaux":1, "Szimtax":1}}]}],    
@@ -1469,7 +1469,7 @@
                                 "5": [{"inputqual":"Hibás", "outputqual":"Hibás", "multiplier":1, "output":[{"type":"and", "items":{"Heszperisz":1}}]},
                                        {"inputqual":"Romlott","outputqual":"Hibás","multiplier":2, "output":[{"type":"and", "items":{"Heszperisz":1}}]}],
                                 "7": [{"inputqual":"Nyers", "outputqual": "Nyers", "multiplier":1, "output":[{"type":"and", "items":{"Heszperisz":1}}]},
-                                       {"inputqual":"Hibás", "outputqual":"Nyers", "multiplier":2, "endquan":1,"output":[{"type":"and", "items":{"Heszperisz":1}}]}],                        
+                                       {"inputqual":"Hibás", "outputqual":"Nyers", "multiplier":2, "output":[{"type":"and", "items":{"Heszperisz":1}}]}],                        
                                 "10": [{"inputqual": "Nyers", "outputqual": "Makulátlan", "multiplier":3,"output":[{"type":"and", "items":{"Heszperisz":1}}]},
                                         {"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":1, "output":[{"type":"and", "items":{"Heszperisz":1}}]}]}},                                                                     
                 
@@ -1504,7 +1504,7 @@
                                 "10": [{"inputqual": "Nyers", "outputqual": "Makulátlan", "multiplier":3,  "output":[{"type":"and", "items":{"Ajdimin":1}}]},
                                       {"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":1, "output":[{"type":"and", "items":{"Ajdimin":1}}]}]}},  
                                 
-                "Aps":          {"Ingredients": [{"type":"and", "items":{"Ajdimin":1}}], "Szintek":{           
+                "Apts":          {"Ingredients": [{"type":"and", "items":{"Ajdimin":1}}], "Szintek":{           
                                 "3":    [{"inputqual":"Romlott", "outputqual":"Minősíthetetlen", "multiplier":1,  "output":[{"type":"and", "items":{"Meshik":2}}]}],             
                                 "5":    [{"inputqual":"Hibás", "outputqual":"Romlott", "multiplier":1,  
                                         "output":[{"type":"and", "items":{"Szapinit":1, "Memoznit":1, "Neumonit":1, "Meshik":5}},
@@ -1633,7 +1633,7 @@
                                 "6":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":4, "output":[{"type":"and", "items":{"Anerox":1}}]}],
                                 "7":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":3, "output":[{"type":"and", "items":{"Anerox":1}}]}],
                                 "8":    [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":3, "output":[{"type":"and", "items":{"Anerox":1}}]}],
-                                "9":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "endquan":1, "output":[{"type":"and", "items":{"Anerox":1}}]}],
+                                "9":    [{"inputqual":"Nyers", "outputqual":"Nyers", "multiplier":2, "output":[{"type":"and", "items":{"Anerox":1}}]}],
                                 "10":   [{"inputqual":"Makulátlan", "outputqual":"Makulátlan", "multiplier":2, "output":[{"type":"and", "items":{"Anerox":1}}]}]}}},
 
 "Eonix":        {"Dias":        {"Ingredients": [{"type":"and", "items":{"Neumonit":1}}], "Szintek": {

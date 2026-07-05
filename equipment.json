@@ -3,297 +3,593 @@
                            "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrk1",
                           "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Memoznit, 2 db Romlott Heszperisz, 3 db Romlott Anerox"},
 
+"Hibás Katonai Szablya": {"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
+                           "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrk1",
+                          "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Memoznit, 2 db Hibás Heszperisz, 3 db Hibás Anerox"},
+
 "Romlott Szövetségi Szablya":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
                            "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrs1", 
                            "Szükséges":"1 db Romlott Szomatium, 2 db Romlott Lamentium, 2 db Romlott Uhton, 1 db Romlott Eonix"},
+
+"Hibás Szövetségi Szablya":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
+                           "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrs1", 
+                           "Szükséges":"1 db Hibás Szomatium, 2 db Hibás Lamentium, 2 db Hibás Uhton, 1 db Hibás Eonix"},                          
 
 "Romlott Bizalmi Szablya":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
                            "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrb1",
                            "Szükséges":"1 db Romlott Szomatium, 2 db Romlott Meridal, 2 db Romlott Farighion, 1 db Romlott Diszepelrix, 2 db Romlott Szimtax"},
 
+"Hibás Bizalmi Szablya":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
+                           "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdrb1",
+                           "Szükséges":"1 db Hibás Szomatium, 2 db Hibás Meridal, 2 db Hibás Farighion, 1 db Hibás Diszepelrix, 2 db Hibás Szimtax"},
+
 "Romlott Uralmi Szablya":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
                           "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdru1",
                           "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Ajdimin, 1 db Romlott Meridal, 1 db Romlott Szapaux"},
+
+"Hibás Uralmi Szablya":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Kard", "Típus":"Szablya", "image":"WEAPON/SpoiledCuirass.jpg",
+                          "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"kdru1",
+                          "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Ajdimin, 1 db Hibás Meridal, 1 db Hibás Szapaux"},
 
 "Romlott Katonai Pallos": {"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
                           "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrk2",
                           "Szükséges":"2 db Romlott Frénium, 2 db Romlott Meruzin, 2 db Romlott Irenit, 3 db Romlott Uhton, 3 db Romlott Anerox"},
 
+"Hibás Katonai Pallos": {"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
+                          "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrk2",
+                          "Szükséges":"2 db Hibás Frénium, 2 db Hibás Meruzin, 2 db Hibás Irenit, 3 db Hibás Uhton, 3 db Hibás Anerox"},
+
 "Romlott Szövetségi Pallos": {"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
                           "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrs2",
                           "Szükséges":"3 db Romlott Frénium, 1 db Romlott Veruzin, 2 db Romlott Mularin, 3 db Romlott Meridal, 1 db Romlott Theráx"},
+
+"Hibás Szövetségi Pallos": {"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
+                          "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrs2",
+                          "Szükséges":"3 db Hibás Frénium, 1 db Hibás Veruzin, 2 db Hibás Mularin, 3 db Hibás Meridal, 1 db Hibás Theráx"},
 
 "Romlott Bizalmi Pallos": {"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
                          "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrb2", 
                          "Szükséges":"3 db Romlott Frénium, 3 db Romlott Lamentium, 3 db Romlott Szapinit, 2 db Romlott Farighion, 2 db Romlott Diszepelrix"},
 
+"Hibás Bizalmi Pallos": {"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
+                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdrb2", 
+                         "Szükséges":"3 db Hibás Frénium, 3 db Hibás Lamentium, 3 db Hibás Szapinit, 2 db Hibás Farighion, 2 db Hibás Diszepelrix"},                 
+
 "Romlott Uralmi Pallos": {"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
                          "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":4, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdru2", 
                          "Szükséges":"3 db Romlott Frénium, 1 db Romlott Neumonit, 3 db Romlott Ajdimin, 3 db Romlott Mularin, 1 db Romlott Szimtax"},
+
+"Hibás Uralmi Pallos": {"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Kard", "Típus":"Pallos", "image":"WEAPON/SpoiledClaymore.jpg",
+                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":4, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Nyelv":{"Mei":1}, "Előállítható":"Az Ártás Zsoltára", "code":"kdru2", 
+                         "Szükséges":"3 db Hibás Frénium, 1 db Hibás Neumonit, 3 db Hibás Ajdimin, 3 db Hibás Mularin, 1 db Hibás Szimtax"},
 
 "Romlott Katonai Gyilok":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrk1",
                         "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Lamentium, 1 db Romlott Ajdimin, 1 db Romlott Uhton, 2 db Romlott Eonix"},
 
+"Hibás Katonai Gyilok":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrk1",
+                        "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Lamentium, 1 db Hibás Ajdimin, 1 db Hibás Uhton, 2 db Hibás Eonix"},
+
 "Romlott Szövetségi Gyilok":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrs1",
                         "Szükséges": "2 db Romlott Neumonit, 1 db Romlott Irenit, 1 db Romlott Ajdimin, 2 db Romlott Theráx"},
 
+"Hibás Szövetségi Gyilok":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrs1",
+                        "Szükséges": "2 db Hibás Neumonit, 1 db Hibás Irenit, 1 db Hibás Ajdimin, 2 db Hibás Theráx"},
+
 "Romlott Bizalmi Gyilok":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":1, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrb1",
                         "Szükséges":"3 db Romlott Neumonit, 1 db Romlott Memoznit, 2 db Romlott Ajdimin, 3 db Romlott Mularin, 1 db Romlott Szapaux"},
+                
+"Hibás Bizalmi Gyilok":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":1, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trrb1",
+                        "Szükséges":"3 db Hibás Neumonit, 1 db Hibás Memoznit, 2 db Hibás Ajdimin, 3 db Hibás Mularin, 1 db Hibás Szapaux"},
 
 "Romlott Uralmi Gyilok":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trru1",
                         "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Ajdimin, 1 db Romlott Meridal, 2 db Romlott Anerox"},
 
+"Hibás Uralmi Gyilok":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Tőr", "Típus":"Gyilok", "image":"WEAPON/SpoiledStilleto.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Nyelv":{"Malco":1}, "Táv":"Frontális", "Előállítható":"Az Ártás Zsoltára", "code":"trru1",
+                        "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Ajdimin, 1 db Hibás Meridal, 2 db Hibás Anerox"},
+
 "Romlott Katonai Krisz":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrk2",
                         "Szükséges": "2 db Romlott Szomatium, 3 db Romlott Lamentium, 1 db Romlott Ajdimin, 3 db Romlott Uhton, 1 db Romlott Szimtax"},
 
+"Hibás Katonai Krisz":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrk2",
+                        "Szükséges": "2 db Hibás Szomatium, 3 db Hibás Lamentium, 1 db Hibás Ajdimin, 3 db Hibás Uhton, 1 db Hibás Szimtax"},
+
 "Romlott Szövetségi Krisz":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrs2",
                         "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Lamentium, 1 db Romlott Ajdimin, 1 db Romlott Farighion, 1 db Romlott Eonix"},
+                    
+"Hibás Szövetségi Krisz":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrs2",
+                        "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Lamentium, 1 db Hibás Ajdimin, 1 db Hibás Farighion, 1 db Hibás Eonix"},
 
 "Romlott Bizalmi Krisz":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrb2",
                         "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Lamentium, 2 db Romlott Ajdimin, 1 db Romlott Meruzin, 2 db Romlott Heszperisz, 1 db Romlott Diszepelrix"},
 
+"Hibás Bizalmi Krisz":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trrb2",
+                        "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Lamentium, 2 db Hibás Ajdimin, 1 db Hibás Meruzin, 2 db Hibás Heszperisz, 1 db Hibás Diszepelrix"},
+
 "Romlott Uralmi Krisz":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
                        "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trru2",
                        "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Lamentium, 1 db Romlott Ajdimin, 1 db Romlott Veruzin, 1 db Romlott Meridal, 2 db Romlott Anerox"},
+
+"Hibás Uralmi Krisz":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Tőr", "Típus":"Krisz", "image":"WEAPON/SpoiledKris.jpg",
+                       "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Ügyesség":1, "Táv":"Ív", "Előállítható":"Az Ártás Zsoltára", "code":"trru2",
+                       "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Lamentium, 1 db Hibás Ajdimin, 1 db Hibás Veruzin, 1 db Hibás Meridal, 2 db Hibás Anerox"},
 
 "Romlott Katonai Fejsze":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":6, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"bark1",
                         "Szükséges": "2 db Romlott Szomatium, 2 db Romlott Memoznit, 3 db Romlott Irenit, 2 db Romlott Farighion, 2 db Romlott Theráx"},
 
+"Hibás Katonai Fejsze":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":6, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"bark1",
+                        "Szükséges": "2 db Hibás Szomatium, 2 db Hibás Memoznit, 3 db Hibás Irenit, 2 db Hibás Farighion, 2 db Hibás Theráx"},
+
 "Romlott Szövetségi Fejsze":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"bars1",
                         "Szükséges": "1 db Romlott Szomatium, 2 db Romlott Frénium, 2 db Romlott Irenit, 2 db Romlott Heszperisz, 1 db Romlott Szapaux"},
+
+"Hibás Szövetségi Fejsze":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"bars1",
+                        "Szükséges": "1 db Hibás Szomatium, 2 db Hibás Frénium, 2 db Hibás Irenit, 2 db Hibás Heszperisz, 1 db Hibás Szapaux"},
 
 "Romlott Bizalmi Fejsze":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"barb1",
                         "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Szapinit, 3 db Romlott Mularin, 3 db Romlott Uhton, 2 db Romlott Eonix"},
 
+"Hibás Bizalmi Fejsze":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"barb1",
+                        "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Szapinit, 3 db Hibás Mularin, 3 db Hibás Uhton, 2 db Hibás Eonix"},
+
 "Romlott Uralmi Fejsze":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"baru1",
                         "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Irenit, 2 db Romlott Meridal, 2 db Romlott Farighion, 1 db Romlott Diszepelrix"},
+
+"Hibás Uralmi Fejsze":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Fejsze", "image":"WEAPON/SpoiledHatchet.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Direkt", "Előállítható":"Az Ártás Zsoltára", "code":"baru1",
+                        "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Irenit, 2 db Hibás Meridal, 2 db Hibás Farighion, 1 db Hibás Diszepelrix"},
 
 "Romlott Katonai Csatabárd":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledWaraxe.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":7, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"bark2",
                     "Szükséges":"2 db Romlott Frénium, 3 db Romlott Memoznit, 2 db Romlott Meruzin, 2 db Romlott Meridal, 2 db Romlott Heszperisz, 2 db Romlott Szapaux"},
 
+"Hibás Katonai Csatabárd":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledWaraxe.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":7, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"bark2",
+                    "Szükséges":"2 db Hibás Frénium, 3 db Hibás Memoznit, 2 db Hibás Meruzin, 2 db Hibás Meridal, 2 db Hibás Heszperisz, 2 db Hibás Szapaux"},
+
 "Romlott Szövetségi Csatabárd":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"bars2",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Memoznit, 2 db Romlott Veruzin, 2 db Romlott Mularin, 2 db Romlott Uhton, 1 db Romlott Szimtax"},
+
+"Hibás Szövetségi Csatabárd":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"bars2",
+                    "Szükséges":"3 db Hibás Frénium, 2 db Hibás Memoznit, 2 db Hibás Veruzin, 2 db Hibás Mularin, 2 db Hibás Uhton, 1 db Hibás Szimtax"},
 
 "Romlott Bizalmi Csatabárd":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"barb2",
                     "Szükséges":"3 db Romlott Frénium, 3 db Romlott Memoznit, 2 db Romlott Ajdimin, 3 db Romlott Uhton, 2 db Romlott Farighion, 3 db Romlott Diszepelrix"},
 
+"Hibás Bizalmi Csatabárd":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"barb2",
+                    "Szükséges":"3 db Hibás Frénium, 3 db Hibás Memoznit, 2 db Hibás Ajdimin, 3 db Hibás Uhton, 2 db Hibás Farighion, 3 db Hibás Diszepelrix"},
+
 "Romlott Uralmi Csatabárd":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":4.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"baru2",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Memoznit, 2 db Romlott Szapinit, 3 db Romlott Mularin, 2 db Romlott Heszperisz, 3 db Romlott Anerox"}, 
+
+"Hibás Uralmi Csatabárd":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Balta", "Típus":"Csatabárd", "image":"WEAPON/SpoiledHWaraxe.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":6, "Becs":4.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Vonal", "Előállítható":"Az Ártás Zsoltára", "code":"baru2",
+                    "Szükséges":"2 db Hibás Frénium, 2 db Hibás Memoznit, 2 db Hibás Szapinit, 3 db Hibás Mularin, 2 db Hibás Heszperisz, 3 db Hibás Anerox"}, 
 
 "Romlott Katonai Buzogány":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrk1",
                         "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Memoznit, 1 db Romlott Irenit, 1 db Romlott Mularin, 3 db Romlott Theráx, 2 db Romlott Eonix"},
 
+"Hibás Katonai Buzogány":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":5, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrk1",
+                        "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Memoznit, 1 db Hibás Irenit, 1 db Hibás Mularin, 3 db Hibás Theráx, 2 db Hibás Eonix"},
+
 "Romlott Szövetségi Buzogány":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrs1",
                         "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Lamentium, 1 db Romlott Irenit, 1 db Romlott Mularin, 3 db Romlott Theráx"},
+
+"Hibás Szövetségi Buzogány":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrs1",
+                        "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Lamentium, 1 db Hibás Irenit, 1 db Hibás Mularin, 3 db Hibás Theráx"},
 
 "Romlott Bizalmi Buzogány":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":1, "Rúnaszám":1, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrb1",
                         "Szükséges": "2 db Romlott Neumonit, 2 db Romlott Memoznit, 2 db Romlott Irenit, 3 db Romlott Uhton, 2 db Romlott Theráx, 2 db Romlott Anerox"},
 
+"Hibás Bizalmi Buzogány":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":1, "Rúnaszám":1, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfrb1",
+                        "Szükséges": "2 db Hibás Neumonit, 2 db Hibás Memoznit, 2 db Hibás Irenit, 3 db Hibás Uhton, 2 db Hibás Theráx, 2 db Hibás Anerox"},
+
 "Romlott Uralmi Buzogány":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfru1",
                         "Szükséges":"2 db Romlott Neumonit, 1 db Romlott Irenit, 1 db Romlott Veruzin, 3 db Romlott Mularin, 3 db Romlott Theráx"},
+
+"Hibás Uralmi Buzogány":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Zúzófegyver", "Típus":"Buzogány", "image":"WEAPON/SpoiledMace.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Frontális", "Nyelv":{"Venta":1}, "Előállítható":"Az Ártás Zsoltára", "code":"zfru1",
+                        "Szükséges":"2 db Hibás Neumonit, 1 db Hibás Irenit, 1 db Hibás Veruzin, 3 db Hibás Mularin, 3 db Hibás Theráx"},
 
 "Romlott Katonai Sulyok":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrk2",
                         "Szükséges":"2 db Romlott Frénium, 2 db Romlott Memozmit, 2 db Romlott Irenit, 2 db Romlott Uhton, 3 db Romlott Theráx, 2 db Romlott Szimtax"},
 
+"Hibás Katonai Sulyok":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrk2",
+                        "Szükséges":"2 db Hibás Frénium, 2 db Hibás Memozmit, 2 db Hibás Irenit, 2 db Hibás Uhton, 3 db Hibás Theráx, 2 db Hibás Szimtax"},
+
 "Romlott Szövetségi Sulyok":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrs2",
                         "Szükséges":"2 db Romlott Frénium, 2 db Romlott Lamentium, 1 db Romlott Mularin, 2 db Romlott Meridal, 3 db Romlott Theráx, 1 db Romlott Szimtax"},
+
+"Hibás Szövetségi Sulyok":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrs2",
+                        "Szükséges":"2 db Hibás Frénium, 2 db Hibás Lamentium, 1 db Hibás Mularin, 2 db Hibás Meridal, 3 db Hibás Theráx, 1 db Hibás Szimtax"},
 
 "Romlott Bizalmi Sulyok":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrb2",
                         "Szükséges":"1 db Romlott Frénium, 3 db Romlott Lamentium, 3 db Romlott Uhton, 3 db Romlott Theráx, 2 db Romlott Szapaux, 2 db Romlott Szimtax"},
 
+"Hibás Bizalmi Sulyok":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfrb2",
+                        "Szükséges":"1 db Hibás Frénium, 3 db Hibás Lamentium, 3 db Hibás Uhton, 3 db Hibás Theráx, 2 db Hibás Szapaux, 2 db Hibás Szimtax"},
+
 "Romlott Uralmi Sulyok":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfru2",
                         "Szükséges":"2 db Romlott Frénium, 2 db Romlott Irenit, 3 db Romlott Meridal, 1 db Romlott Theráx, 2 db Romlott Diszepelrix, 1 db Romlott Szimtax"},
+
+"Hibás Uralmi Sulyok":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Zúzófegyver", "Típus":"Sulyok", "image":"WEAPON/SpoiledMaul.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Fizikum":1, "Előállítható":"Az Ártás Zsoltára", "code":"zfru2",
+                        "Szükséges":"2 db Hibás Frénium, 2 db Hibás Irenit, 3 db Hibás Meridal, 1 db Hibás Theráx, 2 db Hibás Diszepelrix, 1 db Hibás Szimtax"},
 
 "Romlott Katonai Lándzsa":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrk1",
                         "Szükséges":"1 db Romlott Szomatium, 2 db Romlott Neumonit, 1 db Romlott Memoznit, 3 db Romlott Mularin, 2 db Romlott Anerox"},
 
+"Hibás Katonai Lándzsa":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrk1",
+                        "Szükséges":"1 db Hibás Szomatium, 2 db Hibás Neumonit, 1 db Hibás Memoznit, 3 db Hibás Mularin, 2 db Hibás Anerox"},
+
 "Romlott Szövetségi Lándzsa":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrs1",
                         "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Neumonit, 1 db Romlott Mularin, 1 db Romlott Anerox"},
+
+"Hibás Szövetségi Lándzsa":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrs1",
+                        "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Neumonit, 1 db Hibás Mularin, 1 db Hibás Anerox"},
 
 "Romlott Bizalmi Lándzsa":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrb1",
                         "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Neumonit, 1 db Romlott Irenit, 1 db Romlott Mularin, 2 db Romlott Heszperisz, 2 db Romlott Anerox"},
 
+"Hibás Bizalmi Lándzsa":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1, "Rúnaszám":1, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrb1",
+                        "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Neumonit, 1 db Hibás Irenit, 1 db Hibás Mularin, 2 db Hibás Heszperisz, 2 db Hibás Anerox"},
+
 "Romlott Uralmi Lándzsa":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
                             "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfru1",
                         "Szükséges":"1 db Romlott Szomatium, 1 db Romlott Neumonit, 2 db Romlott Mularin, 2 db Romlott Anerox, 1 db Romlott Diszepelrix"},
+
+"Hibás Uralmi Lándzsa":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Szálfegyver", "Típus":"Lándzsa", "image":"WEAPON/SpoiledSpear.jpg",
+                            "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Ív", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfru1",
+                        "Szükséges":"1 db Hibás Szomatium, 1 db Hibás Neumonit, 2 db Hibás Mularin, 2 db Hibás Anerox, 1 db Hibás Diszepelrix"},
 
 "Romlott Katonai Gléfe":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrk2",
                         "Szükséges":"2 db Romlott Neumonit, 3 db Romlott Memoznit, 3 db Romlott Mularin, 1 db Romlott Heszperisz, 3 db Romlott Anerox, 1 db Romlott Diszepelrix"},
 
+"Hibás Katonai Gléfe":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrk2",
+                        "Szükséges":"2 db Hibás Neumonit, 3 db Hibás Memoznit, 3 db Hibás Mularin, 1 db Hibás Heszperisz, 3 db Hibás Anerox, 1 db Hibás Diszepelrix"},
+
 "Romlott Szövetségi Gléfe":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrs2",
                         "Szükséges":"1 db Romlott Neumonit, 1 db Romlott Szapinit, 2 db Romlott Heszperisz, 2 db Romlott Anerox, 2 db Romlott Szimtax"},
+
+"Hibás Szövetségi Gléfe":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrs2",
+                        "Szükséges":"1 db Hibás Neumonit, 1 db Hibás Szapinit, 2 db Hibás Heszperisz, 2 db Hibás Anerox, 2 db Hibás Szimtax"},
 
 "Romlott Bizalmi Gléfe":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
                             "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrb2",
                         "Szükséges":"3 db Romlott Neumonit, 3 db Romlott Lamentium, 1 db Romlott Irenit, 3 db Romlott Mularin, 2 db Romlott Heszperisz, 3 db Romlott Anerox"},
 
+"Hibás Bizalmi Gléfe":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
+                            "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":2, "Rúnaszám":1, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfrb2",
+                        "Szükséges":"3 db Hibás Neumonit, 3 db Hibás Lamentium, 1 db Hibás Irenit, 3 db Hibás Mularin, 2 db Hibás Heszperisz, 3 db Hibás Anerox"},
+
 "Romlott Uralmi Gléfe":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfru2",
                         "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Szapinit, 2 db Romlott Meridal, 1 db Romlott Heszperisz, 2 db Romlott Diszepelrix, 1 db Romlott Anerox"},
+
+"Hibás Uralmi Gléfe":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Szálfegyver", "Típus":"Gléfe", "image":"WEAPON/SpoiledGlaive.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Kör", "Ügyesség":-1, "Előállítható":"Az Ártás Zsoltára", "code":"sfru2",
+                        "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Szapinit, 2 db Hibás Meridal, 1 db Hibás Heszperisz, 2 db Hibás Diszepelrix, 1 db Hibás Anerox"},
 
 "Romlott Katonai Ártoló":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
                         "Invslot":1, "Slot":"Fegyver",  "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrk1",
                     "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Frénium, 1 db Romlott Meruzin, 2 db Romlott Meridal, 1 db Romlott Szimtax"},
 
+"Hibás Katonai Ártoló":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
+                        "Invslot":1, "Slot":"Fegyver",  "Sebzés":3, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrk1",
+                    "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Frénium, 1 db Hibás Meruzin, 2 db Hibás Meridal, 1 db Hibás Szimtax"},
+
 "Romlott Szövetségi Ártoló":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrs1",
                     "Szükséges":"2 db Romlott Szomatium, 1 db Romlott Frénium, 2 db Romlott Irenit, 1 db Romlott Szimtax"},
+
+"Hibás Szövetségi Ártoló":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrs1",
+                    "Szükséges":"2 db Hibás Szomatium, 1 db Hibás Frénium, 2 db Hibás Irenit, 1 db Hibás Szimtax"},
 
 "Romlott Bizalmi Ártoló":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":1, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrb1",
                     "Szükséges":"3 db Romlott Szomatium, 3 db Romlott Frénium, 1 db Romlott Veruzin, 3 db Romlott Diszepelrix, 1 db Romlott Szimtax"},
 
+"Hibás Bizalmi Ártoló":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2, "Rúnaszám":1, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrb1",
+                    "Szükséges":"3 db Hibás Szomatium, 3 db Hibás Frénium, 1 db Hibás Veruzin, 3 db Hibás Diszepelrix, 1 db Hibás Szimtax"},
+
 "Romlott Uralmi Ártoló":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijru1",
                     "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Frénium, 1 db Romlott Memoznit, 2 db Romlott Meridal, 1 db Romlott Szimtax"},
+
+"Hibás Uralmi Ártoló":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Íj", "Típus":"Ártoló", "image":"WEAPON/SpoiledRunebolt.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"1 AP", "Táv":"Tolt", "Előállítható":"Az Ártás Zsoltára", "code":"ijru1",
+                    "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Frénium, 1 db Hibás Memoznit, 2 db Hibás Meridal, 1 db Hibás Szimtax"},
 
 "Romlott Katonai Ark":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrk2",
                     "Szükséges":"2 db Romlott Neumonit, 3 db Romlott Lamentium, 3 db Romlott Mularin, 3 db Romlott Uhton, 3 db Romlott Theráx, 3 db Romlott Anerox"},
 
+"Hibás Katonai Ark":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrk2",
+                    "Szükséges":"2 db Hibás Neumonit, 3 db Hibás Lamentium, 3 db Hibás Mularin, 3 db Hibás Uhton, 3 db Hibás Theráx, 3 db Hibás Anerox"},
+
 "Romlott Szövetségi Ark":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrs2",
                     "Szükséges":"2 db Romlott Neumonit, 2 db Romlott Memoznit, 3 db Romlott Mularin, 2 db Romlott Meridal, 2 db Romlott Theráx, 2 db Romlott Anerox,"},
+
+"Hibás Szövetségi Ark":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrs2",
+                    "Szükséges":"2 db Hibás Neumonit, 2 db Hibás Memoznit, 3 db Hibás Mularin, 2 db Hibás Meridal, 2 db Hibás Theráx, 2 db Hibás Anerox,"},
 
 "Romlott Bizalmi Ark":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrb2",
                     "Szükséges":"3 db Romlott Neumonit, 2db Romlott Irenit, 3 db Romlott Mularin, 2 db Romlott Theráx, 3 db Romlott Anerox, 3 db Romlott Szimtax"},
 
+"Hibás Bizalmi Ark":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijrb2",
+                    "Szükséges":"3 db Hibás Neumonit, 2db Hibás Irenit, 3 db Hibás Mularin, 2 db Hibás Theráx, 3 db Hibás Anerox, 3 db Hibás Szimtax"},
+
 "Romlott Uralmi Ark":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":4.5, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijru2",
                     "Szükséges":"3 db Romlott Neumonit, 3 db Romlott Mularin, 1 db Romlott Memoznit, 2 db Romlott Heszperisz, 3 db Romlott Theráx, 3 db Romlott Anerox"},
+
+"Hibás Uralmi Ark":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Íj", "Típus":"Ark", "image":"WEAPON/SpoiledArc.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":4.5, "Rúnaszám":0, "Spdseg":0, "Újratöltés":"1 AP", "Táv":"Gyémánt", "Előállítható":"Az Ártás Zsoltára", "code":"ijru2",
+                    "Szükséges":"3 db Hibás Neumonit, 3 db Hibás Mularin, 1 db Hibás Memoznit, 2 db Hibás Heszperisz, 3 db Hibás Theráx, 3 db Hibás Anerox"},
 
 "Romlott Katonai Sudár":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrk1",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 3 db Romlott Uhton, 1 db Romlott Diszepelrix"},
 
+"Hibás Katonai Sudár":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrk1",
+                    "Szükséges":"2 db Hibás Frénium, 2 db Hibás Neumonit, 1 db Hibás Szapinit, 3 db Hibás Uhton, 1 db Hibás Diszepelrix"},
+
 "Romlott Szövetségi Sudár":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrs1",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
+
+"Hibás Szövetségi Sudár":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrs1",
+                    "Szükséges":"2 db Hibás Frénium, 2 db Hibás Neumonit, 1 db Hibás Szapinit, 1 db Hibás Diszepelrix"},                   
                     
 "Romlott Bizalmi Sudár":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrb1",
                     "Szükséges":"2 db Romlott Frénium, 1 db Romlott Neumonit, 2 db Romlott Lamentium, 1 db Romlott Szapinit, 2 db Romlott Meridal, 2 db Romlott Diszepelrix"},
 
+"Hibás Bizalmi Sudár":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":1, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbrb1",
+                    "Szükséges":"2 db Hibás Frénium, 1 db Hibás Neumonit, 2 db Hibás Lamentium, 1 db Hibás Szapinit, 2 db Hibás Meridal, 2 db Hibás Diszepelrix"},
+
 "Romlott Uralmi Sudár":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbru1",
                     "Szükséges":"1 db Romlott Frénium, 1 db Romlott Neumonit, 3 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Diszepelrix"},
+
+"Hibás Uralmi Sudár":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Sudár", "image":"WEAPON/SpoiledBaton.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3.5, "Rúnaszám":0, "Spdseg":1, "Ero":2, "Táv":"Frontális", "Előállítható":"A Parancsok Litániája", "code":"vbru1",
+                    "Szükséges":"1 db Hibás Frénium, 1 db Hibás Neumonit, 3 db Hibás Memoznit, 1 db Hibás Szapinit, 1 db Hibás Diszepelrix"},
 
 "Romlott Katonai Driokt":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrk2",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 3 db Romlott Lamentium, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 3 db Romlott Theráx"},
 
+"Hibás Katonai Driokt":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":5, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrk2",
+                    "Szükséges":"3 db Hibás Frénium, 2 db Hibás Neumonit, 3 db Hibás Lamentium, 2 db Hibás Szapinit, 1 db Hibás Meruzin, 3 db Hibás Theráx"},
+
 "Romlott Szövetségi Driokt":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrs2",
                     "Szükséges":"2 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Memoznit, 1 db Romlott Szapinit, 1 db Romlott Veruzin, 3 db Romlott Theráx"},
+
+"Hibás Szövetségi Driokt":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrs2",
+                    "Szükséges":"2 db Hibás Frénium, 2 db Hibás Neumonit, 2 db Hibás Memoznit, 1 db Hibás Szapinit, 1 db Hibás Veruzin, 3 db Hibás Theráx"},
 
 "Romlott Bizalmi Driokt":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":1, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrb2",
                     "Szükséges":"3 db Romlott Frénium, 2 db Romlott Neumonit, 2 db Romlott Irenit, 3 db Romlott Szapinit, 2 db Romlott Szapaux, 2 db Romlott Theráx"},
 
+"Hibás Bizalmi Driokt":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3.5, "Rúnaszám":1, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbrb2",
+                    "Szükséges":"3 db Hibás Frénium, 2 db Hibás Neumonit, 2 db Hibás Irenit, 3 db Hibás Szapinit, 2 db Hibás Szapaux, 2 db Hibás Theráx"},
+
 "Romlott Uralmi Driokt":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbru2",
                     "Szükséges":"3 db Romlott Frénium, 3 db Romlott Neumonit, 2 db Romlott Szapinit, 1 db Romlott Meruzin, 1 db Romlott Veruzin, 2 db Romlott Theráx"},
+
+"Hibás Uralmi Driokt":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Varázsbot", "Típus":"Driokt", "image":"WEAPON/SpoiledScepter.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Ero":2, "Táv":"Vonal", "Előállítható":"A Parancsok Litániája", "code":"vbru2",
+                    "Szükséges":"3 db Hibás Frénium, 3 db Hibás Neumonit, 2 db Hibás Szapinit, 1 db Hibás Meruzin, 1 db Hibás Veruzin, 2 db Hibás Theráx"},
 
 "Romlott Katonai Viharpenge":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
                                 "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrk1",
                     "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Irenit, 2 db Romlott Mularin, 1 db Romlott Szimtax"},
 
+"Hibás Katonai Viharpenge":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
+                                "Invslot":1, "Slot":"Fegyver", "Sebzés":4, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrk1",
+                    "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Irenit, 2 db Hibás Mularin, 1 db Hibás Szimtax"},
+
 "Romlott Szövetségi Viharpenge":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrs1",
                     "Szükséges":"2 db Romlott Szomatium, 1 db Romlott Lamentium, 1 db Romlott Irenit, 1 db Romlott Szimtax"},
+
+"Hibás Szövetségi Viharpenge":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":4, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrs1",
+                    "Szükséges":"2 db Hibás Szomatium, 1 db Hibás Lamentium, 1 db Hibás Irenit, 1 db Hibás Szimtax"},
 
 "Romlott Bizalmi Viharpenge":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":4, "Rúnaszám":1, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrb1",
                     "Szükséges":"3 db Romlott Szomatium, 1 db Romlott Irenit, 3 db Romlott Uhton, 2 db Romlott Anerox, 1 db Romlott Szimtax"},
 
+"Hibás Bizalmi Viharpenge":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":4, "Rúnaszám":1, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esrb1",
+                    "Szükséges":"3 db Hibás Szomatium, 1 db Hibás Irenit, 3 db Hibás Uhton, 2 db Hibás Anerox, 1 db Hibás Szimtax"},
+
 "Romlott Uralmi Viharpenge":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":6, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esru1",
                     "Szükséges":"3 db Romlott Szomatium, 2 db Romlott Memoznit, 1 db Romlott Irenit, 1 db Romlott Szimtax"},
+
+"Hibás Uralmi Viharpenge":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Viharpenge", "image":"WEAPON/SpoiledChakram.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":6, "Rúnaszám":0, "Spdseg":1, "Újratöltés":"2 AP", "Táv":"2átló", "Előállítható":"A Szemle Himnusza", "code":"esru1",
+                    "Szükséges":"3 db Hibás Szomatium, 2 db Hibás Memoznit, 1 db Hibás Irenit, 1 db Hibás Szimtax"},
 
 "Romlott Katonai Ulka":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrk2",
                     "Szükséges":"1 db Romlott Szomatium, 2 db Romlott Lamentium, 3 db Romlott Uhton, 2 db Romlott Heszperisz, 1 db Romlott Eonix"},
 
+"Hibás Katonai Ulka":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":4, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrk2",
+                    "Szükséges":"1 db Hibás Szomatium, 2 db Hibás Lamentium, 3 db Hibás Uhton, 2 db Hibás Heszperisz, 1 db Hibás Eonix"},
+
 "Romlott Szövetségi Ulka":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrs2",
                     "Szükséges":"1 db Romlott Szomatium, 1 db Romlott Memoznit, 2 db Romlott Meridal, 1 db Romlott Heszperisz, 1 db Romlott Eonix"},
+
+"Hibás Szövetségi Ulka":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrs2",
+                    "Szükséges":"1 db Hibás Szomatium, 1 db Hibás Memoznit, 2 db Hibás Meridal, 1 db Hibás Heszperisz, 1 db Hibás Eonix"},
 
 "Romlott Bizalmi Ulka":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrb2", 
                     "Szükséges":"2 db Romlott Szomatium, 2 db Romlott Lamentium, 3 db Romlott Uhton, 1 db Romlott Meridal, 2 db Romlott Heszperisz, 1 db Romlott Eoinix"},
 
+"Hibás Bizalmi Ulka":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":3, "Rúnaszám":1, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esrb2", 
+                    "Szükséges":"2 db Hibás Szomatium, 2 db Hibás Lamentium, 3 db Hibás Uhton, 1 db Hibás Meridal, 2 db Hibás Heszperisz, 1 db Hibás Eoinix"},
+
 "Romlott Uralmi Ulka":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esru2",
                     "Szükséges":"1 db Romlott Szomatium, 2 db Romlott Memoznit, 2 db Romlott Mularin, 1 db Romlott Meridal, 1 db Romlott Heszperisz, 1 db Romlott Eonix"},
+
+"Hibás Uralmi Ulka":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Ulka", "image":"WEAPON/SpoiledMeteor.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":3, "Becs":5, "Rúnaszám":0, "Spdseg":0, "Def":-3, "Táv":"Piramis", "Előállítható":"A Szemle Himnusza", "code":"esru2",
+                    "Szükséges":"1 db Hibás Szomatium, 2 db Hibás Memoznit, 2 db Hibás Mularin, 1 db Hibás Meridal, 1 db Hibás Heszperisz, 1 db Hibás Eonix"},
 
 "Romlott Katonai Ostor":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":1.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrk3",
 "Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
                     "Szükséges":"1 db Romlott Szomatium, 3 db Romlott Lamentium, 3 db Romlott Memoznit, 3 db Romlott Mularin, 2 db Romlott Diszepelrix"},
 
+"Hibás Katonai Ostor":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":3, "Becs":1.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrk3",
+"Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
+                    "Szükséges":"1 db Hibás Szomatium, 3 db Hibás Lamentium, 3 db Hibás Memoznit, 3 db Hibás Mularin, 2 db Hibás Diszepelrix"},
+
 "Romlott Szövetségi Ostor":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrs3",
 "Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
                     "Szükséges":"1 db Romlott Szomatium, 3 db Romlott Mularin, 2 db Romlott Uhton, 2 db Romlott Anerox, 1 db Romlott Diszepelrix"},
 
+"Hibás Szövetségi Ostor":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1.5, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrs3",
+"Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
+                    "Szükséges":"1 db Hibás Szomatium, 3 db Hibás Mularin, 2 db Hibás Uhton, 2 db Hibás Anerox, 1 db Hibás Diszepelrix"},
+                
 "Romlott Bizalmi Ostor":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1.5, "Rúnaszám":1, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrb3",
 "Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
                     "Szükséges":"1 db Romlott Szomatium, 3 db Romlott Memoznit, 3 db Romlott Mularin, 3 db Romlott Meridal, 3 db Romlott Theráx, 1 db Romlott Diszepelrix"},
+
+"Hibás Bizalmi Ostor":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":1.5, "Rúnaszám":1, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esrb3",
+"Abitext":"Minden normál támadás lefegyverzési kísérlet, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél veszít 3 Becset",
+                    "Szükséges":"1 db Hibás Szomatium, 3 db Hibás Memoznit, 3 db Hibás Mularin, 3 db Hibás Meridal, 3 db Hibás Theráx, 1 db Hibás Diszepelrix"},
 
 "Romlott Uralmi Ostor":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
                         "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esru3",
 "Abitext":"Minden normál támadással kísérlet lefegyverzésre, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél elveszti a Fegyver Becsét",
                     "Szükséges":"2 db Romlott Szomatium, 3 db Romlott Lamentium, 2 db Romlott Mularin, 3 db Romlott Anerox, 1 db Romlott Diszepelrix"},
 
+"Hibás Uralmi Ostor":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Ostor", "image":"WEAPON/SpoiledBullwhip.jpg",
+                        "Invslot":1, "Slot":"Fegyver", "Sebzés":2, "Becs":3, "Rúnaszám":0, "Spdseg":0, "Táv":"Hézag", "Előállítható":"A Szemle Himnusza", "code":"esru3",
+"Abitext":"Minden normál támadással kísérlet lefegyverzésre, Erő:15, Ellenállás:Fizikális, Hatás:Ellenfél eldobja a fegyverét, ami egy szomszédos cellára kerül, ellenfél elveszti a Fegyver Becsét",
+                    "Szükséges":"2 db Hibás Szomatium, 3 db Hibás Lamentium, 2 db Hibás Mularin, 3 db Hibás Anerox, 1 db Hibás Diszepelrix"},
+
 "Romlott Katonai Emberfogó":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrk4", 
 "Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
                     "Szükséges":"2 db Romlott Frénium, 1 db Romlott Irenit, 3 db Romlott Uhton, 3 db Romlott Anerox, 1 db Romlott Szimtax"},
+
+"Hibás Katonai Emberfogó":{"Minőség":"Hibás", "Arculat":"Katonai", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":2, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrk4", 
+"Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
+                    "Szükséges":"2 db Hibás Frénium, 1 db Hibás Irenit, 3 db Hibás Uhton, 3 db Hibás Anerox, 1 db Hibás Szimtax"},
 
 "Romlott Szövetségi Emberfogó":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg", 
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrs4",
 "Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
                     "Szükséges":"1 db Romlott Frénium, 1 db Romlott Irenit, 3 db Romlott Meridal, 1 db Romlott Szimtax"},
 
+"Hibás Szövetségi Emberfogó":{"Minőség":"Hibás", "Arculat":"Szövetségi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg", 
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":2.5, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrs4",
+"Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
+                    "Szükséges":"1 db Hibás Frénium, 1 db Hibás Irenit, 3 db Hibás Meridal, 1 db Hibás Szimtax"},
+
 "Romlott Bizalmi Emberfogó":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":2.5, "Rúnaszám":1, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrb4",
 "Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
                     "Szükséges":"1 db Romlott Frénium, 3 db Romlott Irenit, 1 db Romlott Meruzin, 2 db Romlott Heszperisz, 2 db Romlott Theráx, 1 db Romlott Szimtax"},
 
+"Hibás Bizalmi Emberfogó":{"Minőség":"Hibás", "Arculat":"Bizalmi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":2.5, "Rúnaszám":1, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esrb4",
+"Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
+                    "Szükséges":"1 db Hibás Frénium, 3 db Hibás Irenit, 1 db Hibás Meruzin, 2 db Hibás Heszperisz, 2 db Hibás Theráx, 1 db Hibás Szimtax"},
+
 "Romlott Uralmi Emberfogó":{"Minőség":"Romlott", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
                         "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":4, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esru4",
 "Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
                     "Szükséges":"2 db Romlott Frénium, 1 db Romlott Irenit, 1 db Romlott Veruzin, 3 db Romlott Mularin, 1 db Romlott Szimtax"},
+
+"Hibás Uralmi Emberfogó":{"Minőség":"Hibás", "Arculat":"Uralmi", "Kategória":"Egzotikus", "Típus":"Emberfogó", "image":"WEAPON/SpoiledMancatcher.jpg",
+                        "Invslot":2, "Slot":"Fegyver", "Sebzés":1, "Becs":4, "Rúnaszám":0, "Spdseg":0, "Táv":"T", "Előállítható":"A Szemle Himnusza", "code":"esru4",
+"Abitext":"Minden normál támadás kísérlet feldöntésre, Erő:20, Ellenállás:Fizikális, Hatás:Ellenfél felborul, azon a cellán ahol van, 3 Apba kerül a felállás",
+                    "Szükséges":"2 db Hibás Frénium, 1 db Hibás Irenit, 1 db Hibás Veruzin, 3 db Hibás Mularin, 1 db Hibás Szimtax"},
 
 "Romlott Bizalmi Fémkéreg":{"Minőség":"Romlott", "Arculat":"Bizalmi", "Kategória":"Merev Vért", "Típus":"Fémkéreg", "image":"BODY/SpoiledCarapace.jpg",
                     "Invslot":1, "Slot":"Test", "Armor":7, "Becs":0.5, "Rúnaszám":1, "Dodgeseg":0, "Előállítható":"A Kitartás Liturgiája", "Spdseg":-1, "code":"mvrb1",

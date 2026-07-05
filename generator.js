@@ -67,7 +67,7 @@ function update () {
                 jatekos.FizikumTeszt=(karakter.FizikumTeszt || 0) + (kaszt.FizikumTeszt || 0) + (alkaszt.FizikumTeszt || 0);
                 jatekos.ÁllóképességTeszt=(karakter.ÁllóképességTeszt || 0) + (kaszt.ÁllóképességTeszt || 0) + (alkaszt.ÁllóképességTeszt || 0);
                 jatekos.ÜgyességTeszt=(karakter.ÜgyességTeszt || 0) + (kaszt.ÜgyességTeszt || 0) + (alkaszt.ÜgyességTeszt || 0);
-                jatekos.GyorsasságTeszt=(karakter.GyorsasságTeszt || 0) + (kaszt.GyorsasságTeszt || 0) + (alkaszt.GyorsasságTeszt || 0);
+                jatekos.GyorsaságTeszt=(karakter.GyorsaságTeszt || 0) + (kaszt.GyorsaságTeszt || 0) + (alkaszt.GyorsaságTeszt || 0);
                 jatekos.IntelligenciaTeszt=(karakter.IntelligenciaTeszt || 0) + (kaszt.IntelligenciaTeszt || 0) + (alkaszt.IntelligenciaTeszt || 0);
                 jatekos.TehetségTeszt=(karakter.TehetségTeszt|| 0) + (kaszt.TehetségTeszt || 0) + (alkaszt.TehetségTeszt || 0);
                 jatekos.FelismerésTeszt=(karakter.FelismerésTeszt || 0) + (kaszt.FelismerésTeszt || 0) + (alkaszt.FelismerésTeszt || 0);
@@ -518,7 +518,7 @@ function finalitem(vardivs) {
 const span14=document.createElement("span");const invgrid=cont.querySelector(".square");
 const eq1=document.querySelector(".Equipment1"); const gen=invgrid.querySelectorAll(".generated.empty"); console.log("HELLO", gen); 
 const emptys=document.querySelectorAll(".emptyslot"); console.log("ÜRES:", gen, emptys)
-span14.textContent=`; Üres Felszerelési helyek száma:${emptys}`; console.log(span14)
+span14.textContent=`; Üres Felszerelési helyek száma:${emptys.length}`; console.log(span14)
 for (const key in Equipment) {const equipped2=Object.entries(dataStore3.Felszerelés).find(([name,row])=>row.code===key); if (!equipped2) continue; 
 const itemname2=equipped2[0]; const itemvalue2=equipped2[1]; const span12=document.createElement("span"); const colorspan=document.createElement("span"); 
 colorspan.style.color="orange"; colorspan.textContent=` ${itemvalue2.Slot} : `; span12.appendChild(colorspan); span12.append(itemname2);
@@ -557,7 +557,7 @@ const timeloop={time1:activeskill.filter(row=>row.Eval && row.Eval.Idő1), time2
 const rule1=(1-Math.floor(jatekos.Inspiráció/4)/100); const rule2=(1-Math.floor(jatekos.Intelligencia/4)/100); const rule3=(1-Math.floor(jatekos.Felismerés/4)/100);
 const rule4=(1-Math.floor(jatekos.Tehetség/5)/100); const rule5=(1+Math.floor(jatekos.Tehetség/5)/100);
 for (const key in timeloop) {if (!timeloop[key].length) continue; const timeindex=timeloop[key].length-1; const time=timeloop[key][timeindex]; let timevalue
-if (key==="time1") {timevalue= Math.floor(time.Eval.Idő1*rule1)}; if (key==="time2") {timevalue=Math.floor(time.Eval.Idő2*rule2)}; 
+if (key==="time1") {timevalue= Math.floor(time.Eval.Idő1*rule1)}; if (key==="time2") {console.log("CSÖKKENTÉS", rule2); timevalue=Math.floor(time.Eval.Idő2*rule2)}; 
 if (key==="time3") {timevalue=Math.floor(time.Eval.Idő3*rule3);} if (key==="time4") {timevalue=Math.floor(time.Eval.Idő4*rule4)};
 if (key==="time5") {timevalue=Math.floor(time.Eval.Idő5*rule5)}; 
 const timespan=document.createElement("span"); timespan.textContent=`: ${timeformat(timevalue)}`
@@ -745,12 +745,12 @@ const baseline1={"Fizikum":"Fizikum", "Állóképesség":"Állóképesség", "Ü
   "Fell":"Fizikai Ellenállás", "Sell":"Spirituális Ellenállás", "Mell":"Mentális Ellenállás", "Ero":"Erő"};
 const bonus=[]; for (const key in itemvalue) {if (key in baseline1) {bonus.push(`${baseline1[key]}:${itemvalue[key]}`)}}; bonusline.textContent=bonus.join(", ");};
 
-cont.addEventListener("click", (event) => {if (event.target.id==="equip") {itemadd(curritem);}});
+cont.addEventListener("click", (event) => {console.log("CLICKED");if (event.target.id==="equip") {itemadd(curritem); console.log("ITEMADD CALLED")}});
 
 function itemadd(curritem) {
-console.log("Hello")
 const itemvalue=curritem[1];
-if (Equipment[itemvalue.code]) return; for (const key in Equipment) {const equipped=Object.values(dataStore3.Felszerelés).find(row=>row.code===key); console.log(equipped);
+if (Equipment[itemvalue.code]) return; for (const key in Equipment) {const equipped=Object.values(dataStore3.Felszerelés).find(row=>row.code===key); console.log("EQUIPPED:",equipped);
+console.log("EZT TALÁLTAM:", equipped?.Nyelv);
 if (!equipped) continue; if (equipped.Slot===itemvalue.Slot) return; if (equipped.Slot==="Kellék" && itemvalue.Invslot===2) return; 
 if (equipped.Invslot===2 && itemvalue.Slot==="Kellék") return;} 
 let stat={Dmg:0, Armor:0, Runeslot:0, Becs:0, Spdseg:0, Dodgeseg:0, Fizikum:0, ÁLlóképesség:0, Ügyesség:0, Gyorsaság:0, Intelligencia:0, Tehetség:0,
@@ -763,7 +763,7 @@ stat.Dodgeseg+=equipped.Dodgeseg || 0; stat.Fizikum+=equipped.Fizikum || 0; stat
 stat.Gyorsaság+=equipped.Gyorsaság || 0; stat.Intelligencia+=equipped.Intelligencia || 0; stat.Tehetség+=equipped.Tehetség || 0; stat.Felismerés+=equipped.Felismerés || 0; 
 stat.Inspiráció+=equipped.Inspiráció || 0; stat.Mell+=equipped.Mell || 0; stat.Sell+=equipped.Sell || 0; stat.Fell+=equipped.Fell || 0; stat.Atk+=equipped.Atk || 0; 
 stat.Def+=equipped.Def || 0; stat.HP+=equipped.HP || 0; stat.Ero+=equipped.Ero || 0;  console.log(stat);
-};
+if (equipped?.Nyelv) {for (const lang of Object.keys(equipped.Nyelv)) {karakter.Nyelv[lang]=karakter.Nyelv[lang]+equipped.Nyelv[lang]}}};
  for (const key in stat) {karakter[key]=stat[key]}; invslotter()}; 
 
 const st3=document.querySelector(".structure3"); const pinput=document.querySelector("#player"); const att=document.querySelector(".attack")

@@ -1194,35 +1194,131 @@
          "Dar":{"Venta":1}, "Carn":{"Malco":1}, "Dip":{"Mergla":1}, "Jin":{"Prosant":1}},
 
 "Képesség":{"Dudi": {"Ability":[
-{"Név":"Őrült ösztön", "Szint":2, "Típus":"Tank", " Napi Használat":3, "Hatótáv":"2 cella", "Időtartam":15, "Intervallum":"nincs", "Erő":"nincs", "Ellenállás":"nincs", "Költség":4, 
+{"Név":"Őrült ösztön", "Szint":2, "Típus":"Tank", " Napi Használat":3, "Hatótáv":"2 cella", "Időtartam":15, "Intervallum":"nincs", "Erő":"nincs", "Ellenállás":"nincs", 
+"Költség":4, 
 "Leírás":"A felhasználó körüli 2 cellás távon belül minden szövetségest érő normál támadás +8 védelemmel van kalkulálva az időtartam végéig. Felhasználóra nem érvényes"},
-{"Név":"A Sors hajtóereje", "Szint":1, "Típus":"Tank", "Napi Használat":3, "Hatótáv":"Korlátlan", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":15, "Ellenállás":"Fizikális", 
-"Költség":1, "Leírás":"Célpont ellenfél azonnal 1 cellát lép a felhasználó irányába, a legrövidebb útvonalat használva"},
-{"Név":"Szentségtőréssel kezdődött", "Szint":1, "Típus":"Sebző", "Napi Használat":3, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":15, "Ellenállás":"Spirituális",
-"Költség":3, "Leírás":"Normál támadás amely csökkenti az ellenfél aktuális kitérési szegmenseinek a számát 3-mal"},
+{"Név":"A Sors hajtóereje", "Szint":1, "Típus":"Tank", "Feltöltődésenként":3, "Hatótáv":"Korlátlan", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":15, 
+"Ellenállás":"Fell", "Költség":1, "Leírás":"Célpont ellenfél azonnal 1 cellát lép a felhasználó irányába, a legrövidebb útvonalat használva"},
+{"Név":"Szentségtőréssel kezdődött", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":15, 
+"Ellenállás":"Sell","Költség":3, "Leírás":"Normál támadás amely csökkenti az ellenfél aktuális kitérési szegmenseinek a számát 3-mal"},
 {"Név":"És még így is...", "Szint":"nincs", "Típus":"Alkaszt", "Napi használat":"nincs", "Hatótáv":"karakter", "Időtartam":"passzív", "Intervallum":"nincs", "Erő":"nincs", 
-"Ellenállás":"nincs", "Költség":"nincs", "Leírás":"Az Aphistost ért minden ellenséges és szövetséges képesség hatása csak 50% időtartammal fejti ki hatását, amit alapértelmezettnek kell tekinteni"},
-{"Név":"Addíg ütöm", "Szint":"nincs", "Típus":"Kaszt", "Napi használat":1, "Hatótáv":"Fegyver", "Időtartam":"nincs", "Intervallum":"nincs", "Erő":"nincs", "Ellenállás":"nincs",
-"Költség":"nincs", "Leírás":"A Fanatikus normál támadásai amíg nem változtat célpontot, a másodiktól számítva +3 Támadással kalkulálódik. A hatás akkumulálódik, de ha a Fanatikus bármi mást csinál normál támadás helyett, a lánc megszakad, és a hatás elvész"}]},
-"Anf":{"Ability": []},
-"Thief1":{"Ability":[{"Név":"Paralízis", "Szint":2, "Típus":"Debuff", "Napi Használat":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"nincs", "Erő":25, 
-"Ellenállás":"Fizikális", "Költség":4, "Leírás":"Célpont ellenfél az időtartam végéig nem mozoghat"}, 
-{"Név":"Visszaszerzés", "Szint":1, "Típus":"Egyedi", "Napi Használat":1, "Hatótáv":"Bárhol", "Intervallum":"Nincs", "Erő":"Nincs", "Ellenállás":"nincs", "Költség":1,
-"Leírás":"A Játékos automatikus visszaszerez bármilyen tárgyat ami akarata ellenére lett tőle eltulajdonítva 1 órán belül"}]}
-},
+"Ellenállás":"nincs", "Költség":"nincs", "Leírás":"Az Aphistost ért minden ellenséges és szövetséges képesség hatása csak 50% időtartammal (felfelé kerekeítve) fejti ki hatását, amit alapértelmezettnek kell tekinteni"},
+{"Név":"Addíg ütöm", "Szint":"nincs", "Típus":"Kaszt", "Napi használat":"Egyedi", "Hatótáv":"Fegyver", "Időtartam":"nincs", "Intervallum":"nincs", "Erő":"nincs", 
+"Ellenállás":"nincs","Költség":"nincs", 
+"Leírás":"Naponta egyszer, egy csatának a végéig, a Fanatikus normál támadásai amíg nem változtat célpontot, a másodiktól számítva +3 Támadással kalkulálódik. A hatás akkumulálódik, de ha a Fanatikus bármi mást csinál normál támadás helyett, a lánc megszakad, és a hatás elvész"}]},
 
+"Bazsi":{"Ability": [
+{"Név":"Viharcsapás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"2 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":40, "Ellenállás":"Mell", 
+"Költség":4,
+"Leírás":"Minden ellenfél 2 cellás távolságon belül azonnal sebződik 15-t, páncélátütés nincs, páncélcsökkentés van"},
+{"Név":"Elektromos Boogie", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":15, 
+"Ellenállás":"Fell", "Költség":3, 
+"Leírás":"Normál támadás, a sebzés fele azonnal megnöveli a felhasználó aktuális életerő pontját azonos mértékben, nem emelkedhet a HP maximum fölé"},
+{"Név":"Kisülés", "Szint":1, "Típus":"Debuff", "Feltöltődésenként":3, "Hatótáv":"Korlátlan", "Időtartam":"12", "Intervallum":12, "Erő":15, "Ellenállás":"Mell",
+"Költség":2,
+"Leírás":"Amennyiben az intervallum alatt tetszőleges ellenfél fogyóeszközt használ, onnantól kezdve az időtartam végéig az ellenfél páncélzata 4-el csökken. Ha az intervallum végéig nincs fogyóeszköz használat a képesség elvész."},
+{"Név":"Variáció egy témára", "Szint":"nincs", "Típus":"Kaszt", "Feltöltődésenként":"Egyedi", "Hatótáv":"karakter", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":"nincs",
+"Ellenállás":"nincs", "Költség":"nincs",
+"Leírás":"Naponta egyszer a Mágus egy képességük ellenállását meg tudják változtatni Fizikálisról/Mentálisról/Spirituálisról tetszőlegesre"},
+{"Név":"Feszültség", "Szint":"nincs", "Típus":"Alkaszt", "Feltöltődésenként":"nincs", "Hatótáv":"Változó", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":"nincs", 
+"Ellenállás":"nincs", "Költség":"nincs",
+"Leírás":"A következő teljes feltöltődéig minden képesség amit az Anfar használ sebzéssel jár. A sebzés mértéke 1, és 1 cellás távolságban mindenkire érvényes. Mind a távolság, mind a sebzés mértéke minden képesség használatával 1-el növekszik. A sebzés éppúgy érvényes az Anfarra, mint a szövetségésekre."}]},
 
+"Laci":{"Ability": [
+{"Név":"Szerelmeslevél a pokolból", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"Fegyver vagy Társállat", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":20,
+"Ellenállás":"Fell", "Költség":3,
+"Leírás":"Normál támadás célpont ellenfél ellen, akinek a szomszédos celláin tartozkodó maximum 2 további ellenfél az eredeti célpont által elszenvedett sebzés felét elszenvedik. Sebzéscsökkentés csak az eredeti célpontnak van"},
+{"Név":"Osztozz a fájdalmamon", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"Fegyver vagy Társállat", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":5,
+"Ellenállás":"Fell", "Költség":3,
+"Leírás":"Normál támadás, aminek sebzése nem csökkenthető páncélzattal, vagy más forrásból, nem kitérhető, garantált kritikus találat"},
+{"Név":"A szükség törvényt bont", "Szint":1, "Típus":"Buff", "Feltöltődésenként":1, "Hatótáv":"Karakter vagy Társállat 1 cella", "Időtartam":6, "Intervallum":"nincs", 
+"Erő":"nincs","Ellenállás":"nincs", "Költség":3,
+"Leírás":"Minden 1 cellás távon belül tartozkodó szövetséges kritikális sebzése +5-el növekszik időtartam végéig"},
+{"Név":"Megidézés", "Szint":"nincs", "Típus":"Kaszt", "Feltöltődésenként":"korlátlan", "Hatótáv":"1 cella", "Időtartam":"nincs", "Intervallum":"nincs", "Erő":"nincs",
+"Ellenállás":"nincs", "Költség":3,
+"Leírás":"Az Átokfattyú a csatákban képes Társállat démonjának megidézésérére, ezt a képességet korlátlan számban képes használni, de egyszerre maximum csak 1 Társállat lehet aktív, és a csata végeztével a démon eltűnik"},
+{"Név":"Metamorfózis", "Szint":"nincs", "Típus":"Alkaszt", "Feltöltődésenként":1, "Hatótáv":"karakter", "Időtartam":18, "Intervallum":"nincs", "Erő":"nincs",
+"Ellenállás":"nincs", "Költség":"nincs",
+"Leírás":"Ha a Bhayenát halálos sebzés érné, halál helyett a benne lakozó démon teljesen átveszi a test felett az uralmat, és megpróbál kitörni börtönéből. Válogatás nélkül fogja a legközelebbi szövetségest vagy ellenfelet támadni. Az átalakulóban lévő test csak normál támadásokra képes. Amennyiben a csata nem zárul le 3 fordulón belül, a démon kitör és a játék véget ér, minden szövetséges meghal."}]},
 
+"Csilla":{"Ability":[
+{"Név":"Bonyolult", "Szint":1, "Típus":"Debuff", "Feltöltődésenként":1, "Hatótáv":"2 cella", "Időtartam":6, "Intervallum":"nincs", "Erő":8, "Ellenállás":"Mell",
+"Költség":4, 
+"Leírás":"Célpont ellenfél 2 cellás távon belül képtelen leszbármilyen képességet használni az időtartam végéig"},
+{"Név":"Belőled épül a fal", "Szint":1, "Típus":"Debuff", "Feltöltődésenként":1, "Hatótáv":"Fegyver", "Időtartam":6, "Intervallum":"nincs", "Erő":8, "Ellenállás":"Fell",
+"Költség":3, 
+"Leírás":"Célpont ellenfélnek fegyvertávon belül minden normál támadása +1 Ap-ba fog kerülni időtartam végéig"},
+{"Név":"Harag", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"Fegyver", "Időtartam":12, "Intervallum":"nincs", "Erő":8, "Ellenállás":"Fell",
+"Költség":3,
+"Leírás":"Célpont ellenfél fegyvertávon belül minden forduló kezdetén alapsebzés +1 sebzést fog elszenvedni, időtartam végéig. A sebzés nem növelhető, vagy csökkenthető semmilyen módon, és nem lehet kitérni előle."},
+{"Név":"Gógyítsuk meg a világot", "Szint":1, "Típus":"Gyógyító", "Feltöltődésenként":1, "Hatótáv":"1 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":"nincs",
+"Ellenállás":"nincs", "Költség":5, 
+"Leírás":"1 cellás körön belül minden szövetséges akinek az életerő-pontja 50% alatt van azonnal gyógyul 10 életerő-pontot. Amennyiben nem 50% alatt van, nincs gyógyulás, felhasználóra a képesség nem érvényes"},
+{"Név":"Sztárparádé", "Szint":"nincs", "Típus":"Alkaszt", "Feltöltődésenként":1, "Hatótáv":"karakter", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":"nincs", 
+"Ellenállás":"nincs", "Költség":"nincs",
+"Leírás":"Csatánként egyszer a Vesper-nek egy mentális képessége garantáltan sikerül Erőtől és Ellenállástól függetlenül, de a csata hátralévő részében egyetlen Mentális képessége sem lehet sikeres."},
+{"Név":"Rendezd meg a Halálod", "Szint":"nincs", "Típus":"Kaszt", "Feltöltődésenként":1, "Hatótáv":"karakter", "Időtartam":18, "Intervallum":"nincs", "Erő":"nincs",
+"Ellenállás":"nincs", "Költség":"nincs",
+"Leírás":"Csatánként egyszer amennyiben a Zsiványt halálos sebzés érné, halál helyett eszméletlenül összeesik, ez idő alatt minden ellenfél halottként fog rá tekinteni, de ha területi sebzést szenved el, ami 0 alá viszi az életerő pontjait tényleges meghal. A tetszhalál állapot maximum 3 körig tartható fent, ez alatt a Zsivány nem számít valid célpontnak egyetlen direkt képesség számára sem. Fordulónként a regeneráció érvényes, a hatás bármikor megszakítható"}]},
 
-"Ország":["Meiran", "Laumalco", "Ventars", "Velbruun", "Aydeliq", "Bastein", "Saehrit", "Eclepaan"],
-"Kország":{"Meiran":{"Mei":2}, "Laumalco":{"Malco":1, "Mergla":1}, "Ventars":{"Venta":2}, "Velbruun":{"Venta":1, "Prosant":1},
-           "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}},
+"Baqu":{"Ability":[
+{"Név":"Vérszívás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":6, "Intervallum":"nincs", "Erő":30, "Ellenállás":"Sell",
+"Költség":3,
+"Leírás":"Normál támadás célpont ellenfél ellen fegyvertávon belül, a sebzés egésze megnöveli a következő forduló elején a regenerációt."}]},
 
-  
+"Kalsyo":{"Ability":[
+{"Név":"Kezedre bízom lelkemet", "Szint":2, "Típus":"Tank", "Feltöltődésenként":3, "Hatótáv":"karakter", "Időtartam":"azonnali", "Intervallum":15, "Erő":"nincs", 
+"Ellenállás":"nincs", "Költség":3, 
+"Leírás":"Első ellenséges képesség ami a felhasználót éri intervallum alatt negálódik. A támadó elveszti a ráfordított költséget, de nem a képesség használatot. Ez a képesség negálás után azonnal véget ér"},
+{"Név":"Aki, bölcsekkel barátkozik", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"fegyver", "Időtartam":15, "Intervallum":"nincs", "Erő":35, 
+"Ellenállás":"Sell", "Költség":3, 
+"Leírás":"Normál támadás, ami csökkenti célpont Fizikális ellenállását 12-vel az időtartam végéig."}]},
+
+"Wolf1":{"Ability":[
+{"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":9, "Ellenállás":"Sell",
+"Költség":4, 
+"Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
+
+"Wolf2":{"Ability":[
+{"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":9, "Ellenállás":"Sell",
+"Költség":4, 
+"Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
+
+"Wolf3":{"Ability":[
+{"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":9, "Ellenállás":"Sell",
+"Költség":4, 
+"Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
+
+"Wolf4":{"Ability":[
+{"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":9, "Ellenállás":"Sell",
+"Költség":4, 
+"Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
+
+"Thief1":{"Ability":[{"Név":"Paralízis", "Szint":2, "Típus":"Debuff", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"nincs", "Erő":25, 
+"Ellenállás":"Mell", "Költség":4, "Leírás":"Célpont ellenfél az időtartam végéig nem mozoghat"}, 
+{"Név":"Visszaszerzés", "Szint":1, "Típus":"Egyedi", "Feltöltődésenként":1, "Hatótáv":"Bárhol", "Intervallum":"Nincs", "Erő":"Nincs", "Ellenállás":"nincs", "Költség":1,
+"Leírás":"A Játékos automatikus visszaszerez bármilyen tárgyat ami akarata ellenére lett tőle eltulajdonítva 1 órán belül"}]},
+
+"Thief2":{"Ability":[{"Név":"Látlak én", "Szint":2, "Típus":"Sebző", "Napi használat":2, "Hatótáv":"Fegyver", "Időtartam":"12", "Intervallum":0, "Erő":30,
+"Ellenállás":"Fell", "Költség":3, "Leírás":"Bárki aki a képesség időtartama alatt a felhasználó fegyvertávjába lép, normál támadás szenved el annak minden szabályával. Időtartam alatt 2-szer triggerelhető, aki a fegyvertávon belül ztartózkodik arra nem érvényes"}]},
+
+"Thief3":{"Ability":[{"Név":"Ő az én pajzsom", "Szint":2, "Feltöltődésenként":3, "Hatótáv":"3 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Ellenállás":"nincs", 
+"Költség":4, "Leírás":"Minden szövetséges aki 3 cellán belül van és 50% alatt van a HPja gyógyul 15 HP-t, akinek 50% felett van arra nincs hatással"}]},
+
+"Thief4":{"Ability":[{"Név":"Hova szaladsz?", "Szint":2, "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"Nincs", "Ellenállás":"Fell", "Költség":3,
+"Erő":25, "Leírás":"Normál támadás ami -12 Agilitás csökkentést okoz a célpontnak időtartam végéig"}]},
+
+"ThiefL":{"Ability":[{"Név":"Ragyogás", "Szint":2, "Típus":"Buff", "Feltöltődésenként":2, "Hatátóv":"1 cella", "Időtartam":12, "Intervallum":"nincs", "Erő":"nincs", "Költség":3,
+"Ellenállás":"nincs", "Leírás":"Célpont szövetséges 1 cellán belül időtartam végéig +6 Beccsel rendelkezik, felhasználóra nem érvényes"},
+{"Név":"Ellentámadás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":12, "Erő":"nincs", "Ellenállás":"nincs",
+"Költség":4, "Leírás":"Ha a felhasználót intervallum alatt normál támadás éri, a támadás negálódik, és helyette a felhasználó intéz normál támadás amennyiben a támadó ellenfél fegyvertávon belül volt. A képesség véget ér az intervallum leteltével, vagy az ellentámadás bekövetkeztekor"}]}},
+
 "Dudi":{"name":"Apistos", "startSP":40, "currSP":2, "startAP":3, "currAP":0, "Atk":27, "currAtk":27, "Def":37, "currDef":37, "HP":39, "currHP":39, "regen":6, "currregen":6,
 "Critdmg":1.4, "currCritdmg":1.4, "Crit":7, "currCrit":7, "Dmg":5, "currDmg":5, "Becs":8, "currBecs":8, "Fell":10, "currFell":10, "Mell":2, "currMell":2, "Sell":12, "currSell":12, 
 "Ero":0, "currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3, 
 "Inspiráció":11, "Ügyesség":5},
+
+"Bazsi":{},
 
 "Kalsyo":{"name":"Probator", "startSP":45, "currSP":3, "startAP":4, "currAP":0, "Atk":40, "currAtk":40, "Def":36, "currDef":36, "HP":48, "currHP":48, "regen":5, "currregen":5,
 "Critdmg":1.25, "currCritdmg":1.25, "Crit":5, "currCrit":5, "Dmg":4, "currDmg":4, "Becs":9, "currBecs":9, "Fell":10, "currFell":10, "Mell":8, "currMell":8, "Sell":7, "currSell":7, 
@@ -1237,54 +1333,56 @@
 "Baqu":{"name":"Baqu", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":30, "currAtk":30, "Def":28, "currDef":28, "HP":40, "currHP":40, "regen":10, "currregen":10,
 "Critdmg":1.5, "currCritdmg":1.5, "Crit":8, "currCrit":8, "Dmg":5, "currDmg":5, "Becs":2, "currBecs":2, "Fell":2, "currFell":2, "Sell":10, "currSell":10, "Mell":8, "currMell":8,
 "Ero":2, "currEro":2, "Dodgeseg":7, "currDodgeseg":7, "Spdseg":4, "currSpdseg":3, "Armor":8, "currArmor":8, "armorpen":6, "currarmorpen":6, "Agi":8, "currAgi":8, 
-"Inspiráció":0, "Ügyesség":20},
+"Inspiráció":0, "Ügyesség":20, "Fegyvertáv":"Frontális", "Fegyver":"Szájszerv"},
 
 "Wolf1":{"name":"Farkaskölyök", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":25, "currAtk":25, "Def":17, "currDef":17, "HP":13, "currHP":13, "regen":5, "currregen":5,
 "Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
 "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":5, "currarmorpen":5, "Agi":7, "currAgi":7, 
-"Inspiráció":0, "Ügyesség":9},
+"Inspiráció":0, "Ügyesség":9, "Fegyvertáv":"Direkt", "Fegyver":"Harapás"},
 
 "Wolf2":{"name":"Farkas", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":27, "currAtk":27, "Def":18, "currDef":18, "HP":14, "currHP":14, "regen":5, "currregen":5,
 "Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
 "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":5, "currarmorpen":5, "Agi":9, "currAgi":9, 
-"Inspiráció":0, "Ügyesség":9},
+"Inspiráció":0, "Ügyesség":9, "Fegyvertáv":"Direkt", "Fegyver":"Harapás"},
 
 "Wolf3":{"name":"Fehér Farkas", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":30, "currAtk":30, "Def":19, "currDef":19, "HP":15, "currHP":15, "regen":5, "currregen":5,
 "Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
 "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":5, "currarmorpen":5, "Agi":10, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10},
+"Inspiráció":0, "Ügyesség":10, "Fegyvertáv":"Direkt", "Fegyver":"Harapás"},
 
 "Wolf4":{"name":"Fekete Farkas", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":33, "currAtk":33, "Def":20, "currDef":20, "HP":17, "currHP":17, "regen":5, "currregen":5,
 "Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
 "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":6, "currarmorpen":6, "Agi":7, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10},
+"Inspiráció":0, "Ügyesség":10, "Fegyvertáv":"Direkt", "Fegyver":"Harapás"},
 
 "Thief1":{"name":"Közönséges Tolvaj", "startSP":35, "currSP":0, "startAP":0, "currAP":0, "Atk":30, "currAtk":30, "Def":19, "currDef":19, "HP":36, "currHP":36, "regen":5, 
 "currregen":5, "Critdmg":2, "currCritdmg":2, "Crit":6, "currCrit":6, "Dmg":3, "currDmg":3, "Becs":5, "currBecs":5, "Fell":11, "currFell":11, "Mell":1, "currMell":1, "Sell":1, 
 "currSell":1, "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":3, "currSpdseg":3, "Armor":5, "currArmor":5, "armorpen":6, "currarmorpen":6, "Agi":12, "currAgi":12, 
-"Inspiráció":1, "Ügyesség":11, "Fegyvertáv":"Frontális"},
+"Inspiráció":1, "Ügyesség":11, "Fegyvertáv":"Frontális", "Fegyver":"Gyilok"},
 
-"Thief2":{"name":"Tolvaj Íjász", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":33, "currAtk":33, "Def":20, "currDef":20, "HP":17, "currHP":17, "regen":5, "currregen":5,
-"Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
-"Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":6, "currarmorpen":6, "Agi":7, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10},
+"Thief2":{"name":"Tolvaj Íjász", "startSP":35, "currSP":0, "startAP":0, "currAP":0, "Atk":29, "currAtk":29, "Def":25, "currDef":25, "HP":36, "currHP":36, "regen":4, 
+"currregen":4, "Critdmg":1.6, "currCritdmg":1.6, "Crit":8, "currCrit":8, "Dmg":5, "currDmg":5, "Becs":9, "currBecs":9, "Fell":7, "currFell":7, "Mell":2, "currMell":2, 
+"Sell":1, "currSell":1, "Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":3, "currSpdseg":3, "Armor":4, "currArmor":4, "armorpen":3, "currarmorpen":3, "Agi":15, 
+"currAgi":15, "Inspiráció":1, "Ügyesség":15, "Fegyvertáv":"Gyémánt", "Fegyver":"Ark"},
 
-"Thief3":{"name":"Tolvaj Pap", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":33, "currAtk":33, "Def":20, "currDef":20, "HP":17, "currHP":17, "regen":5, "currregen":5,
-"Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
-"Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":6, "currarmorpen":6, "Agi":7, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10},
+"Thief3":{"name":"Tolvaj Pap", "startSP":35, "currSP":35, "startAP":0, "currAP":0, "Atk":19, "currAtk":19, "Def":29, "currDef":29, "HP":37, "currHP":37, "regen":3, 
+"currregen":3, "Critdmg":2, "currCritdmg":2, "Crit":4, "currCrit":4, "Dmg":2, "currDmg":2, "Becs":11.5, "currBecs":11.5, "Fell":1, "currFell":1, "Mell":5, "currMell":5, 
+"Sell":15, "currSell":15, "Ero":2, "currEro":2, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":1, "currSpdseg":1, "Armor":2, "currArmor":2, "armorpen":0, "currarmorpen":0, "Agi":2, 
+"currAgi":2, "Inspiráció":19, "Ügyesség":2, "Fegyvertáv":"Frontális", "Fegyver":"Sudár"},
 
-"Thief4":{"name":"Tolvaj Harcos", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":33, "currAtk":33, "Def":20, "currDef":20, "HP":17, "currHP":17, "regen":5, "currregen":5,
-"Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
-"Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":6, "currarmorpen":6, "Agi":7, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10},
+"Thief4":{"name":"Tolvaj Harcos", "startSP":35, "currSP":35, "startAP":0, "currAP":0, "Atk":35, "currAtk":35, "Def":21, "currDef":21, "HP":44, "currHP":44, "regen":6, 
+"currregen":6, "Critdmg":1, "currCritdmg":1, "Crit":6, "currCrit":6, "Dmg":6, "currDmg":6, "Becs":5.5, "currBecs":5.5, "Fell":12, "currFell":12, "Mell":6, "currMell":6, 
+"Sell":3, "currSell":3, "Ero":0, "currEro":0, "Dodgeseg":-1, "currDodgeseg":-1, "Spdseg":0, "currSpdseg":0, "Armor":10, "currArmor":10, "armorpen":6, "currarmorpen":6, 
+"Agi":1, "currAgi":1, "Inspiráció":5, "Ügyesség":1, "Fegyvertáv":"Vonal", "Fegyver":"Csatabárd"},
 
-"ThiefL":{"name":"Tolvajvezér", "startSP":0, "currSP":0, "startAP":0, "currAP":0, "Atk":33, "currAtk":33, "Def":20, "currDef":20, "HP":17, "currHP":17, "regen":5, "currregen":5,
-"Critdmg":1.33, "currCritdmg":1.33, "Crit":8, "currCrit":8, "Dmg":6, "currDmg":6, "Becs":5, "currBecs":5, "Fell":0, "currFell":0, "Mell":0, "currMell":0, "Sell":0, "currSell":0, 
-"Ero":0, "currEro":0, "Dodgeseg":0, "currDodgeseg":0, "Spdseg":0, "currSpdseg":0, "Armor":6, "currArmor":6, "armorpen":6, "currarmorpen":6, "Agi":7, "currAgi":10, 
-"Inspiráció":0, "Ügyesség":10}
+"ThiefL":{"name":"Tolvajvezér", "startSP":40, "currSP":40, "startAP":0, "currAP":0, "Atk":31, "currAtk":31, "Def":25, "currDef":25, "HP":33, "currHP":33, "regen":5, 
+"currregen":5,"Critdmg":1.25, "currCritdmg":1.25, "Crit":5, "currCrit":5, "Dmg":4, "currDmg":4, "Becs":19, "currBecs":19, "Fell":7, "currFell":7, "Mell":9, "currMell":9, 
+"Sell":8, "currSell":8, "Ero":0, "currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":2, "currSpdseg":2, "Armor":5, "currArmor":5, "armorpen":0, "currarmorpen":0, "Agi":4, 
+"currAgi":4, "Inspiráció":13, "Ügyesség":1},
 
-
+"Ország":["Meiran", "Laumalco", "Ventars", "Velbruun", "Aydeliq", "Bastein", "Saehrit", "Eclepaan"],
+"Kország":{"Meiran":{"Mei":2}, "Laumalco":{"Malco":1, "Mergla":1}, "Ventars":{"Venta":2}, "Velbruun":{"Venta":1, "Prosant":1},
+           "Aydeliq":{"Mei":1, "Malco":1}, "Bastein":{"Venta":1, "Mei":1}, "Saehrit":{"Prosant":1, "Malco":1}, "Eclepaan":{"Malco":1, "Mergla":1}}
 
 
 
