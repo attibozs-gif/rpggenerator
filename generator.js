@@ -578,12 +578,20 @@ if (block.type==="or") {const text2=Object.entries(block.items).map(([ing,amount
 for (const block2 of material) 
 {if (block2.type==="and") {const text3=Object.entries(block2.items).map(([ing, amount]) => {if (ing==="Meshik" || ing === "Nimesh") {return `${amount} db ${ing}`} else 
 {return `${amount} db ${receits.outputqual} ${ing}`}}); input3.push(text3.join(" + "));}
-if (block2.type==="or") {const text4=Object.entries(block2.items).map(([ing, amount]) => {if (receits.chquality) {return `${amount} db ${rdata.chquality} ${ing}`} else
+if (block2.type==="or") {const text4=Object.entries(block2.items).map(([ing, amount]) => {if (block2.chquality) {return `${amount} db ${block2.chquality} ${ing}`} else
 {return `${amount} db ${receits.outputqual} ${ing}`}}); input4.push(`(${text4.join(" VAGY ")})`);}}
-const finput=input.join (" + "); const finput2=input2.join(" + "); const finput3=input3.join (" + "); const finput4=input4.join(" + ");
-const span6=document.createElement("span"); span6.style.color="orange"; if (finput4) {span6.textContent=`${finput3} + (${finput4}) =`;} else {span6.textContent=`${finput3}=`}
+const finput=input.join (" + "); const finput2=input2.join(" + "); const finput3=input3.join (" + "); const finput4=input4.filter(Boolean).join(" + ");
+const span6=document.createElement("span"); span6.style.color="orange"; if (finput4.length>0) {span6.textContent=`${finput3} + (${finput4}) =`;} else {span6.textContent=`${finput3}=`}
 const span7=document.createElement("span"); span7.style.color="white"; if (finput2) {span7.textContent=`${finput} + (${finput2})`} else {span7.textContent=`${finput}`};
-const recipeline=document.createElement("div"); recipeline.appendChild(span6); recipeline.appendChild(span7); vardivs.frecipe.appendChild(recipeline);}}}};
+const recipeline=document.createElement("div"); recipeline.appendChild(span6); recipeline.appendChild(span7); recipeline.style.display = "flex";
+recipeline.style.flexWrap = "wrap";
+vardivs.frecipe.appendChild(recipeline);
+console.log(
+  "lista",
+  typeof input3 !== "undefined" ? input3 : [],
+  typeof input4 !== "undefined" ? input4 : [],
+  typeof finput4 !== "undefined" ? finput4 : []
+);}}};};
 const allspan=vardivs.frecipe.querySelectorAll("div") 
 const span8=document.createElement("span"); span8.textContent="Megszerzett Receptek"; span8.classList.add("badge"); span8.style.color="aquamarine"; 
 if (!vardivs.frecipe.querySelector(".badge")) {vardivs.frecipe.appendChild(span8); allspan[0].parentNode.insertBefore(span8, allspan[0])}};
@@ -797,7 +805,10 @@ const e=instance.enemy[pinput2.value]
 for (const div in textdiv2) {const statname=div;
 textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}   `}});
 
-
+const select2=document.getElementById("ability");
+select2.innerHTML=""; 
+dataStore.Képesség[active.attacker.name].Ability.forEach((ability,index)=> {const option=document.createElement("option"); option.value=index;
+option.textContent=ability.Név; select2.appendChild(option);});
 
 document.addEventListener("click", (event) => {if (event.target===att) {combat()}})
 const crittable=[[], [6], [6], [6], [6], [6], [6], [6], [5,6], [5,6], [4,5,6], [4,5,6]];
@@ -820,7 +831,7 @@ else {basedmg2=basedmg; console.log(basedmg2)};
 const correction=0.53-(basedmg2/(basedmg2+d.currArmor)); const scale=basedmg2*((d.currArmor/100)/(1+(a.currarmorpen/2)*(a.currarmorpen/2)/100));
 const fulldmg=Math.round(basedmg2-correction-scale); console.log("FULLdmg:", basedmg2,correction, scale, "=", fulldmg)
 if (basedmg2>basedmg) {span13.style.color="red";span13.textContent=`Kritikus Találat! Sebzés:${fulldmg}`} else
-{span13.style.color="#00ff66"; span13.textContent=`Sima Találat, Sebzés:${fulldmg}`}; d.currHP-=fulldmg; d.currDodgeseg+=d.Dodgeseg; updateui(a,d);
+{span13.style.color="#00ff66"; span13.textContent=`Sima Találat, Sebzés:${fulldmg}`}; d.currHP-=fulldmg; d.currDodgeseg+=d.Dodgeseg; a.currSpdseg+=a.Spdseg; updateui(a,d);
 console.log({
     attacker: a.name,
     currDmg: a.currDmg,
@@ -833,8 +844,6 @@ if (d.name===instance.player[pinput.value].name) {for (const div in textdiv) {co
 textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}};
 if (d.name===instance.enemy[pinput2.value].name) {for (const div in textdiv2) {const statname=div;
 textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}} }
-
-
 const inputdiv= {currHP:st2.querySelector(".currHP"), currregen:st2.querySelector(".currregen"), currAtk:st2.querySelector(".curratk"), currDef:st2.querySelector(".currdef"),
                 currDmg:st2.querySelector(".currdmg"), currCrit:st2.querySelector(".currcrit"), currBecs:st2.querySelector("currgv"), currArmor:st2.querySelector(".currarm"),
                 currarmorpen:st2.querySelector(".currpen"), currSpdseg:st2.querySelector(".currspd"), currDodgeseg:st2.querySelector("currdodge"), 

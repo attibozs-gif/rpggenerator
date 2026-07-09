@@ -1193,7 +1193,7 @@
          "Eid":{"Mei":1}, "Ago":{"Malco":1}, "Aph":{"Venta":1}, "Man":{"Mergla":1},
          "Dar":{"Venta":1}, "Carn":{"Malco":1}, "Dip":{"Mergla":1}, "Jin":{"Prosant":1}},
 
-"Képesség":{"Dudi": {"Ability":[
+"Képesség":{"Apistos": {"Ability":[
 {"Név":"Őrült ösztön", "Szint":2, "Típus":"Tank", " Napi Használat":3, "Hatótáv":"2 cella", "Időtartam":15, "Intervallum":"nincs", "Erő":"nincs", "Ellenállás":"nincs", 
 "Költség":4, 
 "Leírás":"A felhasználó körüli 2 cellás távon belül minden szövetségest érő normál támadás +8 védelemmel van kalkulálva az időtartam végéig. Felhasználóra nem érvényes"},
@@ -1207,7 +1207,7 @@
 "Ellenállás":"nincs","Költség":"nincs", 
 "Leírás":"Naponta egyszer, egy csatának a végéig, a Fanatikus normál támadásai amíg nem változtat célpontot, a másodiktól számítva +3 Támadással kalkulálódik. A hatás akkumulálódik, de ha a Fanatikus bármi mást csinál normál támadás helyett, a lánc megszakad, és a hatás elvész"}]},
 
-"Bazsi":{"Ability": [
+"Anfar":{"Ability": [
 {"Név":"Viharcsapás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"2 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":44, "Ellenállás":"Mell", 
 "Költség":4,
 "Leírás":"Minden ellenfél 2 cellás távolságon belül azonnal sebződik 15-t, páncélátütés nincs, páncélcsökkentés van"},
@@ -1224,7 +1224,7 @@
 "Ellenállás":"nincs", "Költség":"nincs",
 "Leírás":"A következő teljes feltöltődéig minden képesség amit az Anfar használ sebzéssel jár. A sebzés mértéke 1, és 1 cellás távolságban mindenkire érvényes. Mind a távolság, mind a sebzés mértéke minden képesség használatával 1-el növekszik. A sebzés éppúgy érvényes az Anfarra, mint a szövetségésekre."}]},
 
-"Laci":{"Ability": [
+"Bhayena":{"Ability": [
 {"Név":"Szerelmeslevél a pokolból", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"Fegyver vagy Társállat", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":22,
 "Ellenállás":"Fell", "Költség":3,
 "Leírás":"Normál támadás célpont ellenfél ellen, akinek a szomszédos celláin tartozkodó maximum 2 további ellenfél az eredeti célpont által elszenvedett sebzés felét elszenvedik. Sebzéscsökkentés csak az eredeti célpontnak van"},
@@ -1241,7 +1241,7 @@
 "Ellenállás":"nincs", "Költség":"nincs",
 "Leírás":"Ha a Bhayenát halálos sebzés érné, halál helyett a benne lakozó démon teljesen átveszi a test felett az uralmat, és megpróbál kitörni börtönéből. Válogatás nélkül fogja a legközelebbi szövetségest vagy ellenfelet támadni. Az átalakulóban lévő test csak normál támadásokra képes. Amennyiben a csata nem zárul le 3 fordulón belül, a démon kitör és a játék véget ér, minden szövetséges meghal."}]},
 
-"Csilla":{"Ability":[
+"Vesper":{"Ability":[
 {"Név":"Bonyolult", "Szint":1, "Típus":"Debuff", "Feltöltődésenként":1, "Hatótáv":"2 cella", "Időtartam":6, "Intervallum":"nincs", "Erő":11, "Ellenállás":"Mell",
 "Költség":4, 
 "Leírás":"Célpont ellenfél 2 cellás távon belül képtelen lesz bármilyen képességet használni az időtartam végéig"},
@@ -1266,7 +1266,7 @@
 "Költség":3,
 "Leírás":"Normál támadás célpont ellenfél ellen fegyvertávon belül, a sebzés egésze megnöveli a következő forduló elején a regenerációt."}]},
 
-"Kalsyo":{"Ability":[
+"Probator":{"Ability":[
 {"Név":"Kezedre bízom lelkemet", "Szint":2, "Típus":"Tank", "Feltöltődésenként":3, "Hatótáv":"karakter", "Időtartam":"azonnali", "Intervallum":15, "Erő":"nincs", 
 "Ellenállás":"nincs", "Költség":3, 
 "Leírás":"Első ellenséges képesség ami a felhasználót éri intervallum alatt negálódik. A támadó elveszti a ráfordított költséget, de nem a képesség használatot. Ez a képesség negálás után azonnal véget ér"},
@@ -1274,41 +1274,41 @@
 "Ellenállás":"Sell", "Költség":3, 
 "Leírás":"Normál támadás, ami csökkenti célpont Fizikális ellenállását 12-vel az időtartam végéig."}]},
 
-"Wolf1":{"Ability":[
+"Farkaskölyök":{"Ability":[
 {"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":5, "Ellenállás":"Sell",
 "Költség":4, 
 "Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
 
-"Wolf2":{"Ability":[
+"Farkas":{"Ability":[
 {"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":8, "Ellenállás":"Sell",
 "Költség":4, 
 "Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
 
-"Wolf3":{"Ability":[
+"Fehér Farkas":{"Ability":[
 {"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":11, "Ellenállás":"Sell",
 "Költség":4, 
 "Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
 
-"Wolf4":{"Ability":[
+"Fekete Farkas":{"Ability":[
 {"Név":"Farkasugrás", "Szint":1, "Típus":"Sebző", "Feltöltődésenként":1, "Hatótáv":"fegyver", "időtartam":"azonnali", "Intervallum":"nincs", "Erő":11, "Ellenállás":"Sell",
 "Költség":4, 
 "Leírás":"Normál támadás, ami után a felhasználó a célpont háta mögé kerül, közvetlenül felé fordulva"}]},
 
-"Thief1":{"Ability":[{"Név":"Paralízis", "Szint":2, "Típus":"Debuff", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"nincs", "Erő":26, 
+"Közönséges Tolvaj":{"Ability":[{"Név":"Paralízis", "Szint":2, "Típus":"Debuff", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"nincs", "Erő":26, 
 "Ellenállás":"Mell", "Költség":4, "Leírás":"Célpont ellenfél az időtartam végéig nem mozoghat"}, 
 {"Név":"Visszaszerzés", "Szint":1, "Típus":"Egyedi", "Feltöltődésenként":1, "Hatótáv":"Bárhol", "Intervallum":"Nincs", "Erő":"Nincs", "Ellenállás":"nincs", "Költség":1,
 "Leírás":"A Játékos automatikus visszaszerez bármilyen tárgyat ami akarata ellenére lett tőle eltulajdonítva 1 órán belül"}]},
 
-"Thief2":{"Ability":[{"Név":"Látlak én", "Szint":2, "Típus":"Sebző", "Napi használat":2, "Hatótáv":"Fegyver", "Időtartam":"12", "Intervallum":0, "Erő":30,
+"Tolvaj Íjász":{"Ability":[{"Név":"Látlak én", "Szint":2, "Típus":"Sebző", "Napi használat":2, "Hatótáv":"Fegyver", "Időtartam":"12", "Intervallum":0, "Erő":30,
 "Ellenállás":"Fell", "Költség":3, "Leírás":"Bárki aki a képesség időtartama alatt a felhasználó fegyvertávjába lép, normál támadás szenved el annak minden szabályával. Időtartam alatt 2-szer triggerelhető, aki a fegyvertávon belül ztartózkodik arra nem érvényes"}]},
 
-"Thief3":{"Ability":[{"Név":"Ő az én pajzsom", "Szint":2, "Feltöltődésenként":3, "Hatótáv":"3 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Ellenállás":"nincs", "Erő":"nincs", 
+"Tolvaj Pap":{"Ability":[{"Név":"Ő az én pajzsom", "Szint":2, "Feltöltődésenként":3, "Hatótáv":"3 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Ellenállás":"nincs", "Erő":"nincs", 
 "Költség":4, "Leírás":"Minden szövetséges aki 3 cellán belül van és 50% alatt van a HPja gyógyul 15 HP-t, akinek 50% felett van arra nincs hatással"}]},
 
-"Thief4":{"Ability":[{"Név":"Hova szaladsz?", "Szint":2, "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"Nincs", "Ellenállás":"Fell", "Költség":3,
+"Tolvaj Harcos":{"Ability":[{"Név":"Hova szaladsz?", "Szint":2, "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"Nincs", "Ellenállás":"Fell", "Költség":3,
 "Erő":26, "Leírás":"Normál támadás ami -12 Agilitás csökkentést okoz a célpontnak időtartam végéig"}]},
 
-"ThiefL":{"Ability":[{"Név":"Ragyogás", "Szint":2, "Típus":"Buff", "Feltöltődésenként":2, "Hatátóv":"1 cella", "Időtartam":12, "Intervallum":"nincs", "Erő":"nincs", "Költség":3,
+"Tolvajvezér":{"Ability":[{"Név":"Ragyogás", "Szint":2, "Típus":"Buff", "Feltöltődésenként":2, "Hatátóv":"1 cella", "Időtartam":12, "Intervallum":"nincs", "Erő":"nincs", "Költség":3,
 "Ellenállás":"nincs", "Leírás":"Célpont szövetséges 1 cellán belül időtartam végéig +6 Beccsel rendelkezik, felhasználóra nem érvényes"},
 {"Név":"Ellentámadás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":12, "Erő":"26", "Ellenállás":"nincs",
 "Költség":4, "Leírás":"Ha a felhasználót intervallum alatt normál támadás éri, a támadás negálódik, és helyette a felhasználó intéz normál támadás amennyiben a támadó ellenfél fegyvertávon belül volt. A képesség véget ér az intervallum leteltével, vagy az ellentámadás bekövetkeztekor"}]}},
