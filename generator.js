@@ -794,7 +794,10 @@ pinput.addEventListener("change", ()=>{const Entry=dataStore[pinput.value];
 if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClone(dataStore[pinput.value])}; active.attacker=instance.player[pinput.value]; 
 const p=instance.player[pinput.value];
 for (const div in textdiv) {const statname=div;
-textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}     `}});
+textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}     `}
+const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput.value].forEach((ability, index) => 
+{const option=document.createElement("option"); option.value=index; option.textContent=ability["Név"]; select2.appendChild(option)})
+});
 
 st0.addEventListener("click", (event)=> {if (event.target===acte) {active.attacker=instance.enemy[pinput2.value]; active.defender=instance.player[pinput.value]}});
 st0.addEventListener("click", (event)=> {if (event.target===actp) {active.attacker=instance.player[pinput.value]; active.defender=instance.enemy[pinput2.value]}});
@@ -803,12 +806,10 @@ pinput2.addEventListener("change", ()=>{const Entry2=dataStore[pinput2.value];
 if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClone(dataStore[pinput2.value])}; active.defender=instance.enemy[pinput2.value];
 const e=instance.enemy[pinput2.value] 
 for (const div in textdiv2) {const statname=div;
-textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}   `}});
-
-const select2=document.getElementById("ability");
-select2.innerHTML=""; 
-dataStore.Képesség[active.attacker.name].Ability.forEach((ability,index)=> {const option=document.createElement("option"); option.value=index;
-option.textContent=ability.Név; select2.appendChild(option);});
+textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}   `}
+const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput.value].forEach((ability, index) => 
+{const option=document.createElement("option"); option.value=index; option.textContent=ability["Név"]; select2.appendChild(option)})
+});
 
 document.addEventListener("click", (event) => {if (event.target===att) {combat()}})
 const crittable=[[], [6], [6], [6], [6], [6], [6], [6], [5,6], [5,6], [4,5,6], [4,5,6]];
@@ -826,7 +827,7 @@ const pr= Math.min(11, (pressure+bracket+Math.floor(a.Ügyesség/25))); console.
 let basedmg2; 
 if(critfaces.includes(Number(roll.value))) {
 basedmg2=Math.round(Math.round(basedmg * (1 + (a.Ügyesség / 100) + ((3 * a.Ügyesség) / (basedmg * (a.Ügyesség + basedmg))))));
-console.log(`${basedmg2}, = ${basedmg} * ${(a.Ügyesség/100)} + ${3*a.Ügyesség} / ${a.Ügyesség/basedmg}`)} 
+console.log(`${basedmg2}, = ${basedmg} * ${(a.Ügyesség/100)} + ${3*a.Ügyesség} / ${a.Ügyesség/basedmg}, ${(3 * a.Ügyesség) / (basedmg * (a.Ügyesség + basedmg))}`)} 
 else {basedmg2=basedmg; console.log(basedmg2)}; 
 const correction=0.53-(basedmg2/(basedmg2+d.currArmor)); const scale=basedmg2*((d.currArmor/100)/(1+(a.currarmorpen/2)*(a.currarmorpen/2)/100));
 const fulldmg=Math.round(basedmg2-correction-scale); console.log("FULLdmg:", basedmg2,correction, scale, "=", fulldmg)
