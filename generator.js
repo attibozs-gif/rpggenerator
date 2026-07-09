@@ -795,7 +795,7 @@ if (!instance.player[pinput.value]) {instance.player[pinput.value]=structuredClo
 const p=instance.player[pinput.value];
 for (const div in textdiv) {const statname=div;
 textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${p[statname]} / ${p["curr"+statname] ?? ""}     `}
-const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput.value].forEach((ability, index) => 
+const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput.value].Ability.forEach((ability, index) => 
 {const option=document.createElement("option"); option.value=index; option.textContent=ability["Név"]; select2.appendChild(option)})
 });
 
@@ -807,7 +807,7 @@ if (!instance.enemy[pinput2.value]) {instance.enemy[pinput2.value]=structuredClo
 const e=instance.enemy[pinput2.value] 
 for (const div in textdiv2) {const statname=div;
 textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${e[statname]} / ${e["curr"+statname] ??  ""}   `}
-const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput.value].forEach((ability, index) => 
+const select2=document.getElementById("ability"); select2.innerHTML=""; dataStore.Képesség[pinput2.value].Ability.forEach((ability, index) => 
 {const option=document.createElement("option"); option.value=index; option.textContent=ability["Név"]; select2.appendChild(option)})
 });
 
