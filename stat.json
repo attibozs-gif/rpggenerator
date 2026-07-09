@@ -1207,7 +1207,7 @@
 "Ellenállás":"nincs","Költség":"nincs", 
 "Leírás":"Naponta egyszer, egy csatának a végéig, a Fanatikus normál támadásai amíg nem változtat célpontot, a másodiktól számítva +3 Támadással kalkulálódik. A hatás akkumulálódik, de ha a Fanatikus bármi mást csinál normál támadás helyett, a lánc megszakad, és a hatás elvész"}]},
 
-"Balázs":{"Ability": [
+"Bazsi":{"Ability": [
 {"Név":"Viharcsapás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":3, "Hatótáv":"2 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Erő":44, "Ellenállás":"Mell", 
 "Költség":4,
 "Leírás":"Minden ellenfél 2 cellás távolságon belül azonnal sebződik 15-t, páncélátütés nincs, páncélcsökkentés van"},
