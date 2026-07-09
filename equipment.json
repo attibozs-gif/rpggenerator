@@ -1261,7 +1261,7 @@
 
 "Romlott Szövetségi Gurtni":{"Minőség":"Romlott", "Arculat":"Szövetségi", "Kategória":"Kardkötő", "Típus":"Gurtni", "image":"WAIST/SpoiledTristrap.jpg",
                         "Invslot":1, "Slot":"Derék", "Armor":0, "Becs":2, "Rúnaszám":0, "Dodgeseg":1, "Ügyesség":1, "Előállítható":"A Segítség Imája", "code":"kkrs2",
-                    "Szükséges":"1 db Romlott Neumonit, 1 db Romlott Mularin, 2 db Romlott Anerox" },
+                    "Szükséges":"1 db Romlott Neumonit, 1 db Romlott Mularin, 2 db Romlott Anerox"},
 
 "Romlott Katonai Csípőszorító":{"Minőség":"Romlott", "Arculat":"Katonai", "Kategória":"Öv", "Típus":"Csípőszorítő", "image":"WAIST/SpoiledGirdle.jpg",
                         "Invslot":1, "Slot":"Derék", "Armor":1, "Becs":2, "Rúnaszám":0, "Dodgeseg":0, "Tehetség":1, "Előállítható":"A Segítség Imája", "code":"ovrk1",
