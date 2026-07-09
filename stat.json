@@ -1318,7 +1318,7 @@
 "Ero":0, "currEro":0, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":-1, "currSpdseg":-1, "Armor":10, "currArmor":10, "armorpen":3, "currarmorpen":3, "Agi":3, "currAgi":3, 
 "Inspiráció":11, "Ügyesség":5},
 
-"Bazsi":{"name":"Anfar", "startSP":40, "currSP":1, "startAbP":4, "currAbP":0, "Atk":34, "CurrAtk":34, "Def":24, "currDef":24, "HP":36, "currHP":36, "regen":4, "currregen":4,
+"Bazsi":{"name":"Anfar", "startSP":40, "currSP":1, "startAbP":4, "currAbP":0, "Atk":34, "currAtk":34, "Def":24, "currDef":24, "HP":36, "currHP":36, "regen":4, "currregen":4,
 "Critdmg":1.66, "currCritdmg":1.667, "Crit":5, "currCrit":5, "Dmg":3, "currDmg":3, "Becs":17, "currBecs":17, "Fell":3, "currFell":3, "Mell":15, "currMell":15, "Sell":3, 
 "currSell":3, "Ero":6, "currEro":6, "Dodgeseg":1, "currDodgeseg":1, "Spdseg":3, "currSpdseg":3, "Armor":4, "currArmor":4, "armorpen":0, "currarmorpen":0, "Agi":9, "currAgi":9, 
 "Inspiráció":1,"Ügyesség":6},
