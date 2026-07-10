@@ -1299,7 +1299,7 @@
 {"Név":"Visszaszerzés", "Szint":1, "Típus":"Egyedi", "Feltöltődésenként":1, "Hatótáv":"Bárhol", "Intervallum":"Nincs", "Erő":null, "Ellenállás":"nincs", "Költség":1,
 "Leírás":"A Játékos automatikus visszaszerez bármilyen tárgyat ami akarata ellenére lett tőle eltulajdonítva 1 órán belül"}]},
 
-"Tolvaj Íjász":{"Ability":[{"Név":"Látlak én", "Szint":2, "Típus":"Sebző", "Napi használat":2, "Hatótáv":"Fegyver", "Időtartam":"12", "Intervallum":0, "Erő":30,
+"Tolvaj Íjász":{"Ability":[{"Név":"Látlak én", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":"12", "Intervallum":0, "Erő":30,
 "Ellenállás":"currFell", "Költség":3, "Leírás":"Bárki aki a képesség időtartama alatt a felhasználó fegyvertávjába lép, normál támadás szenved el annak minden szabályával. Időtartam alatt 2-szer triggerelhető, aki a fegyvertávon belül ztartózkodik arra nem érvényes"}]},
 
 "Tolvaj Pap":{"Ability":[{"Név":"Ő az én pajzsom", "Szint":2, "Feltöltődésenként":3, "Hatótáv":"3 cella", "Időtartam":"azonnali", "Intervallum":"nincs", "Ellenállás":"nincs", "Erő":null, 
@@ -1308,7 +1308,7 @@
 "Tolvaj Harcos":{"Ability":[{"Név":"Hova szaladsz?", "Szint":2, "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":9, "Intervallum":"Nincs", "Ellenállás":"currFell", "Költség":3,
 "Erő":26, "Leírás":"Normál támadás ami -12 Agilitás csökkentést okoz a célpontnak időtartam végéig"}]},
 
-"Tolvajvezér":{"Ability":[{"Név":"Ragyogás", "Szint":2, "Típus":"Buff", "Feltöltődésenként":2, "Hatátóv":"1 cella", "Időtartam":12, "Intervallum":"nincs", "Erő":null, "Költség":3,
+"Tolvajvezér":{"Ability":[{"Név":"Ragyogás", "Szint":2, "Típus":"Buff", "Feltöltődésenként":2, "Hatótáv":"1 cella", "Időtartam":12, "Intervallum":"nincs", "Erő":null, "Költség":3,
 "Ellenállás":"nincs", "Leírás":"Célpont szövetséges 1 cellán belül időtartam végéig +6 Beccsel rendelkezik, felhasználóra nem érvényes"},
 {"Név":"Ellentámadás", "Szint":2, "Típus":"Sebző", "Feltöltődésenként":2, "Hatótáv":"Fegyver", "Időtartam":"azonnali", "Intervallum":12, "Erő":"26", "Ellenállás":"nincs",
 "Költség":4, "Leírás":"Ha a felhasználót intervallum alatt normál támadás éri, a támadás negálódik, és helyette a felhasználó intéz normál támadás amennyiben a támadó ellenfél fegyvertávon belül volt. A képesség véget ér az intervallum leteltével, vagy az ellentámadás bekövetkeztekor"}]}},
