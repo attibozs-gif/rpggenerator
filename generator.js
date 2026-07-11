@@ -828,15 +828,16 @@ const crittable=[[], [6], [6], [6], [6], [6], [6], [6], [5,6], [5,6], [4,5,6], [
 let basedmg2;
 const span15=document.createElement("span"); span15.style.color="yellow";cbox.appendChild(span15);
 const span17=document.createElement("span");cbox.appendChild(span17);span17.style.color="brown"; 
-document.addEventListener("click", (event) => {if (event.target===ab1) {span15.textContent="";
+document.addEventListener("click", (event) => {if (event.target===ab1) {console.log("ABILITY CLICK");
+span15.textContent=""; span17.textContent="";
 const currability=dataStore.Képesség[select2.dataset.source].Ability[Number(select2.value)]
 const res=currability.Ellenállás;
 const baseres=currability.Ellenállás.replace("curr","");
-if (typeof currability.Erő==="number") {const power=Number(currability.Erő)+active.attacker.Ero; span13.innerHTML=`Fell:${active.defender.currFell}<br>Mell:${active.defender.currMell}<br>Sell:${active.defender.currSell}<br>`;
+if (typeof currability.Erő==="number") {const power=Number(currability.Erő)+active.attacker.Ero; span13.innerHTML=`Fell:${active.defender.currFell} / ${(active.defender.currFell-power)/2} /${(power-active.defender.currFell)/2} <br>Mell:${active.defender.currMell} / ${(active.defender.currMell-power)/2} /${(power-active.defender.currMell)/2}<br>Sell:${active.defender.currSell}/ ${(active.defender.currSell-power)/2} /${(power-active.defender.currFell)/2} <br>`;
 if (power<=active.defender[res]) 
 {active.defender[res]=active.defender[baseres]-((active.defender[baseres]-power)/2); span15.textContent=`SIKERTELEN ${res}:${active.defender[res]}`; updateui(null, active.defender);} else 
 {active.defender[res]=active.defender[baseres]+((power-active.defender[baseres])/2); span15.textContent=`SIKERES ${res}:${active.defender[res]}`; updateui(null, active.defender);}
-}};
+};
 const a=active.attacker; const d=active.defender; const avd=Math.max(1,(Math.floor((a.currAtk-d.currDef)/12))+1); console.log("ROLL", Number(roll.value), a, d); 
 console.log(a.currBecs, d.currBecs) 
 const gv=Math.max(1,(Math.floor((a.currBecs-Math.floor(d.Inspiráció/10)-d.currBecs)/5))+1); console.log("GV", gv, a.currBecs, Math.floor(d.Inspiráció/10), d.currBecs); const ld=a.startSP-d.startSP; let ldparity;
@@ -848,13 +849,11 @@ const delta2=Math.max(0,a.currAtk-d.currDef); const bracket=Math.max(0,(Math.flo
 const pr= Math.min(11, (pressure+bracket+Math.floor(a.Ügyesség/25))); console.log("PR:",pr); const critfaces=crittable[pr]; console.log("KRITIKAL:", crittable[pr],critfaces);
 switch(select2.options[select2.selectedIndex].text) {
 case "Osztozz a fájdalmamon": basedmg2=Math.round(Math.round(basedmg * (1 + (a.Ügyesség / 100) + ((3 * a.Ügyesség) / (basedmg * (a.Ügyesség + basedmg)))))); console.log("SZÁMOLÁS:",bonusdmg)
-                              span17.textContent=`Sebzés:${basedmg2}`; break
-case "Viharcsapás": 
-
-
-
-}
-});
+                              span17.innerHTML=`<br>Sebzés:${Math.round(basedmg2)}`; d.currHP-=basedmg2; break
+case "Viharcsapás": const correction=0.53-(15/(15+d.currArmor)); const scale=15*((d.currArmor/100)/100); basedmg2=15-correction-scale; 
+                            span17.innerHTML=`<br>Sebzés:${Math.round(basedmg2)}`; d.currHP-=basedmg2; break
+updateui(null,active.defender)}
+}});
 
 function combat () {
 const a=active.attacker; const d=active.defender; const avd=Math.max(1,(Math.floor((a.currAtk-d.currDef)/12))+1); console.log("ROLL", Number(roll.value), a, d); 
@@ -881,12 +880,6 @@ console.log({
     bonusdmg,
     basedmg
 });};
-
-function updateui (a, d) {
-if (d.name===instance.player[pinput.value].name) {for (const div in textdiv) {const statname=div;
-textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}};
-if (d.name===instance.enemy[pinput2.value].name) {for (const div in textdiv2) {const statname=div;
-textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}} }
 const inputdiv= {currHP:st2.querySelector(".currHP"), currregen:st2.querySelector(".currregen"), currAtk:st2.querySelector(".curratk"), currDef:st2.querySelector(".currdef"),
                 currDmg:st2.querySelector(".currdmg"), currCrit:st2.querySelector(".currcrit"), currBecs:st2.querySelector(".currgv"), currArmor:st2.querySelector(".currarm"),
                 currarmorpen:st2.querySelector(".currpen"), currSpdseg:st2.querySelector(".currspd"), currDodgeseg:st2.querySelector(".currdodge"), 
@@ -897,6 +890,19 @@ const inputdiv2= {currHP:st3.querySelector(".currHP"), currregen:st3.querySelect
                 currarmorpen:st3.querySelector(".currpen"), currSpdseg:st3.querySelector(".currspd"), currDodgeseg:st3.querySelector(".currdodge"), 
                 currAgi:st3.querySelector(".curragi"), currEro:st3.querySelector(".currero"), currFell:st3.querySelector(".currfres"), 
                 currMell:st3.querySelector(".currmres"), currSell:st3.querySelector(".currsres"),};
+
+
+
+function updateui (a, d) {
+if (d.name===instance.player[pinput.value].name) {for (const div in textdiv) {const statname=div;
+textdiv[div].querySelector(".label").textContent=`${textdiv[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}};
+if (d.name===instance.enemy[pinput2.value].name) {for (const div in textdiv2) {const statname=div;
+textdiv2[div].querySelector(".label").textContent=`${textdiv2[div].dataset.label} ${d[statname]} / ${d["curr"+statname] ?? ""}    `}}
+if (instance.player[pinput.value].currHP<=instance.player[pinput.value].HP/2) {textdiv.HP.querySelector(".label").style.color="lime"}
+if (instance.player[pinput.value].currHP>instance.player[pinput.value].HP/2) {textdiv.HP.querySelector(".label").style.color="white"}
+if (instance.enemy[pinput2.value].currHP<=instance.enemy[pinput2.value].HP/2) {textdiv2.HP.querySelector(".label").style.color="lime"}
+if (instance.enemy[pinput2.value].currHP>instance.enemy[pinput2.value].HP/2) {textdiv2.HP.querySelector(".label").style.color="white"}    };
+
 const updatebutton=document.querySelector(".update"); 
 updatebutton.addEventListener("click", (event) => 
 {console.log("UPDATE STARTED", inputdiv,inputdiv2);
